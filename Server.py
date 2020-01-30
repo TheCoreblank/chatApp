@@ -1,5 +1,6 @@
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
+import hashlib
 
 Clients = {}
 Addresses = {}
@@ -19,7 +20,7 @@ def accept_incoming_connections():
         print(str(clientAddress) + " connected.")
         
         client.send(bytes("Greetings!", "utf8"))
-        client.send(bytes("Enter {exit} to exit.", "utf8"))
+        client.send(bytes("Enter {quit} to exit.", "utf8"))
         client.send(bytes("Please enter your name", "utf8"))
         #yes, weird syntax. It's an actual way to write to a dictionary
         Addresses[client] = clientAddress
@@ -29,6 +30,25 @@ def accept_incoming_connections():
 def handle_client(client):
     #handles client connections
     name = client.recv(Buffer_size).decode("utf8")
+
+    isAdmin = False
+
+    if "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:
+        client.send(bytes("Enter authorisation", "utf8"))
+        password = client.recv(Buffer_size).decode("utf8")
+
+        passwordHashed = hashlib.sha512(bytes(password, "utf8")).hexdigest()
+        if passwordHashed == "17ee1174ab412b3c5a85373aa6c7b73dd8dfdfaf8e5978ab55602f2f75fab21aae057f9c6649c9a7ab592f56be63766057043021f472036fe42c2b733f1953d5":
+            isAdmin = True
+            client.send(bytes("Your authorisation has been received.", "utf8"))
+            print(str(name) + " has elevated to admin privileges")
+
+        else:
+            client.send(bytes("Authorisation denied; the code is incorrect.", "utf8"))
+            client.send(bytes("Non authorised users are not allowed to be called admin or have admin priveleges", "utf8"))
+            client.send(bytes("Closing connection.", "utf8"))
+            print(str(name) + " attempted to elevate to admin and failed.")
+            
     client.send(bytes(("Received your name! Welcome " + name), "utf8"))
     
     #welcomeMessage = "Welcome " + name + "!"
@@ -49,11 +69,18 @@ def handle_client(client):
         else:
             client.send(bytes("{quit}", "utf8"))
             client.close()
-            del client[client]
-            broadcast(bytes(name + " has left the chat. Byeee!"))
+            del Clients[client]
+            broadcast(bytes(name + " has left the chat. Byeee!", "utf8"))
             break
 
-    broadcast(bytes("Connection closed to client " + name, "utf8"))
+
+        if incomingMessage == bytes("Exit -a", "utf8"):
+            if isAdmin == True:
+                broadcast(bytes("-- EXIT AUTHORISE --", "utf8"))
+            else:
+                broadcast(bytes(" - - - - - " + name + " just attempted to exit. No authorisation was supplied so it didn't happen.", "utf8"))
+
+    print("Connection closed to client " + name)
 
 def broadcast(msg, prefix=""):
     #broadcasts to *all* clients

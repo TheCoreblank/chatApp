@@ -2,11 +2,18 @@
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import tkinter, time
+import sys
 
 def ReceiveFromServer():
     while True:
         try:
             message = client_socket.recv(Buffer_size).decode("utf8")
+
+            if message == "-- EXIT AUTHORISE --":
+                top.destroy()
+                sys.exit()
+                print("Exit received but not executed.")
+                
             message_list.insert(tkinter.END, message)
             
         except OSError: #may be a client exit
@@ -22,14 +29,21 @@ def send(event=None): #event passed by buttons
     
     if message == "{quit}":
         client_socket.close()
+        top.destroy()
         top.quit()
+        sys.exit()
 
 def on_closing():
     #called when window closed
-    my_msg.set("{quit}")
+    my_message.set("{quit}")
     send()
+    top.destroy()
+    sys.exit()
 
 top = tkinter.Tk()
+
+
+
 top.title("Frontend V0.1")
 
 messages_frame = tkinter.Frame(top)
