@@ -3,6 +3,7 @@ from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import tkinter, time
 import sys
+from cryptography.fernet import Fernet
 
 def ReceiveFromServer():
     while True:
@@ -53,7 +54,9 @@ my_message.set("")
 
 scrollbar = tkinter.Scrollbar(messages_frame)
 
-message_list = tkinter.Listbox(messages_frame, height = 20, width = 50, yscrollcommand=scrollbar.set)
+listHeight = int(input("List height? 20 is sensible> "))
+listWidth = int(input("List width? 50 is sensible... > "))
+message_list = tkinter.Listbox(messages_frame, height = listHeight, width = listWidth, yscrollcommand=scrollbar.set)
 
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 message_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
