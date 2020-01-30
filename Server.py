@@ -5,7 +5,7 @@ Clients = {}
 Addresses = {}
 
 Host = ""
-Port = 33000
+Port = 34000
 Buffer_size = 1024
 Address = (Host, Port)
 
@@ -18,25 +18,27 @@ def accept_incoming_connections():
         client, clientAddress = Server.accept()
         print(str(clientAddress) + " connected.")
         
-        client.send(bytes("Greetings!" + "utf8"))
-
+        client.send(bytes("Greetings!", "utf8"))
+        client.send(bytes("Enter {exit} to exit.", "utf8"))
+        client.send(bytes("Please enter your name", "utf8"))
         #yes, weird syntax. It's an actual way to write to a dictionary
-        addresses[client] = client_address
+        Addresses[client] = clientAddress
 
         Thread(target=handle_client, args=(client,)).start()
 
 def handle_client(client):
     #handles client connections
     name = client.recv(Buffer_size).decode("utf8")
+    client.send(bytes(("Received your name! Welcome " + name), "utf8"))
     
-    welcomeMessage = "Welcome " + name + "! Enter {quit} to exit."
-    broadcast(bytes(welcome, "utf8"))
+    #welcomeMessage = "Welcome " + name + "!"
+    #broadcast(bytes(welcomeMessage, "utf8"))
     
     message = name + " has joined!"
-    broadcast(bytes(msg, "utf8"))
+    broadcast(bytes(message, "utf8"))
 
     #yes, this again
-    clients[client] = name
+    Clients[client] = name
     
     while True:
         incomingMessage = client.recv(Buffer_size)
@@ -55,8 +57,10 @@ def handle_client(client):
 
 def broadcast(msg, prefix=""):
     #broadcasts to *all* clients
-    for client in clients:
+    for client in Clients:
         client.send(bytes(prefix, "utf8")+msg)
+
+    print("Broadcasted:      " + str(msg))
 
 def main():
     Server.listen(500)
