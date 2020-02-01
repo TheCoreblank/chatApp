@@ -151,7 +151,6 @@ def send(event=None): #event passed by buttons
         message_list.insert(tkinter.END, "To authenticate, put admin somewhere in your name")
         message_list.insert(tkinter.END, "next time and enter the password.")
         message_list.insert(tkinter.END, "This will only work on people with remote enabled")
-
     
     
 def on_closing():

@@ -55,12 +55,12 @@ def ManageClient(connection, address, name):
 
             setClientLabel(connection, "Auth denied.")
 
-            broadcast(bytes("Server: A certain " + name + " attempted to become admin with an incorrect password!", "utf8"))
+            broadcast(bytes("Server: " + name + " got the admin password wrong.", "utf8"))
             
     print("Manage client for " + str(address) + " , by name " + name + " STARTED")
 
     send(connection, "You have now entered the main chatroom.")
-    send(connection, "All your messages will now be broadcasted to the chatroom.")
+    send(connection, "Your messages will now be broadcasted to all users.")
     
     while True:
         try:
