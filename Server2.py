@@ -139,10 +139,8 @@ def HandleStartingClient(connection, address):
 
         else:
             #fool teachers into thinking it's lost
-            send(connection, ("Password wrong."))
-            setClientLabel(connection, "Oopsie!")
-            send(connection, "Try again in 10 seconds")
-            time.sleep(5)
+            send(connection, ("Password wrong, try again in 5 seconds"))
+            time.sleep(1)
             setClientLabel(connection, "5")
             time.sleep(1)
             setClientLabel(connection, "4")
@@ -152,7 +150,6 @@ def HandleStartingClient(connection, address):
             setClientLabel(connection, "2")
             time.sleep(1)
             setClientLabel(connection, "1")
-            time.sleep(1)
             
     #nameDict.append(address, name)
 
