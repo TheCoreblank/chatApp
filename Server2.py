@@ -10,7 +10,7 @@ server = socket(AF_INET, SOCK_STREAM)
 bufferSize = 1024
 
 Host = ""
-Port = 30008
+Port = 34000
 
 server.bind((Host, Port))
 
@@ -21,7 +21,7 @@ clientList = []
 
 
 def CalculateAuthCode():
-    authCode = int(int(time.time()) / int(10))
+    authCode = int(int(time.time()) / int(1))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     return str(authCode)
 
@@ -30,7 +30,8 @@ def ManageClient(connection, address, name):
     setClientLabel(connection, "Referred to main thread")
     
     if "Alex" in name or "System" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
-        connection.send(bytes("Enter authorisation", "utf8"))
+        send(connection, "Due to your username, you need to elevate to admin")
+        send(connection, "Enter authorisation")
         
         password = connection.recv(bufferSize).decode("utf8")
 
@@ -41,20 +42,20 @@ def ManageClient(connection, address, name):
         passwordHashed = hashlib.sha512(bytes((password + "289289289193819301"), "utf8")).hexdigest()
 
         if passwordHashed == "327c3ee9796088f90e9b5346165deb5d17a2e4112f6e57178be0646bb2d73478936cf4c0283ea78f43405a1bee04f72489d1ca146424a5c7b7288ea31ec4ea46":
-            isAdmin = True
-            connection.send(bytes("Your authorisation has been received.", "utf8"))
+            send(connection, "Your authorisation has been received.")
             print(str(name) + " has elevated to admin privileges")
+            isAdmin = True
             time.sleep(0.1)
-            connection.send(bytes("Elevated to admin", "utf8"))
+            send(connection, "Elevated to admin")
 
             setClientLabel(connection, "Elevated to admin")
 
         else:
-            connection.send(bytes("Auth denied.", "utf8"))
+            send(connection, "Authentication incorrect; elevation denied.")
 
             setClientLabel(connection, "Auth denied.")
 
-            broadcast(bytes("A certain " + name + " attempted to become admin with an incorrect password!", "utf8"))
+            broadcast(bytes("Server: A certain " + name + " attempted to become admin with an incorrect password!", "utf8"))
             
     print("Manage client for " + str(address) + " , by name " + name + " STARTED")
     
@@ -63,23 +64,24 @@ def ManageClient(connection, address, name):
             message = connection.recv(bufferSize).decode("utf8")
 
             if message:
-                if message == "wipe -a":
+                if message == "/wipe -a":
                     if isAdmin == True:
                         authCode = CalculateAuthCode()
                         broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
 
                     else:
-                        connection.send("You don't have permission to perform that command.")
+                        send(connection, "You don't have permission to run that command.")
                         setClientLabel(connection, "Permission denied.")
 
-                elif message == "exit -a":
+                elif message == "/exit -a":
                     if isAdmin == True:
                         authCode = CalculateAuthCode()
                         broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
 
                     else:
-                        connection.send("You don't have permission to perform that command.")
+                        send(connection, "You don't have permission to run that command.")
                         setClientLabel(connection, "Permission denied.")
+                    
                         
                 print(name + ": " + message)
                 broadcast(bytes((name + ": " + message), "utf8"))
@@ -91,18 +93,63 @@ def ManageClient(connection, address, name):
             print("Error in manage client, attempting continue.")
             continue
 
+
+################################################## NOT MAIN, STARTING
+#It's there cause when you are scanning the code this looks a lot like the main thread-hashing and while loops.
+
 def HandleStartingClient(connection, address):
     time.sleep(0.2)
     setClientLabel(connection, "Referred")
     clientList.append(connection)
-    connection.send(bytes("Please enter your name", "utf8"))
-    name = connection.recv(bufferSize).decode("utf8")
-    connection.send(bytes("Received your name, " + name, "utf8"))
+    setClientLabel(connection, "Name requested by server.")
     
-    Thread(target=ManageClient, args=(connection, address, name)).start()
-        
+    send(connection, "Please enter your name")
+    
+    name = connection.recv(bufferSize).decode("utf8")
+
+    send(connection, ("Received your name, " + name))
+
+    time.sleep(1)
+    
+    while True:
+        send(connection, ("Please enter the chatroom password."))
+
+        send(connection, ("Enter authorisation"))
+
+        setClientLabel(connection, "Password required.")
+
+        password = connection.recv(bufferSize).decode("utf8")
+
+        passwordHashed = hashlib.sha512(bytes((password + "#kZTv/?#O{E+;`PWA78hP3`Q)PT*:1R>"), "utf8")).hexdigest()
+
+        if passwordHashed == "16f6ab86817e7ce692242de2ce7c6fd8d236f70460bfe3987725fcb9748bfd15f7eb68cd0b05dc3aa89c6dba4405e6cb2a19a7f7bed0a373a3c0e3d00d03b78a":
+            Thread(target=ManageClient, args=(connection, address, name)).start()
+            break
+
+        else:
+            #fool teachers into thinking it's lost
+            send(connection, ("Password wrong."))
+            setClientLabel(connection, "Oopsie!")
+            send(connection, "Try again in 10 seconds")
+            time.sleep(5)
+            setClientLabel(connection, "5")
+            time.sleep(1)
+            setClientLabel(connection, "4")
+            time.sleep(1)
+            setClientLabel(connection, "3")
+            time.sleep(1)
+            setClientLabel(connection, "2")
+            time.sleep(1)
+            setClientLabel(connection, "1")
+            time.sleep(1)
+            
     #nameDict.append(address, name)
 
+def send(connection, text):
+    time.sleep(0.1)
+    connection.send(bytes("Server [PM]: " + text, "utf8"))
+    time.sleep(0.1)
+    
 def broadcast(message):
     for client in clientList:
         try:

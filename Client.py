@@ -2,6 +2,7 @@
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import tkinter, time
+from tkinter import messagebox
 import sys, hashlib
 
 lastUpIndicator = 0
@@ -34,7 +35,7 @@ if DoCustom:
 
         
 def CalculateAuthCode():
-    authCode = int(int(time.time()) / int(10))
+    authCode = int(int(time.time()) / int(1))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     authCode = str(authCode)
     SetLabelStatus("Auth code is " + authCode)
@@ -45,7 +46,7 @@ def ReceiveFromServer():
         try:
             message = client_socket.recv(Buffer_size).decode("utf8")
 
-            if "Enter authorisation" in message:
+            if "Enter authorisation" in message or "password required" in message:
                 print("Set entry mode to auth")
                 SetLabelStatus("Enter password")
                 entry_field["show"] = "*"
@@ -89,6 +90,12 @@ def ReceiveFromServer():
             if "[INTERNAL SET LABEL MESSAGE]" in message:
                 SetLabelStatus(message[28:])
 
+            if "[SEMI-INTERNAL] Auth code is:" in message:
+                AuthCode = CalculateAuthCode()
+                if message[:29] == AuthCode:
+                    SetLabelStatus("[CLIENT MESSAGE] Auth correct")
+                    message_list.insert(tkinter.END, "Client: Auth correct")
+
             if not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message:
                 message_list.insert(tkinter.END, message)
 
@@ -109,18 +116,37 @@ def send(event=None): #event passed by buttons
 
     SetLabelStatus("Sent.")
 
-    if message == "{wipe}":
+    if message == "/wipe":
         SetLabelStatus("Received, wiping")
         WipeList()
         SetLabelStatus("Wipe process complete.")
     
-    if message == "{quit}":
+    if message == "/exit":
         SetLabelStatus("Quitting.")
         WipeList()
         client_socket.close()
         top.destroy()
         top.quit()
         sys.exit()
+
+    if message == "/help":
+        SetLabelStatus("Here's some help.")
+        WipeList()
+
+        message_list.insert(tkinter.END, "If nothing you type is appearing in the list, it's")
+        message_list.insert(tkinter.END, "cause you have a broken connection.")
+        message_list.insert(tkinter.END, "Local commands:")
+        message_list.insert(tkinter.END, "/wipe - wipes text locally")
+        message_list.insert(tkinter.END, "/exit - exites application")
+        message_list.insert(tkinter.END, "Admin commands: ")
+        message_list.insert(tkinter.END, "/wipe -a - wipes everyone's text")
+        message_list.insert(tkinter.END, "/exit -a - closes everyone's application")
+        message_list.insert(tkinter.END, "These will only work if you have authenticated.")
+        message_list.insert(tkinter.END, "To authenticate, put admin somewhere in your name")
+        message_list.insert(tkinter.END, "next time and enter the password.")
+        message_list.insert(tkinter.END, "This will only work on people with remote enabled")
+
+    
     
 def on_closing():
     #called when window closed
@@ -179,11 +205,11 @@ if DoCustom == True:
     port = input("Enter port: ")
 
 else:
-    backlogLength = 200
-    host = "127.0.0.1"
+    backlogLength = 20
+    #host = "127.0.0.1"
     #host = "86.31.133.208"
-    #host = "192.168.0.35"
-    port = 30008
+    host = "192.168.0.35"
+    port = 34000
     allowRemoteAccess = True
 
 if not port:
@@ -197,7 +223,6 @@ Address = (host, port)
 client_socket = socket(AF_INET, SOCK_STREAM)
 
 tries = 0
-
 
 while True:
     if tries < 20:
