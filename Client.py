@@ -112,7 +112,8 @@ def send(event=None): #event passed by buttons
     message = my_message.get()
     my_message.set("")
 
-    client_socket.send(bytes(message, "utf8"))
+    if not "sudo shutdown server" in message:
+        client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus("Sent.")
 
@@ -151,6 +152,9 @@ def send(event=None): #event passed by buttons
         message_list.insert(tkinter.END, "To authenticate, put admin somewhere in your name")
         message_list.insert(tkinter.END, "next time and enter the password.")
         message_list.insert(tkinter.END, "This will only work on people with remote enabled")
+
+    if "sudo shutdown server" in message:
+        client_socket.send(bytes(("sudo shutdown server " + CalculateAuthCode()), "utf8"))
     
     
 def on_closing():
@@ -211,9 +215,9 @@ if DoCustom == True:
 
 else:
     backlogLength = 20
-    #host = "127.0.0.1"
+    host = "127.0.0.1"
     #host = "86.31.133.208"
-    host = "192.168.0.35"
+    #host = "192.168.0.35"
     port = 34000
     allowRemoteAccess = True
 

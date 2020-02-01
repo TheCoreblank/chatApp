@@ -1,6 +1,9 @@
-import time, hashlib, select
+import time, hashlib, select, sys
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
+DoRun = True
+
+sleepTime = 0.1
 
 print("Imports succesful.")
 
@@ -19,6 +22,7 @@ print("Success.")
 
 clientList = []
 
+blocklist = []
 
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
@@ -64,9 +68,32 @@ def ManageClient(connection, address, name):
     
     while True:
         try:
+            if name in blocklist:
+                send(connection, "You have been banned or kicked.")
+                remove(connection)
+                break
+            
             message = connection.recv(bufferSize).decode("utf8")
 
             if message:
+                if "/ban" in message:
+                    if isAdmin == True:
+                        blocklist.append(message[5:])
+                        send(connection, ("Successfully added " + message[5:] + " to blocklist."))
+                        print("Added " + message[5:] + " to the blocklist.")
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+
+                if "/unban" in message:
+                    if isAdmin == True:
+                        blocklist.remove(message[7:])
+                        send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
+                        print("Removed " + message[7:] + " from the blocklist.")
+
+                    else:
+                        send(connection, ("You don't have permission to run that command"))
+                        broadcast(bytes(name + " attempted to unban " + message[5:]))
+                        
                 if message == "/wipe -a":
                     if isAdmin == True:
                         for i in range(1, 10):
@@ -92,6 +119,38 @@ def ManageClient(connection, address, name):
 
                 elif message == "/verify":
                     send(connection, CalculateAuthCode())
+
+                elif message == "{quit}":
+                    remove(connection)
+                    break
+
+                elif "sudo shutdown server" in message:
+                    print("Received sudo shutdown server")
+                    if isAdmin == True:
+                        if CalculateAuthCode() == message[21:]:
+                                send(connection, "This requires root priveleges, even higher than admin.")
+                                send(connection, "Enter authorisation")
+                                reply = connection.recv(bufferSize).decode("utf8")
+
+                                passwordHashed = hashlib.sha512(bytes((reply + "84902340829048290480928409834902849028409284902890428390482304820948"), "utf8")).hexdigest()
+                                
+                                if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
+                                    broadcast(bytes("This server is shutting down by remote command", "utf8"))
+                                    print("Exiting due to sudo shutdown server command.")
+                                    sys.exit()
+                                    DoRun = False
+
+                                else:
+                                    send(connection, "Oh you fucked up, you really fucked up.")
+                                    broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
+                                    remove(connection)
+                                    broadcast(bytes(("SERVER: REQUEST DENIED, USER DISCONNECTED.", "utf8")))
+                                    
+                    else:
+                        send(connection, "Oh you fucked up, you really fucked up.")
+                        broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
+                        remove(connection)
+                        broadcast(bytes(("SERVER: REQUEST DENIED, USER DISCONNECTED.", "utf8")))
                         
                 print(name + ": " + message)
                 broadcast(bytes((name + ": " + message), "utf8"))
@@ -109,9 +168,7 @@ def ManageClient(connection, address, name):
 
 def HandleStartingClient(connection, address):
     time.sleep(0.2)
-    setClientLabel(connection, "Referred")
     clientList.append(connection)
-    time.sleep(0.2)
     setClientLabel(connection, "Name requested by server.")
     
     send(connection, "Please enter your name")
@@ -120,7 +177,7 @@ def HandleStartingClient(connection, address):
 
     send(connection, ("Received your name, " + name))
 
-    time.sleep(1)
+    time.sleep(0.2)
     
     while True:
         send(connection, ("Please enter the chatroom password."))
@@ -138,7 +195,6 @@ def HandleStartingClient(connection, address):
             break
 
         else:
-            #fool teachers into thinking it's lost
             send(connection, ("Password wrong, try again in 5 seconds"))
             time.sleep(1)
             setClientLabel(connection, "5")
@@ -154,29 +210,31 @@ def HandleStartingClient(connection, address):
     #nameDict.append(address, name)
 
 def send(connection, text):
-    text = str(text)
-    time.sleep(0.2)
-    connection.send(bytes("Server [PM]: " + text, "utf8"))
-    time.sleep(0.2)
-    print("PM'd >> " + text)
+    if DoRun == True:
+        text = str(text)
+        time.sleep(sleepTime)
+        connection.send(bytes("Server [PM]: " + text, "utf8"))
+        time.sleep(sleepTime)
+        print("PM'd >> " + text)
     
 def broadcast(message):
-    for client in clientList:
-        try:
-            client.send(message)
-        except:
-            print("Error in broadcast.")
-            client.close()
-            remove(client)
+    if DoRun == True:
+        for client in clientList:
+            try:
+                client.send(message)
+            except:
+                print("Error in broadcast.")
+                client.close()
+                remove(client)
 
 def remove(connection):
     if connection in clientList:
         clientList.remove(connection)
 
 def setClientLabel(connection, text):
-    time.sleep(0.2)
+    time.sleep(sleepTime)
     connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
-    time.sleep(0.2)
+    time.sleep(sleepTime)
     
 def Listen_for_clients():
     while True:
