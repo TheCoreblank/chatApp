@@ -7,20 +7,62 @@ import sys, hashlib
 lastUpIndicator = 0
 isUp = False
 
+DoCustom = input("Do you want to do default or custom setup? C/D > ")
+
+if DoCustom == "C":
+    DoCustom = True
+
+elif DoCustom == "D":
+    DoCustom = False
+
+else:
+    DoCustom = False
+    print("Non Y/N answer, defaulting to default")
+
+if DoCustom:
+    allowRemoteAccess = input("Do you want to allow admins to remotely shut down or wipe if teachers come? Y/N > ")
+
+    if allowRemoteAccess == "Y":
+        allowRemoteAccess = True
+
+    elif allowRemoteAccess == "N":
+        allowRemoteAccess = False
+
+    else:
+        allowRemoteAccess = True
+        print("Non Y/N answer, defaulting to yes")
+
+        
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
-    authCode = hashlib.sha512(bytes(authCode, "utf8")).hexdigest()
+    authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
+    authCode = str(authCode)
+    SetLabelStatus("Auth code is " + authCode)
     return authCode
-    
+
 def ReceiveFromServer():
+    SetLabelStatus("Please make sure you don't reuse usernames...")
     while True:
         try:
             message = client_socket.recv(Buffer_size).decode("utf8")
 
-            if "-- EXIT AUTHORISE --" in message:
+            if "Enter authorisation" in message:
+                print("Set entry mode to auth")
+                SetLabelStatus("Enter password")
+                entry_field["show"] = "*"
+
+            else:
+                entry_field["show"] = ""
+
+            if "Closing connection" in message or "Closed connection" in message:
+                SetLabelStatus("Seems like you were kicked!")
+
+            if "-- EXIT AUTHORISE --" in message and allowRemoteAccess == True:
+                SetLabelStatus("Received remote close, verifying auth code")
                 print("Received auth message...")
                 
                 if CalculateAuthCode() in message:
+                    SetLabelStatus("Auth code correct. Exiting...")
                     print("Auth correct. Exiting.")
                     WipeList()
                     top.destroy()
@@ -28,15 +70,21 @@ def ReceiveFromServer():
 
                 else:
                     print("Auth incorrect. Not responded.")
+                    SetLabelStatus("Auth incorrect.")
 
-            if "-- WIPE AUTHORISE --" in message:
+            if "-- WIPE AUTHORISE --" in message and allowRemoteAccess == True:
                 print("Received auth message...")
+                SetLabelStatus("Received remote wipe, verifying auth code")
                 authCode = int(int(time.time()) / int(10))
                 if CalculateAuthCode() in message:
+                    SetLabelStatus("Auth correct, wiping.")
                     print("Auth correct. Wiping..")
                     WipeList()
+                    message_list.delete(0)
+                    SetLabelStatus("Wipe process complete.")
 
                 else:
+                    SetLabelStatus("Auth incorrect.")
                     print("Auth incorrect. Not responded.")
 
                     
@@ -51,15 +99,21 @@ def ReceiveFromServer():
 
 def send(event=None): #event passed by buttons
     #handles sending of messages
+    SetLabelStatus("Sending.")
     message = my_message.get()
     my_message.set("")
 
     client_socket.send(bytes(message, "utf8"))
 
+    SetLabelStatus("Sent.")
+
     if message == "{wipe}":
+        SetLabelStatus("Received, wiping")
         WipeList()
+        SetLabelStatus("Wipe process complete.")
     
     if message == "{quit}":
+        SetLabelStatus("Quitting.")
         WipeList()
         client_socket.close()
         top.destroy()
@@ -76,11 +130,11 @@ def on_closing():
 
 def WipeList():
     message_list.delete(0, tkinter.END)
-    message_list.delete(0)
+
+def SetLabelStatus(text):
+    statusLabel["text"] = text
     
 top = tkinter.Tk()
-
-
 
 top.title("Frontend V0.1")
 
@@ -91,8 +145,13 @@ my_message.set("")
 
 scrollbar = tkinter.Scrollbar(messages_frame)
 
-listHeight = int(input("List height? 20 is sensible> "))
-listWidth = int(input("List width? 50 is sensible... > "))
+if DoCustom == True:
+    listHeight = int(input("List height? 20 is sensible> "))
+    listWidth = int(input("List width? 50 is sensible... > "))
+
+else:
+    listHeight = 20
+    listWidth = 50
 message_list = tkinter.Listbox(messages_frame, height = listHeight, width = listWidth, yscrollcommand=scrollbar.set)
 
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
@@ -104,14 +163,30 @@ entry_field = tkinter.Entry(top, textvariable=my_message)
 entry_field.bind("<Return>", send)
 entry_field.pack()
 
+send_button = tkinter.Button(top, text="Send", command=send)
+send_button.pack()
+
+statusLabel = tkinter.Label(top, text="-")
+statusLabel.pack()
+
 top.protocol("WM_DELETE_WINDOW", on_closing)
 
-backlogLength = int(input("What length should the backlog be before removing the end? > "))
-host = input("Enter host: ")
-port = input("Enter port: ")
+if DoCustom == True:
+    backlogLength = int(input("What length should the backlog be before removing the end? > "))
+    host = input("Enter host: ")
+    port = input("Enter port: ")
+
+else:
+    backlogLength = 200
+    host = "127.0.0.1"
+    #host = "86.31.133.208"
+    #host = "192.168.0.35"
+    port = 34000
+    allowRemoteAccess = True
 
 if not port:
     port = 34000
+
 else:
     port = int(port)
 
@@ -121,22 +196,27 @@ client_socket = socket(AF_INET, SOCK_STREAM)
 
 tries = 0
 
-    
+
 while True:
     if tries < 20:
        tries = tries + 1
        
     try:
+        SetLabelStatus("Attempting to connect.")
         client_socket.connect(Address)
         print("Succesful connection established.")
+        SetLabelStatus("Succesful connection established. Remember not to reuse usernames.")
         break
         
     except ConnectionRefusedError:
         print("Connection refused. Retrying in " + str(tries) + " seconds.")
+        SetLabelStatus("Error. Retrying in " + str(tries) + " seconds.")
         time.sleep(tries)
         continue
 
+SetLabelStatus("Starting receive thread.")
 receive_thread = Thread(target=ReceiveFromServer)
 receive_thread.start()
+SetLabelStatus("Done!")
 
 tkinter.mainloop()  # Starts GUI execution.
