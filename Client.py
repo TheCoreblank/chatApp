@@ -41,7 +41,6 @@ def CalculateAuthCode():
     return authCode
 
 def ReceiveFromServer():
-    SetLabelStatus("Please make sure you don't reuse usernames...")
     while True:
         try:
             message = client_socket.recv(Buffer_size).decode("utf8")
@@ -87,8 +86,11 @@ def ReceiveFromServer():
                     SetLabelStatus("Auth incorrect.")
                     print("Auth incorrect. Not responded.")
 
-                    
-            message_list.insert(tkinter.END, message)
+            if "[INTERNAL SET LABEL MESSAGE]" in message:
+                SetLabelStatus(message[28:])
+
+            if not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message:
+                message_list.insert(tkinter.END, message)
 
             if message_list.size() > backlogLength:
                 message_list.delete(0)
@@ -181,7 +183,7 @@ else:
     host = "127.0.0.1"
     #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 34000
+    port = 30008
     allowRemoteAccess = True
 
 if not port:
@@ -205,7 +207,7 @@ while True:
         SetLabelStatus("Attempting to connect.")
         client_socket.connect(Address)
         print("Succesful connection established.")
-        SetLabelStatus("Succesful connection established. Remember not to reuse usernames.")
+        SetLabelStatus("Succesful connection established.")
         break
         
     except ConnectionRefusedError:
