@@ -69,8 +69,10 @@ def ManageClient(connection, address, name):
             if message:
                 if message == "/wipe -a":
                     if isAdmin == True:
-                        authCode = CalculateAuthCode()
-                        broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
+                        for i in range(1, 10):
+                            time.sleep(0.2)
+                            authCode = CalculateAuthCode()
+                            broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
 
                     else:
                         send(connection, "You don't have permission to run that command.")
@@ -78,8 +80,10 @@ def ManageClient(connection, address, name):
 
                 elif message == "/exit -a":
                     if isAdmin == True:
-                        authCode = CalculateAuthCode()
-                        broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
+                        for i in range(1, 10):
+                            time.sleep(0.2)
+                            authCode = CalculateAuthCode()
+                            broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
 
                     else:
                         send(connection, "You don't have permission to run that command.")
