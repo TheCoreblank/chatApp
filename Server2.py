@@ -157,9 +157,9 @@ def HandleStartingClient(connection, address):
 
 def send(connection, text):
     text = str(text)
-    time.sleep(0.3)
+    time.sleep(0.1)
     connection.send(bytes("Server [PM]: " + text, "utf8"))
-    time.sleep(0.3)
+    time.sleep(0.1)
     print("PM'd >> " + text)
     
 def broadcast(message):
@@ -176,9 +176,9 @@ def remove(connection):
         clientList.remove(connection)
 
 def setClientLabel(connection, text):
-    time.sleep(0.3)
+    time.sleep(0.1)
     connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
-    time.sleep(0.3)
+    time.sleep(0.1)
     
 def Listen_for_clients():
     while True:
