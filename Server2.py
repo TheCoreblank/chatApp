@@ -21,7 +21,7 @@ clientList = []
 
 
 def CalculateAuthCode():
-    authCode = int(int(time.time()) / int(1))
+    authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     return str(authCode)
 
@@ -58,6 +58,9 @@ def ManageClient(connection, address, name):
             broadcast(bytes("Server: A certain " + name + " attempted to become admin with an incorrect password!", "utf8"))
             
     print("Manage client for " + str(address) + " , by name " + name + " STARTED")
+
+    send(connection, "You have now entered the main chatroom.")
+    send(connection, "All your messages will now be broadcasted to the chatroom.")
     
     while True:
         try:

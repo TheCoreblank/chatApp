@@ -35,7 +35,7 @@ if DoCustom:
 
         
 def CalculateAuthCode():
-    authCode = int(int(time.time()) / int(1))
+    authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     authCode = str(authCode)
     SetLabelStatus("Auth code is " + authCode)
