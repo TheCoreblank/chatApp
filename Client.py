@@ -117,12 +117,12 @@ def send(event=None): #event passed by buttons
 
     SetLabelStatus("Sent.")
 
-    if message == "/wipe":
+    if message == "/wipe" or message == "/clear":
         SetLabelStatus("Received, wiping")
         WipeList()
         SetLabelStatus("Wipe process complete.")
     
-    if message == "/exit":
+    if message == "/exit" or message == "/quit":
         SetLabelStatus("Quitting.")
         WipeList()
         client_socket.close()
@@ -196,7 +196,7 @@ message_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
 
 messages_frame.pack()
 
-entry_field = tkinter.Entry(top, textvariable=my_message)
+entry_field = tkinter.Entry(top, textvariable=my_message, width = listWidth)
 entry_field.bind("<Return>", send)
 entry_field.pack()
 
@@ -218,7 +218,7 @@ else:
     host = "127.0.0.1"
     #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 34001
+    port = 34000
     allowRemoteAccess = True
 
 if not port:

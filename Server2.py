@@ -13,7 +13,7 @@ server = socket(AF_INET, SOCK_STREAM)
 bufferSize = 1024
 
 Host = ""
-Port = 34001
+Port = 34000
 
 server.bind((Host, Port))
 
@@ -118,7 +118,7 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, "You don't have permission to run that command.")
                         
-                if message == "/wipe -a":
+                if message == "/wipe -a" or message == "/clear -a":
                     if isAdmin == True:
                         for i in range(1, 10):
                             time.sleep(0.2)
@@ -198,6 +198,11 @@ def HandleStartingClient(connection, address):
     send(connection, "Please enter your name")
     
     name = connection.recv(bufferSize).decode("utf8")
+
+    if name in blocklist:
+        send(connection, "You have been banned.")
+        send(connection, "Don't tell yourselfs you are all clever thinking")
+        send(connection, "of using a new account; there's no way round it.")
 
     send(connection, ("Received your name, " + name))
 
