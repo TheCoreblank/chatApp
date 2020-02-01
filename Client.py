@@ -129,6 +129,9 @@ def send(event=None): #event passed by buttons
         top.quit()
         sys.exit()
 
+    if message == "/verify":
+        message_list.insert(tkinter.END, "Client auth: " + CalculateAuthCode())
+
     if message == "/help":
         SetLabelStatus("Here's some help.")
         WipeList()
@@ -137,7 +140,10 @@ def send(event=None): #event passed by buttons
         message_list.insert(tkinter.END, "cause you have a broken connection.")
         message_list.insert(tkinter.END, "Local commands:")
         message_list.insert(tkinter.END, "/wipe - wipes text locally")
-        message_list.insert(tkinter.END, "/exit - exites application")
+        message_list.insert(tkinter.END, "/exit - exits application")
+        message_list.insert(tkinter.END, "/verify - tells server to return auth and returns client side")
+        message_list.insert(tkinter.END, "... is for debug, not security, because the server can pretend")
+        message_list.insert(tkinter.END, "...to be the client")
         message_list.insert(tkinter.END, "Admin commands: ")
         message_list.insert(tkinter.END, "/wipe -a - wipes everyone's text")
         message_list.insert(tkinter.END, "/exit -a - closes everyone's application")

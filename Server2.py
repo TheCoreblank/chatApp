@@ -88,7 +88,10 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, "You don't have permission to run that command.")
                         setClientLabel(connection, "Permission denied.")
-                    
+
+
+                elif message == "/verify":
+                    send(connection, CalculateAuthCode())
                         
                 print(name + ": " + message)
                 broadcast(bytes((name + ": " + message), "utf8"))
@@ -153,9 +156,11 @@ def HandleStartingClient(connection, address):
     #nameDict.append(address, name)
 
 def send(connection, text):
+    text = str(text)
     time.sleep(0.1)
     connection.send(bytes("Server [PM]: " + text, "utf8"))
     time.sleep(0.1)
+    print("PM'd >> " + text)
     
 def broadcast(message):
     for client in clientList:
