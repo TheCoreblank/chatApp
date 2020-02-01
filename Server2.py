@@ -125,9 +125,9 @@ def HandleStartingClient(connection, address):
     while True:
         send(connection, ("Please enter the chatroom password."))
 
-        send(connection, ("Enter authorisation"))
-
         setClientLabel(connection, "Password required.")
+
+        send(connection, ("Enter authorisation"))
 
         password = connection.recv(bufferSize).decode("utf8")
 
