@@ -218,7 +218,7 @@ else:
     host = "127.0.0.1"
     #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 34000
+    port = 34001
     allowRemoteAccess = True
 
 if not port:

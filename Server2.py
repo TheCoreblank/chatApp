@@ -13,7 +13,7 @@ server = socket(AF_INET, SOCK_STREAM)
 bufferSize = 1024
 
 Host = ""
-Port = 34000
+Port = 34001
 
 server.bind((Host, Port))
 
@@ -23,6 +23,8 @@ print("Success.")
 clientList = []
 
 blocklist = []
+
+kicklist = []
 
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
@@ -69,8 +71,14 @@ def ManageClient(connection, address, name):
     while True:
         try:
             if name in blocklist:
-                send(connection, "You have been banned or kicked.")
+                send(connection, "You have been banned.")
                 remove(connection)
+                break
+
+            if name in kicklist:
+                send(connection, "You have been kicked.")
+                remove(connection)
+                kicklist.remove(name)
                 break
             
             message = connection.recv(bufferSize).decode("utf8")
@@ -85,14 +93,30 @@ def ManageClient(connection, address, name):
                         send(connection, "You don't have permission to run that command.")
 
                 if "/unban" in message:
+                    DoSuccess = True
                     if isAdmin == True:
-                        blocklist.remove(message[7:])
-                        send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
+                        try:
+                            blocklist.remove(message[7:])
+                        except:
+                            send(connection, ("Error, it seems " + message[7:] + " is not banned."))
+                            DoSuccess = False
+
+                        if DoSuccess == True:
+                            send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
                         print("Removed " + message[7:] + " from the blocklist.")
 
                     else:
                         send(connection, ("You don't have permission to run that command"))
                         broadcast(bytes(name + " attempted to unban " + message[5:]))
+
+
+                if "/kick" in message:
+                    if isAdmin == True:
+                        kicklist.append(message[6:])
+                        send(connection, ("Successfully added " + message[6:] + " to kicklist."))
+                        print("Added " + message[6:] + " to the kicklist.")
+                    else:
+                        send(connection, "You don't have permission to run that command.")
                         
                 if message == "/wipe -a":
                     if isAdmin == True:
