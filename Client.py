@@ -120,7 +120,7 @@ def send(event=None): #event passed by buttons
     if message == "/wipe" or message == "/clear":
         SetLabelStatus("Received, wiping")
         WipeList()
-        SetLabelStatus("Wipe process complete.")
+        SetLabelStatus("")
     
     if message == "/exit" or message == "/quit":
         SetLabelStatus("Quitting.")

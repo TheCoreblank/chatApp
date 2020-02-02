@@ -111,12 +111,12 @@ def ManageClient(connection, address, name):
     
     while True:
         try:
-            if name in blocklist:
+            if name in blocklist and isAdmin == False:
                 send(connection, "You have been banned.")
                 remove(connection, name)
                 break
 
-            if name in kicklist:
+            if name in kicklist and isAdmin == False:
                 kicklist.remove(name)
                 send(connection, "You have been kicked.")
                 remove(connection, name)
