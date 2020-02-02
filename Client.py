@@ -136,21 +136,6 @@ def send(event=None): #event passed by buttons
     if message == "/faketext" or message == "/faketext -a":
         InsertFakeText()
         
-    if message == "/help":
-        SetLabelStatus("Here's some help.")
-        WipeList()
-
-        message_list.insert(tkinter.END, "If nothing you type is appearing in the list, it's")
-        message_list.insert(tkinter.END, "cause you have a broken connection.")
-        message_list.insert(tkinter.END, "Local commands:")
-        message_list.insert(tkinter.END, "/wipe - wipes text locally")
-        message_list.insert(tkinter.END, "/exit - exits application")
-        message_list.insert(tkinter.END, "/pm [username] - private message")
-        message_list.insert(tkinter.END, "/verify - tells server to return auth and returns client side")
-        message_list.insert(tkinter.END, "... is for debug, not security, because the server can pretend")
-        message_list.insert(tkinter.END, "...to be the client")
-        message_list.insert(tkinter.END, "If I gave you the admin pw, you should know the admin commands.")
-
     if "sudo shutdown server" in message:
         client_socket.send(bytes(("sudo shutdown server " + CalculateAuthCode()), "utf8"))
 

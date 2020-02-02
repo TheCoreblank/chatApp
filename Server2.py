@@ -31,6 +31,8 @@ namelist = []
 
 pendingPms = {}
 
+lastMessage = time.time()
+
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
@@ -45,6 +47,20 @@ def CalculateNameAppend(length):
         result = result + choice(alphabet)
 
     return result
+
+def GetLastMessageTime():
+    secondsAgo = int(time.time() - lastMessage)
+    if secondsAgo < 60:
+        return "Last message was " + str(secondsAgo) + " seconds ago."
+
+    if secondsAgo > 60:
+        minutesAgo = int(secondsAgo / 60)
+        if minutesAgo > 120:
+            hoursAgo = int(minutesAgo / 60)
+            return "Last message was " + str(hoursAgo) + " hours ago."
+
+        else:
+            return "Last message was " + str(minutesAgo) + " minutes ago."
 
 def ManageClient(connection, address, name):
     isAdmin = False
@@ -93,166 +109,172 @@ def ManageClient(connection, address, name):
     send(connection, "Your messages will now be broadcasted to all users.")
     
     while True:
-        #try:
-        if name in blocklist:
-            send(connection, "You have been banned.")
-            remove(connection, name)
-            break
-
-        if name in kicklist:
-            kicklist.remove(name)
-            send(connection, "You have been kicked.")
-            remove(connection, name)
-            break
-
-        
-        message = connection.recv(bufferSize).decode("utf8")
-
-        if message:
-            print(name + ": " + message)
-            if not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
-                broadcast(bytes((name + ": " + message), "utf8"))
-
-                
-            if "/pm" in message:
-                nameToPm = message[4:]
-
-                if nameToPm in namelist:
-                    send(connection, ("What do you want to send? Your next message is private"))
-                    reply = connection.recv(bufferSize).decode("utf8")
-
-                    pendingPms[nameToPm] = (name + " : " + reply)
-
-                    send(connection, ("Added to buffer."))
-
-                    SetLabelStatus("PM sent")
-
-                else:
-                    send(connection, ("This person isn't online right now"))
-            
-            if "/ban" in message:
-                if isAdmin == True:
-                    blocklist.append(message[5:])
-                    send(connection, ("Successfully added " + message[5:] + " to blocklist."))
-                    print("Added " + message[5:] + " to the blocklist.")
-                else:
-                    send(connection, "You don't have permission to run that command.")
-
-            if "/unban" in message:
-                DoSuccess = True
-                if isAdmin == True:
-                    try:
-                        blocklist.remove(message[7:])
-                    except:
-                        send(connection, ("Error, it seems " + message[7:] + " is not banned."))
-                        DoSuccess = False
-
-                    if DoSuccess == True:
-                        send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
-                    print("Removed " + message[7:] + " from the blocklist.")
-
-                else:
-                    send(connection, ("You don't have permission to run that command"))
-                    broadcast(bytes(name + " attempted to unban " + message[5:]))
-
-
-            if "/kick" in message:
-                if isAdmin == True:
-                    kicklist.append(message[6:])
-                    send(connection, ("Successfully added " + message[6:] + " to kicklist."))
-                    print("Added " + message[6:] + " to the kicklist.")
-                else:
-                    send(connection, "You don't have permission to run that command.")
-
-            if "/broadcast" in message:
-                if isAdmin == True:
-                    broadcast(bytes((message[11:]), "utf8"))
-
-                else:
-                    send(connection, "You don't have permission to run that command.")
-                    
-            if message == "/wipe -a" or message == "/clear -a":
-                if isAdmin == True:
-                    for i in range(1, 10):
-                        time.sleep(0.2)
-                        authCode = CalculateAuthCode()
-                        broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
-
-                else:
-                    send(connection, "You don't have permission to run that command.")
-                    setClientLabel(connection, "Permission denied.")
-
-            elif message == "/exit -a":
-                if isAdmin == True:
-                    for i in range(1, 10):
-                        time.sleep(0.2)
-                        authCode = CalculateAuthCode()
-                        broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
-
-                else:
-                    send(connection, "You don't have permission to run that command.")
-                    setClientLabel(connection, "Permission denied.")
-
-
-            elif message == "/faketext -a":
-                if isAdmin == True:
-                    for i in range(1, 10):
-                        time.sleep(0.2)
-                        authCode = CalculateAuthCode()
-                        #uses this so if a teacher catches it mid wipe they don't see "authorise faketext"
-                        broadcast(bytes(("-- AUTHORISE 42 --" + authCode), "utf8"))
-
-            elif message == "/verify":
-                send(connection, CalculateAuthCode())
-
-            elif message == "/quit" or message == "/exit":
+        try:
+            if name in blocklist:
+                send(connection, "You have been banned.")
                 remove(connection, name)
                 break
 
-            elif message == "/here" or message == "/namelist" or message == "/users":
-                send(connection, str(len(namelist)) + " in list.")
-                time.sleep(0.4)
-                send(connection, "Users listed are necessarily online.")
-                for name in namelist:
-                    time.sleep(0.4)
-                    send(connection, name)
+            if name in kicklist:
+                kicklist.remove(name)
+                send(connection, "You have been kicked.")
+                remove(connection, name)
+                break
 
-            elif "sudo shutdown server" in message:
-                print("Received sudo shutdown server")
-                if isAdmin == True:
-                    if CalculateAuthCode() == message[21:]:
-                            send(connection, "This requires root priveleges, even higher than admin.")
-                            send(connection, "Enter authorisation")
-                            reply = connection.recv(bufferSize).decode("utf8")
+            
+            message = connection.recv(bufferSize).decode("utf8")
 
-                            passwordHashed = hashlib.sha512(bytes((reply + "84902340829048290480928409834902849028409284902890428390482304820948"), "utf8")).hexdigest()
-                            
-                            if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
-                                broadcast(bytes("This server is shutting down by remote command", "utf8"))
-                                print("Exiting due to sudo shutdown server command.")
-                                sys.exit()
-                                DoRun = False
+            if message:
+                print(name + ": " + message)
+                if not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
+                    broadcast(bytes((name + ": " + message), "utf8"))
 
-                            else:
-                                broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
-                                remove(connection, name)
-                                time.sleep(0.5)
-                                broadcast(bytes("SERVER: REQUEST DENID, CLIENT REMOVED.", "utf8"))
-                                break
-                                
-                else:
-                    broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
-                    blocklist.append(name)
+                    
+                if "/pm" in message:
+                    nameToPm = message[4:]
+
+                    if nameToPm in namelist:
+                        send(connection, ("What do you want to send? Your next message is private"))
+                        reply = connection.recv(bufferSize).decode("utf8")
+
+                        pendingPms[nameToPm] = (name + " : " + reply)
+
+                        send(connection, ("Added to buffer."))
+
+                        SetLabelStatus("PM sent")
+
+                    else:
+                        send(connection, ("This person isn't online right now"))
+                
+                if "/ban" in message:
+                    if isAdmin == True:
+                        blocklist.append(message[5:])
+                        send(connection, ("Successfully added " + message[5:] + " to blocklist."))
+                        print("Added " + message[5:] + " to the blocklist.")
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+
+                if "/unban" in message:
+                    DoSuccess = True
+                    if isAdmin == True:
+                        try:
+                            blocklist.remove(message[7:])
+                        except:
+                            send(connection, ("Error, it seems " + message[7:] + " is not banned."))
+                            DoSuccess = False
+
+                        if DoSuccess == True:
+                            send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
+                        print("Removed " + message[7:] + " from the blocklist.")
+
+                    else:
+                        send(connection, ("You don't have permission to run that command"))
+                        broadcast(bytes(name + " attempted to unban " + message[5:]))
+
+
+                if "/kick" in message:
+                    if isAdmin == True:
+                        kicklist.append(message[6:])
+                        send(connection, ("Successfully added " + message[6:] + " to kicklist."))
+                        print("Added " + message[6:] + " to the kicklist.")
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+
+                if "/broadcast" in message:
+                    if isAdmin == True:
+                        broadcast(bytes((message[11:]), "utf8"))
+
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+                        
+                if message == "/wipe -a" or message == "/clear -a":
+                    if isAdmin == True:
+                        for i in range(1, 10):
+                            time.sleep(0.2)
+                            authCode = CalculateAuthCode()
+                            broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
+
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+                        setClientLabel(connection, "Permission denied.")
+
+                elif message == "/exit -a":
+                    if isAdmin == True:
+                        for i in range(1, 10):
+                            time.sleep(0.2)
+                            authCode = CalculateAuthCode()
+                            broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
+
+                    else:
+                        send(connection, "You don't have permission to run that command.")
+                        setClientLabel(connection, "Permission denied.")
+
+
+                elif message == "/faketext -a":
+                    if isAdmin == True:
+                        for i in range(1, 10):
+                            time.sleep(0.2)
+                            authCode = CalculateAuthCode()
+                            #uses this so if a teacher catches it mid wipe they don't see "authorise faketext"
+                            broadcast(bytes(("-- AUTHORISE 42 --" + authCode), "utf8"))
+
+                elif message == "/verify":
+                    send(connection, CalculateAuthCode())
+
+                elif message == "/quit" or message == "/exit":
                     remove(connection, name)
-                    broadcast(bytes(("SERVER: REQUEST DENIED, USER BANNED.", "utf8")))
                     break
 
-        else:
-            remove(connection, name)
-            
-        #except:
-        #    print("Error in manage client, attempting continue.")
-        #    continue
+                elif message == "/here" or message == "/namelist" or message == "/users":
+                    send(connection, str(len(namelist)) + " in list.")
+                    time.sleep(0.4)
+                    send(connection, "Users listed are necessarily online.")
+                    for name in namelist:
+                        time.sleep(0.4)
+                        send(connection, name)
+
+                elif message == "/last":
+                    broadcast(bytes(("As requested by " + name + " the"), "utf8"))
+                    time.sleep(0.2)
+                    broadcast(bytes(    str(GetLastMessageTime())     ,   "utf8"))
+                    time.sleep(0.1)
+
+                elif "sudo shutdown server" in message:
+                    print("Received sudo shutdown server")
+                    if isAdmin == True:
+                        if CalculateAuthCode() == message[21:]:
+                                send(connection, "This requires root priveleges, even higher than admin.")
+                                send(connection, "Enter authorisation")
+                                reply = connection.recv(bufferSize).decode("utf8")
+
+                                passwordHashed = hashlib.sha512(bytes((reply + "84902340829048290480928409834902849028409284902890428390482304820948"), "utf8")).hexdigest()
+                                
+                                if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
+                                    broadcast(bytes("This server is shutting down by remote command", "utf8"))
+                                    print("Exiting due to sudo shutdown server command.")
+                                    sys.exit()
+                                    DoRun = False
+
+                                else:
+                                    broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
+                                    remove(connection, name)
+                                    time.sleep(0.5)
+                                    broadcast(bytes("SERVER: REQUEST DENID, CLIENT REMOVED.", "utf8"))
+                                    break
+                                    
+                    else:
+                        broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
+                        blocklist.append(name)
+                        remove(connection, name)
+                        broadcast(bytes(("SERVER: REQUEST DENIED, USER BANNED.", "utf8")))
+                        break
+
+            else:
+                remove(connection, name)
+                
+        except:
+            print("Error in manage client, attempting continue.")
+            continue
 
     print("Exitted main thread")
 
@@ -305,7 +327,7 @@ def send(connection, text, Show=True):
             connection.send(bytes("Server [PM]: " + text, "utf8"))
         else:
             connection.send(bytes(text, "utf8"))
-            
+
         time.sleep(sleepTime)
         print("PM'd >> " + text)
     
@@ -318,6 +340,8 @@ def broadcast(message):
                 print("Error in broadcast.")
                 client.close()
                 remove(client, name)
+
+        lastMessage = time.time()
 
 def remove(connection, name):
     connection.close()
