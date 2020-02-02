@@ -185,9 +185,14 @@ def ManageClient(connection, address, name):
                         send(connection, "You don't have permission to run that command.")
 
                 if "/status" in message:
-                    send(connection, ("Port: " + str(Port) + "Your IP: " + str(address)))
                     time.sleep(0.2)
-                    send(connection, ("Your name: " + name + " Your Admin Status: " + str(isAdmin)))
+                    send(connection, "Port: " + str(Port))
+                    time.sleep(0.2)
+                    send(connection, "Your IP: " + str(address))
+                    time.sleep(0.2)
+                    send(connection, "Your name: " + name)
+                    time.sleep(0.2)
+                    send(connection, "Your Admin Status: " + str(isAdmin))
 
                 if "/broadcast" in message:
                     if isAdmin == True:
