@@ -37,7 +37,7 @@ def CalculateAuthCode():
     return str(authCode)
 
 def CalculateNameAppend(length):
-    alphabet = list(string.printable) + list(string.printable.upper())
+    alphabet = list("abcdefghijklmnopqrstuvwxyz1234567890!'£%^&*()@/#ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
     result = ""
     
@@ -320,7 +320,7 @@ def HandleStartingClient(connection, address):
         send(connection, "of using a new account; there's no way round it.")
 
     else:
-        name = (CalculateNameAppend(4) + "-" + name)
+        name = (CalculateNameAppend(6) + "-" + name)
 
         namelist.append(name)
     
