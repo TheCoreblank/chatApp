@@ -317,7 +317,7 @@ def HandleStartingClient(connection, address):
 
 
     else:
-        name = (CalculateNameAppend() + "-" + name)
+        name = (CalculateNameAppend(4) + "-" + name)
 
         namelist.append(name)
     
