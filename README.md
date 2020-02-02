@@ -23,3 +23,20 @@ Server side
 - /here, /namelist, /users - prints all users currently in names database. May or may not be connected. 
 - sudo shutdown server - A command for if there is some need to shut down the server. Requires higher authentication than administrator, which only I know.
 
+# How do I get admin?
+If a list of words (written below) are in your username, it'll prompt you for the password. Enter it, and you'll be admin. Enter wrong, and you'll be kicked and have to try again or pick a different username. Don't bother looking for it in the code, it's hashed and salted.
+
+The words (case insensitive) are:
+- Alex
+- System
+- Server
+- Admin
+- Root
+- Administrator
+- Sudo
+
+# Is this unethical?
+# <rant>
+Yes, unless it's in REP, PSHE, Human Languages, Knitting, or another awful subject or your school doesn't do computer science or try to find someone to do computer science, in which case you are teaching yourself what your school neglected to teach you by setting up the server. It's also entirely ethical if your school did a computer ban then wondered why students weren't able to do their online homework at break and lunch. If your school did that, like mine, they are clearly too stupid for you to learn anything in lessons and you should find something more productive to do with your time, like browsing github.
+
+# </rant>

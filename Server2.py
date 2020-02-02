@@ -51,8 +51,8 @@ def ManageClient(connection, address, name):
     isAdmin = False
     try:
         setClientLabel(connection, "Referred to main thread")
-        
-        if "Alex" in name or "System" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
+        #Yes, I know I should have made an all lowercase copy of name and made it half as long.
+        if "Alex" in name or "System" in name or "sudo" in name or "Sudo" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
             send(connection, "Due to your username, you need to elevate to admin")
             send(connection, "Enter authorisation")
             
