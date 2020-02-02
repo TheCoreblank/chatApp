@@ -33,19 +33,17 @@ if DoCustom:
         allowRemoteAccess = True
         print("Non Y/N answer, defaulting to yes")
 
-        
+
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     authCode = str(authCode)
-    SetLabelStatus("Auth code is " + authCode)
     return authCode
 
 def ReceiveFromServer():
     while True:
         try:
             message = client_socket.recv(Buffer_size).decode("utf8")
-
             if "Enter authorisation" in message or "password required" in message:
                 print("Set entry mode to auth")
                 SetLabelStatus("Enter password")
@@ -75,32 +73,34 @@ def ReceiveFromServer():
             if "-- WIPE AUTHORISE --" in message and allowRemoteAccess == True:
                 print("Received auth message...")
                 SetLabelStatus("Received remote wipe, verifying auth code")
-                authCode = int(int(time.time()) / int(10))
                 if CalculateAuthCode() in message:
                     SetLabelStatus("Auth correct, wiping.")
                     print("Auth correct. Wiping..")
                     WipeList()
                     message_list.delete(0)
-                    SetLabelStatus("Wipe process complete.")
+                    SetLabelStatus("Only talk about the work or you will be banned.")
 
                 else:
                     SetLabelStatus("Auth incorrect.")
                     print("Auth incorrect. Not responded.")
 
+            #triggers fake text, renamed so if teachers see the message they aren't suspicious
+            if "-- AUTHORISE 42 --" in message and allowRemoteAccess == True:
+                print("Received 42 message...")
+                SetLabelStatus("Received remote 42, verifying auth code")
+                if CalculateAuthCode() in message:
+                    SetLabelStatus("Auth correct")
+                    InsertFakeText()
+
+                else:
+                    SetLabelStatus("Auth incorrect")
+                    print("Auth incorrect. Not responded.")
+                    
             if "[INTERNAL SET LABEL MESSAGE]" in message:
                 SetLabelStatus(message[28:])
 
-            if "[SEMI-INTERNAL] Auth code is:" in message:
-                AuthCode = CalculateAuthCode()
-                if message[:29] == AuthCode:
-                    SetLabelStatus("[CLIENT MESSAGE] Auth correct")
-                    message_list.insert(tkinter.END, "Client: Auth correct")
-
-            if not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message:
+            if not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
                 message_list.insert(tkinter.END, message)
-
-            if message_list.size() > backlogLength:
-                message_list.delete(0)
             
         except OSError: #may be a client exit
             break
@@ -112,7 +112,7 @@ def send(event=None): #event passed by buttons
     message = my_message.get()
     my_message.set("")
 
-    if not "sudo shutdown server" in message:
+    if not "sudo shutdown server" in message or "/help" in message:
         client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus("Sent.")
@@ -131,8 +131,11 @@ def send(event=None): #event passed by buttons
         sys.exit()
 
     if message == "/verify":
-        message_list.insert(tkinter.END, "Client auth: " + CalculateAuthCode())
+        message_list.insert(tkinter.END, "Client [LOCAL]: " + CalculateAuthCode())
 
+    if message == "/faketext" or message == "/faketext -a":
+        InsertFakeText()
+        
     if message == "/help":
         SetLabelStatus("Here's some help.")
         WipeList()
@@ -142,20 +145,22 @@ def send(event=None): #event passed by buttons
         message_list.insert(tkinter.END, "Local commands:")
         message_list.insert(tkinter.END, "/wipe - wipes text locally")
         message_list.insert(tkinter.END, "/exit - exits application")
+        message_list.insert(tkinter.END, "/pm [username] - private message")
         message_list.insert(tkinter.END, "/verify - tells server to return auth and returns client side")
         message_list.insert(tkinter.END, "... is for debug, not security, because the server can pretend")
         message_list.insert(tkinter.END, "...to be the client")
-        message_list.insert(tkinter.END, "Admin commands: ")
-        message_list.insert(tkinter.END, "/wipe -a - wipes everyone's text")
-        message_list.insert(tkinter.END, "/exit -a - closes everyone's application")
-        message_list.insert(tkinter.END, "These will only work if you have authenticated.")
-        message_list.insert(tkinter.END, "To authenticate, put admin somewhere in your name")
-        message_list.insert(tkinter.END, "next time and enter the password.")
-        message_list.insert(tkinter.END, "This will only work on people with remote enabled")
+        message_list.insert(tkinter.END, "If I gave you the admin pw, you should know the admin commands.")
 
     if "sudo shutdown server" in message:
         client_socket.send(bytes(("sudo shutdown server " + CalculateAuthCode()), "utf8"))
-    
+
+def InsertFakeText():
+    WipeList()
+    message_list.insert(tkinter.END, "1: Can you send me the link for info?")
+    message_list.insert(tkinter.END, "2: bit.ly/HA&42&fU got the free url shortener,")
+    message_list.insert(tkinter.END, "2: it'll expire in a min")
+    message_list.insert(tkinter.END, "1: Thanks")
+    message_list.insert(tkinter.END, "1: Want to play DnD at break?")
     
 def on_closing():
     #called when window closed
@@ -170,6 +175,12 @@ def WipeList():
 
 def SetLabelStatus(text):
     statusLabel["text"] = text
+
+def MessageListTrim():
+    while True:
+        time.sleep(0.1)
+        if message_list.size() > backlogLength:
+                message_list.delete(0)
     
 top = tkinter.Tk()
 
@@ -190,6 +201,8 @@ else:
     listHeight = 20
     listWidth = 50
 message_list = tkinter.Listbox(messages_frame, height = listHeight, width = listWidth, yscrollcommand=scrollbar.set)
+
+Thread(target=MessageListTrim).start()
 
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 message_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
@@ -218,7 +231,7 @@ else:
     host = "127.0.0.1"
     #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 34000
+    port = 34001
     allowRemoteAccess = True
 
 if not port:
