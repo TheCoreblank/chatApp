@@ -6,7 +6,7 @@ DoRun = True
 
 sleepTime = 0.1
 
-print("Imports succesful.")
+print("Imports successful.")
 
 print("Beginning server.")
 server = socket(AF_INET, SOCK_STREAM) 
@@ -14,7 +14,7 @@ server = socket(AF_INET, SOCK_STREAM)
 bufferSize = 1024
 
 Host = ""
-Port = 34001
+Port = 34000
 
 server.bind((Host, Port))
 
@@ -105,7 +105,7 @@ def ManageClient(connection, address, name):
 
             except:
                 pass
-            
+
             remove(connection, name)
         pass
     
@@ -350,15 +350,18 @@ def broadcast(message):
             try:
                 client.send(message)
             except:
-                print("Error in broadcast.")
+                print("Error in broadcast. Can not remove name, not given to function")
                 client.close()
-                remove(client, name)
+                remove(client, "")
 
 def remove(connection, name):
     connection.close()
     if connection in clientList:
         clientList.remove(connection)
-        namelist.remove(name)
+        try:
+            namelist.remove(name)
+        except:
+            print("Name not found when removing client")
 
 def setClientLabel(connection, text):
     time.sleep(sleepTime)
