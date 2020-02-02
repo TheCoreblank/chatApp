@@ -112,7 +112,7 @@ def send(event=None): #event passed by buttons
     message = my_message.get()
     my_message.set("")
 
-    if not "sudo shutdown server" in message and not "/wipe" in message and not "/clear" in message:
+    if not "sudo shutdown server" in message:
         client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus("Sent.")

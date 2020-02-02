@@ -12,9 +12,9 @@ Client Side
 
 Server side
 - /pm [name] - open a PM prompt with another person. Make sure there are no spaces at the end... I'll fix that at some point. The spaces rule applies to all the other commands that take names for arguments.
-- /ban [name] - pretty redundant, useful only for blocking offensive usernames, considering people can just reconnect with a different name. Requires administrator.
-- /unban [name] - unbans. Requires administrator.
-- /kick [name] - kicks someone but only once they have sent a message, from memory. I need to fix this one too. I don't expect to use these much or at all tbh. Requires administrator.
+- /ban [name] - pretty redundant, useful only for blocking offensive usernames, considering people can just reconnect with a different name. Note this blocks the name after the random characters, and won't ban anyone currently with that name. A recommended procedure for someone with a username you don't like is to ban the base username (E.G. in 2n0An1-Mark just ban Mark) then kick the person. Requires administrator. 
+- /unban [name] - Undoes the above. Requires administrator.
+- /kick [name] - kicks someone but only once they have sent a message. I need to fix this one too. I don't expect to use these much or at all tbh. Requires administrator.
 - /broadcast [message] - sends a message but without your name at the front, basically. It's more for future proofing if I implement channels etc.
 - /wipe -a - this is a good contender for the most useful command. Sends a authenticated message from the server (using my patented HashTime technology) to wipe everyone's chat history. Requires administrator.
 - /exit -a - Sends a authenticated message from the server to close everyone's chats. Requires administrator.

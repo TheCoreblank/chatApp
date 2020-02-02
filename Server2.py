@@ -250,8 +250,8 @@ def ManageClient(connection, address, name):
                                 if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
                                     broadcast(bytes("This server is shutting down by remote command", "utf8"))
                                     print("Exiting due to sudo shutdown server command.")
-                                    sys.exit()
                                     DoRun = False
+                                    sys.exit()
 
                                 else:
                                     broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
@@ -262,9 +262,7 @@ def ManageClient(connection, address, name):
                                     
                     else:
                         broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
-                        blocklist.append(name)
                         remove(connection, name)
-                        broadcast(bytes(("SERVER: REQUEST DENIED, USER BANNED.", "utf8")))
                         break
 
             else:
@@ -315,12 +313,11 @@ def HandleStartingClient(connection, address):
     name = connection.recv(bufferSize).decode("utf8")
 
     if name in blocklist:
-        send(connection, "You have been banned.")
-        send(connection, "Don't tell yourselfs you are all clever thinking")
-        send(connection, "of using a new account; there's no way round it.")
+        send(connection, "Username banned")
+
 
     else:
-        name = (CalculateNameAppend(6) + "-" + name)
+        name = (CalculateNameAppend() + "-" + name)
 
         namelist.append(name)
     
