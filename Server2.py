@@ -1,6 +1,7 @@
-import time, hashlib, select, sys
+import time, hashlib, select, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
+from random import *
 DoRun = True
 
 sleepTime = 0.1
@@ -35,6 +36,16 @@ def CalculateAuthCode():
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     return str(authCode)
 
+def CalculateNameAppend(length):
+    alphabet = list(string.printable) + list(string.printable.upper())
+
+    result = ""
+    
+    for i in range(0, length):
+        result = result + choice(alphabet)
+
+    return result
+
 def ManageClient(connection, address, name):
     isAdmin = False
     setClientLabel(connection, "Referred to main thread")
@@ -66,6 +77,8 @@ def ManageClient(connection, address, name):
             setClientLabel(connection, "Auth denied.")
 
             broadcast(bytes("Server: " + name + " got the admin password wrong.", "utf8"))
+
+            remove(connection, name)
             
     print("Manage client for " + str(address) + " , by name " + name + " STARTED")
 
@@ -196,7 +209,10 @@ def ManageClient(connection, address, name):
                 remove(connection, name)
                 break
 
-            elif message == "/here" or message == "/online" or message == "/users":
+            elif message == "/here" or message == "/namelist" or message == "/users":
+                send(connection, str(len(namelist)) + " in list.")
+                time.sleep(0.4)
+                send(connection, "Users listed are necessarily online.")
                 for name in namelist:
                     time.sleep(0.4)
                     send(connection, name)
@@ -218,10 +234,10 @@ def ManageClient(connection, address, name):
                                 DoRun = False
 
                             else:
-                                broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
+                                broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
                                 remove(connection, name)
                                 time.sleep(0.5)
-                                broadcast(bytes(("SERVER: REQUEST DENIED, USER DISCONNECTED.", "utf8")))
+                                broadcast(bytes("SERVER: REQUEST DENID, CLIENT REMOVED.", "utf8"))
                                 break
                                 
                 else:
@@ -263,16 +279,16 @@ def HandleStartingClient(connection, address):
     
     name = connection.recv(bufferSize).decode("utf8")
 
-    name = (CalculateAuthCode())[:3] + "-" + name
-
-    namelist.append(name)
-
     if name in blocklist:
         send(connection, "You have been banned.")
         send(connection, "Don't tell yourselfs you are all clever thinking")
         send(connection, "of using a new account; there's no way round it.")
 
     else:
+        name = (CalculateNameAppend(4) + "-" + name)
+
+        namelist.append(name)
+    
         send(connection, ("Received your name, " + name))
 
         time.sleep(0.2)
@@ -301,9 +317,10 @@ def broadcast(message):
             except:
                 print("Error in broadcast.")
                 client.close()
-                remove(client)
+                remove(client, name)
 
-def remove(connection):
+def remove(connection, name):
+    connection.close()
     if connection in clientList:
         clientList.remove(connection)
         namelist.remove(name)
