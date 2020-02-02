@@ -108,11 +108,11 @@ def ReceiveFromServer():
 
 def send(event=None): #event passed by buttons
     #handles sending of messages
-    SetLabelStatus("Sending.")
+    SetLabelStatus("Sending...")
     message = my_message.get()
     my_message.set("")
 
-    if not "sudo shutdown server" in message or "/help" in message:
+    if not "sudo shutdown server" in message and not "/wipe" in message and not "/clear" in message:
         client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus("Sent.")
@@ -139,9 +139,13 @@ def send(event=None): #event passed by buttons
     if "sudo shutdown server" in message:
         client_socket.send(bytes(("sudo shutdown server " + CalculateAuthCode()), "utf8"))
 
+    if "/help" in message:
+        message_list.insert(tkinter.END, "Read the readme, you dimwit. ")
+        message_list.insert(tkinter.END, "https://github.com/AlexAndHisScripts/chatApp")
+
 def InsertFakeText():
     WipeList()
-    message_list.insert(tkinter.END, "1: Can you send me the link for info?")
+    message_list.insert(tkinter.END, "1: Can you send me the link for the website?")
     message_list.insert(tkinter.END, "2: bit.ly/HA&42&fU got the free url shortener,")
     message_list.insert(tkinter.END, "2: it'll expire in a min")
     message_list.insert(tkinter.END, "1: Thanks")
@@ -213,10 +217,10 @@ if DoCustom == True:
 
 else:
     backlogLength = 20
-    host = "127.0.0.1"
+    #host = "127.0.0.1"
     #host = "86.31.133.208"
-    #host = "192.168.0.35"
-    port = 34001
+    host = "192.168.0.35"
+    port = 34000
     allowRemoteAccess = True
 
 if not port:
