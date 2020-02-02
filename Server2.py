@@ -106,9 +106,6 @@ def ManageClient(connection, address, name):
         #by waiting for the client to reply
         Thread(target=HandlePMs, args=(connection, name)).start()
 
-        send(connection, "You have now entered the main chatroom.")
-        send(connection, "Your messages will now be broadcasted to all users.")
-
     except:
         print("Error in preperation for main thread loop. Passing to save")
         errorCount = errorCount + 1
@@ -123,19 +120,22 @@ def ManageClient(connection, address, name):
 
             remove(connection, name)
         pass
-    
+
+    print("Starting kick check thread")
+    time.sleep(0.2)
+    Thread(target=kickCheckThread, args=(connection, name, isAdmin)).start()
+    time.sleep(0.2)
+    print("Done")
+
+    send(connection, "You have now entered the main chatroom.")
+    time.sleep(0.2)
+    send(connection, "Your messages will now be broadcasted to all users.")
+
     while True:
         try:
             #this isn't how it's intended, but it's there anyway incase someone uses it wrong
             if name in blocklist and isAdmin == False:
                 send(connection, "You have been banned.")
-                remove(connection, name)
-                break
-
-            #removes you if you are in the kicklist
-            if name in kicklist and isAdmin == False:
-                kicklist.remove(name)
-                send(connection, "You have been kicked.")
                 remove(connection, name)
                 break
 
@@ -434,6 +434,21 @@ def setClientLabel(connection, text):
         print("Error in setting client label - - removing connection")
         remove(connection, "")
         pass
+
+#runs concurrently to check if you have been kicked
+
+def kickCheckThread(connection, name, isAdmin):
+    while True:
+        time.sleep(0.2)
+        if name in kicklist and isAdmin == False:
+            kicklist.remove(name)
+            send(connection, "You have been kicked.")
+            break
+
+        if name in kicklist and isAdmin == True:
+            kicklist.remove(name)
+            send(connection, "You would have been kicked, but you were admin.")
+
     
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
