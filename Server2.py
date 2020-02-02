@@ -257,7 +257,7 @@ def ManageClient(connection, address, name):
         #    print("Error in manage client, attempting continue.")
         #    continue
 
-    print("Exitted main thread")
+    print("Exited main thread")
 
 def HandlePMs(connection, name):
     time.sleep(5)
