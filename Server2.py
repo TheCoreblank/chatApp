@@ -2,6 +2,8 @@ import time, hashlib, select, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 from random import *
+
+#set out vars
 DoRun = True
 
 sleepTime = 0.1
@@ -11,6 +13,7 @@ print("Imports successful.")
 print("Beginning server.")
 server = socket(AF_INET, SOCK_STREAM) 
 
+#can be changed, but seems OK for this kind of thing
 bufferSize = 1024
 
 Host = ""
@@ -21,21 +24,30 @@ server.bind((Host, Port))
 server.listen(1000)
 print("Success.")
 
+#holds socket objects, also known as black magic
 clientList = []
 
+#holds base usernames that have been set as banned
 blocklist = []
 
+#If someone's name is in this when the main loop checks, they will be removed from the list and kicked.
 kicklist = []
 
+#list of names connected
 namelist = []
 
+#contains name:message combinations
 pendingPms = {}
 
+#the client has a identical function. This stops my friends sending fake shutdown messages, pretending to be the server
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
     return str(authCode)
 
+#calculates the characters that go at the front of the names so the fuckery that happens when two people
+#have the same name is as hard to trigger as possible. If a client disconnects non-cleanly, it often keeps
+#their names in the names list, which is why we didn't filter that way. 
 def CalculateNameAppend(length):
     alphabet = list("abcdefghijklmnopqrstuvwxyz1234567890!'£%^&*()@/#ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
@@ -46,16 +58,20 @@ def CalculateNameAppend(length):
 
     return result
 
+#main function!
 def ManageClient(connection, address, name):
     errorCount = 0
     isAdmin = False
     try:
         setClientLabel(connection, "Referred to main thread")
         #Yes, I know I should have made an all lowercase copy of name and made it half as long.
+        #checks if they should be made admin, then requests auth
         if "Alex" in name or "System" in name or "sudo" in name or "Sudo" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
             send(connection, "Due to your username, you need to elevate to admin")
+            #the phrase "enter authorisation" triggers the client to change the input field to stars
             send(connection, "Enter authorisation")
             
+            #receives their reply
             password = connection.recv(bufferSize).decode("utf8")
 
             setClientLabel(connection, "Processing")
@@ -86,10 +102,9 @@ def ManageClient(connection, address, name):
 
         send(connection, "Starting PM thread...")
 
+        #when a PM is in the buffer, this handles it. It's in a different thread so it doesn't get blocked
+        #by waiting for the client to reply
         Thread(target=HandlePMs, args=(connection, name)).start()
-
-        if name in pendingPms:
-            time.sleep(5)
 
         send(connection, "You have now entered the main chatroom.")
         send(connection, "Your messages will now be broadcasted to all users.")
@@ -111,11 +126,13 @@ def ManageClient(connection, address, name):
     
     while True:
         try:
+            #this isn't how it's intended, but it's there anyway incase someone uses it wrong
             if name in blocklist and isAdmin == False:
                 send(connection, "You have been banned.")
                 remove(connection, name)
                 break
 
+            #removes you if you are in the kicklist
             if name in kicklist and isAdmin == False:
                 kicklist.remove(name)
                 send(connection, "You have been kicked.")
@@ -130,10 +147,11 @@ def ManageClient(connection, address, name):
 
             if message:
                 print(name + ": " + message)
+                #if not command, send the message to everyone else-including the sender.
                 if not "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
                     broadcast(bytes((name + ": " + message), "utf8"))
 
-                    
+                #PM system
                 if "/pm" in message:
                     nameToPm = message[4:]
 
@@ -150,6 +168,7 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, ("This person isn't online right now"))
                 
+                #banning system
                 if "/ban" in message:
                     if isAdmin == True:
                         blocklist.append(message[5:])
@@ -158,6 +177,7 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, "You don't have permission to run that command.")
 
+                #unbanning system
                 if "/unban" in message:
                     DoSuccess = True
                     if isAdmin == True:
@@ -175,7 +195,7 @@ def ManageClient(connection, address, name):
                         send(connection, ("You don't have permission to run that command"))
                         broadcast(bytes(name + " attempted to unban " + message[5:]))
 
-
+                #kick system
                 if "/kick" in message:
                     if isAdmin == True:
                         kicklist.append(message[6:])
@@ -184,6 +204,8 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, "You don't have permission to run that command.")
 
+
+                #returns server info
                 if "/status" in message:
                     time.sleep(0.2)
                     send(connection, "Port: " + str(Port))
@@ -194,6 +216,7 @@ def ManageClient(connection, address, name):
                     time.sleep(0.2)
                     send(connection, "Your Admin Status: " + str(isAdmin))
 
+                #way to pretend you are the server
                 if "/broadcast" in message:
                     if isAdmin == True:
                         broadcast(bytes((message[11:]), "utf8"))
@@ -201,11 +224,14 @@ def ManageClient(connection, address, name):
                     else:
                         send(connection, "You don't have permission to run that command.")
                         
+                #wipes everyone's screens. I'll go in depth in the auth for this one
                 if message == "/wipe -a" or message == "/clear -a":
                     if isAdmin == True:
                         for i in range(1, 10):
                             time.sleep(0.2)
+                            #get an auth code from the time (10 second change)
                             authCode = CalculateAuthCode()
+                            #broadcast wipe authorise plus the auth code, 10 times just in case
                             broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
 
                     else:
@@ -233,12 +259,16 @@ def ManageClient(connection, address, name):
                             broadcast(bytes(("-- AUTHORISE 42 --" + authCode), "utf8"))
 
                 elif message == "/verify":
+                    #the client will print it's auth code too. This is more for diagnostics than security
                     send(connection, CalculateAuthCode())
 
+                #I hope you can work out what this does...
                 elif message == "/quit" or message == "/exit":
                     remove(connection, name)
                     break
 
+
+                #lists everyone in namelist.
                 elif message == "/here" or message == "/namelist" or message == "/users":
                     send(connection, str(len(namelist)) + " in list.")
                     time.sleep(0.4)
@@ -247,6 +277,8 @@ def ManageClient(connection, address, name):
                         time.sleep(0.4)
                         send(connection, name)
 
+                #for remote shutdown, if the sockets module has a vuln somehow or all this talking
+                #lark is getting on my nerves.
                 elif "sudo shutdown server" in message:
                     print("Received sudo shutdown server")
                     if isAdmin == True:
@@ -299,6 +331,7 @@ def ManageClient(connection, address, name):
 
     print("Exited main thread")
 
+#PM handling thread. Pretty self explanatory.
 def HandlePMs(connection, name):
     time.sleep(5)
     while True:
@@ -313,44 +346,64 @@ def HandlePMs(connection, name):
 
         time.sleep(0.2)
 
+#first thread assigned to someone. It gets name and refers to the main thread. It's partially here
+#just cause that function is so long. I
 def HandleStartingClient(connection, address):
-    time.sleep(0.2)
-    clientList.append(connection)
-    setClientLabel(connection, "Name requested by server.")
-    
-    send(connection, "Please enter your name")
-    
-    name = connection.recv(bufferSize).decode("utf8")
-
-    if name in blocklist:
-        send(connection, "Username banned")
-
-
-    else:
-        name = (CalculateNameAppend(4) + "-" + name)
-
-        namelist.append(name)
-    
-        send(connection, ("Received your name, " + name))
-
+    try:
         time.sleep(0.2)
+        clientList.append(connection)
+        setClientLabel(connection, "Name requested by server.")
         
-        Thread(target=ManageClient, args=(connection, address, name)).start()
+        send(connection, "Please enter your name")
         
-    #nameDict.append(address, name)
+        name = connection.recv(bufferSize).decode("utf8")
 
-def send(connection, text, Show=True):
-    if DoRun == True:
-        text = str(text)
-        time.sleep(sleepTime)
-        if Show == True:
-            connection.send(bytes("Server [PM]: " + text, "utf8"))
+        if name in blocklist:
+            send(connection, "Username banned")
+
         else:
-            connection.send(bytes(text, "utf8"))
+            name = (CalculateNameAppend(4) + "-" + name)
 
-        time.sleep(sleepTime)
-        print("PM'd >> " + text)
+            namelist.append(name)
+        
+            send(connection, ("Received your name, " + name))
+
+            time.sleep(0.2)
+            
+            Thread(target=ManageClient, args=(connection, address, name)).start()
+            
+        #nameDict.append(address, name)
+
+        def send(connection, text, Show=True):
+            if DoRun == True:
+                text = str(text)
+                time.sleep(sleepTime)
+                if Show == True:
+                    connection.send(bytes("Server [PM]: " + text, "utf8"))
+                else:
+                    connection.send(bytes(text, "utf8"))
+
+                time.sleep(sleepTime)
+                print("PM'd >> " + text)
+
+    except:
+        print("Exitting starting thread due to error")
+        try:
+            send(connection, "An error has occurred. Please try to reconnect.")
+        except:
+            if name:
+                remove(connection, name)
+            else:
+                remove(connection, "")
+            pass
+
+        if name:
+            remove(connection, name)
+        else:
+            remove(connection, "")
+        pass
     
+#sends message to all clients
 def broadcast(message):
     if DoRun == True:
         for client in clientList:
@@ -361,6 +414,7 @@ def broadcast(message):
                 client.close()
                 remove(client, "")
 
+#removes a connection
 def remove(connection, name):
     connection.close()
     if connection in clientList:
@@ -370,11 +424,18 @@ def remove(connection, name):
         except:
             print("Name not found when removing client")
 
+#sets the label at the bottom of the client. 
 def setClientLabel(connection, text):
-    time.sleep(sleepTime)
-    connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
-    time.sleep(sleepTime)
+    try:
+        time.sleep(sleepTime)
+        connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
+        time.sleep(sleepTime)
+    except:
+        print("Error in setting client label - - removing connection")
+        remove(connection, "")
+        pass
     
+#passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
     while True:
         connection, address = server.accept()
