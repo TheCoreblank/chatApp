@@ -259,7 +259,7 @@ def ManageClient(connection, address, name):
                                     broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
                                     remove(connection, name)
                                     time.sleep(0.5)
-                                    broadcast(bytes("SERVER: REQUEST DENID, CLIENT REMOVED.", "utf8"))
+                                    broadcast(bytes("SERVER: REQUEST DENIED, CLIENT REMOVED.", "utf8"))
                                     break
                                     
                     else:
