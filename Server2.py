@@ -18,7 +18,7 @@ Port = 34000
 
 server.bind((Host, Port))
 
-server.listen(100)
+server.listen(1000)
 print("Success.")
 
 clientList = []
@@ -130,7 +130,7 @@ def ManageClient(connection, address, name):
 
             if message:
                 print(name + ": " + message)
-                if not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
+                if not "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
                     broadcast(bytes((name + ": " + message), "utf8"))
 
                     
@@ -183,6 +183,11 @@ def ManageClient(connection, address, name):
                         print("Added " + message[6:] + " to the kicklist.")
                     else:
                         send(connection, "You don't have permission to run that command.")
+
+                if "/status" in message:
+                    send(connection, ("Port: " + str(Port) + "Your IP: " + str(address)))
+                    time.sleep(0.2)
+                    send(connection, ("Your name: " + name + " Your Admin Status: " + str(isAdmin)))
 
                 if "/broadcast" in message:
                     if isAdmin == True:
