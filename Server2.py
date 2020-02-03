@@ -422,6 +422,10 @@ def send(connection, text, Show=True):
 #sends message to all clients
 def broadcast(message):
     if DoRun == True:
+        try:
+            print(str(message.decode("utf8")))
+        except: 
+            print("Error printing broadcast")
         for client in clientList:
             try:
                 client.send(message)
