@@ -258,9 +258,9 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    #host = "127.0.0.1"
+    host = "127.0.0.1"
     #host = "86.31.133.208"
-    host = "192.168.0.35"
+    #host = "192.168.0.35"
     port = 34000
     allowRemoteAccess = True
 
@@ -286,7 +286,7 @@ while True:
     try:
         SetLabelStatus("Attempting to connect.")
         client_socket.connect(Address)
-        print("Succesful connection established.")
+        print("Successful connection established.")
         SetLabelStatus("Succesful connection established.")
         break
         

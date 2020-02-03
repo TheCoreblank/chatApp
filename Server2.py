@@ -374,35 +374,35 @@ def HandleStartingClient(connection, address):
             
         #nameDict.append(address, name)
 
-        def send(connection, text, Show=True):
-            if DoRun == True:
-                text = str(text)
-                time.sleep(sleepTime)
-                if Show == True:
-                    connection.send(bytes("Server [PM]: " + text, "utf8"))
-                else:
-                    connection.send(bytes(text, "utf8"))
-
-                time.sleep(sleepTime)
-                print("PM'd >> " + text)
-
     except:
         print("Exitting starting thread due to error")
         try:
             send(connection, "An error has occurred. Please try to reconnect.")
         except:
-            if name:
+            try:
                 remove(connection, name)
-            else:
+            except:
                 remove(connection, "")
             pass
 
-        if name:
+        try:
             remove(connection, name)
-        else:
+        except:
             remove(connection, "")
         pass
     
+def send(connection, text, Show=True):
+    if DoRun == True:
+        text = str(text)
+        time.sleep(sleepTime)
+        if Show == True:
+            connection.send(bytes("Server [PM]: " + text, "utf8"))
+        else:
+            connection.send(bytes(text, "utf8"))
+
+        time.sleep(sleepTime)
+        print("PM'd >> " + text)
+
 #sends message to all clients
 def broadcast(message):
     if DoRun == True:
@@ -435,8 +435,7 @@ def setClientLabel(connection, text):
         remove(connection, "")
         pass
 
-#runs concurrently to check if you have been kicked
-
+#runs concurrently to check if you have been kicked.
 def kickCheckThread(connection, name, isAdmin):
     while True:
         time.sleep(0.2)
@@ -448,7 +447,6 @@ def kickCheckThread(connection, name, isAdmin):
         if name in kicklist and isAdmin == True:
             kicklist.remove(name)
             send(connection, "You would have been kicked, but you were admin.")
-
     
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
