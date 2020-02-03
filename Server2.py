@@ -1,3 +1,4 @@
+#TODO MOOOORE FEATURES
 import time, hashlib, select, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *

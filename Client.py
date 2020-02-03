@@ -1,4 +1,5 @@
 #client side script
+#TODO Make the UI fit in with google docs
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import tkinter, time
@@ -213,14 +214,20 @@ def MessageListTrim():
 #as well as I can now, so I won't bother.
 top = tkinter.Tk()
 
-top.title("Frontend V0.1")
+#disguise that shit
+top.title("Word")
+top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
+top.configure(background="white")
+
 
 messages_frame = tkinter.Frame(top)
+messages_frame.configure(background="white")
 
 my_message = tkinter.StringVar()
 my_message.set("")
 
 scrollbar = tkinter.Scrollbar(messages_frame)
+scrollbar.configure(background="white")
 
 if DoCustom == True:
     listHeight = int(input("List height? 20 is sensible> "))
@@ -230,6 +237,7 @@ else:
     listHeight = 20
     listWidth = 50
 message_list = tkinter.Listbox(messages_frame, height = listHeight, width = listWidth, yscrollcommand=scrollbar.set)
+message_list.configure(background="white")
 
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 message_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
@@ -238,12 +246,15 @@ messages_frame.pack()
 
 entry_field = tkinter.Entry(top, textvariable=my_message, width = listWidth)
 entry_field.bind("<Return>", send)
+entry_field.configure(background="white")
 entry_field.pack()
 
 send_button = tkinter.Button(top, text="Send", command=send)
+send_button.configure(background="white")
 send_button.pack()
 
 statusLabel = tkinter.Label(top, text="-")
+statusLabel.configure(background="white")
 statusLabel.pack()
 
 top.protocol("WM_DELETE_WINDOW", on_closing)
@@ -258,9 +269,9 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    host = "127.0.0.1"
+    #host = "127.0.0.1"
     #host = "86.31.133.208"
-    #host = "192.168.0.35"
+    host = "192.168.0.35"
     port = 34000
     allowRemoteAccess = True
 
