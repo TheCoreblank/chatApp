@@ -393,16 +393,31 @@ def HandleStartingClient(connection, address):
         pass
     
 def send(connection, text, Show=True):
-    if DoRun == True:
-        text = str(text)
-        time.sleep(sleepTime)
-        if Show == True:
-            connection.send(bytes("Server [PM]: " + text, "utf8"))
-        else:
-            connection.send(bytes(text, "utf8"))
+    try:
+        if DoRun == True:
+            text = str(text)
+            time.sleep(sleepTime)
+            if Show == True:
+                connection.send(bytes("Server [PM]: " + text, "utf8"))
+            else:
+                connection.send(bytes(text, "utf8"))
 
-        time.sleep(sleepTime)
-        print("PM'd >> " + text)
+            time.sleep(sleepTime)
+            print("PM'd >> " + text)
+    except:
+        print("Error in send, attempting client removal")
+        try:
+            connection.send(bytes("Your are being disconnected to internal error, please retry" + text, "utf8"))
+
+        except:
+            print("Could not send abort message")
+
+        try:
+            remove(connection, "")
+            pass
+        except:
+            print("Error removing client")
+            pass
 
 #sends message to all clients
 def broadcast(message):
@@ -414,16 +429,28 @@ def broadcast(message):
                 print("Error in broadcast. Can not remove name, not given to function")
                 client.close()
                 remove(client, "")
+                pass
 
 #removes a connection
 def remove(connection, name):
-    connection.close()
-    if connection in clientList:
-        clientList.remove(connection)
+    try:
+        connection.close()
+        if connection in clientList:
+            clientList.remove(connection)
+            try:
+                namelist.remove(name)
+                print("Removed " + name)
+
+            except:
+                print("Name not found when removing client")
+                pass
+    except:
         try:
-            namelist.remove(name)
+            print("Error removing client, name = " + name)
+            pass
         except:
-            print("Name not found when removing client")
+            print("Error removing client, printing name caused an error")
+            pass
 
 #sets the label at the bottom of the client. 
 def setClientLabel(connection, text):
@@ -433,28 +460,52 @@ def setClientLabel(connection, text):
         time.sleep(sleepTime)
     except:
         print("Error in setting client label - - removing connection")
-        remove(connection, "")
+        try:
+            remove(connection, "")
+            pass
+        except:
+            print("Error removing connection caused by error in set client label")
+            pass
         pass
 
 #runs concurrently to check if you have been kicked.
 def kickCheckThread(connection, name, isAdmin):
-    while True:
-        time.sleep(0.2)
-        if name in kicklist and isAdmin == False:
-            kicklist.remove(name)
-            send(connection, "You have been kicked.")
-            break
+    try:
+        while True:
+            time.sleep(0.2)
+            if name in kicklist and isAdmin == False:
+                kicklist.remove(name)
+                send(connection, "You have been kicked.")
+                break
 
-        if name in kicklist and isAdmin == True:
-            kicklist.remove(name)
-            send(connection, "You would have been kicked, but you were admin.")
-    
+            if name in kicklist and isAdmin == True:
+                kicklist.remove(name)
+                send(connection, "You would have been kicked, but you were admin.")
+    except:
+        try:
+            print("Error in kick check thread for " + name)
+            remove(connection, name)
+            pass
+        except:
+            print("Error in kick check thread")
+            pass
+            try:
+                remove(connection, name)
+                pass
+            except:
+                print("Error, error, error")
+                pass
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
     while True:
-        connection, address = server.accept()
-        setClientLabel(connection, "Referring to starting thread.")
-        Thread(target=HandleStartingClient, args=(connection, address)).start()
+        try:
+            connection, address = server.accept()
+            setClientLabel(connection, "Referring to starting thread.")
+            Thread(target=HandleStartingClient, args=(connection, address)).start()
+
+        except:
+            print("Error in listen_for_clients, passing.")
+            pass
         
 Listen_for_clients()
 server.close()
