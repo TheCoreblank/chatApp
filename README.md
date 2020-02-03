@@ -4,6 +4,8 @@ A work-in-progress chat app designed to circumvent school systems.
 Includes numerous anti-detection and plausible denial features. 
 Currently unencrypted, although passwords are not stored in plain text.
 
+Also, don't try to talk about me using the PM function. I own the server :)
+
 # Commands
 Client Side
 - /wipe, /clear - Clears chat history locally.
