@@ -733,3 +733,56 @@ U/l)-fkdsjfl: {quit}
 Broadcast: U/l)-fkdsjfl: {quit}
 Removed U/l)-fkdsjfl
 Exited main thread
+Accepted connection from ('127.0.0.1', 44274)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+PM'd >> Please enter your name
+Calculated name append to be HLWP
+PM'd >> Received your name, HLWP-Alex
+Manageclient reporting: Have been initiated for name HLWP-Alex, address('127.0.0.1', 44274), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+PM'd >> Your authorisation has been received.
+HLWP-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44274)>
+Manage client for ('127.0.0.1', 44274) , by name HLWP-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for HLWP-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+HLWP-Alex: /pingTest
+Broadcast: HLWP-Alex: /pingTest
+HLWP-Alex: fsf
+Broadcast: HLWP-Alex: fsf
+HLWP-Alex: /pingTime
+Broadcast: HLWP-Alex: /pingTime
+HLWP-Alex: fjklsd
+Broadcast: HLWP-Alex: fjklsd
+HLWP-Alex: sdlkf
+Broadcast: HLWP-Alex: sdlkf
+HLWP-Alex: sdlf
+Broadcast: HLWP-Alex: sdlf
+HLWP-Alex: fjsl
+Broadcast: HLWP-Alex: fjsl
+HLWP-Alex: {quit}
+Broadcast: HLWP-Alex: {quit}
+Removed HLWP-Alex
+Exited main thread
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Defaulted
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()

@@ -177,7 +177,7 @@ def ManageClient(connection, address, name):
                 if "-- EXIT AUTHORISE --" in message or "-- AUTHORISE 42 --" in message or "-- WIPE AUTHORISE --" in message:
                     send(connection, "Only the server is allowed to authorise remote commands.")
 
-                if not "/pingTest" in message and not "/pingTime" in message and not "-- EXIT AUTHORISE --" in message and not "-- AUTHORISE 42 --" in message and not  "-- WIPE AUTHORISE --" in message and not  "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
+                if not "-- EXIT AUTHORISE --" in message and not "-- AUTHORISE 42 --" in message and not  "-- WIPE AUTHORISE --" in message and not  "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
                     broadcast(bytes((name + ": " + message), "utf8"))
 
                 #PM system

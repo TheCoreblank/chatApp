@@ -58,7 +58,6 @@ def ReceiveFromServer():
 
             if PingVars.IsTestingPing == True:
                 PingVars.SecondPingTime = time.time()
-                PingVars.IsTestingPing = False
 
                 TotalPingTime = PingVars.SecondPingTime - PingVars.FirstPingTime
                 TotalPingTime = TotalPingTime * 1000
@@ -69,6 +68,8 @@ def ReceiveFromServer():
 
                 message_list.insert(tkinter.END, "Ping:")
                 message_list.insert(tkinter.END, toInsert)
+
+                PingVars.IsTestingPing = False
 
             #if it is a auth prompt, set the entry field to stars
             if "Enter authorisation" in message or "password required" in message:
@@ -294,10 +295,10 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    host = "127.0.0.1"
+    #host = "127.0.0.1"
     #host = "86.31.133.208"
-    #host = "192.168.0.35"
-    port = 34000
+    host = "192.168.0.35"
+    port = 443
     allowRemoteAccess = True
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
