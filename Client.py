@@ -37,6 +37,12 @@ if DoCustom:
 #There is an identical one on the server, it means my friends can't pretend to 
 #send commands as the server without knowing python
 
+#I wish python would just let global vars be a proper thing
+class PingVars:
+    FirstPingTime = 0
+    SecondPingTime = 0
+    IsTestingPing = False
+
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
@@ -49,6 +55,21 @@ def ReceiveFromServer():
         try:
             #receive *and* decode
             message = client_socket.recv(Buffer_size).decode("utf8")
+
+            if PingVars.IsTestingPing == True:
+                PingVars.SecondPingTime = time.time()
+                PingVars.IsTestingPing = False
+
+                TotalPingTime = PingVars.SecondPingTime - PingVars.FirstPingTime
+                TotalPingTime = TotalPingTime * 1000
+                
+                TotalPingTime = str(TotalPingTime)[:5]
+
+                toInsert = str(TotalPingTime) + "ms"
+
+                message_list.insert(tkinter.END, "Ping:")
+                message_list.insert(tkinter.END, toInsert)
+
             #if it is a auth prompt, set the entry field to stars
             if "Enter authorisation" in message or "password required" in message:
                 print("Set entry mode to auth")
@@ -110,7 +131,7 @@ def ReceiveFromServer():
                 SetLabelStatus(message[28:])
 
             #if it's not internal, write it in the feed. 
-            if not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
+            if not "/pingTest" in message and not "/pingTime" in message and not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
                 message_list.insert(tkinter.END, message)
             
         except OSError: #may be a client exit
@@ -132,6 +153,10 @@ def send(event=None):
     #if not client command, send
     if not "sudo shutdown server" in message and not "/help" in message:
         client_socket.send(bytes(message, "utf8"))
+
+    if "/pingTest" in message or "/pingTime" in message:
+        PingVars.FirstPingTime = time.time()
+        PingVars.IsTestingPing = True
 
     SetLabelStatus("Sent.")
 

@@ -487,3 +487,249 @@ Uf)m-Alex: sf
 Broadcast: Uf)m-Alex: sf
 Removed Uf)m-Alex
 Exited main thread
+Accepted connection from ('127.0.0.1', 42534)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42534)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42534)>
+PM'd >> Please enter your name
+Calculated name append to be )s^m
+PM'd >> Received your name, )s^m-{quit}
+Manageclient reporting: Have been initiated for name )s^m-{quit}, address('127.0.0.1', 42534), connection <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42534)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42534)>
+Manage client for ('127.0.0.1', 42534) , by name )s^m-{quit} STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for )s^m-{quit}
+Done
+Error in send, attempting client removal
+Could not send abort message
+Name not found when removing client
+Error in send, attempting client removal
+Could not send abort message
+Entered main thread : main loop
+Exited main thread
+Accepted connection from ('127.0.0.1', 43450)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+PM'd >> Please enter your name
+Calculated name append to be ukP4
+PM'd >> Received your name, ukP4-Alex
+Manageclient reporting: Have been initiated for name ukP4-Alex, address('127.0.0.1', 43450), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+PM'd >> Your authorisation has been received.
+ukP4-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43450)>
+Manage client for ('127.0.0.1', 43450) , by name ukP4-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for ukP4-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+ukP4-Alex: /pingtest
+Broadcast: ukP4-Alex: /pingtest
+ukP4-Alex: /pingTest
+Broadcast: ukP4-Alex: /pingTest
+ukP4-Alex: {quit}
+Broadcast: ukP4-Alex: {quit}
+Removed ukP4-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 43614)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+PM'd >> Please enter your name
+Calculated name append to be 7*Tz
+PM'd >> Received your name, 7*Tz-Alex
+Manageclient reporting: Have been initiated for name 7*Tz-Alex, address('127.0.0.1', 43614), connection <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+PM'd >> Your authorisation has been received.
+7*Tz-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43614)>
+Manage client for ('127.0.0.1', 43614) , by name 7*Tz-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for 7*Tz-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+7*Tz-Alex: sjflsh
+Broadcast: 7*Tz-Alex: sjflsh
+7*Tz-Alex: /pingTest
+Broadcast: 7*Tz-Alex: /pingTest
+Removed 7*Tz-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 43674)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+PM'd >> Please enter your name
+Calculated name append to be yawA
+PM'd >> Received your name, yawA-Alex
+Manageclient reporting: Have been initiated for name yawA-Alex, address('127.0.0.1', 43674), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+PM'd >> Your authorisation has been received.
+yawA-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43674)>
+Manage client for ('127.0.0.1', 43674) , by name yawA-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for yawA-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+yawA-Alex: /pingTest
+Broadcast: yawA-Alex: /pingTest
+Removed yawA-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 43856)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+PM'd >> Please enter your name
+Calculated name append to be 1/Mp
+PM'd >> Received your name, 1/Mp-Alex
+Manageclient reporting: Have been initiated for name 1/Mp-Alex, address('127.0.0.1', 43856), connection <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+PM'd >> Your authorisation has been received.
+1/Mp-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43856)>
+Manage client for ('127.0.0.1', 43856) , by name 1/Mp-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for 1/Mp-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+1/Mp-Alex: /pingTest
+Broadcast: 1/Mp-Alex: /pingTest
+Removed 1/Mp-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 43886)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+PM'd >> Please enter your name
+Calculated name append to be Cbt7
+PM'd >> Received your name, Cbt7-Alex
+Manageclient reporting: Have been initiated for name Cbt7-Alex, address('127.0.0.1', 43886), connection <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+PM'd >> Your authorisation has been received.
+Cbt7-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 43886)>
+Manage client for ('127.0.0.1', 43886) , by name Cbt7-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for Cbt7-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+Cbt7-Alex: fklsdjfkl
+Broadcast: Cbt7-Alex: fklsdjfkl
+Cbt7-Alex: slkf
+Broadcast: Cbt7-Alex: slkf
+Cbt7-Alex: /pingTime
+Broadcast: Cbt7-Alex: /pingTime
+Cbt7-Alex: /pingTest
+Broadcast: Cbt7-Alex: /pingTest
+Removed Cbt7-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 44088)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+PM'd >> Please enter your name
+Calculated name append to be rCCY
+PM'd >> Received your name, rCCY-Alex
+Manageclient reporting: Have been initiated for name rCCY-Alex, address('127.0.0.1', 44088), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+PM'd >> Your authorisation has been received.
+rCCY-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44088)>
+Manage client for ('127.0.0.1', 44088) , by name rCCY-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for rCCY-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+rCCY-Alex: /pingTest
+Broadcast: rCCY-Alex: /pingTest
+rCCY-Alex: /pingTest
+Broadcast: rCCY-Alex: /pingTest
+Removed rCCY-Alex
+Exited main thread
+Accepted connection from ('127.0.0.1', 44128)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44128)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44128)>
+PM'd >> Please enter your name
+Calculated name append to be U/l)
+PM'd >> Received your name, U/l)-fkdsjfl
+Manageclient reporting: Have been initiated for name U/l)-fkdsjfl, address('127.0.0.1', 44128), connection <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44128)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 44128)>
+Manage client for ('127.0.0.1', 44128) , by name U/l)-fkdsjfl STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for U/l)-fkdsjfl
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+U/l)-fkdsjfl: /pingTime
+Broadcast: U/l)-fkdsjfl: /pingTime
+U/l)-fkdsjfl: /pingTest
+Broadcast: U/l)-fkdsjfl: /pingTest
+U/l)-fkdsjfl: /pingTest
+Broadcast: U/l)-fkdsjfl: /pingTest
+U/l)-fkdsjfl: /pingTime
+Broadcast: U/l)-fkdsjfl: /pingTime
+U/l)-fkdsjfl: /pingTime
+Broadcast: U/l)-fkdsjfl: /pingTime
+U/l)-fkdsjfl: /pingTest
+Broadcast: U/l)-fkdsjfl: /pingTest
+U/l)-fkdsjfl: fsdgf
+Broadcast: U/l)-fkdsjfl: fsdgf
+U/l)-fkdsjfl: {quit}
+Broadcast: U/l)-fkdsjfl: {quit}
+Removed U/l)-fkdsjfl
+Exited main thread

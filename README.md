@@ -24,6 +24,7 @@ Server side
 - /verify - more of a diagnostic tool, this writes your client HashTime and tells the server to send theirs. Not appropriate for security-even ignoring the multitude of problems with HashTime, the server has direct write and wipe control over your message feed, where your client HashTime appears. 
 - /here, /namelist, /users - prints all users currently in names database. May or may not be connected. 
 - /status - gives port, client IP, client name, and client admin status.
+- /pingTest - gets ping in ms
 - sudo shutdown server - A command for if there is some need to shut down the server. Requires higher authentication than administrator, which only I know.
 
 # How do I get admin?
