@@ -334,3 +334,156 @@ PM'd >> Only the server is allowed to authorise remote commands. connection <soc
 Broadcast: ^Qzw-Alex: {quit}
 Removed ^Qzw-Alex
 Exited main thread
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Defaulted
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Accepted connection from ('127.0.0.1', 42108)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+PM'd >> Please enter your name
+Calculated name append to be Uf)m
+PM'd >> Received your name, Uf)m-Alex
+Manageclient reporting: Have been initiated for name Uf)m-Alex, address('127.0.0.1', 42108), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+PM'd >> Your authorisation has been received.
+Uf)m-Alex has elevated to admin privileges
+PM'd >> Elevated to admin
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 42108)>
+Manage client for ('127.0.0.1', 42108) , by name Uf)m-Alex STARTED
+PM'd >> Starting PM thread...
+Starting kick check thread
+Started kickCheckThread for Uf)m-Alex
+Done
+PM'd >> You have now entered the main chatroom.
+PM'd >> Your messages will now be broadcasted to all users.
+Entered main thread : main loop
+Uf)m-Alex: dsjf
+Broadcast: Uf)m-Alex: dsjf
+Uf)m-Alex: dsfs
+Broadcast: Uf)m-Alex: dsfs
+Uf)m-Alex: sdf
+Broadcast: Uf)m-Alex: sdf
+Uf)m-Alex: jklfj
+Broadcast: Uf)m-Alex: jklfj
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Uf)m-Alex: sd
+Broadcast: Uf)m-Alex: sd
+Uf)m-Alex: fs
+Broadcast: Uf)m-Alex: fs
+Uf)m-Alex: df
+Broadcast: Uf)m-Alex: df
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: fs
+Broadcast: Uf)m-Alex: fs
+Uf)m-Alex: d
+Broadcast: Uf)m-Alex: d
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Uf)m-Alex: sdf
+Broadcast: Uf)m-Alex: sdf
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: fs
+Broadcast: Uf)m-Alex: fs
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sdfsdhfjhsdjfs
+Broadcast: Uf)m-Alex: sdfsdhfjhsdjfs
+Uf)m-Alex: fsdhfs
+Broadcast: Uf)m-Alex: fsdhfs
+Uf)m-Alex: dfshkfs
+Broadcast: Uf)m-Alex: dfshkfs
+Uf)m-Alex: fskhfs
+Broadcast: Uf)m-Alex: fskhfs
+Uf)m-Alex: fsdjkfs
+Broadcast: Uf)m-Alex: fsdjkfs
+Uf)m-Alex: fsjdf
+Broadcast: Uf)m-Alex: fsjdf
+Uf)m-Alex: sfjsf
+Broadcast: Uf)m-Alex: sfjsf
+Uf)m-Alex: sfjshfs
+Broadcast: Uf)m-Alex: sfjshfs
+Uf)m-Alex: fhsf
+Broadcast: Uf)m-Alex: fhsf
+Uf)m-Alex: sdfksf
+Broadcast: Uf)m-Alex: sdfksf
+Uf)m-Alex: sfhksd
+Broadcast: Uf)m-Alex: sfhksd
+Uf)m-Alex: fhsdfs
+Broadcast: Uf)m-Alex: fhsdfs
+Uf)m-Alex: fkdsf
+Broadcast: Uf)m-Alex: fkdsf
+Uf)m-Alex: dsfhkdsf
+Broadcast: Uf)m-Alex: dsfhkdsf
+Uf)m-Alex: sdfksf
+Broadcast: Uf)m-Alex: sdfksf
+Uf)m-Alex: sfhkf
+Broadcast: Uf)m-Alex: sfhkf
+Uf)m-Alex: sfs
+Broadcast: Uf)m-Alex: sfs
+Uf)m-Alex: fsd'fsd'f
+Broadcast: Uf)m-Alex: fsd'fsd'f
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: fs
+Broadcast: Uf)m-Alex: fs
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sdf
+Broadcast: Uf)m-Alex: sdf
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: df
+Broadcast: Uf)m-Alex: df
+Uf)m-Alex: sdf
+Broadcast: Uf)m-Alex: sdf
+Uf)m-Alex: s
+Broadcast: Uf)m-Alex: s
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sfadfds
+Broadcast: Uf)m-Alex: sfadfds
+Uf)m-Alex: fsd
+Broadcast: Uf)m-Alex: fsd
+Uf)m-Alex: f
+Broadcast: Uf)m-Alex: f
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Uf)m-Alex: sf
+Broadcast: Uf)m-Alex: sf
+Removed Uf)m-Alex
+Exited main thread

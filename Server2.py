@@ -176,7 +176,7 @@ def ManageClient(connection, address, name):
 
                 if "-- EXIT AUTHORISE --" in message or "-- AUTHORISE 42 --" in message or "-- WIPE AUTHORISE --" in message:
                     send(connection, "Only the server is allowed to authorise remote commands.")
-                    
+
                 if not "-- EXIT AUTHORISE --" in message and not "-- AUTHORISE 42 --" in message and not  "-- WIPE AUTHORISE --" in message and not  "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
                     broadcast(bytes((name + ": " + message), "utf8"))
 
@@ -371,7 +371,7 @@ def HandlePMs(connection, name):
             send(connection, pendingPms[name], False)
             send(connection, "-----------------------------", False)
 
-            printlog("Name: " + str(name) + " Received pm " + pendingPms[name])
+            printlog("Name: " + str(name) + " received pm " + pendingPms[name])
 
             del pendingPms[name]
             time.sleep(1)
@@ -445,7 +445,7 @@ def HandleStartingClient(connection, address):
         #nameDict.append(address, name)
 
     except:
-        printlog("Exitting starting thread due to error")
+        printlog("Exiting starting thread due to error")
         try:
             send(connection, "An error has occurred. Please try to reconnect.")
         except:
@@ -472,7 +472,7 @@ def send(connection, text, Show=True):
                 connection.send(bytes(text, "utf8"))
 
             time.sleep(sleepTime)
-            printlog("PM'd >> " + text + " connection " + str(connection))
+            printlog("PM'd >> " + text)
     except:
         printlog("Error in send, attempting client removal")
         try:
@@ -494,7 +494,8 @@ def broadcast(message):
         try:
             printlog("Broadcast: " + str(message.decode("utf8")))
         except: 
-            printlog("Error printloging broadcast")
+            printlog("Error printlogging broadcast")
+
         for client in clientList:
             try:
                 client.send(message)
@@ -527,7 +528,7 @@ def remove(connection, name):
 
 #sets the label at the bottom of the client. 
 def setClientLabel(connection, text):
-    printlog("Setting client label to " + text + ", connection - " + str(connection))
+    printlog("Setting client label to " + text)
     try:
         time.sleep(sleepTime)
         connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
