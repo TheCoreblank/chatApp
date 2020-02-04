@@ -11,21 +11,30 @@ def printlog(text):
 
 printlog("------------ START OF SCRIPT ------------")
 
+printlog("Imports successful, printlog function initialised.")
+
 #set out vars
 DoRun = True
 
 sleepTime = 0.1
 
-printlog("Imports successful.")
-
 printlog("Beginning server.")
+
 server = socket(AF_INET, SOCK_STREAM) 
 
-#can be changed, but seems OK for this kind of thing
-bufferSize = 1024
+#can be changed, but seems OK for this kind of thing. Was originally 1024
+bufferSize = 2048
 
 Host = ""
-Port = 34000
+printlog("Enter server port. Nothing will default to 34000")
+Port = input(" > ")
+if not Port:
+    Port = 34000
+    printlog("Defaulted")
+
+else:
+    Port = int(Port)
+    printlog("Port set to " + str(Port))
 
 server.bind((Host, Port))
 
@@ -44,14 +53,19 @@ kicklist = []
 #list of names connected
 namelist = []
 
+printlog("All arrays initialised")
+
 #contains name:message combinations
 pendingPms = {}
 
+printlog("All dicts initialised")
 #the client has a identical function. This stops my friends sending fake shutdown messages, pretending to be the server
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
     authCode = hashlib.sha512(bytes(str(authCode), "utf8")).hexdigest()
-    return str(authCode)
+    authCode = str(authCode)
+    printlog("Calculate auth code reporting: will shortly return " + authCode)
+    return authCode
 
 #calculates the characters that go at the front of the names so the fuckery that happens when two people
 #have the same name is as hard to trigger as possible. If a client disconnects non-cleanly, it often keeps
@@ -64,10 +78,12 @@ def CalculateNameAppend(length):
     for i in range(0, length):
         result = result + choice(alphabet)
 
+    printlog("Calculated name append to be " + str(result))
     return result
 
 #main function!
 def ManageClient(connection, address, name):
+    printlog("Manageclient reporting: Have been initiated for name " + str(name) + ", address" + str(address) + ", connection " + str(connection))
     errorCount = 0
     isAdmin = False
     try:
@@ -138,6 +154,7 @@ def ManageClient(connection, address, name):
     send(connection, "You have now entered the main chatroom.")
     time.sleep(0.2)
     send(connection, "Your messages will now be broadcasted to all users.")
+    printlog("Entered main thread : main loop")
 
     while True:
         try:
@@ -280,7 +297,7 @@ def ManageClient(connection, address, name):
                 elif message == "/here" or message == "/namelist" or message == "/users":
                     send(connection, str(len(namelist)) + " in list.")
                     time.sleep(0.4)
-                    send(connection, "Users listed are necessarily online.")
+                    send(connection, "Users listed are not necessarily online.")
                     for name in namelist:
                         time.sleep(0.4)
                         send(connection, name)
@@ -350,50 +367,54 @@ def HandlePMs(connection, name):
             send(connection, pendingPms[name], False)
             send(connection, "-----------------------------", False)
 
+            printlog("Name: " + str(name) + " Received pm " + pendingPms[name])
+
             del pendingPms[name]
+            time.sleep(1)
 
         time.sleep(0.2)
 
 #first thread assigned to someone. It gets name and refers to the main thread. It's partially here
 #just cause that function is so long. I
-
+''' removed due to not working. Will come back. #FIXME Local command console
 def LocalServerCommandConsole():
-    message = str(input("CmdConsole > "))
-    if not "/" in message:
-        broadcast(bytes(message, "utf8"))
+    while True:
+        message = str(input("CmdConsole > "))
+        if not "/" in message:
+            broadcast(bytes(message, "utf8"))
 
-    if "/pm" in message:
-        nameToPm = message[4:]
+        if "/pm" in message:
+            nameToPm = message[4:]
 
-        if nameToPm in namelist:
-            reply = str(input("CmdConsole-Enter PM > "))
+            if nameToPm in namelist:
+                reply = str(input("CmdConsole-Enter PM > "))
 
-            pendingPms[nameToPm] = (reply)
+                pendingPms[nameToPm] = (reply)
 
-            printlog("Added to buffer")
+                printlog("Added to buffer")
 
-        else:
-            printlog("This person isn't online right now")
+            else:
+                printlog("This person isn't online right now")
 
-        if "/kick" in message:
-            kicklist.append(message[6:])
-            printlog("Successfully added " + message[6:] + " to kicklist.")
+            if "/kick" in message:
+                kicklist.append(message[6:])
+                printlog("Successfully added " + message[6:] + " to kicklist.")
 
-        if "/exit -a" in message:
-            for i in range(1, 10):
-                time.sleep(0.2)
-                authCode = CalculateAuthCode()
-                broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
+            if "/exit -a" in message:
+                for i in range(1, 10):
+                    time.sleep(0.2)
+                    authCode = CalculateAuthCode()
+                    broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
 
-        if "wipe -a" in message:
-            for i in range(1, 10):
-                time.sleep(0.2)
-                authCode = CalculateAuthCode()
-                broadcast(bytes("-- WIPE AUTHORISE --" + authCode, "utf8"))
-
-
+            if "wipe -a" in message:
+                for i in range(1, 10):
+                    time.sleep(0.2)
+                    authCode = CalculateAuthCode()
+                    broadcast(bytes("-- WIPE AUTHORISE --" + authCode, "utf8"))
+'''
 def HandleStartingClient(connection, address):
     try:
+        printlog("Referred to thread HandleStartingClient")
         time.sleep(0.2)
         clientList.append(connection)
         setClientLabel(connection, "Name requested by server.")
@@ -404,6 +425,7 @@ def HandleStartingClient(connection, address):
 
         if name in blocklist:
             send(connection, "Username banned")
+            printlog("Username banned is " + str(name))
 
         else:
             name = (CalculateNameAppend(4) + "-" + name)
@@ -446,7 +468,7 @@ def send(connection, text, Show=True):
                 connection.send(bytes(text, "utf8"))
 
             time.sleep(sleepTime)
-            printlog("PM'd >> " + text)
+            printlog("PM'd >> " + text + " connection " + str(connection))
     except:
         printlog("Error in send, attempting client removal")
         try:
@@ -466,7 +488,7 @@ def send(connection, text, Show=True):
 def broadcast(message):
     if DoRun == True:
         try:
-            printlog(str(message.decode("utf8")))
+            printlog("Broadcast: " + str(message.decode("utf8")))
         except: 
             printlog("Error printloging broadcast")
         for client in clientList:
@@ -501,6 +523,7 @@ def remove(connection, name):
 
 #sets the label at the bottom of the client. 
 def setClientLabel(connection, text):
+    printlog("Setting client label to " + text + ", connection - " + str(connection))
     try:
         time.sleep(sleepTime)
         connection.send(bytes("[INTERNAL SET LABEL MESSAGE] " + text, "utf8"))
@@ -517,16 +540,19 @@ def setClientLabel(connection, text):
 
 #runs concurrently to check if you have been kicked.
 def kickCheckThread(connection, name, isAdmin):
+    printlog("Started kickCheckThread for " + name)
     try:
         while True:
             time.sleep(0.2)
             if name in kicklist and isAdmin == False:
                 kicklist.remove(name)
+                printlog("Kicked " + name)
                 send(connection, "You have been kicked.")
                 break
 
             if name in kicklist and isAdmin == True:
                 kicklist.remove(name)
+                printlog("Would have kicked " + name + " but " + name + " is admin.")
                 send(connection, "You would have been kicked, but you were admin.")
     except:
         try:
@@ -542,18 +568,19 @@ def kickCheckThread(connection, name, isAdmin):
             except:
                 printlog("Error, error, error")
                 pass
+
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
+    printlog("Started Listen_for_clients()")
     while True:
-        try:
-            connection, address = server.accept()
-            setClientLabel(connection, "Referring to starting thread.")
-            Thread(target=HandleStartingClient, args=(connection, address)).start()
+        connection, address = server.accept()
+        printlog("Accepted connection from " + str(address))
+        setClientLabel(connection, "Referring to starting thread.")
+        printlog("Referring to starting thread")
+        Thread(target=HandleStartingClient, args=(connection, address)).start()
 
-        except:
-            printlog("Error in listen_for_clients, passing.")
-            pass
-        
+printlog("All functions initialised")
+
 Listen_for_clients()
-printlog("------------ END OF SCRIPT ------------")
 server.close()
+printlog("------------ END OF SCRIPT ------------")

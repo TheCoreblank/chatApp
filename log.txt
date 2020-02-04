@@ -2,3 +2,280 @@
 ------------ START OF SCRIPT ------------
 Imports successful.
 Beginning server.
+------------ START OF SCRIPT ------------
+Imports successful.
+Beginning server.
+Success.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Defaulted
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34001
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Accepted connection from ('127.0.0.1', 59432)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+PM'd >> Please enter your name connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Calculated name append to be k(eP
+PM'd >> Received your name, k(eP-Alex connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Manageclient reporting: Have been initiated for name k(eP-Alex, address('127.0.0.1', 59432), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+PM'd >> Due to your username, you need to elevate to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+PM'd >> Enter authorisation connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+PM'd >> Your authorisation has been received. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+k(eP-Alex has elevated to admin privileges
+PM'd >> Elevated to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Manage client for ('127.0.0.1', 59432) , by name k(eP-Alex STARTED
+PM'd >> Starting PM thread... connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Starting kick check thread
+Started kickCheckThread for k(eP-Alex
+Done
+PM'd >> You have now entered the main chatroom. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+PM'd >> Your messages will now be broadcasted to all users. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34001), raddr=('127.0.0.1', 59432)>
+Entered main thread : main loop
+k(eP-Alex: fsjfok
+k(eP-Alex: fsjfok
+k(eP-Alex: d
+k(eP-Alex: d
+k(eP-Alex: fs
+k(eP-Alex: fs
+k(eP-Alex: fs
+k(eP-Alex: fs
+k(eP-Alex: fskdfklshf
+k(eP-Alex: fskdfklshf
+k(eP-Alex: sjhnf
+k(eP-Alex: sjhnf
+k(eP-Alex: dfhljg
+k(eP-Alex: dfhljg
+k(eP-Alex: fsjhd
+k(eP-Alex: fsjhd
+k(eP-Alex: /wipe
+k(eP-Alex: /wipe
+k(eP-Alex: skldj
+k(eP-Alex: skldj
+k(eP-Alex: sfdfls
+k(eP-Alex: sfdfls
+k(eP-Alex: sdfhl
+k(eP-Alex: sdfhl
+k(eP-Alex: /wipe -a
+k(eP-Alex: /wipe -a
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+Calculate auth code reporting: will shortly return 467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+-- WIPE AUTHORISE --467382fef0a60568ed90489d96cc78a8608ab1d5c087a6799c1c7edb709356eca7d156af297a198d0d2cccd8330fdc4fef3680099b7b8532db4cff376f32c975
+k(eP-Alex: slkdjf
+k(eP-Alex: slkdjf
+k(eP-Alex: sdjfl
+k(eP-Alex: sdjfl
+k(eP-Alex: ksjklf
+k(eP-Alex: ksjklf
+k(eP-Alex: sf
+k(eP-Alex: sf
+k(eP-Alex: sj;
+k(eP-Alex: sj;
+k(eP-Alex: {quit}
+k(eP-Alex: {quit}
+Removed k(eP-Alex
+Exited main thread
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34001
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34001
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34002
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Accepted connection from ('127.0.0.1', 60424)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+PM'd >> Please enter your name connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Calculated name append to be BA8E
+PM'd >> Received your name, BA8E-Alex connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Manageclient reporting: Have been initiated for name BA8E-Alex, address('127.0.0.1', 60424), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+PM'd >> Due to your username, you need to elevate to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+PM'd >> Enter authorisation connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+PM'd >> Your authorisation has been received. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+BA8E-Alex has elevated to admin privileges
+PM'd >> Elevated to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Manage client for ('127.0.0.1', 60424) , by name BA8E-Alex STARTED
+PM'd >> Starting PM thread... connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Starting kick check thread
+Started kickCheckThread for BA8E-Alex
+Done
+PM'd >> You have now entered the main chatroom. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+PM'd >> Your messages will now be broadcasted to all users. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34002), raddr=('127.0.0.1', 60424)>
+Entered main thread : main loop
+BA8E-Alex: {quit}
+Broadcast: BA8E-Alex: {quit}
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Defaulted
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34001
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34002
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34005
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34005
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34006
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Broadcast: 
+Broadcast: 
+Broadcast: 
+Broadcast: 
+Broadcast: 
+Broadcast: lkh
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34006
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34007
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34007
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34008
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Accepted connection from ('127.0.0.1', 41232)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+PM'd >> Please enter your name connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Calculated name append to be @T@&
+PM'd >> Received your name, @T@&-Hello connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Manageclient reporting: Have been initiated for name @T@&-Hello, address('127.0.0.1', 41232), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Manage client for ('127.0.0.1', 41232) , by name @T@&-Hello STARTED
+PM'd >> Starting PM thread... connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Starting kick check thread
+Started kickCheckThread for @T@&-Hello
+Done
+PM'd >> You have now entered the main chatroom. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+PM'd >> Your messages will now be broadcasted to all users. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34008), raddr=('127.0.0.1', 41232)>
+Entered main thread : main loop
+@T@&-Hello: test
+Broadcast: @T@&-Hello: test
+@T@&-Hello: /exit
+Broadcast: @T@&-Hello: /exit
+Removed @T@&-Hello
+Exited main thread
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+Error in listen_for_clients, passing.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Port set to 34000

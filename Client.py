@@ -282,7 +282,7 @@ if not port:
 else:
     port = int(port)
 
-Buffer_size = 1024
+Buffer_size = 2048
 Address = (host, port)
 #AF_INET means TCP
 client_socket = socket(AF_INET, SOCK_STREAM)
