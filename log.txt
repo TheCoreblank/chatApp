@@ -279,3 +279,58 @@ Imports successful, printlog function initialised.
 Beginning server.
 Enter server port. Nothing will default to 34000
 Port set to 34000
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 34000
+Defaulted
+Success.
+All arrays initialised
+All dicts initialised
+All functions initialised
+Started Listen_for_clients()
+Accepted connection from ('127.0.0.1', 41796)
+Setting client label to Referring to starting thread., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Name requested by server., connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+PM'd >> Please enter your name connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Calculated name append to be ^Qzw
+PM'd >> Received your name, ^Qzw-Alex connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Manageclient reporting: Have been initiated for name ^Qzw-Alex, address('127.0.0.1', 41796), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Setting client label to Referred to main thread, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+PM'd >> Due to your username, you need to elevate to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+PM'd >> Enter authorisation connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Setting client label to Processing, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+PM'd >> Your authorisation has been received. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+^Qzw-Alex has elevated to admin privileges
+PM'd >> Elevated to admin connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Setting client label to Elevated to admin, connection - <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Manage client for ('127.0.0.1', 41796) , by name ^Qzw-Alex STARTED
+PM'd >> Starting PM thread... connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Starting kick check thread
+Started kickCheckThread for ^Qzw-Alex
+Done
+PM'd >> You have now entered the main chatroom. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+PM'd >> Your messages will now be broadcasted to all users. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+Entered main thread : main loop
+^Qzw-Alex: sdijf
+Broadcast: ^Qzw-Alex: sdijf
+^Qzw-Alex: sdf
+Broadcast: ^Qzw-Alex: sdf
+^Qzw-Alex: jlkjfls
+Broadcast: ^Qzw-Alex: jlkjfls
+^Qzw-Alex: -- AUTHORISE EXIT --#
+Broadcast: ^Qzw-Alex: -- AUTHORISE EXIT --#
+^Qzw-Alex: -- AUTHORISE WIPE --
+Broadcast: ^Qzw-Alex: -- AUTHORISE WIPE --
+^Qzw-Alex: -- EXIT AUTHORISE --
+PM'd >> Only the server is allowed to authorise remote commands. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+^Qzw-Alex: -- WIPE AUTHORISE --
+PM'd >> Only the server is allowed to authorise remote commands. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+^Qzw-Alex: -- AUTHORISE 42 --
+PM'd >> Only the server is allowed to authorise remote commands. connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 41796)>
+^Qzw-Alex: {quit}
+Broadcast: ^Qzw-Alex: {quit}
+Removed ^Qzw-Alex
+Exited main thread
