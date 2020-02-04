@@ -209,7 +209,7 @@ def MessageListTrim():
         time.sleep(0.1)
         if message_list.size() > backlogLength:
                 message_list.delete(0)
-    
+
 #tkinter magic. 95% from stackoverflow. I figure you can work out the syntax in 6 months
 #as well as I can now, so I won't bother.
 top = tkinter.Tk()
@@ -269,8 +269,8 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    #host = "127.0.0.1"
-    host = "86.31.133.208"
+    host = "127.0.0.1"
+    #host = "86.31.133.208"
     #host = "192.168.0.35"
     port = 34000
     allowRemoteAccess = True
@@ -295,10 +295,9 @@ while True:
        tries = tries + 1
        
     try:
-        SetLabelStatus("Attempting to connect.")
+        print("Attempting to connect")
         client_socket.connect(Address)
         print("Successful connection established.")
-        SetLabelStatus("Succesful connection established.")
         break
         
     except ConnectionRefusedError:
