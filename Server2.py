@@ -411,12 +411,12 @@ def HandleStartingClient(connection, address):
         time.sleep(0.2)
         clientList.append(connection)
         setClientLabel(connection, "Names must be less than 10 characters.")
-        
-        send(connection, "Please enter your name")
 
         wrongUsernameCount = 0
         
         while True:
+            send(connection, "Please enter your name")
+
             name = connection.recv(bufferSize).decode("utf8")
             if len(name) < 10:
                 break
@@ -425,11 +425,15 @@ def HandleStartingClient(connection, address):
                 send(connection, "Usernames must be under 10 characters")
                 wrongUsernameCount = wrongUsernameCount + 1
                 if wrongUsernameCount > 5:
+                    time.sleep(0.1)
                     send(connection, "You are being removed")
                     time.sleep(0.1)
                     send(connection, "You have tried more than 5 times")
+                    remove(connection, "")
 
+                time.sleep(0.1)
                 setClientLabel(connection, "Try: " + str(wrongUsernameCount) + "/5")
+                time.sleep(0.1)
 
         if name in blocklist:
             send(connection, "Username banned")
