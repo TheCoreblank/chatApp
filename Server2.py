@@ -13,12 +13,58 @@ printlog("------------ START OF SCRIPT ------------")
 
 printlog("Imports successful, printlog function initialised.")
 
+#holds socket objects, also known as black magic
+clientList = []
+
+time.sleep(0.1)
+
+printlog("Client list initalised")
+
+#holds base usernames that have been set as banned
+blocklist = []
+
+time.sleep(0.1)
+
+printlog("Block list initialised")
+#If someone's name is in this when the main loop checks, they will be removed from the list and kicked.
+kicklist = []
+
+time.sleep(0.1)
+
+printlog("Kick list initialised")
+#list of names connected
+
+time.sleep(0.1)
+
+namelist = []
+printlog("Name list initialised")
+
+time.sleep(0.1)
+
+printlog("All arrays initialised")
+
+time.sleep(0.1)
+#contains name:message combinations
+pendingPms = {}
+
+printlog("Pending PM's initialised")
+
+time.sleep(0.2)
+
+printlog("All dicts initialised")
+
+time.sleep(0.2)
+
 #set out vars
 DoRun = True
 
 sleepTime = 0.1
 
-printlog("Beginning server.")
+printlog("Misc. Variable initialised")
+
+time.sleep(0.2)
+
+printlog("Ready to start server: STARTING SERVER")
 
 server = socket(AF_INET, SOCK_STREAM) 
 
@@ -39,26 +85,17 @@ else:
 server.bind((Host, Port))
 
 server.listen(1000)
+
+time.sleep(0.5)
+
 printlog("Success.")
 
-#holds socket objects, also known as black magic
-clientList = []
+time.sleep(0.05)
 
-#holds base usernames that have been set as banned
-blocklist = []
+printlog("Initialising functions")
 
-#If someone's name is in this when the main loop checks, they will be removed from the list and kicked.
-kicklist = []
+time.sleep(0.5)
 
-#list of names connected
-namelist = []
-
-printlog("All arrays initialised")
-
-#contains name:message combinations
-pendingPms = {}
-
-printlog("All dicts initialised")
 #the client has a identical function. This stops my friends sending fake shutdown messages, pretending to be the server
 def CalculateAuthCode():
     authCode = int(int(time.time()) / int(10))
@@ -589,6 +626,9 @@ def kickCheckThread(connection, name, isAdmin):
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
     printlog("Started Listen_for_clients()")
+
+    #I won't lie, half the logging's to make me feel cool when I start the script
+    printlog("SCRIPT FULLY OPERATIONAL")
     while True:
         connection, address = server.accept()
         printlog("Accepted connection from " + str(address))
@@ -596,8 +636,26 @@ def Listen_for_clients():
         printlog("Referring to starting thread")
         Thread(target=HandleStartingClient, args=(connection, address)).start()
 
+time.sleep(0.5)
+
 printlog("All functions initialised")
 
+time.sleep(0.1)
+
+printlog("Core script entirely initialised")
+
+time.sleep(0.2)
+
+printlog("\n \n \n")
+
+time.sleep(0.2)
+
+printlog("Starting listen_for_clients...")
+
+time.sleep(0.1)
+
 Listen_for_clients()
+
 server.close()
+
 printlog("------------ END OF SCRIPT ------------")
