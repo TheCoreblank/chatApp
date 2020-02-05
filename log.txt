@@ -1,1 +1,5 @@
 <start of log, line 0 entered manual>
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Beginning server.
+Enter server port. Nothing will default to 443

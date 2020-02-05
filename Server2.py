@@ -145,6 +145,8 @@ def ManageClient(connection, address, name):
     send(connection, "You have now entered the main chatroom.")
     printlog("Entered main thread : main loop")
 
+    setClientLabel(connection, "Welcome to the chatroom.")
+
     while True:
         try:
             #this isn't how it's intended, but it's there anyway incase someone uses it wrong
