@@ -528,10 +528,10 @@ def remove(connection, name):
                 pass
     except:
         try:
-            printlog("Error removing client, name = " + name)
+            printlog("Error removing client connection, name = " + name)
             pass
         except:
-            printlog("Error removing client, printloging name caused an error")
+            printlog("Error removing client connection, printloging name caused an error")
             pass
 
 #sets the label at the bottom of the client. 
