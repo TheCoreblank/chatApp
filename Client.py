@@ -132,7 +132,7 @@ def ReceiveFromServer():
                 SetLabelStatus(message[28:])
 
             #if it's not internal, write it in the feed. 
-            if not "/pingTest" in message and not "/pingTime" in message and not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
+            if not "/ping" in message and not "/pingTest" in message and not "/pingTime" in message and not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
                 message_list.insert(tkinter.END, message)
             
         except OSError: #may be a client exit
@@ -155,7 +155,7 @@ def send(event=None):
     if not "sudo shutdown server" in message and not "/help" in message:
         client_socket.send(bytes(message, "utf8"))
 
-    if "/pingTest" in message or "/pingTime" in message:
+    if "/pingTest" in message or "/pingTime" in message or "/ping" in message:
         PingVars.FirstPingTime = time.time()
         PingVars.IsTestingPing = True
 
@@ -245,7 +245,6 @@ top.title("Word")
 top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
 top.configure(background="white")
 
-
 messages_frame = tkinter.Frame(top)
 messages_frame.configure(background="white")
 
@@ -270,7 +269,7 @@ message_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
 
 messages_frame.pack()
 
-entry_field = tkinter.Entry(top, textvariable=my_message, width = listWidth)
+entry_field = tkinter.Entry(top, textvariable=my_message, width = (listWidth-6))
 entry_field.bind("<Return>", send)
 entry_field.configure(background="white")
 entry_field.pack()
@@ -296,14 +295,14 @@ else:
     #default settings
     backlogLength = 20
     #host = "127.0.0.1"
-    #host = "86.31.133.208"
-    host = "192.168.0.35"
+    host = "86.31.133.208"
+    #host = "192.168.0.35"
     port = 443
     allowRemoteAccess = True
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
 if not port:
-    port = 34000
+    port = 443
 
 else:
     port = int(port)

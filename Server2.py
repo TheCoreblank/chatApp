@@ -26,10 +26,10 @@ server = socket(AF_INET, SOCK_STREAM)
 bufferSize = 2048
 
 Host = ""
-printlog("Enter server port. Nothing will default to 34000")
+printlog("Enter server port. Nothing will default to 443")
 Port = input(" > ")
 if not Port:
-    Port = 34000
+    Port = 443
     printlog("Defaulted")
 
 else:
@@ -87,7 +87,6 @@ def ManageClient(connection, address, name):
     errorCount = 0
     isAdmin = False
     try:
-        setClientLabel(connection, "Referred to main thread")
         #Yes, I know I should have made an all lowercase copy of name and made it half as long.
         #checks if they should be made admin, then requests auth
         if "Alex" in name or "System" in name or "sudo" in name or "Sudo" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
@@ -98,8 +97,6 @@ def ManageClient(connection, address, name):
             #receives their reply
             password = connection.recv(bufferSize).decode("utf8")
 
-            setClientLabel(connection, "Processing")
-
             #I know it's insecure, this is for getting round the school system not evading MI5
             #                                                Hey, at least this part's secure!
             passwordHashed = hashlib.sha512(bytes((password + "289289289193819301"), "utf8")).hexdigest()
@@ -108,10 +105,9 @@ def ManageClient(connection, address, name):
                 send(connection, "Your authorisation has been received.")
                 printlog(str(name) + " has elevated to admin privileges")
                 isAdmin = True
+                setClientLabel(connection, "Elevated to admin")
                 time.sleep(0.1)
                 send(connection, "Elevated to admin")
-
-                setClientLabel(connection, "Elevated to admin")
 
             else:
                 send(connection, "Authentication incorrect; elevation denied.")
@@ -124,11 +120,12 @@ def ManageClient(connection, address, name):
                 
         printlog("Manage client for " + str(address) + " , by name " + name + " STARTED")
 
-        send(connection, "Starting PM thread...")
-
         #when a PM is in the buffer, this handles it. It's in a different thread so it doesn't get blocked
         #by waiting for the client to reply
         Thread(target=HandlePMs, args=(connection, name)).start()
+
+        #pretty much the same, just for kicking.
+        Thread(target=kickCheckThread, args=(connection, name, isAdmin)).start()
 
     except:
         printlog("Error in preperation for main thread loop. Passing to save")
@@ -145,15 +142,7 @@ def ManageClient(connection, address, name):
             remove(connection, name)
         pass
 
-    printlog("Starting kick check thread")
-    time.sleep(0.2)
-    Thread(target=kickCheckThread, args=(connection, name, isAdmin)).start()
-    time.sleep(0.2)
-    printlog("Done")
-
     send(connection, "You have now entered the main chatroom.")
-    time.sleep(0.2)
-    send(connection, "Your messages will now be broadcasted to all users.")
     printlog("Entered main thread : main loop")
 
     while True:
@@ -421,11 +410,26 @@ def HandleStartingClient(connection, address):
         printlog("Referred to thread HandleStartingClient")
         time.sleep(0.2)
         clientList.append(connection)
-        setClientLabel(connection, "Name requested by server.")
+        setClientLabel(connection, "Names must be less than 10 characters.")
         
         send(connection, "Please enter your name")
+
+        wrongUsernameCount = 0
         
-        name = connection.recv(bufferSize).decode("utf8")
+        while True:
+            name = connection.recv(bufferSize).decode("utf8")
+            if len(name) < 10:
+                break
+
+            else:
+                send(connection, "Usernames must be under 10 characters")
+                wrongUsernameCount = wrongUsernameCount + 1
+                if wrongUsernameCount > 5:
+                    send(connection, "You are being removed")
+                    time.sleep(0.1)
+                    send(connection, "You have tried more than 5 times")
+
+                setClientLabel(connection, "Try: " + str(wrongUsernameCount) + "/5")
 
         if name in blocklist:
             send(connection, "Username banned")
@@ -537,6 +541,7 @@ def setClientLabel(connection, text):
         printlog("Error in setting client label - - removing connection")
         try:
             remove(connection, "")
+            printlog("Succesfully removed")
             pass
         except:
             printlog("Error removing connection caused by error in set client label")
@@ -580,7 +585,7 @@ def Listen_for_clients():
     while True:
         connection, address = server.accept()
         printlog("Accepted connection from " + str(address))
-        setClientLabel(connection, "Referring to starting thread.")
+        setClientLabel(connection, "Welcome! Referring you to a thread.")
         printlog("Referring to starting thread")
         Thread(target=HandleStartingClient, args=(connection, address)).start()
 
