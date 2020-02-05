@@ -146,7 +146,8 @@ def ReceiveFromServer():
 #and the server was the one being weird cause it doesn't show errors! It's a tkinter requirement. 
 def send(event=None): 
     #handles sending of messages
-    SetLabelStatus("Sending...")
+    pastLabelStatus = statusLabel["text"]
+    SetLabelStatus("If you see this, error sending")
     #gets from message box
     message = my_message.get()
     my_message.set("")
@@ -155,11 +156,11 @@ def send(event=None):
     if not "sudo shutdown server" in message and not "/help" in message:
         client_socket.send(bytes(message, "utf8"))
 
+    SetLabelStatus(pastLabelStatus)
+
     if "/pingTest" in message or "/pingTime" in message or "/ping" in message:
         PingVars.FirstPingTime = time.time()
         PingVars.IsTestingPing = True
-
-    SetLabelStatus("Sent.")
 
     #if internal command, do shit
     #wipes. 

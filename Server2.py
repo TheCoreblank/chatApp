@@ -348,6 +348,7 @@ def ManageClient(connection, address, name):
             continue
 
     printlog("Exited main thread")
+    printlog("------------------")
 
 #PM handling thread. Pretty self explanatory.
 def HandlePMs(connection, name):
