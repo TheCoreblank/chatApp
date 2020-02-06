@@ -32,6 +32,7 @@ Found when I tested it with someone else who wasn't using it as intended
 - Proper authentication
 - A database with names, connection objects, and (Hashed and salted) password
 - Don't use tkinter: I hate it. 
+- USE CLASSES. SERIOUSLY.
 
 # Rebuild roadmap
 - Tomorrow, I will look into my graphical framework, crypto libraries, and make a proper plan of the accounts system and how everything will communicate. I will list every function in the server; the client can be more ambigious, it doesn't do as much.
@@ -47,6 +48,61 @@ Found when I tested it with someone else who wasn't using it as intended
 - Then over the weekend after that, I want to get the backend for the proper client going (Designed from the ground up with my new protocols, instead of things slapped on in the dev version.)
 
 - For 3 weeks after that I want to put together the disguised client. Properly disguised, not this "Looks like word in the taskbar" bullshit.
+
+# Notes, per the first day of the rebuild roadmap
+- OK, I know the type of database I am going to use. It's extremely sophisticated. It's a set of dictionaries in a list saved to a file. I did research it, and considering I am only going to have like 10 pieces of data I'll be OK.
+
+# My functions/classes
+# Server communications
+privateMessageFromServer(Username) - It'll extrapolate the rest by accessing the database. 
+broadcast(Username) - Sends to all users but the username. 
+InternalMessage(Username) - This sends an internal message, such as "Ping" or "You have been kicked" or "Set the input mode to stars, we're receiving a password."
+IsOnline(Username) - Sends a "ping", not as in the ICMP one but a manual one to check connection.
+
+# Cryptography
+KeyExchange() - Dark magic. I'll work this one out later.
+Encrypt(text, publicKey)
+Decrypt(text, privateKey)
+HashPassword() 
+
+# Accounts
+Keep in mind, the username is basically the sole account identifier. 
+An account contains (With example values):
+{Username : "Alex", 
+Password : "sjfhjsbfh9w8fn028h02n etc",
+PendingPms : {Sender: "Luke", Message : "Hello!"},
+isAdmin : True
+isOnline : True
+isOP: True
+connectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : "I am not copying an entire sockets connection object"}
+}
+NewAccount(Username, password[unhashed at this point], isAdmin) 
+GetAccountData(Username, key you want)
+PushAccountData(Username, key you want to replace/add, value)
+DeleteAccount(Username, password-hashed)
+
+# Miscellaneous
+PrintLog() - prints and logs to a file at the same time
+
+# Program structure
+I want there to be a loop accepting connections and referring to a thread called Main(), that asks for account details.
+At this point they can also create an account, if they have a password. Then, they go into the loop of "I send message, message goes to everyone, everyone reads message, people reply, I see message.
+
+I also want a couple of other threads to be run. One goes through all the clients and, if they have shouldBan to true,  disconnects them. I also want one to periodically ping every account set to online (A manual ping is done on logging in and they are set to online) and update the IsOnline field (The main thread closes if this is false). I want one to go through the pendingPms of every online user and send them the PM if there is one. 
+
+# Features I want
+- PM's
+- Accounts (Obviously)
+- The old /exit -a, /wipe -a, and /faketext -a
+- Admin status to be account based
+- Non admins be able to elevate to admin for a single message, in "sudo like" fashion, with a password.
+- People to be able to change their passwords, elevate to admin, et cetera
+- The OP being able to make people admins without giving them the password
+- /broadcast to pretend to be the server - peace of cake to implement and quite entertaining
+- /here, /online - display everyone currently online
+- /namelist, /people, /everyone, /users - display everyone registered
+- /ping - shows ping time to the server. Takes a while to implement but a useful tool.
+- /status - gives basically all the data in their username dict.
 
 # Commands
 Client Side
