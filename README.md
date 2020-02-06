@@ -28,7 +28,7 @@ Found when I tested it with someone else who wasn't using it as intended
 
 - Messages don't wrap to the next line
 
-- When you have a big ping, you don't see the first "what is your name" message
+- When you have a high ping, you don't see the first "what is your name" message
 
 - Everything is broken
 
@@ -40,15 +40,10 @@ Found when I tested it with someone else who wasn't using it as intended
 
 # To do
 
-- Fix the above
-
-- Have a dict of connection:name
-
-- Make it ping the client periodically to establish who is connected
-
+- Rewrite it
   
 
-# For when I rebuild
+# What I want when I remake it.
 
 - Connection: name list
 
@@ -68,7 +63,6 @@ Found when I tested it with someone else who wasn't using it as intended
 
 - USE CLASSES. SERIOUSLY.
 
-  
 
 # Rebuild roadmap
 
@@ -100,11 +94,10 @@ Found when I tested it with someone else who wasn't using it as intended
 
   
 
-# Notes, per the first day of the rebuild roadmap
+# Notes, per the first day (OK, more like hour) of the rebuild roadmap
 
 - OK, I know the type of database I am going to use. It's extremely sophisticated. It's a set of dictionaries in a list saved to a file. I did research it, and considering I am only going to have like 10 pieces of data I'll be OK.
 
-  
 
 # My functions/classes
 
