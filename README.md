@@ -4,8 +4,6 @@ A work-in-progress chat app designed to circumvent school systems.
 Includes numerous anti-detection and plausible denial features. 
 Currently unencrypted, although passwords are not stored in plain text.
 
-Also, don't try to talk about me using the PM function. I own the server :)
-
 # Known problems
 Found when I tested it with someone else who wasn't using it as intended
 - Kicking doesn't work. Like, it tells you you've been kicked... then it... kinda... lets you continue as normal.
@@ -13,7 +11,8 @@ Found when I tested it with someone else who wasn't using it as intended
 - People not on the name list are totally there communicating. It's broken.
 - It's broken.
 - everything is broken
-- Spamming is extreeeemely easy
+- Spamming is extremely easy
+- Messages don't wrap to the next line
 - When you have a big ping, you don't see the first "what is your name" message
 - Everything is broken
 - When doing PM's, kicks, bans, etc it gets the name from all the characters past a certain point... including spaces.
@@ -32,7 +31,22 @@ Found when I tested it with someone else who wasn't using it as intended
 - Fewer features: It's bloated
 - Proper authentication
 - A database with names, connection objects, and (Hashed and salted) password
+- Don't use tkinter: I hate it. 
 
+# Rebuild roadmap
+- Tomorrow, I will look into my graphical framework, crypto libraries, and make a proper plan of the accounts system and how everything will communicate. I will list every function in the server; the client can be more ambigious, it doesn't do as much.
+
+- The school week and weekend after that (I have school, it'll be slow) I want to make accounts and databases work: I want to fake (with input() and print()) the whole process of first connecting, enter the password to be allowed to make an account, enter your name, give it a password (hashed and salted) and then come back another time, log in, enter password, etc. 
+
+- The school week after that I want to make a dev client for communicating with my new server while I write it and build the server's core network backend (No more raw UTF8 and writing everything you receive: No, this is gonna be my own protocol, and it might even have emojis!), with cryptography in mind.
+
+- The weekend after that I want to finish that.
+
+- The school week after that I want to put in proper cryptography/finish that. By the end of it, I want my dev clients talking to each other!
+
+- Then over the weekend after that, I want to get the backend for the proper client going (Designed from the ground up with my new protocols, instead of things slapped on in the dev version.)
+
+- For 3 weeks after that I want to put together the disguised client. Properly disguised, not this "Looks like word in the taskbar" bullshit.
 
 # Commands
 Client Side
