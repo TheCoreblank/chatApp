@@ -6,6 +6,18 @@ Currently unencrypted, although passwords are not stored in plain text.
 
 Also, don't try to talk about me using the PM function. I own the server :)
 
+# Known problems
+Found when I tested it with someone else who wasn't using it as intended
+- Kicking doesn't work. Like, it tells you you've been kicked... then it... kinda... lets you continue as normal.
+- When someone exits, you take over their account
+- People not on the name list are totally there communicating. It's broken.
+- It's broken.
+- everything is broken
+- Spamming is extreeeemely easy
+- When you have a big ping, you don't see the first "what is your name" message
+- Everything is broken
+- The creator can't be bothered to remake the whole thing on an account system so deal with it.
+
 # Commands
 Client Side
 - /wipe, /clear - Clears chat history locally.
