@@ -602,7 +602,7 @@ def kickCheckThread(connection, name, isAdmin):
                 kicklist.remove(name)
                 printlog("Kicked " + name)
                 send(connection, "You have been kicked.")
-                remove(conneciton, name)
+                remove(connection, name)
                 break
 
             if name in kicklist and isAdmin == True:
