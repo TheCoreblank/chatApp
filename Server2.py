@@ -637,6 +637,12 @@ def Listen_for_clients():
         printlog("Referring to starting thread")
         Thread(target=HandleStartingClient, args=(connection, address)).start()
 
+def PeriodicallyWipeDictsAndLists():
+    time.sleep(100000)
+    kicklist = []
+    pendingPms = {}
+    printlog("Kicklist, pendingPms wiped")
+
 time.sleep(0.5)
 
 printlog("All functions initialised")

@@ -152,8 +152,10 @@ def send(event=None):
     message = my_message.get()
     my_message.set("")
 
+    ToLong = False
+    if ToLong > 
     #if not client command, send
-    if not "sudo shutdown server" in message and not "/help" in message:
+    if not "sudo shutdown server" in message and not "/help" in message and ToLong == False:
         client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus(pastLabelStatus)

@@ -16,7 +16,23 @@ Found when I tested it with someone else who wasn't using it as intended
 - Spamming is extreeeemely easy
 - When you have a big ping, you don't see the first "what is your name" message
 - Everything is broken
-- The creator can't be bothered to remake the whole thing on an account system so deal with it.
+- When doing PM's, kicks, bans, etc it gets the name from all the characters past a certain point... including spaces.
+- You can have two people with the same names
+
+# To do
+- Fix the above
+- Have a dict of connection:name
+- Make it ping the client periodically to establish who is connected
+
+# For when I rebuild
+- Connection: name list
+- Accounts system
+- Encryption, at least for sending passwords
+- Make your own client write your message to the list and the server send to everyone but you
+- Fewer features: It's bloated
+- Proper authentication
+- A database with names, connection objects, and (Hashed and salted) password
+
 
 # Commands
 Client Side
@@ -31,7 +47,7 @@ Server side
 - /kick [name] - kicks someone but only once they have sent a message. I need to fix this one too. I don't expect to use these much or at all tbh. Requires administrator.
 - /broadcast [message] - sends a message but without your name at the front, basically. It's more for future proofing if I implement channels etc.
 - /wipe -a - this is a good contender for the most useful command. Sends a authenticated message from the server (using my patented HashTime technology) to wipe everyone's chat history. Requires administrator.
-- /exit -a - Sends a authenticated message from the server to close everyone's chats. Requires administrator.
+- /exit -a - Sends a authenticateMade d message from the server to close everyone's chats. Requires administrator.
 - /faketext -a - Sends an authenticated message from the server to replace everyone's chats with a "lesson friendly" conversation. Requires administrator.
 - /verify - more of a diagnostic tool, this writes your client HashTime and tells the server to send theirs. Not appropriate for security-even ignoring the multitude of problems with HashTime, the server has direct write and wipe control over your message feed, where your client HashTime appears. 
 - /here, /namelist, /users - prints all users currently in names database. May or may not be connected. 
