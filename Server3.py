@@ -136,20 +136,18 @@ class Accounts():
     #}
 
     def ReadAccountList():
-        try:
-            SaveFile = open('accounts', 'rb')
-            Accounts.AccountList = pickle.load(SaveFile)
-        except:
-            PrintLog("Error reading account list from file, passing")
-            pass
+        SaveFile = open('accounts', 'rb')
+        Accounts.AccountList = pickle.load(SaveFile)
 
     def SaveAccountListToFile():
-        try:
-            SaveFile = open('accounts', 'wb')
-            pickle.dump(Accounts.AccountList, SaveFile)
-        except:
-            PrintLog("Error saving account list to file, passing")
-            pass
+        SaveFile = open('accounts', 'wb')
+        AccountsListNoSockets = Accounts.AccountList
+        
+        del AccountsListNoSockets["ConnectionObject"]
+        
+        print(str(AccountsListNoSockets))
+
+        pickle.dump(AccountsListNoSockets, SaveFile)
 
     def PopulateFile():
         SaveFile = open("accounts", "wb")
@@ -162,7 +160,7 @@ class Accounts():
             PasswordInput = str(PasswordInput)
             isAdminInput = str(isAdminInput)
 
-            Accounts.ReadAccountList()
+            #Accounts.ReadAccountList()
             Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
             Accounts.SaveAccountListToFile()
         except:
@@ -172,7 +170,7 @@ class Accounts():
                 PrintLog("Error creating new account, error printing username")
 
     def GetAccountDataFromObject(Account, Key):
-        Accounts.ReadAccountList()
+        #Accounts.ReadAccountList()
         try:
             Key = str(Key)
             toReturn = Account.get(Key)
@@ -187,7 +185,7 @@ class Accounts():
             UsernameInput = str(UsernameInput)
             key = str(key)
 
-            Accounts.ReadAccountList()
+            #Accounts.ReadAccountList()
             for account in Accounts.AccountList:
                 if account.get('Username') == UsernameInput:
                     return account.get(key)
@@ -206,7 +204,7 @@ class Accounts():
                 PrintLog("Error getting account data, error printing name")
 
     def PushAccountData(UsernameInput, key, value):
-        Accounts.ReadAccountList()
+        #Accounts.ReadAccountList()
         UsernameInput = str(UsernameInput)
         key = str(key)
         for account in Accounts.AccountList:
@@ -219,7 +217,7 @@ class Accounts():
         UsernameInput = str(UsernameInput)
         PasswordInput = str(PasswordInput)
 
-        Accounts.ReadAccountList()
+        #Accounts.ReadAccountList()
         AccountListB = Accounts.AccountList
         for account in AccountList:
             if account.get('Username') == UsernameInput:
@@ -228,6 +226,11 @@ class Accounts():
         
         Accounts.AccountList = AccountListB
         Accounts.SaveAccountListToFile()
+
+    def InitAccountList():
+        Accounts.PopulateFile()
+        Accounts.ReadAccountList()
+        print(str(len(Accounts.AccountList)))
 
 class Dev():
     def AddAccount():
@@ -331,7 +334,7 @@ class Main():
                     LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
 
         except:
-            connection.Close()
+            connection.close()
 
     def NewAccountProcess(connection, address):
         try:
@@ -395,7 +398,7 @@ class Main():
                 time.sleep(0.5)
                 LowLevelCommunications.SendServerPM(connection, "Creating account...")
                 #waits for a bit to stop spamming
-                time.sleep(2.5)
+                time.sleep(1)
                 Accounts.NewAccount(Username, Password, IsAdmin)
                 time.sleep(1)
                 Accounts.PushAccountData(Username, "ConnectionObject", connection)
@@ -438,8 +441,7 @@ BufferSize = 2048
 server.bind((Host, Port))
 server.listen(1000)
 
-#For a bunch of stuff to work, the accounts file needs to be populated. Run if you deleted it.
-#Accounts.PopulateFile()
+Accounts.InitAccountList()
 
 Main.AcceptIncomingConnections()
 
