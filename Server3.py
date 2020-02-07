@@ -148,23 +148,28 @@ class Accounts():
             SaveFile = open('accounts', 'wb')
             pickle.dump(Accounts.AccountList, SaveFile)
         except:
-            PrintLog("Error saving account list from file, passing")
+            PrintLog("Error saving account list to file, passing")
             pass
 
-    def NewAccount(UsernameInput, PasswordInput, isAdminInput):
-        #try:
-        UsernameInput = str(UsernameInput)
-        PasswordInput = str(PasswordInput)
-        isAdminInput = str(isAdminInput)
+    def PopulateFile():
+        SaveFile = open("accounts", "wb")
+        toDump = [{"Username" : "Placeholder-jshgfiowjfiowfo2nwfo"}]
+        pickle.dump(toDump, SaveFile)
 
-        Accounts.ReadAccountList()
-        Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
-        Accounts.SaveAccountListToFile()
-        #except:
-        #    try:
-        #        PrintLog("Error creating new account, username: " + str(UsernameInput))
-        #    except:
-        #        PrintLog("Error creating new account, error printing username")
+    def NewAccount(UsernameInput, PasswordInput, isAdminInput):
+        try:
+            UsernameInput = str(UsernameInput)
+            PasswordInput = str(PasswordInput)
+            isAdminInput = str(isAdminInput)
+
+            Accounts.ReadAccountList()
+            Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
+            Accounts.SaveAccountListToFile()
+        except:
+            try:
+                PrintLog("Error creating new account, username: " + str(UsernameInput))
+            except:
+                PrintLog("Error creating new account, error printing username")
 
     def GetAccountDataFromObject(Account, Key):
         Accounts.ReadAccountList()
@@ -251,7 +256,6 @@ class Main():
         a = 1
 
     def AcceptIncomingConnections():
-        #TODO Accept incoming connections
         while True:
             connection, address = server.accept()
             PrintLog("Accepted connection from " + str(address) + " , referring")
@@ -281,11 +285,10 @@ class Main():
             connection.close()
 
     def SignInProcess(connection, address):
+        #TODO Sign in process
         time.sleep(1)
-        #TODO New account process
 
     def NewAccountProcess(connection, address):
-        #TODO Error handle this shit
         try:
             LowLevelCommunications.SendServerPM(connection, "Please enter phrase to auth new account")
             response = connection.recv(BufferSize).decode("utf8")
@@ -293,84 +296,81 @@ class Main():
             PrintLog("Error in NewAccountProcess, closing connection")
             connection.close()
 
-        try:
-            if response == "Hello":
-                while True:
-                    InUse = False
-                    LowLevelCommunications.SendServerPM(connection, "Please enter your new username: ")
-                    response = connection.recv(BufferSize).decode("utf8")
-                    Username = response
+        #try:
+        if response == "Hello":
+            while True:
+                InUse = False
+                LowLevelCommunications.SendServerPM(connection, "Please enter your new username: ")
+                response = connection.recv(BufferSize).decode("utf8")
+                Username = response
 
-                    if " " in Username:
+                if " " in Username:
+                    InUse = True
+                    LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
+
+                for account in Accounts.AccountList:
+                    if Accounts.GetAccountDataFromObject(account, "Username") == Username:
+                        LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
                         InUse = True
-                        LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
-
-                    for account in Accounts.AccountList:
-                        if Accounts.GetAccountDataFromObject(account, "Username") == Username:
-                            LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
-                            InUse = True
-                    
-                    if InUse == False:
-                        break
-
+                
                 if InUse == False:
-                    LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
+                    break
+
+            LowLevelCommunications.SendServerPM(connection, "Username received: " + Username)
+
+            if InUse == False:
+                LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
+                response = connection.recv(BufferSize).decode("utf8")
+                Password = response
+
+                loops = 0
+                while loops < 32:
+                    loops = loops + 1
+                    LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
                     response = connection.recv(BufferSize).decode("utf8")
-                    Password = response
-
-                    loops = 0
-                    while loops < 50:
-                        loops = loops + 1
-                        LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
+                    if response == "Y":
+                        LowLevelCommunications.SendServerPM(connection, "Password: ")
+                        #FIXME placeholder pw, will obviously be hashed in the future
                         response = connection.recv(BufferSize).decode("utf8")
-                        if response == "Y":
-                            LowLevelCommunications.SendServerPM(connection, "Password: ")
-                            #FIXME placeholder pw
-                            response = connection.recv(BufferSize).decode("utf8")
 
-                            if response == "Password1!":
-                                IsAdmin = True
-                                LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
-                                break
-
-                            else:
-                                IsAdmin = False
-                                LowLevelCommunications.SendServerPM(connection, "Password wrong.")
+                        if response == "Password1!":
+                            IsAdmin = True
+                            LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
+                            break
 
                         else:
-                            break
                             IsAdmin = False
-
-                    time.sleep(0.5)
-                    LowLevelCommunications.SendServerPM(connection, "Creating account...")
-                    #waits for a bit to stop spamming
-                    time.sleep(2.5)
-                    Accounts.NewAccount(Username, Password, IsAdmin)
-                    time.sleep(1)
-                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
-                    time.sleep(0.2)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
-                    response = connection.recv(BufferSize).decode("utf8")
-                    if response == "continue":
-                        Thread(Target=Main.SignInProcess).start()
+                            LowLevelCommunications.SendServerPM(connection, "Password wrong.")
 
                     else:
-                        connection.close()
+                        IsAdmin = False
+                        break
+
+                time.sleep(0.5)
+                LowLevelCommunications.SendServerPM(connection, "Creating account...")
+                #waits for a bit to stop spamming
+                time.sleep(2.5)
+                Accounts.NewAccount(Username, Password, IsAdmin)
+                time.sleep(1)
+                Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
+                time.sleep(0.2)
+                HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
+                response = connection.recv(BufferSize).decode("utf8")
+                if response == "continue":
+                    Thread(target=Main.SignInProcess, args=(connection, address)).start()
 
                 else:
                     connection.close()
 
             else:
                 connection.close()
-        except:
-            PrintLog("Error in account creation, exiting")    
-            connection.close()  
 
-
-    def PeriodicPing():
-        #TODO Periodic ping
-        a = 1
+        else:
+            connection.close()
+        #except:
+        #    PrintLog("Error in account creation, exiting")    
+        #    connection.close()  
 
     def PMManager():
         #TODO PM manager
@@ -389,6 +389,9 @@ Host = ""
 BufferSize = 2048
 server.bind((Host, Port))
 server.listen(1000)
+
+#For a bunch of stuff to work, the accounts file needs to be populated. Run if you deleted it.
+#Accounts.PopulateFile()
 
 Main.AcceptIncomingConnections()
 
