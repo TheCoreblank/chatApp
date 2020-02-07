@@ -1,5 +1,4 @@
 #client side script
-#TODO Make the UI fit in with google docs
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import tkinter, time

@@ -54,21 +54,22 @@ Found when I tested it with someone else who wasn't using it as intended
 
 # My functions/classes
 # Server communications
-privateMessageFromServer(Username) - It'll extrapolate the rest by accessing the database. 
-broadcast(Username) - Sends to all users but the username. 
-InternalMessage(Username) - This sends an internal message, such as "Ping" or "You have been kicked" or "Set the input mode to stars, we're receiving a password."
-IsOnline(Username) - Sends a "ping", not as in the ICMP one but a manual one to check connection.
+- privateMessageFromServer(Username) - It'll extrapolate the rest by accessing the database. 
+- broadcast(Username) - Sends to all users but the username. 
+- InternalMessage(Username) - This sends an internal message, such as "Ping" or "You have been kicked" or "Set the input - mode to stars, we're receiving a password."
+- IsOnline(Username) - Sends a "ping", not as in the ICMP one but a manual one to check connection.
 
 # Cryptography
-KeyExchange() - Dark magic. I'll work this one out later.
-Encrypt(text, publicKey)
-Decrypt(text, privateKey)
-HashPassword() 
+- KeyExchange() - Dark magic. I'll work this one out later.
+- Encrypt(text, publicKey)
+- Decrypt(text, privateKey)
+- HashPassword() 
 
 # Accounts
 Keep in mind, the username is basically the sole account identifier. 
 An account contains (With example values):
-{Username : "Alex", 
+{
+Username : "Alex", 
 Password : "sjfhjsbfh9w8fn028h02n etc",
 PendingPms : {Sender: "Luke", Message : "Hello!"},
 isAdmin : True
@@ -88,7 +89,7 @@ PrintLog() - prints and logs to a file at the same time
 I want there to be a loop accepting connections and referring to a thread called Main(), that asks for account details.
 At this point they can also create an account, if they have a password. Then, they go into the loop of "I send message, message goes to everyone, everyone reads message, people reply, I see message.
 
-I also want a couple of other threads to be run. One goes through all the clients and, if they have shouldBan to true,  disconnects them. I also want one to periodically ping every account set to online (A manual ping is done on logging in and they are set to online) and update the IsOnline field (The main thread closes if this is false). I want one to go through the pendingPms of every online user and send them the PM if there is one. 
+I also want a couple of other threads to be run. I also want one to periodically ping every account set to online (A manual ping is done on logging in and they are set to online) and update the IsOnline field (The main thread closes if this is false). I want one to go through the pendingPms of every online user and send them the PM if there is one. 
 
 # Features I want
 - PM's
