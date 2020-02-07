@@ -7,7 +7,7 @@ Addresses = {}
 
 Host = ""
 Port = 34000
-Buffer_size = 1024
+Buffer_size = 2048
 Address = (Host, Port)
 
 Server = socket(AF_INET, SOCK_STREAM)
