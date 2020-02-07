@@ -1,19 +1,24 @@
-import time, hashlib, sys, string
+import time, hashlib, sys, string, pickle
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 
 class Server():
     def PrivateMessageFromServer(Username):
         #TODO Private message from server
+        a = 1
     
     def Broadcast(Username):
         #TODO Broadcast
+        a = 1        
+
 
     def InternalMessage(Username):
         #TODO Internal message
-    
+        a = 1
+
     def PingCheck(Username):
         #TODO Ping check
+        a = 1
 
     def Encode(Text):
         return bytes(Text, "utf8")
@@ -21,12 +26,15 @@ class Server():
 class Cryptography():
     def KeyExchange():
         #TODO Key exchange
+        a = 1
 
     def Encrypt(text, publicKey):
         #TODO Encryption
+        a = 1
 
     def Decrypt(text, privateKey):
         #TODO Decryption
+        a = 1
 
     def HashPassword(text):
         return str(hashlib.sha512(bytes(str(text) + "f8weucrwirun3wurifiwshfklhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89", "utf8")).hexdigest())
@@ -46,33 +54,32 @@ class Accounts():
     #}
 
     def ReadAccountList():
-        AccountList = []
-        SaveFile = open("accounts.txt", "r")
-        AccountList = list(SaveFile.read())
+        SaveFile = open("accounts", "rb")
+        Accounts.AccountList = pickle.load(SaveFile)
 
     def SaveAccountListToFile():
-        SaveFile = open("accounts.txt", "w")
-        SaveFile.write(AccountList)
+        SaveFile = open("accounts", "wb")
+        pickle.dump(Accounts.AccountList, SaveFile)
 
     def NewAccount(UsernameInput, PasswordInput, isAdminInput, isOpInput):
         #TODO New account
-        ReadAccountList()
-        AccountList.append({Username : UsernameInput, Password : PasswordInput, isAdmin : isAdminInput, isOnline : True, isOP : isOpInput})
-        SaveAccountListToFile()
+        Accounts.ReadAccountList()
+        Accounts.AccountList.append({"Username" : UsernameInput, "Password" : PasswordInput, "isAdmin" : isAdminInput, "isOnline" : True, "isOP" : isOpInput})
+        Accounts.SaveAccountListToFile()
 
     def GetAccountData(UsernameInput, key):
-        ReadAccountList()
-        for account in AccountList:
-            if account[Username] == UsernameInput:
-                return account[key]
+        Accounts.ReadAccountList()
+        for account in Accounts.AccountList:
+            if account.get("Username") == UsernameInput:
+                return account.get(key)
 
-        SaveAccountListToFile()
+        Accounts.SaveAccountListToFile()
         #TODO Get account data
 
     def PushAccountData(UsernameInput, key, value):
         ReadAccountList()
-        for account in AccountList:
-            if account[Username] == UsernameInput:
+        for account in Accounts.AccountList:
+            if account.get("Username") == UsernameInput:
                 account.update({key : value})
 
         SaveAccountListToFile()
@@ -80,23 +87,36 @@ class Accounts():
 
     def DeleteAccount(UsernameInput, PasswordInput):
         ReadAccountList()
-        AccountListB = AccountList
+        AccountListB = Accounts.AccountList
         for account in AccountList:
-            if account[Username] == UsernameInput:
-                if account[Password] == PasswordInput:
+            if account.get("Username") == UsernameInput:
+                if account.get("Password") == PasswordInput:
                     AccountListB.remove(account)
-
-        AccountList = AccountListB
+        
+        Accounts.AccountList = AccountListB
         SaveAccountListToFile()
         #TODO Account deletion
 
 class Dev():
-    def AccountsTesting:
+    def AddAccount():
         Username = input("Username: ")
         Password = input("Password: ")
-        Password = HashPassword(Password)
-        #continue
+        Password = Cryptography.HashPassword(Password)
+        IsAdmin = True
+        IsOp = False
+        Accounts.NewAccount(Username, Password, IsAdmin, IsOp)
 
+
+    def GetAccountInfo():
+        Username = input("Username: ")
+        print(str(Accounts.GetAccountData(Username, "isAdmin")))
+
+    def ChangeAccount():
+        Username = input("Username: ")
+        key = input("Key: ")
+        value = input("Value: ")
+
+        #TODO CURRENT make this work
 
 class Main():
     def PrintLog(text):
@@ -108,13 +128,18 @@ class Main():
 
     def ManageClient(Username):
         #TODO Manage client
+        a = 1
 
     def AcceptIncomingConnections():
         #TODO Accept incoming connections
+        a = 1
 
     def PeriodicPing():
         #TODO Periodic ping
+        a = 1
 
     def PMManager():
         #TODO PM manager
+        a = 1
     
+Dev.GetAccountInfo()
