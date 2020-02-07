@@ -285,8 +285,53 @@ class Main():
             connection.close()
 
     def SignInProcess(connection, address):
-        #TODO Sign in process
-        time.sleep(1)
+        while True:
+            try:
+                LowLevelCommunications.SendServerPM(connection, "Please enter username, be careful about whitespace: ")
+                Username = connection.recv(BufferSize).decode("utf8")
+
+                DoesAccountExist = False
+
+                for account in Accounts.AccountList:
+                    if Accounts.GetAccountDataFromObject(account, "Username") == Username:
+                        LowLevelCommunications.SendServerPM(connection, "Identified account.")
+                        DoesAccountExist = True
+
+                if DoesAccountExist == True:
+                    break
+
+                else:
+                    LowLevelCommunications.SendServerPM(connection, "That account doesn't exist.")
+
+            except:
+                PrintLog("Error in sign in : Username pick loop, closing connection")
+                connection.close()
+                break
+
+            
+        try:
+            while True:
+                LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
+                time.sleep(0.5)
+                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+
+                Password = connection.recv(BufferSize).decode("utf8")
+                
+                if Accounts.GetAccountData(Username, "Password") == Password:
+                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
+                    reply = connection.recv(BufferSize).decode("utf8")
+                    if "continue" in reply:
+                        Thread(target=Main.ManageClient, args=(Username)).start()
+
+                    else:
+                        connection.close()
+
+                else:
+                    LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
+
+        except:
+            connection.Close()
 
     def NewAccountProcess(connection, address):
         try:
@@ -308,6 +353,7 @@ class Main():
                     InUse = True
                     LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
 
+                #TODO Check this works
                 for account in Accounts.AccountList:
                     if Accounts.GetAccountDataFromObject(account, "Username") == Username:
                         LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
@@ -382,6 +428,8 @@ def PrintLog(text):
     print(text)
     LogFile = open('log.txt', 'a')
     LogFile.write(text)
+
+#TODO Proper, server V2-Like remove function
 
 server = socket(AF_INET, SOCK_STREAM) 
 Port = int(input("Port: "))
