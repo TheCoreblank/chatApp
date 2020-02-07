@@ -151,10 +151,8 @@ def send(event=None):
     message = my_message.get()
     my_message.set("")
 
-    ToLong = False
-    if ToLong > 
     #if not client command, send
-    if not "sudo shutdown server" in message and not "/help" in message and ToLong == False:
+    if not "sudo shutdown server" in message and not "/help" in message:
         client_socket.send(bytes(message, "utf8"))
 
     SetLabelStatus(pastLabelStatus)
@@ -262,7 +260,7 @@ if DoCustom == True:
 
 else:
     listHeight = 20
-    listWidth = 50
+    listWidth = 100
 message_list = tkinter.Listbox(messages_frame, height = listHeight, width = listWidth, yscrollcommand=scrollbar.set)
 message_list.configure(background="white")
 
@@ -296,10 +294,10 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    #host = "127.0.0.1"
-    host = "86.31.133.208"
+    host = "127.0.0.1"
+    #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 443
+    port = 34000
     allowRemoteAccess = True
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.

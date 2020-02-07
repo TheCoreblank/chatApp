@@ -2,137 +2,371 @@ import time, hashlib, sys, string, pickle
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 
-class Server():
-    def PrivateMessageFromServer(Username):
-        #TODO Private message from server
-        a = 1
+class LowLevelCommunications():
+    #for before the client is logged in
+    def Encode(Text):
+        try:
+            Text = str(Text)
+            PrintLog("Encoding: " + Text)
+            return bytes(Text, 'utf8')
+        except:
+            PrintLog("Error encoding")
+
+    def SendServerPM(connection, text):
+        time.sleep(0.2)
+        text = str(text)
+        try:
+            PrintLog("Sending low level message PM")
+            ToSend = "[SERVER INTERNAL-LOW LEVEL-PM MESSAGE]" + text
+            connection.send(LowLevelCommunications.Encode(ToSend))
+        except:
+            PrintLog("Error sending low level message PM")
+            connection.close()
+
+        time.sleep(0.2)
+        
+
+    def SendInternalMessage(connection, text):
+        time.sleep(0.2)
+        text = str(text)
+        try:
+            PrintLog("Sending low level internal message")
+            ToSend = "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" + text
+            connection.send(LowLevelCommunications.Encode(ToSend))
+
+        except:
+            PrintLog("Error sending low level internal PM, passing")
+            pass
+
+        time.sleep(0.2)
+
     
-    def Broadcast(Username):
-        #TODO Broadcast
-        a = 1        
+class HighLevelCommunications():
+    def PrivateMessageFromServer(Username, Text):
+        hadError = False
+        Text = str(Text)
+        Username = str(Username)
+        PrintLog("Sending to " + Username + " : " + Text)
+        try:
+            Connection = Accounts.GetAccountData(Username, "ConnectionObject")
+        except:
+            PrintLog("Could not get connection for Server PM name, passing and not sending")
+            hadError = True
+            pass
+
+        try:
+            if hadError == False:
+                toSend = "[SERVER INTERNAL-PM MESSAGE]" + Text
+                Connection.send(HighLevelCommunications.Encode(toSend))
+            else:
+                PrintLog("Had error earlier, not sending")
+        except:
+            PrintLog("Error sending PM")
+    
+    def Broadcast(Text):
+        Text = str(Text)
+        try:
+            for account in Accounts.AccountList():
+                try:
+                    if Accounts.GetAccountDataFromObject(account, "isOnline") == True:
+                        Connection = Accounts.GetAccountDataFromObject(account, "ConnectionObject")
+                        ToSend = HighLevelCommunications.Encode("[SERVER INTERNAL-BROADCAST]" + str(Text))
+                        Connection.send(ToSend)
+                except:
+                    PrintLog("Error in broadcast : loop")
+                    continue
+
+            PrintLog("Broadcasted " + Text)
+        except:
+            PrintLog("Error in broadcast")
+            pass
 
 
-    def InternalMessage(Username):
-        #TODO Internal message
-        a = 1
+    def InternalMessage(Username, Text):
+        hadError = False
+        Text = str(Text)
+        Username = str(Username)
+        PrintLog("Sending internal message to " + Username + " : " + Text)
+        try:
+            Connection = Accounts.GetAccountData(Username, ConnectionObject)
+        except:
+            PrintLog("Could not get connection for internal message name, passing and not sending")
+            hadError = True
+            pass
 
-    def PingCheck(Username):
-        #TODO Ping check
-        a = 1
+        try:
+            if hadError == False:
+                toSend = "[SERVER INTERNAL-INTERNAL]" + Text
+                Connection.send(HighLevelCommunications.Encode(toSend))
+            else:
+                PrintLog("Had error earlier, not sending")
+        except:
+            PrintLog("Error sending internal message")
 
     def Encode(Text):
-        return bytes(Text, "utf8")
+        try:
+            Text = str(Text)
+            PrintLog("Encoding: " + Text)
+            return bytes(Text, 'utf8')
+        except:
+            PrintLog("Error encoding")
 
 class Cryptography():
-    def KeyExchange():
-        #TODO Key exchange
-        a = 1
-
-    def Encrypt(text, publicKey):
-        #TODO Encryption
-        a = 1
-
-    def Decrypt(text, privateKey):
-        #TODO Decryption
-        a = 1
-
     def HashPassword(text):
-        return str(hashlib.sha512(bytes(str(text) + "f8weucrwirun3wurifiwshfklhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89", "utf8")).hexdigest())
+        i = 0
+        while True:
+            i = i + 1
+            text = str(hashlib.sha512(bytes(str(text) + str(i) + 'f8weucrwirun3wurifiwshfkfdsifjisdjfisjfiosjflsjfiljdslkfjllhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89', 'utf8')).hexdigest())
+            if i == 128:
+                break
 
+        return str(text)
+        
 class Accounts():
     AccountList = []
     #Account specifications:
     #A example account
     #{
-    #    Username : "Alex"
-    #    Password : "sjfhjsbfh9w8fn028h02n etc",
-    #    PendingPms : {Sender: "Luke", Message : "Hello!"},
-    #    isAdmin : True
-    #    isOnline : True
-    #    isOP: True
-    #    connectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : "I am not copying an entire sockets connection object"}
+    #    Username : 'Alex'
+    #    Password : 'sjfhjsbfh9w8fn028h02n etc',
+    #    PendingPms : {Sender: 'Luke', Message : 'Hello!'},
+    #    isAdmin : True,
+    #    isOnline : True,
+    #    connectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
     #}
 
     def ReadAccountList():
-        SaveFile = open("accounts", "rb")
-        Accounts.AccountList = pickle.load(SaveFile)
+        try:
+            SaveFile = open('accounts', 'rb')
+            Accounts.AccountList = pickle.load(SaveFile)
+        except:
+            PrintLog("Error reading account list from file, passing")
+            pass
 
     def SaveAccountListToFile():
-        SaveFile = open("accounts", "wb")
-        pickle.dump(Accounts.AccountList, SaveFile)
+        try:
+            SaveFile = open('accounts', 'wb')
+            pickle.dump(Accounts.AccountList, SaveFile)
+        except:
+            PrintLog("Error saving account list from file, passing")
+            pass
 
-    def NewAccount(UsernameInput, PasswordInput, isAdminInput, isOpInput):
-        #TODO New account
+    def NewAccount(UsernameInput, PasswordInput, isAdminInput):
+        #try:
+        UsernameInput = str(UsernameInput)
+        PasswordInput = str(PasswordInput)
+        isAdminInput = str(isAdminInput)
+
         Accounts.ReadAccountList()
-        Accounts.AccountList.append({"Username" : UsernameInput, "Password" : PasswordInput, "isAdmin" : isAdminInput, "isOnline" : True, "isOP" : isOpInput})
+        Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
         Accounts.SaveAccountListToFile()
+        #except:
+        #    try:
+        #        PrintLog("Error creating new account, username: " + str(UsernameInput))
+        #    except:
+        #        PrintLog("Error creating new account, error printing username")
+
+    def GetAccountDataFromObject(Account, Key):
+        Accounts.ReadAccountList()
+        try:
+            Key = str(Key)
+            toReturn = Account.get(Key)
+            return toReturn
+        
+        except:
+            PrintLog("Error getting account data from object")
 
     def GetAccountData(UsernameInput, key):
-        Accounts.ReadAccountList()
-        for account in Accounts.AccountList:
-            if account.get("Username") == UsernameInput:
-                return account.get(key)
+        try:
+            returned = False
+            UsernameInput = str(UsernameInput)
+            key = str(key)
 
-        Accounts.SaveAccountListToFile()
-        #TODO Get account data
+            Accounts.ReadAccountList()
+            for account in Accounts.AccountList:
+                if account.get('Username') == UsernameInput:
+                    return account.get(key)
+                    returned = True
+
+            if returned == False:
+                PrintLog("Could not find data when searching " + str(username) + " for " + str(key))
+                return ""
+
+            Accounts.SaveAccountListToFile()
+
+        except:
+            try:
+                PrintLog("Error getting account data for " + str(username))
+            except:
+                PrintLog("Error getting account data, error printing name")
 
     def PushAccountData(UsernameInput, key, value):
-        ReadAccountList()
+        Accounts.ReadAccountList()
+        UsernameInput = str(UsernameInput)
+        key = str(key)
         for account in Accounts.AccountList:
-            if account.get("Username") == UsernameInput:
+            if account.get('Username') == UsernameInput:
                 account.update({key : value})
 
-        SaveAccountListToFile()
-        #TODO Push account data
+        Accounts.SaveAccountListToFile()
 
     def DeleteAccount(UsernameInput, PasswordInput):
-        ReadAccountList()
+        UsernameInput = str(UsernameInput)
+        PasswordInput = str(PasswordInput)
+
+        Accounts.ReadAccountList()
         AccountListB = Accounts.AccountList
         for account in AccountList:
-            if account.get("Username") == UsernameInput:
-                if account.get("Password") == PasswordInput:
+            if account.get('Username') == UsernameInput:
+                if account.get('Password') == PasswordInput:
                     AccountListB.remove(account)
         
         Accounts.AccountList = AccountListB
-        SaveAccountListToFile()
-        #TODO Account deletion
+        Accounts.SaveAccountListToFile()
 
 class Dev():
     def AddAccount():
-        Username = input("Username: ")
-        Password = input("Password: ")
+        Username = input('Username: ')
+        Password = input('Password: ')
         Password = Cryptography.HashPassword(Password)
         IsAdmin = True
         IsOp = False
-        Accounts.NewAccount(Username, Password, IsAdmin, IsOp)
+        Accounts.NewAccount(Username, Password, IsAdmin)
 
 
     def GetAccountInfo():
-        Username = input("Username: ")
-        print(str(Accounts.GetAccountData(Username, "isAdmin")))
+        Username = input('Username: ')
+        print(str(Accounts.GetAccountData(Username, 'isAdmin')))
 
-    def ChangeAccount():
-        Username = input("Username: ")
-        key = input("Key: ")
-        value = input("Value: ")
+    def ChangeAccountInfo():
+        Username = input('Username: ')
+        key = input('Key: ')
+        value = input('Value: ')
 
-        #TODO CURRENT make this work
+        Accounts.PushAccountData(Username, key, value)
 
 class Main():
-    def PrintLog(text):
-        text = str(text)
-        print(text)
-        LogFile = open("log.txt", "a")
-        LogFile.write(text)
-        #TODO PrintLog
-
     def ManageClient(Username):
         #TODO Manage client
         a = 1
 
     def AcceptIncomingConnections():
         #TODO Accept incoming connections
-        a = 1
+        while True:
+            connection, address = server.accept()
+            PrintLog("Accepted connection from " + str(address) + " , referring")
+            Thread(target=Main.WelcomeNewConnections, args=(connection, address)).start()
+
+    def WelcomeNewConnections(connection, address):
+        try:
+            LowLevelCommunications.SendServerPM(connection, "Make a new account (M), or sign in (S)")
+            ContinueConnectionProcess = True
+        except:
+            PrintLog("Error sending to new client. Removing client.")
+            connection.close()
+            ContinueConnectionProcess = False
+        
+        try:
+            if ContinueConnectionProcess == True:
+                response = connection.recv(BufferSize).decode("utf8")
+                if response == "M":
+                    Thread(target=Main.NewAccountProcess, args=(connection, address)).start()
+
+                else:
+                    Thread(target=Main.SignInProcess, args=(connection, address)).start()
+
+
+        except:
+            PrintLog("Error in welcome new connections. Removing client")
+            connection.close()
+
+    def SignInProcess(connection, address):
+        time.sleep(1)
+        #TODO New account process
+
+    def NewAccountProcess(connection, address):
+        #TODO Error handle this shit
+        try:
+            LowLevelCommunications.SendServerPM(connection, "Please enter phrase to auth new account")
+            response = connection.recv(BufferSize).decode("utf8")
+        except:
+            PrintLog("Error in NewAccountProcess, closing connection")
+            connection.close()
+
+        try:
+            if response == "Hello":
+                while True:
+                    InUse = False
+                    LowLevelCommunications.SendServerPM(connection, "Please enter your new username: ")
+                    response = connection.recv(BufferSize).decode("utf8")
+                    Username = response
+
+                    if " " in Username:
+                        InUse = True
+                        LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
+
+                    for account in Accounts.AccountList:
+                        if Accounts.GetAccountDataFromObject(account, "Username") == Username:
+                            LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
+                            InUse = True
+                    
+                    if InUse == False:
+                        break
+
+                if InUse == False:
+                    LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
+                    response = connection.recv(BufferSize).decode("utf8")
+                    Password = response
+
+                    loops = 0
+                    while loops < 50:
+                        loops = loops + 1
+                        LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
+                        response = connection.recv(BufferSize).decode("utf8")
+                        if response == "Y":
+                            LowLevelCommunications.SendServerPM(connection, "Password: ")
+                            #FIXME placeholder pw
+                            response = connection.recv(BufferSize).decode("utf8")
+
+                            if response == "Password1!":
+                                IsAdmin = True
+                                LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
+                                break
+
+                            else:
+                                IsAdmin = False
+                                LowLevelCommunications.SendServerPM(connection, "Password wrong.")
+
+                        else:
+                            break
+                            IsAdmin = False
+
+                    time.sleep(0.5)
+                    LowLevelCommunications.SendServerPM(connection, "Creating account...")
+                    #waits for a bit to stop spamming
+                    time.sleep(2.5)
+                    Accounts.NewAccount(Username, Password, IsAdmin)
+                    time.sleep(1)
+                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
+                    time.sleep(0.2)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
+                    response = connection.recv(BufferSize).decode("utf8")
+                    if response == "continue":
+                        Thread(Target=Main.SignInProcess).start()
+
+                    else:
+                        connection.close()
+
+                else:
+                    connection.close()
+
+            else:
+                connection.close()
+        except:
+            PrintLog("Error in account creation, exiting")    
+            connection.close()  
+
 
     def PeriodicPing():
         #TODO Periodic ping
@@ -141,5 +375,24 @@ class Main():
     def PMManager():
         #TODO PM manager
         a = 1
-    
-Dev.GetAccountInfo()
+
+#NOTE Not in any class because I want it to be readily accessed and it doesn't belong to any in particular
+def PrintLog(text):
+    text = str(text)
+    print(text)
+    LogFile = open('log.txt', 'a')
+    LogFile.write(text)
+
+server = socket(AF_INET, SOCK_STREAM) 
+Port = int(input("Port: "))
+Host = ""
+BufferSize = 2048
+server.bind((Host, Port))
+server.listen(1000)
+
+Main.AcceptIncomingConnections()
+
+#NOTES:
+#Fix it allowing accounts of same name, and strip whitespace when checking
+#Fix it breaking when you exit the client
+#Do sign in 
