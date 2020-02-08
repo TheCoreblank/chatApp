@@ -175,7 +175,7 @@ class Accounts():
             isAdminInput = str(isAdminInput)
 
             #Accounts.ReadAccountList()
-            Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
+            Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : False})
             #Accounts.SaveAccountListToFile
         except:
             try:
@@ -262,18 +262,16 @@ class Main():
             connection.close()
             NoError = False
 
-        while NoError == True and Accounts.GetAccountData(Username, "ErrorCount") < 10:
+        while NoError == True and Accounts.GetAccountData(Username, "ErrorCount") < 10 and Accounts.GetAccountData(Username, "isOnline") == True:
             try:
                 connection = Accounts.GetAccountData(Username, "ConnectionObject")
                 message = connection.recv(BufferSize).decode("utf8")
 
                 if message:
-                    if "[PING INTERNAL]" in message:
-                        PingManager.LastPingUpdate = time.time()
-                        Accounts.PushAccountData(Username, "isOnline", True)
+                    Accounts.PushAccountData(Username, "LastSeen", time.time())
+                    Accounts.PushAccountData(Username, "isOnline", True)
 
-
-                    elif "/pm" in message:
+                    if"/pm" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Who do you want to send the PM to?")
                         ToSendPmTo = connection.recv(BufferSize).decode("utf8")
                         ToSendExists = False
@@ -299,15 +297,18 @@ class Main():
 
                             HighLevelCommunications.PrivateMessageFromServer(Username, "Added to buffer.")
 
+                    elif "/exit" in message or "/quit" in message:
+                        Accounts.PushAccountData(Username, "IsOnline", False)
 
-                    else:
+                    elif not "[CLIENT PING UPDATE]" in message:
                         PrintLog(Username + ": " + message)
                         HighLevelCommunications.Broadcast(Username + ": " + message)
-                        Accounts.PushAccountData(Username, "isOnline", True)
 
             except:
                 PrintLog("Error in manage client, exiting")
                 break
+
+        connection.close()
 
     def AcceptIncomingConnections():
         while True:
@@ -360,30 +361,35 @@ class Main():
                 PrintLog("Error in sign in : Username pick loop, closing connection")
                 connection.close()
                 break
+        
+        #FIXME Always set to online
+        if Accounts.GetAccountData(Username, "IsOnline") == False:
+            while True:
+                LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
+                time.sleep(0.2)
+                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
 
-            
-        while True:
-            LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
-            time.sleep(0.2)
-            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+                Password = connection.recv(BufferSize).decode("utf8")
+                
+                if Accounts.GetAccountData(Username, "Password") == Password:
+                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
+                    reply = connection.recv(BufferSize).decode("utf8")
+                    print(str(Username))
+                    if reply == "continue":
+                        Accounts.PushAccountData(Username, "ErrorCount", 0)
+                        Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
+                        break
 
-            Password = connection.recv(BufferSize).decode("utf8")
-            
-            if Accounts.GetAccountData(Username, "Password") == Password:
-                Accounts.PushAccountData(Username, "ConnectionObject", connection)
-                HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
-                reply = connection.recv(BufferSize).decode("utf8")
-                print(str(Username))
-                if reply == "continue":
-                    Accounts.PushAccountData(Username, "ErrorCount", 0)
-                    Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
-                    break
+                    else:
+                        connection.close()
 
                 else:
-                    connection.close()
+                    LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
 
-            else:
-                LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
+        else:
+            LowLevelCommunications.SendServerPM(connection, "You are online somewhere else.")
+            connection.close()
 
     def NewAccountProcess(connection, address):
         try:
@@ -405,7 +411,6 @@ class Main():
                     InUse = True
                     LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
 
-                #TODO Check this works
                 for account in Accounts.AccountList:
                     if Accounts.GetAccountDataFromObject(account, "Username") == Username:
                         LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
@@ -506,11 +511,6 @@ class PMManager:
             
             except:
                 PrintLog("Error in PM manager, can not increase log")
-class PingManager:
-    LastPingUpdate = 0
-    def PingManager():
-        #TODO Ping manager
-        a = 1
 
 #NOTE Not in any class because I want it to be readily accessed and it doesn't belong to any in particular
 def PrintLog(text):
@@ -519,6 +519,19 @@ def PrintLog(text):
     text = text + "\n"
     LogFile = open('log.txt', 'a')
     LogFile.write(text)
+
+class PingManager:
+    def PingManager():
+        while True:
+            time.sleep(10)
+            for account in Accounts.AccountList:
+                if Accounts.GetAccountDataFromObject(account, "IsOnline") == True:
+                    lastSeen = Accounts.GetAccountDataFromObject(account, "LastSeen")
+                    difference = time.time() - lastSeen
+
+                    if difference > 60:
+                        Username = Accounts.GetAccountDataFromObject(account, "Username")
+                        Accounts.PushAccountData(Username, "IsOnline", False)
 
 server = socket(AF_INET, SOCK_STREAM) 
 Port = int(input("Port: "))
@@ -532,5 +545,7 @@ PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 Accounts.InitAccountList()
 
 Thread(target=PMManager.PMManager).start()
+
+Thread(target=PingManager.PingManager).start()
 
 Main.AcceptIncomingConnections()

@@ -1,0 +1,118 @@
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581179467.1023006
+PM Manager started
+Accepted connection from ('127.0.0.1', 36328) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Error sending low level message PM
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error sending low level message PM
+Error in sign in : Username pick loop, closing connection
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Accepted connection from ('127.0.0.1', 36376) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Sorry! That username is already in use.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: {quit}
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581180535.6002014
+PM Manager started
+Accepted connection from ('127.0.0.1', 50848) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581180622.5387022
+PM Manager started
+Accepted connection from ('127.0.0.1', 50928) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Accepted connection from ('127.0.0.1', 50938) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
