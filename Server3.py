@@ -65,21 +65,21 @@ class HighLevelCommunications():
     
     def Broadcast(Text):
         Text = str(Text)
-        try:
-            for account in Accounts.AccountList():
-                try:
-                    if Accounts.GetAccountDataFromObject(account, "isOnline") == True:
-                        Connection = Accounts.GetAccountDataFromObject(account, "ConnectionObject")
-                        ToSend = HighLevelCommunications.Encode("[SERVER INTERNAL-BROADCAST]" + str(Text))
-                        Connection.send(ToSend)
-                except:
-                    PrintLog("Error in broadcast : loop")
-                    continue
+        #try:
+        for account in Accounts.AccountList:
+            try:
+                if Accounts.GetAccountDataFromObject(account, "isOnline") == True:
+                    Connection = Accounts.GetAccountDataFromObject(account, "ConnectionObject")
+                    ToSend = HighLevelCommunications.Encode("[SERVER INTERNAL-BROADCAST]" + str(Text))
+                    Connection.send(ToSend)
+            except:
+                PrintLog("Error in broadcast : loop")
+                continue
 
-            PrintLog("Broadcasted " + Text)
-        except:
-            PrintLog("Error in broadcast")
-            pass
+        PrintLog("Broadcasted " + Text)
+        #except:
+        #    PrintLog("Error in broadcast")
+        #    pass
 
 
     def InternalMessage(Username, Text):
@@ -132,19 +132,25 @@ class Accounts():
     #    PendingPms : {Sender: 'Luke', Message : 'Hello!'},
     #    isAdmin : True,
     #    isOnline : True,
-    #    connectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
+    #    ConnectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
     #}
 
     def ReadAccountList():
+        #BROKEN, SO NOT RUNNING
         SaveFile = open('accounts', 'rb')
         Accounts.AccountList = pickle.load(SaveFile)
 
     def SaveAccountListToFile():
+        #BROKEN, SO NOT RUNNING
         SaveFile = open('accounts', 'wb')
         AccountsListNoSockets = Accounts.AccountList
-        
-        del AccountsListNoSockets["ConnectionObject"]
-        
+
+        for account in Accounts.AccountList:
+            try:
+                del account["ConnectionObject"]
+            except KeyError:
+                PrintLog("Connection object not found to delete")
+
         print(str(AccountsListNoSockets))
 
         pickle.dump(AccountsListNoSockets, SaveFile)
@@ -162,7 +168,7 @@ class Accounts():
 
             #Accounts.ReadAccountList()
             Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : True})
-            Accounts.SaveAccountListToFile()
+            #Accounts.SaveAccountListToFile
         except:
             try:
                 PrintLog("Error creating new account, username: " + str(UsernameInput))
@@ -195,7 +201,7 @@ class Accounts():
                 PrintLog("Could not find data when searching " + str(username) + " for " + str(key))
                 return ""
 
-            Accounts.SaveAccountListToFile()
+            #Accounts.SaveAccountListToFile
 
         except:
             try:
@@ -211,7 +217,7 @@ class Accounts():
             if account.get('Username') == UsernameInput:
                 account.update({key : value})
 
-        Accounts.SaveAccountListToFile()
+        #Accounts.SaveAccountListToFile
 
     def DeleteAccount(UsernameInput, PasswordInput):
         UsernameInput = str(UsernameInput)
@@ -225,7 +231,7 @@ class Accounts():
                     AccountListB.remove(account)
         
         Accounts.AccountList = AccountListB
-        Accounts.SaveAccountListToFile()
+        #Accounts.SaveAccountListToFile
 
     def InitAccountList():
         Accounts.PopulateFile()
@@ -254,9 +260,27 @@ class Dev():
         Accounts.PushAccountData(Username, key, value)
 
 class Main():
-    def ManageClient(Username):
-        #TODO Manage client
-        a = 1
+    def ManageClientHighLevel(Username):
+        HighLevelCommunications.InternalMessage(Username, "SENDPINGS=TRUE")
+        HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
+        while True:
+            #try:
+            connection = Accounts.GetAccountData(Username, "ConnectionObject")
+            message = connection.recv(BufferSize).decode("utf8")
+
+            if message:
+                if "[PING INTERNAL]" in message:
+                    PingManager.LastPingUpdate = time.time()
+                    Accounts.PushAccountData(Username, "isOnline", True)
+
+                else:
+                    PrintLog(Username + ": " + message)
+                    HighLevelCommunications.Broadcast(Username + ": " + message)
+                    Accounts.PushAccountData(Username, "isOnline", True)
+
+            #except:
+            #    PrintLog("Error in manage client, exiting")
+            #    break
 
     def AcceptIncomingConnections():
         while True:
@@ -297,7 +321,6 @@ class Main():
 
                 for account in Accounts.AccountList:
                     if Accounts.GetAccountDataFromObject(account, "Username") == Username:
-                        LowLevelCommunications.SendServerPM(connection, "Identified account.")
                         DoesAccountExist = True
 
                 if DoesAccountExist == True:
@@ -312,29 +335,26 @@ class Main():
                 break
 
             
-        try:
-            while True:
-                LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
-                time.sleep(0.5)
-                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+        while True:
+            LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
+            time.sleep(0.2)
+            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
 
-                Password = connection.recv(BufferSize).decode("utf8")
-                
-                if Accounts.GetAccountData(Username, "Password") == Password:
-                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
-                    reply = connection.recv(BufferSize).decode("utf8")
-                    if "continue" in reply:
-                        Thread(target=Main.ManageClient, args=(Username)).start()
-
-                    else:
-                        connection.close()
+            Password = connection.recv(BufferSize).decode("utf8")
+            
+            if Accounts.GetAccountData(Username, "Password") == Password:
+                Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
+                reply = connection.recv(BufferSize).decode("utf8")
+                if reply == "continue":
+                    Thread(target=Main.ManageClientHighLevel, args=(str(Username))).start()
+                    break
 
                 else:
-                    LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
+                    connection.close()
 
-        except:
-            connection.close()
+            else:
+                LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
 
     def NewAccountProcess(connection, address):
         try:
@@ -369,6 +389,7 @@ class Main():
 
             if InUse == False:
                 LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
+                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
                 response = connection.recv(BufferSize).decode("utf8")
                 Password = response
 
@@ -405,7 +426,11 @@ class Main():
                 HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
                 time.sleep(0.2)
                 HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
-                response = connection.recv(BufferSize).decode("utf8")
+                try:
+                    response = connection.recv(BufferSize).decode("utf8")
+                except:
+                    PrintLog("Error getting response from client")
+
                 if response == "continue":
                     Thread(target=Main.SignInProcess, args=(connection, address)).start()
 
@@ -421,8 +446,15 @@ class Main():
         #    PrintLog("Error in account creation, exiting")    
         #    connection.close()  
 
+class PMManager:
     def PMManager():
         #TODO PM manager
+        a = 1
+
+class PingManager:
+    LastPingUpdate = 0
+    def PingManager():
+        #TODO Ping manager
         a = 1
 
 #NOTE Not in any class because I want it to be readily accessed and it doesn't belong to any in particular
