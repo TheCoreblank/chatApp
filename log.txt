@@ -465,3 +465,206 @@ Broadcasted Alex: hfds
 Alex: {quit}
 Encoding: [SERVER INTERNAL-BROADCAST]Alex: {quit}
 Broadcasted Alex: {quit}
+Accepted connection from ('127.0.0.1', 53452) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+Sending internal message to Alex : SENDPINGS=TRUE
+Could not get connection for internal message name, passing and not sending
+Had error earlier, not sending
+Sending to Alex : Welcome to the chatroom.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+Alex: sdfkl
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfkl
+Broadcasted Alex: sdfkl
+Alex: ds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: ds
+Broadcasted Alex: ds
+Alex: sd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sd
+Broadcasted Alex: sd
+Alex: shd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: shd
+Broadcasted Alex: shd
+Alex: sfdhj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdhj
+Broadcasted Alex: sfdhj
+Alex: sdf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+Broadcasted Alex: sdf
+Alex: dsfk
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfk
+Broadcasted Alex: dsfk
+Alex: ds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: ds
+Broadcasted Alex: ds
+Alex: sfhjdsf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfhjdsf
+Broadcasted Alex: sfhjdsf
+Alex: dsfhjds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfhjds
+Broadcasted Alex: dsfhjds
+Alex: dshjfds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dshjfds
+Broadcasted Alex: dshjfds
+Alex: fdshfs
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdshfs
+Broadcasted Alex: fdshfs
+Alex: fsdhf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdhf
+Broadcasted Alex: fsdhf
+Alex: {quit}
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: {quit}
+Broadcasted Alex: {quit}
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581183394.0617442
+PM Manager started
+Accepted connection from ('127.0.0.1', 53632) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error in sign in : Username pick loop, closing connection
+Error getting account data, error printing name
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in signin
+Accepted connection from ('127.0.0.1', 53648) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Accepted connection from ('127.0.0.1', 53662) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Error
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Error sending low level message PM
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in account creation
+Accepted connection from ('127.0.0.1', 53680) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Error
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Error sending low level message PM
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in account creation
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581183507.056747
+PM Manager started
+Accepted connection from ('127.0.0.1', 53762) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Accepted connection from ('127.0.0.1', 53772) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Error
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Error sending low level message PM
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in account creation
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581183567.8160856
+PM Manager started
+Accepted connection from ('127.0.0.1', 53818) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581183664.3250551
+PM Manager started
+Accepted connection from ('127.0.0.1', 40526) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+Sending internal message to Alex : SENDPINGS=TRUE
+Could not get connection for internal message name, passing and not sending
+Had error earlier, not sending
+Sending to Alex : Welcome to the chatroom.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+Alex: ksjflks
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: ksjflks
+Broadcasted Alex: ksjflks
+Alex: /error
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: /error
+Broadcasted Alex: /error

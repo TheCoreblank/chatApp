@@ -426,6 +426,15 @@ class Main():
                         if Accounts.GetAccountDataFromObject(account, "Username") == Username:
                             LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
                             InUse = True
+
+                    bannedWords = ["Marlwood is great", "Admin", "Server", "admin", "server"]
+                    for word in bannedWords:
+                        if word in Username:
+                            LowLevelCommunications.SendServerPM(connection, "Username is in a blacklist.")
+                            InUse = True
+
+                    if "42" in Username:
+                        LowLevelCommunications.SendServerPM(connection, "42! Nice!")
                     
                     if InUse == False:
                         break
@@ -553,6 +562,7 @@ class PingManager:
                         Accounts.PushAccountData(Username, "IsOnline", False)
 
 server = socket(AF_INET, SOCK_STREAM) 
+#TODO Improve
 Port = int(input("Port: "))
 Host = ""
 BufferSize = 2048
