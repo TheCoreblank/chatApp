@@ -62,6 +62,7 @@ class HighLevelCommunications():
                 PrintLog("Had error earlier, not sending")
         except:
             PrintLog("Error sending PM")
+            Accounts.IncreaseErrorCount(Username)
     
     def Broadcast(Text):
         Text = str(Text)
@@ -74,6 +75,11 @@ class HighLevelCommunications():
                     Connection.send(ToSend)
             except:
                 PrintLog("Error in broadcast : loop")
+                try:
+                    Username = Accounts.GetAccountDataFromObject(account, "Username")
+                    Accounts.IncreaseErrorCount(Username)
+                except:
+                    pass
                 continue
 
         PrintLog("Broadcasted " + Text)
@@ -92,6 +98,7 @@ class HighLevelCommunications():
         except:
             PrintLog("Could not get connection for internal message name, passing and not sending")
             hadError = True
+            Accounts.IncreaseErrorCount(Username)
             pass
 
         try:
@@ -102,6 +109,7 @@ class HighLevelCommunications():
                 PrintLog("Had error earlier, not sending")
         except:
             PrintLog("Error sending internal message")
+            Accounts.IncreaseErrorCount(Username)
 
     def Encode(Text):
         try:
@@ -209,6 +217,11 @@ class Accounts():
             except:
                 PrintLog("Error getting account data, error printing name")
 
+    def IncreaseErrorCount(UsernameInput):
+        CurrentErrorCount = Accounts.GetAccountData(UsernameInput, "ErrorCount")
+        if not CurrentErrorCount == None:
+            Accounts.PushAccountData(UsernameInput, "ErrorCount", (CurrentErrorCount + 1))
+
     def PushAccountData(UsernameInput, key, value):
         #Accounts.ReadAccountList()
         UsernameInput = str(UsernameInput)
@@ -238,49 +251,63 @@ class Accounts():
         Accounts.ReadAccountList()
         print(str(len(Accounts.AccountList)))
 
-class Dev():
-    def AddAccount():
-        Username = input('Username: ')
-        Password = input('Password: ')
-        Password = Cryptography.HashPassword(Password)
-        IsAdmin = True
-        IsOp = False
-        Accounts.NewAccount(Username, Password, IsAdmin)
-
-
-    def GetAccountInfo():
-        Username = input('Username: ')
-        print(str(Accounts.GetAccountData(Username, 'isAdmin')))
-
-    def ChangeAccountInfo():
-        Username = input('Username: ')
-        key = input('Key: ')
-        value = input('Value: ')
-
-        Accounts.PushAccountData(Username, key, value)
-
 class Main():
     def ManageClientHighLevel(Username):
-        HighLevelCommunications.InternalMessage(Username, "SENDPINGS=TRUE")
-        HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
-        while True:
-            #try:
-            connection = Accounts.GetAccountData(Username, "ConnectionObject")
-            message = connection.recv(BufferSize).decode("utf8")
+        NoError = True
+        try:
+            HighLevelCommunications.InternalMessage(Username, "SENDPINGS=TRUE")
+            HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
+        except:
+            PrintLog("Error at start of high level manage client")
+            connection.close()
+            NoError = False
 
-            if message:
-                if "[PING INTERNAL]" in message:
-                    PingManager.LastPingUpdate = time.time()
-                    Accounts.PushAccountData(Username, "isOnline", True)
+        while NoError == True and Accounts.GetAccountData(Username, "ErrorCount") < 10:
+            try:
+                connection = Accounts.GetAccountData(Username, "ConnectionObject")
+                message = connection.recv(BufferSize).decode("utf8")
 
-                else:
-                    PrintLog(Username + ": " + message)
-                    HighLevelCommunications.Broadcast(Username + ": " + message)
-                    Accounts.PushAccountData(Username, "isOnline", True)
+                if message:
+                    if "[PING INTERNAL]" in message:
+                        PingManager.LastPingUpdate = time.time()
+                        Accounts.PushAccountData(Username, "isOnline", True)
 
-            #except:
-            #    PrintLog("Error in manage client, exiting")
-            #    break
+
+                    elif "/pm" in message:
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "Who do you want to send the PM to?")
+                        ToSendPmTo = connection.recv(BufferSize).decode("utf8")
+                        ToSendExists = False
+                        ToSendOnline = False
+
+                        for account in Accounts.AccountList:
+                            if Accounts.GetAccountDataFromObject(account, "Username") == ToSendPmTo:
+                                ToSendExists = True
+                                if Accounts.GetAccountDataFromObject(account, "isOnline") == True:
+                                    ToSendOnline = True
+
+                        if ToSendExists == False:
+                            HighLevelCommunications.PrivateMessageFromServer(Username, "User does not exist.")
+
+                        if ToSendExists == True and ToSendOnline == False:
+                            HighLevelCommunications.PrivateMessageFromServer(Username, "User exists, but is not online")
+
+                        if ToSendExists == True and ToSendOnline == True:
+                            HighLevelCommunications.PrivateMessageFromServer(Username, "What do you want to send?")
+                            PmToSend = connection.recv(BufferSize).decode("utf8")
+
+                            Accounts.PushAccountData(ToSendPmTo, "PendingPms", {"Sender" : Username, "Message" : PmToSend, "HasAnswered" : False})
+
+                            HighLevelCommunications.PrivateMessageFromServer(Username, "Added to buffer.")
+
+
+                    else:
+                        PrintLog(Username + ": " + message)
+                        HighLevelCommunications.Broadcast(Username + ": " + message)
+                        Accounts.PushAccountData(Username, "isOnline", True)
+
+            except:
+                PrintLog("Error in manage client, exiting")
+                break
 
     def AcceptIncomingConnections():
         while True:
@@ -346,8 +373,10 @@ class Main():
                 Accounts.PushAccountData(Username, "ConnectionObject", connection)
                 HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
                 reply = connection.recv(BufferSize).decode("utf8")
+                print(str(Username))
                 if reply == "continue":
-                    Thread(target=Main.ManageClientHighLevel, args=(str(Username))).start()
+                    Accounts.PushAccountData(Username, "ErrorCount", 0)
+                    Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
                     break
 
                 else:
@@ -448,9 +477,36 @@ class Main():
 
 class PMManager:
     def PMManager():
-        #TODO PM manager
-        a = 1
+        #FIXME PM manager
+        PrintLog("PM Manager started")
+        while True:
+            try:
+                time.sleep(5)
+                for Account in Accounts.AccountList:
+                    if not Accounts.GetAccountDataFromObject(Account, "PendingPms") == None:
+                        if Accounts.GetAccountDataFromObject(Account, "isOnline") == True:
+                            Username = Accounts.GetAccountDataFromObject(Account, "Username")
+                            PendingPMobject = Accounts.GetAccountData(Username, "PendingPms")
+                            if PendingPMobject.get("HasAnswered") == False:
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "You have received a private message.")
+                                time.sleep(0.25)
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "Name: " + str(PendingPMobject.get("Sender")))
+                                time.sleep(0.25)
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "Message: " + str(PendingPMobject.get("Message")))
+                                time.sleep(0.25)
+                                Accounts.PushAccountData(Username, "PendingPms", None)
 
+                            else:
+                                PrintLog("PM MANAGER: Already answered")
+
+                        else:
+                            PrintLog("Not online, not sending PM")
+
+            except TypeError:
+                continue
+            
+            except:
+                PrintLog("Error in PM manager, can not increase log")
 class PingManager:
     LastPingUpdate = 0
     def PingManager():
@@ -464,8 +520,6 @@ def PrintLog(text):
     LogFile = open('log.txt', 'a')
     LogFile.write(text)
 
-#TODO Proper, server V2-Like remove function
-
 server = socket(AF_INET, SOCK_STREAM) 
 Port = int(input("Port: "))
 Host = ""
@@ -474,6 +528,8 @@ server.bind((Host, Port))
 server.listen(1000)
 
 Accounts.InitAccountList()
+
+Thread(target=PMManager.PMManager).start()
 
 Main.AcceptIncomingConnections()
 

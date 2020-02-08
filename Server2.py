@@ -409,7 +409,7 @@ def HandlePMs(connection, name):
 
 #first thread assigned to someone. It gets name and refers to the main thread. It's partially here
 #just cause that function is so long. I
-''' removed due to not working. Will come back. #FIXME Local command console
+''' removed due to not working. 
 def LocalServerCommandConsole():
     while True:
         message = str(input("CmdConsole > "))
