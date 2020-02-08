@@ -535,8 +535,3 @@ Accounts.InitAccountList()
 Thread(target=PMManager.PMManager).start()
 
 Main.AcceptIncomingConnections()
-
-#NOTES:
-#Fix it allowing accounts of same name, and strip whitespace when checking
-#Fix it breaking when you exit the client
-#Do sign in 
