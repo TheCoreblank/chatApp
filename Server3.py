@@ -262,6 +262,9 @@ class Main():
             connection.close()
             NoError = False
 
+        Accounts.PushAccountData(Username, "LastSeen", time.time())
+        Accounts.PushAccountData(Username, "isOnline", True)
+
         while NoError == True and Accounts.GetAccountData(Username, "ErrorCount") < 10 and Accounts.GetAccountData(Username, "isOnline") == True:
             try:
                 connection = Accounts.GetAccountData(Username, "ConnectionObject")
@@ -308,6 +311,7 @@ class Main():
                 PrintLog("Error in manage client, exiting")
                 break
 
+        connection = Accounts.GetAccountData(Username, "ConnectionObject")
         connection.close()
 
     def AcceptIncomingConnections():
@@ -340,56 +344,62 @@ class Main():
             connection.close()
 
     def SignInProcess(connection, address):
-        while True:
-            try:
-                LowLevelCommunications.SendServerPM(connection, "Please enter username, be careful about whitespace: ")
-                Username = connection.recv(BufferSize).decode("utf8")
-
-                DoesAccountExist = False
-
-                for account in Accounts.AccountList:
-                    if Accounts.GetAccountDataFromObject(account, "Username") == Username:
-                        DoesAccountExist = True
-
-                if DoesAccountExist == True:
-                    break
-
-                else:
-                    LowLevelCommunications.SendServerPM(connection, "That account doesn't exist.")
-
-            except:
-                PrintLog("Error in sign in : Username pick loop, closing connection")
-                connection.close()
-                break
-        
-        #FIXME Always set to online
-        if Accounts.GetAccountData(Username, "IsOnline") == False:
+        try:
             while True:
-                LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
-                time.sleep(0.2)
-                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+                try:
+                    LowLevelCommunications.SendServerPM(connection, "Please enter username, be careful about whitespace: ")
+                    Username = connection.recv(BufferSize).decode("utf8")
 
-                Password = connection.recv(BufferSize).decode("utf8")
-                
-                if Accounts.GetAccountData(Username, "Password") == Password:
-                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
-                    reply = connection.recv(BufferSize).decode("utf8")
-                    print(str(Username))
-                    if reply == "continue":
-                        Accounts.PushAccountData(Username, "ErrorCount", 0)
-                        Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
+                    DoesAccountExist = False
+
+                    for account in Accounts.AccountList:
+                        if Accounts.GetAccountDataFromObject(account, "Username") == Username:
+                            DoesAccountExist = True
+
+                    if DoesAccountExist == True:
                         break
 
                     else:
-                        connection.close()
+                        LowLevelCommunications.SendServerPM(connection, "That account doesn't exist.")
 
-                else:
-                    LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
+                except:
+                    PrintLog("Error in sign in : Username pick loop, closing connection")
+                    connection.close()
+                    break
+            
+            #Double negative because it sometimes returns "none"
+            if not Accounts.GetAccountData(Username, "IsOnline") == True:
+                while True:
+                    LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
+                    time.sleep(0.2)
+                    LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
 
-        else:
-            LowLevelCommunications.SendServerPM(connection, "You are online somewhere else.")
-            connection.close()
+                    Password = connection.recv(BufferSize).decode("utf8")
+                    
+                    if Accounts.GetAccountData(Username, "Password") == Password:
+                        Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, you successfully identified. Type 'continue' to continue.")
+                        reply = connection.recv(BufferSize).decode("utf8")
+                        print(str(Username))
+                        if reply == "continue":
+                            Accounts.PushAccountData(Username, "ErrorCount", 0)
+                            Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
+                            break
+
+                        else:
+                            connection.close()
+
+                    else:
+                        LowLevelCommunications.SendServerPM(connection, "Password incorrect.")
+
+            else:
+                LowLevelCommunications.SendServerPM(connection, "You are online somewhere else.")
+                connection.close()
+        except:
+            PrintLog("Error in signin")
+            ErrorCount = ErrorCount + 1
+            if ErrorCount > 5:
+                connection.close()
 
     def NewAccountProcess(connection, address):
         try:
@@ -401,54 +411,63 @@ class Main():
 
         #try:
         if response == "Hello":
-            while True:
-                InUse = False
-                LowLevelCommunications.SendServerPM(connection, "Please enter your new username: ")
-                response = connection.recv(BufferSize).decode("utf8")
-                Username = response
-
-                if " " in Username:
-                    InUse = True
-                    LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
-
-                for account in Accounts.AccountList:
-                    if Accounts.GetAccountDataFromObject(account, "Username") == Username:
-                        LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
-                        InUse = True
-                
-                if InUse == False:
-                    break
-
-            LowLevelCommunications.SendServerPM(connection, "Username received: " + Username)
-
-            if InUse == False:
-                LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
-                LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
-                response = connection.recv(BufferSize).decode("utf8")
-                Password = response
-
-                loops = 0
-                while loops < 32:
-                    loops = loops + 1
-                    LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
+            try:
+                while True:
+                    InUse = False
+                    LowLevelCommunications.SendServerPM(connection, "Please enter your new username: ")
                     response = connection.recv(BufferSize).decode("utf8")
-                    if response == "Y":
-                        LowLevelCommunications.SendServerPM(connection, "Password: ")
-                        #FIXME placeholder pw, will obviously be hashed in the future
-                        response = connection.recv(BufferSize).decode("utf8")
+                    Username = response
 
-                        if response == "Password1!":
-                            IsAdmin = True
-                            LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
-                            break
+                    if " " in Username:
+                        InUse = True
+                        LowLevelCommunications.SendServerPM(connection, "Remove that whitespace!")
+
+                    for account in Accounts.AccountList:
+                        if Accounts.GetAccountDataFromObject(account, "Username") == Username:
+                            LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
+                            InUse = True
+                    
+                    if InUse == False:
+                        break
+
+            except:
+                PrintLog("Error")
+                connection.close()
+
+            try:
+                LowLevelCommunications.SendServerPM(connection, "Username received: " + Username)
+
+                if InUse == False:
+                    LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
+                    LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+                    response = connection.recv(BufferSize).decode("utf8")
+                    Password = response
+
+                    loops = 0
+                    while loops < 32:
+                        loops = loops + 1
+                        LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
+                        response = connection.recv(BufferSize).decode("utf8")
+                        if response == "Y":
+                            LowLevelCommunications.SendServerPM(connection, "Password: ")
+                            #FIXME placeholder pw, will obviously be hashed in the future
+                            response = connection.recv(BufferSize).decode("utf8")
+
+                            if response == "Password":
+                                IsAdmin = True
+                                LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
+                                break
+
+                            else:
+                                IsAdmin = False
+                                LowLevelCommunications.SendServerPM(connection, "Password wrong.")
 
                         else:
                             IsAdmin = False
-                            LowLevelCommunications.SendServerPM(connection, "Password wrong.")
-
-                    else:
-                        IsAdmin = False
-                        break
+                            break
+                
+                else:
+                    connection.close()
 
                 time.sleep(0.5)
                 LowLevelCommunications.SendServerPM(connection, "Creating account...")
@@ -470,15 +489,15 @@ class Main():
 
                 else:
                     connection.close()
-
-            else:
+            except:
                 connection.close()
+                PrintLog("Error in account creation")
 
         else:
             connection.close()
-        #except:
-        #    PrintLog("Error in account creation, exiting")    
-        #    connection.close()  
+    #except:
+    #    PrintLog("Error in account creation, exiting")    
+    #    connection.close()  
 
 class PMManager:
     def PMManager():
@@ -540,6 +559,14 @@ BufferSize = 2048
 server.bind((Host, Port))
 server.listen(1000)
 
+def PrintPeriodic():
+    while True:
+        try:
+            time.sleep(0.5)
+            print(str(Accounts.GetAccountData("Alex", "IsOnline")))
+        except:
+            continue
+
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
 Accounts.InitAccountList()
@@ -547,5 +574,7 @@ Accounts.InitAccountList()
 Thread(target=PMManager.PMManager).start()
 
 Thread(target=PingManager.PingManager).start()
+
+#Thread(target=PrintPeriodic).start()
 
 Main.AcceptIncomingConnections()
