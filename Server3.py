@@ -517,6 +517,7 @@ class PingManager:
 def PrintLog(text):
     text = str(text)
     print(text)
+    text = text + "\n"
     LogFile = open('log.txt', 'a')
     LogFile.write(text)
 
@@ -526,6 +527,8 @@ Host = ""
 BufferSize = 2048
 server.bind((Host, Port))
 server.listen(1000)
+
+PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
 Accounts.InitAccountList()
 
