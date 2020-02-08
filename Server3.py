@@ -119,17 +119,6 @@ class HighLevelCommunications():
         except:
             PrintLog("Error encoding")
 
-class Cryptography():
-    def HashPassword(text):
-        i = 0
-        while True:
-            i = i + 1
-            text = str(hashlib.sha512(bytes(str(text) + str(i) + 'f8weucrwirun3wurifiwshfkfdsifjisdjfisjfiosjflsjfiljdslkfjllhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89', 'utf8')).hexdigest())
-            if i == 128:
-                break
-
-        return str(text)
-        
 class Accounts():
     AccountList = []
     #Account specifications:
@@ -397,9 +386,7 @@ class Main():
                 connection.close()
         except:
             PrintLog("Error in signin")
-            ErrorCount = ErrorCount + 1
-            if ErrorCount > 5:
-                connection.close()
+            connection.close()
 
     def NewAccountProcess(connection, address):
         try:
@@ -562,11 +549,29 @@ class PingManager:
                         Accounts.PushAccountData(Username, "IsOnline", False)
 
 server = socket(AF_INET, SOCK_STREAM) 
-#TODO Improve
-Port = int(input("Port: "))
+Port = input("Port: ")
+if not Port:
+    Port = 34000
+    PrintLog("Defaulted")
+
+else:
+    Port = int(Port)
+    PrintLog("Port set to " + str(Port))
+
 Host = ""
 BufferSize = 2048
-server.bind((Host, Port))
+try:
+    server.bind((Host, Port))
+except:
+    if Port == 34000:
+        Port = 34001
+        PrintLog("Set port to 34001 due to error")
+
+    elif Port == 34001:
+        Port = 34000
+        PrintLog("Set port to 34000 due to error")
+
+    server.bind((Host, Port))
 server.listen(1000)
 
 def PrintPeriodic():

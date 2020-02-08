@@ -14,12 +14,22 @@ It has a lot of problems. Just look at some of the older readme's!
 
 Because of that, I am doing a full rewrite with an account system. That's in Server3.py. I am testing it with Client.py still (the protocols are still usably compatible) though soon I will create a new dev client in DevelopmentClient.py. Then I'll make a Client2.py, where I rebuild it to be disguised as notepad and be designed to work with Server3.py from the ground up. It'll probably be partially compatible with Server2.py, but just use the old client for that.
 
-For now, if you want to use it, use Client.py and Server2.py. Don't touch Server1.py, it's shit, though Client.py can still interface alright with it. None of this "The client can work on all 3 OK" thing is intentional, it's just they all use the same buffer size and communicate in UTF8, with a simple "Write something and click enter to send that stuff, print anything you receive" communication method on the client. 
+If someone actually wants to use this script, then keep in mind:
 
-This will probably end on the next generation of clients (DevelopmentClient, Client2) because they are going to use a more complex protocol, though you'll still be able to see stuff, just through a bunch of non human-friendly data.
+Server 2 has:
+- Better error handling
+- More features
+- More testing
+- Not developed anymore
 
-The following documentation is for Server 2 and Client.py. It will carry across pretty well to Server1, but not Server2.
-
+Server 3 has
+- PASSWORDS ARE STORED IN PLAIN TEXT
+- Not as good error handling
+- Less features
+- No properly compatible client
+- Has only been tested by the developer
+- Is still in active development
+- Has a proper account system
 # Commands
 
 Client Side

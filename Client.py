@@ -297,7 +297,7 @@ else:
     host = "127.0.0.1"
     #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 34001
+    port = 34000
     allowRemoteAccess = True
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
@@ -316,19 +316,29 @@ tries = 0
 
 #tries to connnect. 
 while True:
-    if tries < 20:
-       tries = tries + 1
-       
     try:
         print("Attempting to connect")
         client_socket.connect(Address)
         print("Successful connection established.")
         break
-        
+
     except ConnectionRefusedError:
+        if port == 34000:
+            port = 34001
+            print("Port set to 34001")
+
+        elif port == 34001:
+            port = 34000
+            print("Port set to 34000")
+
+        Address = (host, port)
         print("Connection refused. Retrying in " + str(tries) + " seconds.")
         SetLabelStatus("Error. Retrying in " + str(tries) + " seconds.")
         time.sleep(tries)
+
+        if tries < 20:
+            tries = tries + 1
+
         continue
 
 #lol, I set this before I started the gui...

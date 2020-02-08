@@ -668,3 +668,94 @@ Broadcasted Alex: ksjflks
 Alex: /error
 Encoding: [SERVER INTERNAL-BROADCAST]Alex: /error
 Broadcasted Alex: /error
+Port set to 34000
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581184227.8147354
+PM Manager started
+Accepted connection from ('127.0.0.1', 54494) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Port set to 34000
+Set port to 34001 due to error
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581184277.1392295
+PM Manager started
+Accepted connection from ('127.0.0.1', 41208) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error sending low level message PM
+Error in sign in : Username pick loop, closing connection
+Error getting account data, error printing name
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in signin
+Accepted connection from ('127.0.0.1', 41230) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error sending low level message PM
+Error in sign in : Username pick loop, closing connection
+Error getting account data, error printing name
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in signin
+Accepted connection from ('127.0.0.1', 41256) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error sending low level message PM
+Error in sign in : Username pick loop, closing connection
+Error getting account data, error printing name
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in signin
+Defaulted
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581184482.128889
+PM Manager started
+Accepted connection from ('127.0.0.1', 54778) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Error sending low level message PM
+Error in sign in : Username pick loop, closing connection
+Error getting account data, error printing name
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Error sending low level message PM
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Error sending low level internal PM, passing
+Error in signin
