@@ -477,7 +477,6 @@ class Main():
 
 class PMManager:
     def PMManager():
-        #FIXME PM manager
         PrintLog("PM Manager started")
         while True:
             try:
