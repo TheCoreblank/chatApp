@@ -34,6 +34,14 @@ Server 3 has
 - Has only been tested by the developer
 - Is still in active development
 - Has a proper account system
+
+# Server V3 Commands
+No server V3 commands have arguments, you are asked for info after entering the base command.
+
+- /pm - prompts you to PM somebody. 
+- /bug report - prompts you to make a bug report.
+- /feature request - prompts you to request a feature
+
 # Commands
 
 Client Side

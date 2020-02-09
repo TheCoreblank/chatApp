@@ -299,7 +299,6 @@ class Main():
                         BugReportsFile.close()
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
 
-
                     elif "/feature request" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to request?")
                         reply = connection.recv(BufferSize).decode("utf8")
