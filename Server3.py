@@ -383,7 +383,7 @@ class Main():
                     break
             
             #Double negative because it sometimes returns "none"
-            if not Accounts.GetAccountData(Username, "IsOnline") == True:
+            if not Accounts.GetAccountData(Username, "IsOnline") == True and DoesAccountExist == False:
                 while True:
                     LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
                     time.sleep(0.2)
