@@ -2,6 +2,8 @@ import time, hashlib, sys, string, pickle
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 
+#TODO Profile this thing, it takes up way too much resources
+
 class LowLevelCommunications():
     #for before the client is logged in
     def Encode(Text):
@@ -486,8 +488,7 @@ class Main():
                         response = connection.recv(BufferSize).decode("utf8")
                         if response == "Y":
                             LowLevelCommunications.SendServerPM(connection, "Password: ")
-                            #FIXME placeholder pw, will obviously be hashed in the future
-                            #FIXME Won't work cause it now sends hashed passwords
+
                             LowLevelCommunications.SendInternalMessage("PASSWORD ENTRY FIELD")
                             response = connection.recv(BufferSize).decode("utf8")
                             #
@@ -500,8 +501,9 @@ class Main():
                                     time.sleep(0.5)
                                     LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
                                     time.sleep(0.5)
-                                    
-                            if response == "Password":
+                            
+                            #replace as you wish. Use the ClientV2Implementation() function in Hash Testing.py to calculate.
+                            if response == "b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905":
                                 IsAdmin = True
                                 LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
                                 break

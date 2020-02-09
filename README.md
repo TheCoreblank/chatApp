@@ -2,21 +2,9 @@
 
 A work-in-progress chat app designed to circumvent school systems.
 
-  
-
 Includes numerous anti-detection and plausible denial features.
 
-Currently unencrypted, although passwords are not stored in plain text.
-
-# IMPORTANT
-
-It has a lot of problems. Just look at some of the older readme's!
-
-Because of that, I am doing a full rewrite with an account system. That's in Server3.py. I am testing it with Client.py still (the protocols are still usably compatible) though soon I will create a new dev client in DevelopmentClient.py. Then I'll make a Client2.py, where I rebuild it to be disguised as notepad and be designed to work with Server3.py from the ground up. It'll probably be partially compatible with Server2.py, but just use the old client for that.
-
-Server 3 *does not* hash passwords due my planned implementation requiring a compatible client.
-
-When I do make it hash passwords, it will be using argon2 with between 1 and 4 iterations.
+Currently unencrypted, although passwords are hashed before being sent (Though with no unique salt).
 
 If someone actually wants to use this script, then keep in mind:
 
@@ -25,12 +13,10 @@ Server 2 has:
 - More features
 - More testing
 - Not developed anymore
+- A plethora of problems: Just knowing about them doesn't fix them, and a lot of it is underlying problems with the system - underlying problems fixed with Server 3. 
 
 Server 3 has
-- PASSWORDS ARE STORED IN PLAIN TEXT
-- Not as good error handling
 - Less features
-- No properly compatible client
 - Has only been tested by the developer
 - Is still in active development
 - Has a proper account system
