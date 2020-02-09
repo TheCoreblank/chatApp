@@ -1,6 +1,7 @@
 import time, hashlib, sys, string, pickle
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
+import hashlib
 
 #TODO Profile this thing, it takes up way too much resources
 
@@ -493,7 +494,7 @@ class Main():
                             response = connection.recv(BufferSize).decode("utf8")
                             #
                             # Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
-                            if len(Password) < 50:
+                            if len(response) < 50:
                                 PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
                                 PrintLog("COMPROMISE TIME: " + time.time())
                                 while True:

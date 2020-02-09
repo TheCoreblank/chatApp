@@ -38,6 +38,7 @@ class Communications():
             message = Cryptography.Hash(message)
             Communications.InternalSend(message)
             GUI.SetLabelStatus(" ")
+            GUI.entry_field["show"] = ""
 
 
     def PeriodicPing():
@@ -75,7 +76,7 @@ class Communications():
                 if "PASSWORD ENTRY FIELD" in message:
                     Communications.HashNextMessage = True
                     GUI.SetLabelStatus("Hashing next message...")
-                    
+                    GUI.entry_field["show"] = "*"
 
             elif "[SERVER INTERNAL-INTERNAL]" in message:
                 if "SENDPINGS=TRUE" in message:
