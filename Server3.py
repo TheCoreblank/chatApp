@@ -32,6 +32,7 @@ class LowLevelCommunications():
         try:
             PrintLog("Sending low level internal message")
             ToSend = "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" + text
+            #TODO Prevent people broadcasting server internal
             connection.send(LowLevelCommunications.Encode(ToSend))
 
         except:
@@ -384,6 +385,16 @@ class Main():
                     LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
 
                     Password = connection.recv(BufferSize).decode("utf8")
+                    PrintLog("Received [Hashed] password: " + str(Password))
+
+                    #Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
+                    if len(Password) < 50:
+                        PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
+                        PrintLog("COMPROMISE TIME: " + time.time())
+                        while True:
+                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
+                            LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+
                     
                     if Accounts.GetAccountData(Username, "Password") == Password:
                         Accounts.PushAccountData(Username, "ConnectionObject", connection)
@@ -458,6 +469,15 @@ class Main():
                     LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
                     response = connection.recv(BufferSize).decode("utf8")
                     Password = response
+                    PrintLog("Received [Hashed] password: " + str(Password))
+
+                    #Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
+                    if len(Password) < 50:
+                        PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
+                        PrintLog("COMPROMISE TIME: " + time.time())
+                        while True:
+                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
+                            LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
 
                     loops = 0
                     while loops < 32:
@@ -467,8 +487,20 @@ class Main():
                         if response == "Y":
                             LowLevelCommunications.SendServerPM(connection, "Password: ")
                             #FIXME placeholder pw, will obviously be hashed in the future
+                            #FIXME Won't work cause it now sends hashed passwords
+                            LowLevelCommunications.SendInternalMessage("PASSWORD ENTRY FIELD")
                             response = connection.recv(BufferSize).decode("utf8")
-
+                            #
+                            # Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
+                            if len(Password) < 50:
+                                PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
+                                PrintLog("COMPROMISE TIME: " + time.time())
+                                while True:
+                                    LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
+                                    time.sleep(0.5)
+                                    LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+                                    time.sleep(0.5)
+                                    
                             if response == "Password":
                                 IsAdmin = True
                                 LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")

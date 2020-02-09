@@ -1216,3 +1216,469 @@ Broadcasted Alex: sfjdl
 1581242796.133926 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
 1581242796.134101 : Error sending low level internal PM, passing
 1581242796.3349388 : Error in signin
+1581257486.6409664 : Defaulted
+1581257486.6664968 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581257486.666391
+1581257486.6684637 : PM Manager started
+1581257510.4993565 : Accepted connection from ('127.0.0.1', 33762) , referring
+1581257510.7015018 : Sending low level message PM
+1581257510.7018802 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581257520.3488207 : Sending low level message PM
+1581257520.3497257 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581257522.4897127 : Sending low level message PM
+1581257522.4907527 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581257524.7954075 : Sending low level message PM
+1581257524.7961602 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581257525.1979718 : Sending low level message PM
+1581257525.1989048 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581257525.6006513 : Sending low level internal message
+1581257525.601067 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581257527.9586582 : Sending low level message PM
+1581257527.959573 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581257536.9139707 : Sending low level message PM
+1581257536.9144793 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581257539.1182132 : Sending to Alex : If you can read this, your account creation worked.
+1581257539.1192415 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581257539.3202777 : Sending to Alex : Enter the word 'continue' to sign in
+1581257539.320715 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581257542.7269537 : Sending low level message PM
+1581257542.7278814 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581257544.651849 : Sending low level message PM
+1581257544.6526296 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581257545.254906 : Sending low level internal message
+1581257545.2557595 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581257550.2497697 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581257550.2502384 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581257552.1043046 : Sending internal message to Alex : SENDPINGS=TRUE
+1581257552.1051598 : Could not get connection for internal message name, passing and not sending
+1581257552.105899 : Had error earlier, not sending
+1581257552.1070921 : Sending to Alex : Welcome to the chatroom.
+1581257552.1077971 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581257552.7240765 : Alex: fjls
+1581257552.7246442 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fjls
+1581257552.725114 : Broadcasted Alex: fjls
+1581257553.251776 : Alex: shd
+1581257553.2526784 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: shd
+1581257553.2535481 : Broadcasted Alex: shd
+1581257553.7905283 : Alex: kdsf
+1581257553.7910292 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: kdsf
+1581257553.7914839 : Broadcasted Alex: kdsf
+1581257555.7516654 : Alex: hl
+1581257555.7525976 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hl
+1581257555.7532258 : Broadcasted Alex: hl
+1581257558.5715582 : Sending to Alex : Who do you want to send the PM to?
+1581257558.5719776 : Encoding: [SERVER INTERNAL-PM MESSAGE]Who do you want to send the PM to?
+1581257560.5061095 : Sending to Alex : What do you want to send?
+1581257560.5070925 : Encoding: [SERVER INTERNAL-PM MESSAGE]What do you want to send?
+1581257562.869111 : Sending to Alex : Added to buffer.
+1581257562.8700094 : Encoding: [SERVER INTERNAL-PM MESSAGE]Added to buffer.
+1581257566.7308881 : Sending to Alex : You have received a private message.
+1581257566.7317855 : Encoding: [SERVER INTERNAL-PM MESSAGE]You have received a private message.
+1581257566.983054 : Sending to Alex : Name: Alex
+1581257566.98347 : Encoding: [SERVER INTERNAL-PM MESSAGE]Name: Alex
+1581257567.2575147 : Sending to Alex : Message: Hello
+1581257567.2584546 : Encoding: [SERVER INTERNAL-PM MESSAGE]Message: Hello
+1581257574.2796395 : Alex: {quit}
+1581257574.2800508 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: {quit}
+1581257574.2803953 : Broadcasted Alex: {quit}
+1581257610.5955436 : Accepted connection from ('127.0.0.1', 33826) , referring
+1581257610.8057504 : Sending low level message PM
+1581257610.8060725 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269146.1267426 : Defaulted
+1581269146.155232 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581269146.1551485
+1581269146.1575422 : PM Manager started
+1581269175.1430597 : Accepted connection from ('127.0.0.1', 43060) , referring
+1581269175.3446841 : Sending low level message PM
+1581269175.3451717 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269185.358783 : Sending low level message PM
+1581269185.3591654 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269185.7604969 : Sending low level message PM
+1581269185.761249 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269185.7618911 : Error sending low level message PM
+1581269186.1636162 : Sending low level message PM
+1581269186.1639707 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269186.1641529 : Error sending low level message PM
+1581269186.364893 : Error in sign in : Username pick loop, closing connection
+1581269186.3653002 : Error getting account data, error printing name
+1581269186.566181 : Sending low level message PM
+1581269186.5670416 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269186.5676603 : Error sending low level message PM
+1581269187.1690817 : Sending low level internal message
+1581269187.1695051 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269187.169717 : Error sending low level internal PM, passing
+1581269187.3702743 : Error in signin
+1581269225.448659 : Accepted connection from ('127.0.0.1', 43086) , referring
+1581269225.6504276 : Sending low level message PM
+1581269225.6507914 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269236.6098049 : Sending low level message PM
+1581269236.6101837 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269237.0113332 : Sending low level message PM
+1581269237.0119276 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269237.012418 : Error sending low level message PM
+1581269237.4145885 : Sending low level message PM
+1581269237.4149687 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269237.4151883 : Error sending low level message PM
+1581269237.6157253 : Error in sign in : Username pick loop, closing connection
+1581269237.616118 : Error getting account data, error printing name
+1581269237.8166668 : Sending low level message PM
+1581269237.8172243 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269237.8176093 : Error sending low level message PM
+1581269238.4187849 : Sending low level internal message
+1581269238.4194937 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269238.4200754 : Error sending low level internal PM, passing
+1581269238.6208973 : Error in signin
+1581269253.4606485 : Accepted connection from ('127.0.0.1', 43100) , referring
+1581269253.661905 : Sending low level message PM
+1581269253.6622407 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269297.0826283 : Sending low level message PM
+1581269297.08293 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269297.483791 : Sending low level message PM
+1581269297.4841218 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269297.4843118 : Error sending low level message PM
+1581269297.8850617 : Sending low level message PM
+1581269297.8853955 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269297.8855748 : Error sending low level message PM
+1581269298.0860736 : Error in sign in : Username pick loop, closing connection
+1581269298.0864434 : Error getting account data, error printing name
+1581269298.2885594 : Sending low level message PM
+1581269298.288922 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269298.2891042 : Error sending low level message PM
+1581269298.8900998 : Sending low level internal message
+1581269298.8905172 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269298.8907344 : Error sending low level internal PM, passing
+1581269299.0914106 : Error in signin
+1581269321.893616 : Accepted connection from ('127.0.0.1', 43136) , referring
+1581269322.0944557 : Sending low level message PM
+1581269322.0948157 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269336.6941786 : Sending low level message PM
+1581269336.695211 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269337.102531 : Sending low level message PM
+1581269337.1032457 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269337.1038213 : Error sending low level message PM
+1581269337.5049572 : Sending low level message PM
+1581269337.5053127 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269337.5055654 : Error sending low level message PM
+1581269337.706071 : Error in sign in : Username pick loop, closing connection
+1581269337.706745 : Error getting account data, error printing name
+1581269337.9074612 : Sending low level message PM
+1581269337.9078484 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269337.9080713 : Error sending low level message PM
+1581269338.5091312 : Sending low level internal message
+1581269338.509477 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269338.5096576 : Error sending low level internal PM, passing
+1581269338.7101705 : Error in signin
+1581269354.6353893 : Accepted connection from ('127.0.0.1', 43156) , referring
+1581269354.836362 : Sending low level message PM
+1581269354.8367422 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269360.8291972 : Sending low level message PM
+1581269360.8300521 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581269365.322956 : Sending low level message PM
+1581269365.323883 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581269369.5763083 : Sending low level message PM
+1581269369.5771828 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581269369.9785354 : Sending low level message PM
+1581269369.9791641 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581269370.3804035 : Sending low level internal message
+1581269370.3807669 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269396.2026508 : Sending low level message PM
+1581269396.2030241 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581269403.2592402 : Sending low level message PM
+1581269403.2601247 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581269405.4641922 : Sending to Alex : If you can read this, your account creation worked.
+1581269405.4645784 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581269405.6652546 : Sending to Alex : Enter the word 'continue' to sign in
+1581269405.6658921 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581269409.5287995 : Sending low level message PM
+1581269409.5296068 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269411.93752 : Sending low level message PM
+1581269411.9384997 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269412.541192 : Sending low level internal message
+1581269412.5416875 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269415.3492146 : Sending low level message PM
+1581269415.350115 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password incorrect.
+1581269415.7516572 : Sending low level message PM
+1581269415.7520728 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269416.3530464 : Sending low level internal message
+1581269416.3535163 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269418.7132125 : Sending low level message PM
+1581269418.7137403 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password incorrect.
+1581269419.1151817 : Sending low level message PM
+1581269419.1160297 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269419.7186708 : Sending low level internal message
+1581269419.7194037 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269421.5297558 : Sending low level message PM
+1581269421.530704 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password incorrect.
+1581269421.9323301 : Sending low level message PM
+1581269421.9327276 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269422.533858 : Sending low level internal message
+1581269422.5342164 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269430.2167134 : Error in signin
+1581269500.520003 : Defaulted
+1581269500.5235407 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581269500.523396
+1581269500.5278347 : PM Manager started
+1581269508.403859 : Accepted connection from ('127.0.0.1', 43248) , referring
+1581269508.605026 : Sending low level message PM
+1581269508.6054983 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269533.0353963 : Sending low level message PM
+1581269533.0358012 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269533.437418 : Sending low level message PM
+1581269533.4377437 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269533.4379299 : Error sending low level message PM
+1581269533.8387027 : Sending low level message PM
+1581269533.8390462 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269533.8392196 : Error sending low level message PM
+1581269534.0397263 : Error in sign in : Username pick loop, closing connection
+1581269534.0400758 : Error getting account data, error printing name
+1581269534.238649 : Accepted connection from ('127.0.0.1', 43264) , referring
+1581269534.2405012 : Sending low level message PM
+1581269534.2408092 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269534.2409842 : Error sending low level message PM
+1581269534.4406312 : Sending low level message PM
+1581269534.4410284 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269534.8425207 : Sending low level internal message
+1581269534.8433995 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269534.8441153 : Error sending low level internal PM, passing
+1581269535.0450613 : Error in signin
+1581269593.103795 : Sending low level message PM
+1581269593.1041377 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269593.505026 : Sending low level message PM
+1581269593.5053387 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269593.5055194 : Error sending low level message PM
+1581269593.9060688 : Sending low level message PM
+1581269593.906423 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269593.9065964 : Error sending low level message PM
+1581269594.1070888 : Error in sign in : Username pick loop, closing connection
+1581269594.107405 : Error getting account data, error printing name
+1581269594.1951125 : Accepted connection from ('127.0.0.1', 43296) , referring
+1581269594.307869 : Sending low level message PM
+1581269594.3082 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269594.3083723 : Error sending low level message PM
+1581269594.396047 : Sending low level message PM
+1581269594.3963807 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269594.9093482 : Sending low level internal message
+1581269594.9096913 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269594.9098735 : Error sending low level internal PM, passing
+1581269595.1103916 : Error in signin
+1581269638.304723 : Sending low level message PM
+1581269638.3051026 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269638.7061148 : Sending low level message PM
+1581269638.7064784 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269638.706669 : Error sending low level message PM
+1581269639.1079578 : Sending low level message PM
+1581269639.1082954 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269639.1084764 : Error sending low level message PM
+1581269639.2225811 : Accepted connection from ('127.0.0.1', 43320) , referring
+1581269639.3089747 : Error in sign in : Username pick loop, closing connection
+1581269639.3093405 : Error getting account data, error printing name
+1581269639.4241014 : Sending low level message PM
+1581269639.4244425 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269639.509826 : Sending low level message PM
+1581269639.510182 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269639.5103939 : Error sending low level message PM
+1581269640.1113942 : Sending low level internal message
+1581269640.111779 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269640.111966 : Error sending low level internal PM, passing
+1581269640.3124578 : Error in signin
+1581269675.908072 : Sending low level message PM
+1581269675.9084053 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269676.3094206 : Sending low level message PM
+1581269676.3099988 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269676.3104417 : Error sending low level message PM
+1581269676.711356 : Sending low level message PM
+1581269676.7116768 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269676.7118526 : Error sending low level message PM
+1581269676.9123414 : Error in sign in : Username pick loop, closing connection
+1581269676.9126697 : Error getting account data, error printing name
+1581269676.97882 : Accepted connection from ('127.0.0.1', 43340) , referring
+1581269677.11324 : Sending low level message PM
+1581269677.1136007 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269677.1137793 : Error sending low level message PM
+1581269677.179762 : Sending low level message PM
+1581269677.180103 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269677.7146857 : Sending low level internal message
+1581269677.7150261 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269677.7152019 : Error sending low level internal PM, passing
+1581269677.915834 : Error in signin
+1581269696.1881495 : Sending low level message PM
+1581269696.188503 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269696.5893846 : Sending low level message PM
+1581269696.5896912 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581269696.58987 : Error sending low level message PM
+1581269696.9906418 : Sending low level message PM
+1581269696.9909809 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581269696.9911618 : Error sending low level message PM
+1581269697.0766122 : Accepted connection from ('127.0.0.1', 43350) , referring
+1581269697.191655 : Error in sign in : Username pick loop, closing connection
+1581269697.1919966 : Error getting account data, error printing name
+1581269697.2775416 : Sending low level message PM
+1581269697.2778764 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581269697.3924544 : Sending low level message PM
+1581269697.3927836 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581269697.3929656 : Error sending low level message PM
+1581269697.9939966 : Sending low level internal message
+1581269697.99437 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581269697.9945517 : Error sending low level internal PM, passing
+1581269698.1950414 : Error in signin
+1581269711.981012 : Sending low level message PM
+1581269711.981814 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581270163.6588392 : Defaulted
+1581270163.6621306 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581270163.6619475
+1581270163.6714673 : PM Manager started
+1581270180.3470683 : Accepted connection from ('127.0.0.1', 43590) , referring
+1581270180.5487292 : Sending low level message PM
+1581270180.549204 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581270184.2243447 : Sending low level message PM
+1581270184.2252865 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581270189.5987048 : Sending low level message PM
+1581270189.5995789 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581270191.6185133 : Sending low level message PM
+1581270191.6193535 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581270192.0208306 : Sending low level message PM
+1581270192.0215409 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581270192.4228137 : Sending low level internal message
+1581270192.42363 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581270195.9082532 : Received [Hashed] password: 4f58d89d18040d2e96bd034c04509dde4fd2644a42ae65f71fd3b8ca34ea9ec3ca895b039a8864e2de9cae38ae043feb15b687a69337389ade778b5a2fcd66c6
+1581270196.1089444 : Sending low level message PM
+1581270196.109754 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581270201.7383716 : Sending low level message PM
+1581270201.73925 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581270203.9430037 : Sending to Alex : If you can read this, your account creation worked.
+1581270203.9437964 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581270204.1451719 : Sending to Alex : Enter the word 'continue' to sign in
+1581270204.1460426 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581270206.663599 : Sending low level message PM
+1581270206.6643264 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581270209.140477 : Sending low level message PM
+1581270209.1410072 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581270209.7422545 : Sending low level internal message
+1581270209.7426252 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581270212.826893 : Received [Hashed] password: 4f58d89d18040d2e96bd034c04509dde4fd2644a42ae65f71fd3b8ca34ea9ec3ca895b039a8864e2de9cae38ae043feb15b687a69337389ade778b5a2fcd66c6
+1581270212.8279717 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581270212.829146 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581270214.685758 : Sending internal message to Alex : SENDPINGS=TRUE
+1581270214.6868536 : Could not get connection for internal message name, passing and not sending
+1581270214.6875823 : Had error earlier, not sending
+1581270214.688225 : Sending to Alex : Welcome to the chatroom.
+1581270214.6897469 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581270233.7829216 : Alex: jsdll
+1581270233.7835827 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsdll
+1581270233.7842355 : Broadcasted Alex: jsdll
+1581270234.3744442 : Alex: ljds
+1581270234.3747687 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ljds
+1581270234.3749926 : Broadcasted Alex: ljds
+1581270234.8988426 : Alex: dsf
+1581270234.8997214 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581270234.9005752 : Broadcasted Alex: dsf
+1581270235.4143748 : Alex: fkjs
+1581270235.4147282 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fkjs
+1581270235.4150982 : Broadcasted Alex: fkjs
+1581270235.977037 : Alex: fskh
+1581270235.9775105 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fskh
+1581270235.9779181 : Broadcasted Alex: fskh
+1581270237.596401 : Alex: fk'sdf
+1581270237.5967393 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fk'sdf
+1581270237.596984 : Broadcasted Alex: fk'sdf
+1581270237.975164 : Alex: sdf
+1581270237.9756901 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581270237.9762 : Broadcasted Alex: sdf
+1581270238.1540487 : Alex: fsd
+1581270238.154665 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsd
+1581270238.155163 : Broadcasted Alex: fsd
+1581270238.315478 : Alex: s
+1581270238.3159132 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581270238.316338 : Broadcasted Alex: s
+1581270238.477788 : Alex: d
+1581270238.4781823 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270238.4786246 : Broadcasted Alex: d
+1581270238.6476424 : Alex: fds
+1581270238.6485114 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fds
+1581270238.649366 : Broadcasted Alex: fds
+1581270238.8345344 : Alex: s
+1581270238.835481 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581270238.8363688 : Broadcasted Alex: s
+1581270239.0074584 : Alex: fs
+1581270239.0078635 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fs
+1581270239.008175 : Broadcasted Alex: fs
+1581270239.1895869 : Alex: df
+1581270239.1904392 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: df
+1581270239.1912277 : Broadcasted Alex: df
+1581270239.3651595 : Alex: s
+1581270239.3655632 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581270239.3658853 : Broadcasted Alex: s
+1581270239.5323532 : Alex: f
+1581270239.5332468 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581270239.5340784 : Broadcasted Alex: f
+1581270239.706524 : Alex: sf
+1581270239.7072606 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581270239.7078962 : Broadcasted Alex: sf
+1581270239.8850782 : Alex: s
+1581270239.8859413 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581270239.8869011 : Broadcasted Alex: s
+1581270240.0620956 : Alex: f
+1581270240.0630646 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581270240.064342 : Broadcasted Alex: f
+1581270240.24663 : Alex: s
+1581270240.2469401 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581270240.247175 : Broadcasted Alex: s
+1581270240.436995 : Alex: f
+1581270240.4375165 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581270240.437968 : Broadcasted Alex: f
+1581270242.647598 : Alex: a
+1581270242.6483939 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581270242.6491601 : Broadcasted Alex: a
+1581270243.774738 : Alex: sdlfsjf
+1581270243.7753844 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdlfsjf
+1581270243.7760062 : Broadcasted Alex: sdlfsjf
+1581270244.9082692 : Alex: sdfjkhsjlfhs
+1581270244.9089787 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfjkhsjlfhs
+1581270244.9096808 : Broadcasted Alex: sdfjkhsjlfhs
+1581270245.070722 : Alex: fd
+1581270245.0711958 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fd
+1581270245.071604 : Broadcasted Alex: fd
+1581270245.3737319 : Alex: d
+1581270245.3740382 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270245.3742688 : Broadcasted Alex: d
+1581270245.6962242 : Alex: d
+1581270245.6971767 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270245.6980555 : Broadcasted Alex: d
+1581270245.8544443 : Alex: d
+1581270245.8553252 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270245.856187 : Broadcasted Alex: d
+1581270246.0166392 : Alex: d
+1581270246.0170867 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270246.017472 : Broadcasted Alex: d
+1581270246.18615 : Alex: d
+1581270246.1871104 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270246.1880488 : Broadcasted Alex: d
+1581270246.3605492 : Alex: d
+1581270246.360933 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581270246.3612483 : Broadcasted Alex: d
+1581270248.6401536 : Alex: 1
+1581270248.6412013 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 1
+1581270248.6421928 : Broadcasted Alex: 1
+1581270248.8542364 : Alex: 2
+1581270248.855304 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 2
+1581270248.8562007 : Broadcasted Alex: 2
+1581270249.052443 : Alex: 2
+1581270249.0531392 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 2
+1581270249.0537384 : Broadcasted Alex: 2
+1581270249.2537923 : Alex: 3
+1581270249.2541134 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 3
+1581270249.2543802 : Broadcasted Alex: 3
+1581270249.4330523 : Alex: 3
+1581270249.4338217 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 3
+1581270249.4345715 : Broadcasted Alex: 3
+1581270249.5998895 : Alex: 4
+1581270249.6002843 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 4
+1581270249.6006098 : Broadcasted Alex: 4
+1581270249.750267 : Alex: 54
+1581270249.7506373 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 54
+1581270249.7508867 : Broadcasted Alex: 54
+1581270249.9206748 : Alex: 5
+1581270249.9212165 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 5
+1581270249.9216702 : Broadcasted Alex: 5
+1581270253.3962595 : Alex: 1
+1581270253.3966525 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 1
+1581270253.3969045 : Broadcasted Alex: 1
+1581270253.6356997 : Alex: 2
+1581270253.6365952 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 2
+1581270253.6370032 : Broadcasted Alex: 2
