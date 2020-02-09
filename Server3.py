@@ -3,7 +3,7 @@ from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import hashlib
 
-#TODO Profile this thing, it takes up way too much resources
+#TODO Profile this thing, it takes up way too much resources. I think it may be due to threads continuing to run even when I have closed the connection.
 
 class LowLevelCommunications():
     #for before the client is logged in
@@ -39,7 +39,8 @@ class LowLevelCommunications():
             connection.send(LowLevelCommunications.Encode(ToSend))
 
         except:
-            PrintLog("Error sending low level internal PM, passing")
+            PrintLog("Error sending low level internal PM, exiting")
+            connection.close()
             pass
 
         time.sleep(0.2)
@@ -326,6 +327,7 @@ class Main():
 
         connection = Accounts.GetAccountData(Username, "ConnectionObject")
         connection.close()
+        Accounts.PushAccountData(Username, "ConnectionObject", "")
 
     def AcceptIncomingConnections():
         while True:
@@ -397,6 +399,7 @@ class Main():
                         while True:
                             LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
                             LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+                            time.sleep(5)
 
                     
                     if Accounts.GetAccountData(Username, "Password") == Password:
@@ -481,6 +484,7 @@ class Main():
                         while True:
                             LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
                             LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+                            time.sleep(5)
 
                     loops = 0
                     while loops < 32:
@@ -499,9 +503,8 @@ class Main():
                                 PrintLog("COMPROMISE TIME: " + time.time())
                                 while True:
                                     LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
-                                    time.sleep(0.5)
                                     LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
-                                    time.sleep(0.5)
+                                    time.sleep(5)
                             
                             #replace as you wish. Use the ClientV2Implementation() function in Hash Testing.py to calculate.
                             if response == "b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905":
@@ -534,6 +537,7 @@ class Main():
                     response = connection.recv(BufferSize).decode("utf8")
                 except:
                     PrintLog("Error getting response from client")
+                    connection.close()
 
                 if response == "continue":
                     Thread(target=Main.SignInProcess, args=(connection, address)).start()
@@ -593,7 +597,7 @@ def PrintLog(text):
 class PingManager:
     def PingManager():
         while True:
-            time.sleep(10)
+            time.sleep(20)
             for account in Accounts.AccountList:
                 if Accounts.GetAccountDataFromObject(account, "IsOnline") == True:
                     lastSeen = Accounts.GetAccountDataFromObject(account, "LastSeen")
@@ -628,14 +632,6 @@ except:
 
     server.bind((Host, Port))
 server.listen(1000)
-
-def PrintPeriodic():
-    while True:
-        try:
-            time.sleep(0.5)
-            print(str(Accounts.GetAccountData("Alex", "IsOnline")))
-        except:
-            continue
 
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
