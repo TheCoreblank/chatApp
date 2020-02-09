@@ -14,6 +14,10 @@ It has a lot of problems. Just look at some of the older readme's!
 
 Because of that, I am doing a full rewrite with an account system. That's in Server3.py. I am testing it with Client.py still (the protocols are still usably compatible) though soon I will create a new dev client in DevelopmentClient.py. Then I'll make a Client2.py, where I rebuild it to be disguised as notepad and be designed to work with Server3.py from the ground up. It'll probably be partially compatible with Server2.py, but just use the old client for that.
 
+Server 3 *does not* hash passwords due my planned implementation requiring a compatible client.
+
+When I do make it hash passwords, it will be using argon2 with between 1 and 4 iterations.
+
 If someone actually wants to use this script, then keep in mind:
 
 Server 2 has:

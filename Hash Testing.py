@@ -1,4 +1,5 @@
 import hashlib
+import time
 from argon2 import PasswordHasher
 
 def OldMethod(text):
@@ -32,6 +33,26 @@ def NewMethod(text, uniqueSalt):
 
     return(str(text))
 
+#This was for fun. I have a strange definition of fun.
+def Overkill(text, uniqueSalt):
+    startTime = time.time()
+    #12x Argon2.
+    text = NewMethod(NewMethod(text, uniqueSalt), NewMethod(text, uniqueSalt))
+    print("Argon 2 done")
+    i = 0
+    #128 * 32768 = 4 194 304
+    while i < 512:
+        i = i + 1
+        text = OldMethodMoreSecure(text, "this is stupidly overkill")
+        print(str((i / 512) * 100) + "%")
+
+    endTime = time.time()
+
+    print(str(endTime - startTime))
+
+    return str(text)
+
 #print(str(OldMethod("Password")))
 #print(str(OldMethodMoreSecure("Password", "Alex")))
-print(str(NewMethod("Password", "Alex")))
+#print(str(NewMethod("Password", "Alex")))
+print(str(Overkill("Password", "Alex")))
