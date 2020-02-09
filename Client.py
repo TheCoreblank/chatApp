@@ -133,7 +133,7 @@ def ReceiveFromServer():
             #if it's not internal, write it in the feed. 
             if not "/ping" in message and not "/pingTest" in message and not "/pingTime" in message and not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
                 message_list.insert(tkinter.END, message)
-            
+
         except OSError: #may be a client exit
             break
         

@@ -759,3 +759,398 @@ Sending low level internal message
 Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
 Error sending low level internal PM, passing
 Error in signin
+Port set to 34000
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581241225.078644
+PM Manager started
+Accepted connection from ('127.0.0.1', 48746) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+Sending internal message to Alex : SENDPINGS=TRUE
+Could not get connection for internal message name, passing and not sending
+Had error earlier, not sending
+Sending to Alex : Welcome to the chatroom.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+Alex: fksjlkf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fksjlkf
+Broadcasted Alex: fksjlkf
+Alex: sdl
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdl
+Broadcasted Alex: sdl
+Alex: sh
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sh
+Broadcasted Alex: sh
+Alex: k
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: k
+Broadcasted Alex: k
+Alex: kshdf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: kshdf
+Broadcasted Alex: kshdf
+Alex: dshif
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dshif
+Broadcasted Alex: dshif
+Alex: skfhd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: skfhd
+Broadcasted Alex: skfhd
+Alex: hksfd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: hksfd
+Broadcasted Alex: hksfd
+Alex: hsdf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsdf
+Broadcasted Alex: hsdf
+Alex: hds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: hds
+Broadcasted Alex: hds
+Alex: skhd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: skhd
+Broadcasted Alex: skhd
+Alex: khsd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: khsd
+Broadcasted Alex: khsd
+Alex: khsdf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: khsdf
+Broadcasted Alex: khsdf
+Alex: shd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: shd
+Broadcasted Alex: shd
+Alex: sdfhk
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfhk
+Broadcasted Alex: sdfhk
+Sending to Alex : What would you like to report?
+Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to report?
+Sending to Alex : Saved.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+Sending to Alex : What would you like to request?
+Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to request?
+Error in manage client, exiting
+Port set to 34000
+--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581241491.948999
+PM Manager started
+Accepted connection from ('127.0.0.1', 48928) , referring
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+Sending to Alex : If you can read this, your account creation worked.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+Sending to Alex : Enter the word 'continue' to sign in
+Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+Sending low level message PM
+Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+Sending low level internal message
+Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+Sending internal message to Alex : SENDPINGS=TRUE
+Could not get connection for internal message name, passing and not sending
+Had error earlier, not sending
+Sending to Alex : Welcome to the chatroom.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+Alex: sdffj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdffj
+Broadcasted Alex: sdffj
+Alex: dsfhl
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfhl
+Broadcasted Alex: dsfhl
+Alex: fsdh
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdh
+Broadcasted Alex: fsdh
+Alex: fs
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fs
+Broadcasted Alex: fs
+Alex: dhsf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dhsf
+Broadcasted Alex: dhsf
+Alex: fd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fd
+Broadcasted Alex: fd
+Alex: fdsh
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdsh
+Broadcasted Alex: fdsh
+Alex: dfh
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dfh
+Broadcasted Alex: dfh
+Alex: dsfj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfj
+Broadcasted Alex: dsfj
+Alex: fdsj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdsj
+Broadcasted Alex: fdsj
+Alex: jsf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsf
+Broadcasted Alex: jsf
+Alex: df
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: df
+Broadcasted Alex: df
+Alex: sf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+Broadcasted Alex: sf
+Alex: jds
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: jds
+Broadcasted Alex: jds
+Alex: lhfsd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: lhfsd
+Broadcasted Alex: lhfsd
+Alex: jdsf
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: jdsf
+Broadcasted Alex: jdsf
+Alex: fdsj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdsj
+Broadcasted Alex: fdsj
+Alex: dj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: dj
+Broadcasted Alex: dj
+Alex: sdj
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdj
+Broadcasted Alex: sdj
+Alex: s
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+Broadcasted Alex: s
+Alex: sdfl
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfl
+Broadcasted Alex: sdfl
+Alex: hsd
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsd
+Broadcasted Alex: hsd
+Sending to Alex : What would you like to report?
+Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to report?
+Sending to Alex : Saved.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+Sending to Alex : What would you like to request?
+Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to request?
+Sending to Alex : Saved.
+Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+Alex: jfls
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: jfls
+Broadcasted Alex: jfls
+Alex: sfjdl
+Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfjdl
+Broadcasted Alex: sfjdl
+1581241898.192014 : Defaulted
+1581241898.1931212 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581241898.1930711
+1581241898.1952085 : PM Manager started
+1581241940.9767509 : Accepted connection from ('127.0.0.1', 49200) , referring
+1581241941.1778038 : Sending low level message PM
+1581241941.1781588 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581241944.4832542 : Sending low level message PM
+1581241944.483692 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581241947.3692849 : Sending low level message PM
+1581241947.3696449 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581241948.5648165 : Sending low level message PM
+1581241948.5651674 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581241948.965986 : Sending low level message PM
+1581241948.9663255 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581241949.367168 : Sending low level internal message
+1581241949.3675115 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581241949.8085566 : Sending low level message PM
+1581241949.8089151 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581241951.8137388 : Sending low level message PM
+1581241951.814094 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581241954.0173275 : Sending to Alex : If you can read this, your account creation worked.
+1581241954.0182064 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581241954.2193532 : Sending to Alex : Enter the word 'continue' to sign in
+1581241954.219685 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581241956.6175296 : Sending low level message PM
+1581241956.6179082 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581241959.1227343 : Sending low level message PM
+1581241959.1235313 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581241959.725091 : Sending low level internal message
+1581241959.725439 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581241961.1366754 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581241961.1370258 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581241963.9861834 : Sending internal message to Alex : SENDPINGS=TRUE
+1581241963.9867074 : Could not get connection for internal message name, passing and not sending
+1581241963.987121 : Had error earlier, not sending
+1581241963.9874716 : Sending to Alex : Welcome to the chatroom.
+1581241963.98781 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581241964.9860394 : Alex: sdklfj
+1581241964.9863658 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdklfj
+1581241964.9865975 : Broadcasted Alex: sdklfj
+1581241965.5705056 : Alex: sfl
+1581241965.5708416 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfl
+1581241965.5710707 : Broadcasted Alex: sfl
+1581241966.0338964 : Alex: sjd
+1581241966.0342224 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sjd
+1581241966.0344517 : Broadcasted Alex: sjd
+1581241966.4920304 : Alex: sfd
+1581241966.492364 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfd
+1581241966.492595 : Broadcasted Alex: sfd
+1581241966.9669726 : Alex: sdhf
+1581241966.967297 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdhf
+1581241966.9675264 : Broadcasted Alex: sdhf
+1581241967.4308395 : Alex: dsf
+1581241967.4311585 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581241967.431384 : Broadcasted Alex: dsf
+1581241967.899998 : Alex: dsfjh
+1581241967.9003222 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfjh
+1581241967.9005504 : Broadcasted Alex: dsfjh
+1581241968.4097457 : Alex: sfdjh
+1581241968.410069 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdjh
+1581241968.4103003 : Broadcasted Alex: sfdjh
+1581241971.1500216 : Sending to Alex : What would you like to report?
+1581241971.1506586 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to report?
+1581241977.2129707 : Sending to Alex : Saved.
+1581241977.213168 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+1581241982.7529361 : Sending to Alex : What would you like to request?
+1581241982.7532504 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to request?
+1581241987.9133015 : Sending to Alex : Saved.
+1581241987.9135113 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+1581241988.8840122 : Alex: sdfjlk
+1581241988.8843448 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfjlk
+1581241988.8845978 : Broadcasted Alex: sdfjlk
+1581241989.4252055 : Alex: sf
+1581241989.4255111 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581241989.4257617 : Broadcasted Alex: sf
+1581241997.8886077 : Accepted connection from ('127.0.0.1', 49240) , referring
+1581241998.1050084 : Sending low level message PM
+1581241998.1081555 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581242002.376417 : Sending low level message PM
+1581242002.376979 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581242004.4536715 : Sending low level message PM
+1581242004.454189 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581242005.065589 : Sending low level internal message
+1581242005.0730815 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581242005.777039 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581242005.7782836 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581242010.6100025 : Sending internal message to Alex : SENDPINGS=TRUE
+1581242010.610927 : Could not get connection for internal message name, passing and not sending
+1581242010.6117408 : Had error earlier, not sending
+1581242010.6124604 : Sending to Alex : Welcome to the chatroom.
+1581242010.6134017 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581242011.7830489 : Alex: sjdfl
+1581242011.784262 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sjdfl
+1581242011.7851999 : Broadcasted Alex: sjdfl
+1581242012.5774715 : Alex: d
+1581242012.5778508 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581242012.578111 : Broadcasted Alex: d
+1581242013.2558074 : Alex: fdj
+1581242013.256668 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdj
+1581242013.257532 : Broadcasted Alex: fdj
+1581242013.895808 : Alex: fsdk
+1581242013.8961837 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdk
+1581242013.896456 : Broadcasted Alex: fsdk
+1581242014.455454 : Alex: dsf
+1581242014.4558408 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581242014.4560883 : Broadcasted Alex: dsf
+1581242015.0228813 : Alex: sd
+1581242015.023308 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sd
+1581242015.0236425 : Broadcasted Alex: sd
+1581242015.5238883 : Alex: dsfhj
+1581242015.524311 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfhj
+1581242015.5245626 : Broadcasted Alex: dsfhj
+1581242016.0931764 : Alex: sf
+1581242016.093544 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581242016.0937889 : Broadcasted Alex: sf
+1581242016.626815 : Alex: sdfh
+1581242016.6272657 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfh
+1581242016.6276326 : Broadcasted Alex: sdfh
+1581242017.1883714 : Alex: sfjhsdf
+1581242017.1888282 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfjhsdf
+1581242017.1890829 : Broadcasted Alex: sfjhsdf
+1581242021.2397141 : Sending to Alex : What would you like to report?
+1581242021.2404125 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to report?
+1581242022.180419 : Sending to Alex : Saved.
+1581242022.1806602 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+1581242028.9200213 : Sending to Alex : What would you like to request?
+1581242028.9211078 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to request?
+1581242029.8814814 : Alex: fsjlj
+1581242029.8818762 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsjlj
+1581242029.882235 : Broadcasted Alex: fsjlj
+1581242030.499368 : Alex: dshfjk
+1581242030.5000298 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dshfjk
+1581242030.500542 : Broadcasted Alex: dshfjk
+1581242032.008854 : Alex: fsh
+1581242032.0091846 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsh
+1581242032.0095594 : Broadcasted Alex: fsh
+1581242036.5793328 : Sending to Alex : Saved.
+1581242036.5802271 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+1581242225.9540489 : Defaulted
+1581242225.9551184 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581242225.955072
+1581242225.9574063 : PM Manager started
+1581242231.7361581 : Accepted connection from ('127.0.0.1', 49392) , referring
+1581242231.9372458 : Sending low level message PM
+1581242231.9375844 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581242234.0932696 : Sending low level message PM
+1581242234.093798 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581242236.326803 : Sending low level message PM
+1581242236.3272402 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581242238.1686 : Sending low level message PM
+1581242238.1690006 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581242238.5698807 : Sending low level message PM
+1581242238.5702424 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581242238.9750628 : Sending low level internal message
+1581242238.9759293 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581242240.2312036 : Sending low level message PM
+1581242240.231572 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581242242.0278084 : Sending low level message PM
+1581242242.0286584 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581242244.2328787 : Sending to Alex : If you can read this, your account creation worked.
+1581242244.2335503 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581242244.434593 : Sending to Alex : Enter the word 'continue' to sign in
+1581242244.4351838 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581242246.9833074 : Sending low level message PM
+1581242246.984061 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581242250.0205297 : Sending low level message PM
+1581242250.0212862 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581242250.6225972 : Sending low level internal message
+1581242250.6229622 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581242251.4171 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581242251.4174206 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581242254.7796972 : Sending internal message to Alex : SENDPINGS=TRUE
+1581242254.7812366 : Could not get connection for internal message name, passing and not sending
+1581242254.7818754 : Had error earlier, not sending
+1581242254.7824264 : Sending to Alex : Welcome to the chatroom.
+1581242254.7829845 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581242255.854082 : Alex: fjskl
+1581242255.8544054 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fjskl
+1581242255.8546457 : Broadcasted Alex: fjskl
+1581242256.344492 : Alex: sdfhk
+1581242256.3448625 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfhk
+1581242256.3451195 : Broadcasted Alex: sdfhk
+1581242258.5073087 : Sending to Alex : What would you like to report?
+1581242258.5081694 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to report?
+1581242262.5214126 : Sending to Alex : Saved.
+1581242262.522144 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.
+1581242266.822549 : Sending to Alex : What would you like to request?
+1581242266.822854 : Encoding: [SERVER INTERNAL-PM MESSAGE]What would you like to request?
+1581242268.2695491 : Sending to Alex : Saved.
+1581242268.2700722 : Encoding: [SERVER INTERNAL-PM MESSAGE]Saved.

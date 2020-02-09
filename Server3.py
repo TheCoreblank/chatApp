@@ -289,6 +289,27 @@ class Main():
 
                             HighLevelCommunications.PrivateMessageFromServer(Username, "Added to buffer.")
 
+                    elif "/bug report" in message:
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to report?")
+                        reply = connection.recv(BufferSize).decode("utf8")
+                        BugReportsFile = open('bugReports.txt', 'a')
+                        BugReportsFile.write("---- BUG REPORT: SENDER " + str(Username) + " TIME:" + str(time.time()) + " ---- \n")
+                        BugReportsFile.write(str(reply) + "\n")
+                        BugReportsFile.write("</BUG REPORT> \n")
+                        BugReportsFile.close()
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
+
+
+                    elif "/feature request" in message:
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to request?")
+                        reply = connection.recv(BufferSize).decode("utf8")
+                        FeatureRequestsFile = open('featureRequests.txt', "a")
+                        FeatureRequestsFile.write("---- FEATURE REQUEST: SENDER " + str(Username) + " TIME: " + str(time.time()) + " ----\n")
+                        FeatureRequestsFile.write(str(reply) + "\n")
+                        FeatureRequestsFile.write("</FEATURE REQUEST> \n")
+                        FeatureRequestsFile.close()
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
+
                     elif "/exit" in message or "/quit" in message:
                         Accounts.PushAccountData(Username, "IsOnline", False)
 
@@ -531,7 +552,7 @@ class PMManager:
 def PrintLog(text):
     text = str(text)
     print(text)
-    text = text + "\n"
+    text = str(time.time()) + " : " + text + "\n"
     LogFile = open('log.txt', 'a')
     LogFile.write(text)
 
