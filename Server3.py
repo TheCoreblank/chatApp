@@ -490,7 +490,7 @@ class Main():
                         if response == "Y":
                             LowLevelCommunications.SendServerPM(connection, "Password: ")
 
-                            LowLevelCommunications.SendInternalMessage("PASSWORD ENTRY FIELD")
+                            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
                             response = connection.recv(BufferSize).decode("utf8")
                             #
                             # Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway

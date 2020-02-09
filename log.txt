@@ -2481,3 +2481,24 @@ Broadcasted Alex: sfjdl
 1581276410.3909342 : Sending low level message PM
 1581276410.3918734 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password: 
 1581276410.593418 : Error in account creation
+1581277460.7753544 : Defaulted
+1581277460.776395 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581277460.776338
+1581277460.778647 : PM Manager started
+1581277474.836056 : Accepted connection from ('127.0.0.1', 47292) , referring
+1581277475.037125 : Sending low level message PM
+1581277475.0375164 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581277477.0930195 : Sending low level message PM
+1581277477.0935957 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581277483.5836027 : Sending low level message PM
+1581277483.5845675 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581277485.8949444 : Sending low level message PM
+1581277485.8958077 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581277486.2976549 : Sending low level message PM
+1581277486.2979975 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581277486.6988919 : Sending low level internal message
+1581277486.6993446 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581277490.4732437 : Received [Hashed] password: ea65d0a52b90936f318c762119141b659f14190d4ab6dbc08207eb7d3d6560cd3c5760d27a3ca6fbf481efb3ddecb1351ee3ae5932a2dd45ee5061020e5493e3
+1581277490.67392 : Sending low level message PM
+1581277490.6744895 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581277491.9621706 : Sending low level message PM
+1581277491.9631042 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password: 
