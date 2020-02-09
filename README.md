@@ -42,7 +42,7 @@ No server V3 commands have arguments, you are asked for info after entering the 
 - /bug report - prompts you to make a bug report.
 - /feature request - prompts you to request a feature
 
-# Commands
+# Server V2 Commands
 
 Client Side
 
