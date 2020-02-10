@@ -137,26 +137,6 @@ class Accounts():
     #    ConnectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
     #}
 
-    def ReadAccountList():
-        #BROKEN, SO NOT RUNNING
-        SaveFile = open('accounts', 'rb')
-        Accounts.AccountList = pickle.load(SaveFile)
-
-    def SaveAccountListToFile():
-        #BROKEN, SO NOT RUNNING
-        SaveFile = open('accounts', 'wb')
-        AccountsListNoSockets = Accounts.AccountList
-
-        for account in Accounts.AccountList:
-            try:
-                del account["ConnectionObject"]
-            except KeyError:
-                PrintLog("Connection object not found to delete")
-
-        print(str(AccountsListNoSockets))
-
-        pickle.dump(AccountsListNoSockets, SaveFile)
-
     def PopulateFile():
         SaveFile = open("accounts", "wb")
         toDump = [{"Username" : "Placeholder-jshgfiowjfiowfo2nwfo"}]
@@ -333,6 +313,7 @@ class Main():
     def AcceptIncomingConnections():
         while True:
             connection, address = server.accept()
+            str(connection)
             PrintLog("Accepted connection from " + str(address) + " , referring")
             Thread(target=Main.WelcomeNewConnections, args=(connection, address)).start()
 
