@@ -18,10 +18,10 @@ class Communications():
             GUI.WipeList()
 
         elif message == "/exit" or message == "/quit":
-            InternalSend("/quit")
+            Communications.InternalSend("/quit")
             client_socket.close()
             GUI.top.destroy()
-            top.quit()
+            GUI.top.quit()
             sys.exit()
 
         elif Communications.HashNextMessage == False:
@@ -43,7 +43,7 @@ class Communications():
 
     def PeriodicPing():
         while True:
-            time.sleep(15)
+            time.sleep(10)
             if Communications.sendpings == True:
                 Communications.InternalSend("[CLIENT PING UPDATE]")
     
@@ -147,7 +147,7 @@ class GUI:
 
     messages_frame.pack()
 
-    entry_field = tkinter.Entry(top, textvariable=my_message, width = (listWidth-6))
+    entry_field = tkinter.Entry(top, textvariable=my_message, width = (listWidth))
     entry_field.bind("<Return>", Communications.Send)
     entry_field.configure(background="white")
     entry_field.pack()
@@ -172,10 +172,10 @@ class GUI:
 #<copied code> Copied from Client2 because it's pretty good code, if I say so myself. 
 #default settings
 backlogLength = 20
-#host = "127.0.0.1"
-host = "86.31.133.208"
+host = "127.0.0.1"
+#host = "86.31.133.208"
 #host = "192.168.0.35"
-port = 443
+port = 34000
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
 if not port:

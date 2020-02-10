@@ -315,7 +315,8 @@ class Main():
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
 
                     elif "/exit" in message or "/quit" in message:
-                        Accounts.PushAccountData(Username, "IsOnline", False)
+                        Accounts.PushAccountData(Username, "isOnline", False)
+                        break
 
                     elif not "[CLIENT PING UPDATE]" in message:
                         PrintLog(Username + ": " + message)
@@ -383,11 +384,11 @@ class Main():
                     break
             
             #Double negative because it sometimes returns "none"
-            if not Accounts.GetAccountData(Username, "IsOnline") == True and DoesAccountExist == False:
+            if not Accounts.GetAccountData(Username, "isOnline") == True and DoesAccountExist == True:
                 while True:
-                    LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
-                    time.sleep(0.2)
                     LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+                    time.sleep(0.2)
+                    LowLevelCommunications.SendServerPM(connection, "Enter password, be careful about whitespace.")
 
                     Password = connection.recv(BufferSize).decode("utf8")
                     PrintLog("Received [Hashed] password: " + str(Password))
@@ -471,8 +472,8 @@ class Main():
                 LowLevelCommunications.SendServerPM(connection, "Username received: " + Username)
 
                 if InUse == False:
-                    LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
                     LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
+                    LowLevelCommunications.SendServerPM(connection, "Please enter your new password: ")
                     response = connection.recv(BufferSize).decode("utf8")
                     Password = response
                     PrintLog("Received [Hashed] password: " + str(Password))
@@ -492,9 +493,9 @@ class Main():
                         LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
                         response = connection.recv(BufferSize).decode("utf8")
                         if response == "Y":
+                            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
                             LowLevelCommunications.SendServerPM(connection, "Password: ")
 
-                            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
                             response = connection.recv(BufferSize).decode("utf8")
                             #
                             # Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
@@ -530,6 +531,7 @@ class Main():
                 Accounts.NewAccount(Username, Password, IsAdmin)
                 time.sleep(1)
                 Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                Accounts.PushAccountData(Username, "isOnline", False)
                 HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
                 time.sleep(0.2)
                 HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
@@ -597,15 +599,15 @@ def PrintLog(text):
 class PingManager:
     def PingManager():
         while True:
-            time.sleep(20)
+            time.sleep(10)
             for account in Accounts.AccountList:
-                if Accounts.GetAccountDataFromObject(account, "IsOnline") == True:
+                if Accounts.GetAccountDataFromObject(account, "isOnline") == True:
                     lastSeen = Accounts.GetAccountDataFromObject(account, "LastSeen")
                     difference = time.time() - lastSeen
 
-                    if difference > 60:
+                    if difference > 20:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
-                        Accounts.PushAccountData(Username, "IsOnline", False)
+                        Accounts.PushAccountData(Username, "isOnline", False)
 
 server = socket(AF_INET, SOCK_STREAM) 
 Port = input("Port: ")
@@ -632,6 +634,11 @@ except:
 
     server.bind((Host, Port))
 server.listen(1000)
+
+def PrintPeriodic():
+    while True:
+        time.sleep(0.5)
+        PrintLog(str(Accounts.GetAccountData("Alex", "isOnline")))
 
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
