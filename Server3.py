@@ -254,7 +254,8 @@ class Main():
 
                     if"/pm" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Who do you want to send the PM to?")
-                        ToSendPmTo = connection.recv(BufferSize).decode("utf8")
+                        while not "[CLIENT PING UPDATE]" in message:
+                            ToSendPmTo = connection.recv(BufferSize).decode("utf8")
                         ToSendExists = False
                         ToSendOnline = False
 
@@ -272,7 +273,8 @@ class Main():
 
                         if ToSendExists == True and ToSendOnline == True:
                             HighLevelCommunications.PrivateMessageFromServer(Username, "What do you want to send?")
-                            PmToSend = connection.recv(BufferSize).decode("utf8")
+                            while not "[CLIENT PING UPDATE]" in message:
+                                PmToSend = connection.recv(BufferSize).decode("utf8")
 
                             Accounts.PushAccountData(ToSendPmTo, "PendingPms", {"Sender" : Username, "Message" : PmToSend, "HasAnswered" : False})
 
@@ -302,7 +304,7 @@ class Main():
                         Accounts.PushAccountData(Username, "isOnline", False)
                         break
 
-                    elif not "[CLIENT PING UPDATE]" in message:
+                    elif not "[CLIENT PING UPDATE]" in message and not "[PING: REPLY URGENTLY]" in message:
                         PrintLog(Username + ": " + message)
                         HighLevelCommunications.Broadcast(Username + ": " + message)
 
@@ -590,7 +592,7 @@ class PingManager:
                     lastSeen = Accounts.GetAccountDataFromObject(account, "LastSeen")
                     difference = time.time() - lastSeen
 
-                    if difference > 60:
+                    if difference > 30:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
                         Accounts.PushAccountData(Username, "isOnline", False)
 

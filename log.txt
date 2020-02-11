@@ -3943,3 +3943,1244 @@ Broadcasted Alex: sfjdl
 1581409503.9001348 : Ale: hds
 1581409503.9010088 : Encoding: [SERVER INTERNAL-BROADCAST]Ale: hds
 1581409503.9017606 : Broadcasted Ale: hds
+1581419746.6880512 : Defaulted
+1581419746.7119246 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581419746.7118526
+1581419746.713482 : PM Manager started
+1581419755.7754889 : Accepted connection from ('127.0.0.1', 34872) , referring
+1581419755.9766054 : Sending low level message PM
+1581419755.9770396 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581419762.2123413 : Sending low level message PM
+1581419762.2127364 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581419764.6794384 : Sending low level message PM
+1581419764.6800103 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581419766.1287696 : Sending low level message PM
+1581419766.1297143 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581419766.5312636 : Sending low level internal message
+1581419766.5319915 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581419766.9333537 : Sending low level message PM
+1581419766.9339023 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581419771.3984635 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581419771.599728 : Sending low level message PM
+1581419771.6002178 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581419817.9535766 : Sending low level message PM
+1581419817.953932 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581419820.156609 : Sending to Alex : If you can read this, your account creation worked.
+1581419820.1571846 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581419820.3579948 : Sending to Alex : Enter the word 'continue' to sign in
+1581419820.3583145 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581419828.8193612 : Accepted connection from ('127.0.0.1', 34914) , referring
+1581419829.020657 : Sending low level message PM
+1581419829.0211253 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581419831.02799 : Sending low level message PM
+1581419831.028487 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581419832.2645392 : Sending low level internal message
+1581419832.2654305 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581419832.867334 : Sending low level message PM
+1581419832.868228 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581419839.6196067 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581419839.6199632 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581419839.620127 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581419843.0325465 : Sending to Alex : Welcome to the chatroom.
+1581419843.0331557 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581419843.5518057 : Alex: fsjd
+1581419843.5522358 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsjd
+1581419843.5525548 : Broadcasted Alex: fsjd
+1581419844.0338535 : Alex: sdjk
+1581419844.0344543 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjk
+1581419844.035109 : Broadcasted Alex: sdjk
+1581419912.4821942 : Alex: fji
+1581419912.5037544 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fji
+1581419912.5041192 : Broadcasted Alex: fji
+1581419912.976594 : Alex: sfh
+1581419912.976918 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfh
+1581419912.9771438 : Broadcasted Alex: sfh
+1581419913.469264 : Alex: sdj
+1581419913.4695814 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdj
+1581419913.4698102 : Broadcasted Alex: sdj
+1581419913.9330692 : Alex: s
+1581419913.933413 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581419913.9336557 : Broadcasted Alex: s
+1581419914.445978 : Alex: sf
+1581419914.4463015 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581419914.4465582 : Broadcasted Alex: sf
+1581419914.9521036 : Alex: sfdkj
+1581419914.952437 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdkj
+1581419914.9526958 : Broadcasted Alex: sfdkj
+1581419915.427154 : Alex: sdfh
+1581419915.4275591 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfh
+1581419915.4278095 : Broadcasted Alex: sdfh
+1581419915.9081447 : Alex: fdsjh
+1581419915.9084873 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdsjh
+1581419915.9087503 : Broadcasted Alex: fdsjh
+1581419916.3576853 : Alex: sdfh
+1581419916.3580213 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfh
+1581419916.3582804 : Broadcasted Alex: sdfh
+1581419916.7786052 : Alex: dsfds
+1581419916.7790043 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfds
+1581419916.7792761 : Broadcasted Alex: dsfds
+1581419917.3071954 : Alex: sdf
+1581419917.307548 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581419917.3078022 : Broadcasted Alex: sdf
+1581420003.576287 : Accepted connection from ('127.0.0.1', 35132) , referring
+1581420003.7774572 : Sending low level message PM
+1581420003.7824762 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581420006.1368449 : Sending low level message PM
+1581420006.1410627 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581420008.4504313 : Sending low level message PM
+1581420008.4515483 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581420023.1759892 : Accepted connection from ('127.0.0.1', 35140) , referring
+1581420023.3872995 : Sending low level message PM
+1581420023.387635 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581420099.3033707 : Sending low level message PM
+1581420099.3042638 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581420101.7455416 : Sending low level internal message
+1581420101.7458844 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581420102.3476229 : Sending low level message PM
+1581420102.3479745 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581420107.555325 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581420107.555743 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581420107.5559316 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581420116.556699 : Sending to Alex : Welcome to the chatroom.
+1581420116.5585773 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581420120.7733016 : Alex: fdl
+1581420120.774121 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdl
+1581420120.774915 : Broadcasted Alex: fdl
+1581420121.3371723 : Alex: sdh
+1581420121.3374891 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdh
+1581420121.33773 : Broadcasted Alex: sdh
+1581420956.509172 : Defaulted
+1581420956.512417 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581420956.5122693
+1581420956.5167491 : PM Manager started
+1581421015.9197783 : Accepted connection from ('10.6.140.129', 63335) , referring
+1581421016.1213787 : Sending low level message PM
+1581421016.1218631 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581421025.704908 : Accepted connection from ('127.0.0.1', 35652) , referring
+1581421025.9060755 : Sending low level message PM
+1581421025.9064522 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581421028.3440683 : Sending low level message PM
+1581421028.344665 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581421029.7400293 : Sending low level message PM
+1581421029.7405305 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581421032.401606 : Sending low level message PM
+1581421032.4019332 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581421038.1338258 : Sending low level message PM
+1581421038.134163 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: SchoolPC
+1581421038.5353613 : Sending low level internal message
+1581421038.536254 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581421038.9384203 : Sending low level message PM
+1581421038.939383 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581421045.1697996 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581421045.3709152 : Sending low level message PM
+1581421045.3713138 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581421059.0423753 : Accepted connection from ('127.0.0.1', 35668) , referring
+1581421059.2434819 : Sending low level message PM
+1581421059.2444875 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581421061.9965136 : Sending low level message PM
+1581421061.9973004 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581421064.4872644 : Sending low level message PM
+1581421064.488125 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581421070.576401 : Sending low level message PM
+1581421070.57675 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581421070.9782841 : Sending low level internal message
+1581421070.9788303 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581421071.3803403 : Sending low level message PM
+1581421071.38117 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581421075.2979262 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581421075.4988582 : Sending low level message PM
+1581421075.4992592 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581421078.897367 : Sending low level message PM
+1581421078.898218 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581421081.1018724 : Sending to Alex : If you can read this, your account creation worked.
+1581421081.1022642 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581421081.3031938 : Sending to Alex : Enter the word 'continue' to sign in
+1581421081.304068 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581421081.9632568 : Sending low level message PM
+1581421081.9639335 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581421084.1670394 : Sending to SchoolPC : If you can read this, your account creation worked.
+1581421084.1677694 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581421084.368781 : Sending to SchoolPC : Enter the word 'continue' to sign in
+1581421084.369725 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581421085.0746965 : Sending low level message PM
+1581421085.0755856 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581421089.3428416 : Sending low level message PM
+1581421089.3432102 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581421093.3304472 : Sending low level internal message
+1581421093.3309333 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581421093.933367 : Sending low level message PM
+1581421093.9342887 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581421099.3770163 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581421099.3777769 : Sending to SchoolPC : If you can read this, you successfully identified. Type 'continue' to continue.
+1581421099.378311 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581421102.3477135 : Sending to SchoolPC : Welcome to the chatroom.
+1581421102.3481295 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581421103.1664658 : SchoolPC: sdf
+1581421103.167462 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: sdf
+1581421103.1916747 : Broadcasted SchoolPC: sdf
+1581421103.781006 : SchoolPC: s
+1581421103.7819185 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: s
+1581421103.78291 : Broadcasted SchoolPC: s
+1581421109.9236748 : Sending low level internal message
+1581421109.924196 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581421110.525757 : Sending low level message PM
+1581421110.5261946 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581421114.7113652 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581421114.7122931 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581421114.712965 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581421116.6763635 : Sending to Alex : Welcome to the chatroom.
+1581421116.6772842 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581421117.30199 : Alex: sjflk
+1581421117.3024814 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sjflk
+1581421117.3029237 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sjflk
+1581421117.3033352 : Broadcasted Alex: sjflk
+1581421751.4829261 : Alex: vbsfd
+1581421751.483292 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: vbsfd
+1581421751.4835627 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: vbsfd
+1581421751.4837976 : Broadcasted Alex: vbsfd
+1581422119.5290256 : Alex: lglkjf
+1581422119.5339458 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lglkjf
+1581422119.5343952 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lglkjf
+1581422119.5346894 : Broadcasted Alex: lglkjf
+1581422357.4317858 : Defaulted
+1581422357.458069 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581422357.4579911
+1581422357.4594562 : PM Manager started
+1581422364.8751771 : Accepted connection from ('10.6.140.129', 63389) , referring
+1581422365.0783584 : Sending low level message PM
+1581422365.078785 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581422621.9157012 : Accepted connection from ('127.0.0.1', 36420) , referring
+1581422622.1460032 : Sending low level message PM
+1581422622.1471395 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581422624.5382614 : Sending low level message PM
+1581422624.5386293 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581422627.4224715 : Sending low level message PM
+1581422627.422869 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581422628.7195904 : Sending low level message PM
+1581422628.7203152 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581422629.1218238 : Sending low level internal message
+1581422629.122615 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581422629.5245252 : Sending low level message PM
+1581422629.525228 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581422632.6562405 : Sending low level message PM
+1581422632.6571808 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581422635.2115903 : Sending low level message PM
+1581422635.2125309 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581422636.790431 : Sending low level message PM
+1581422636.791434 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581422637.1935456 : Sending low level internal message
+1581422637.1943967 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581422637.5961425 : Sending low level message PM
+1581422637.597016 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581422643.8182583 : Error in account creation
+1581422651.4996395 : Accepted connection from ('10.6.140.129', 63409) , referring
+1581422651.7008474 : Sending low level message PM
+1581422651.7011685 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581422657.5845745 : Sending low level message PM
+1581422657.5855284 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581422660.709932 : Sending low level message PM
+1581422660.710942 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581422664.089796 : Sending low level message PM
+1581422664.090645 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Remove that whitespace!
+1581422664.4923134 : Sending low level message PM
+1581422664.493169 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581422667.2868147 : Sending low level message PM
+1581422667.2872143 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: SchoolPC
+1581422667.6885679 : Sending low level internal message
+1581422667.6894763 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581422668.091721 : Sending low level message PM
+1581422668.0925689 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581422673.9644883 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581422674.1657133 : Sending low level message PM
+1581422674.1663902 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581422677.5043015 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581422677.705109 : Sending low level message PM
+1581422677.7057216 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581422679.3365378 : Sending low level message PM
+1581422679.3373144 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581422681.5405028 : Sending to SchoolPC : If you can read this, your account creation worked.
+1581422681.5408936 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581422681.7414944 : Sending to SchoolPC : Enter the word 'continue' to sign in
+1581422681.7421093 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581422682.0628324 : Sending low level message PM
+1581422682.0632834 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581422684.2952063 : Sending to Alex : If you can read this, your account creation worked.
+1581422684.2956593 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581422684.4966445 : Sending to Alex : Enter the word 'continue' to sign in
+1581422684.4975147 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581422689.896731 : Sending low level message PM
+1581422689.8976293 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581422693.3824072 : Sending low level message PM
+1581422693.3828497 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581422696.743302 : Sending low level internal message
+1581422696.7441878 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581422697.3468697 : Sending low level message PM
+1581422697.3477273 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581422701.0621638 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581422701.0632098 : Sending to SchoolPC : If you can read this, you successfully identified. Type 'continue' to continue.
+1581422701.0638978 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581422703.488641 : Sending low level internal message
+1581422703.4895008 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581422704.091221 : Sending low level message PM
+1581422704.0917513 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581422707.465067 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581422707.4654012 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581422707.4655612 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581422709.7673004 : Sending to SchoolPC : Welcome to the chatroom.
+1581422709.7703333 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581422711.923252 : Sending to Alex : Welcome to the chatroom.
+1581422711.924232 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581422712.5533051 : Alex: slfs
+1581422712.5536275 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: slfs
+1581422712.5538552 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: slfs
+1581422712.5540771 : Broadcasted Alex: slfs
+1581422714.141969 : Alex: dfsj
+1581422714.1423218 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dfsj
+1581422714.142585 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dfsj
+1581422714.1429348 : Broadcasted Alex: dfsj
+1581422715.7050478 : SchoolPC: jhlfji
+1581422715.705934 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jhlfji
+1581422715.7069402 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jhlfji
+1581422715.7078059 : Broadcasted SchoolPC: jhlfji
+1581422716.0125794 : SchoolPC: df
+1581422716.0135317 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: df
+1581422716.0143938 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: df
+1581422716.0154047 : Broadcasted SchoolPC: df
+1581422720.577897 : SchoolPC: dhsdufh
+1581422720.5782866 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: dhsdufh
+1581422720.5785983 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: dhsdufh
+1581422720.5789702 : Broadcasted SchoolPC: dhsdufh
+1581422721.7610884 : Alex: gfgd
+1581422721.7620418 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: gfgd
+1581422721.7669048 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: gfgd
+1581422721.7683225 : Broadcasted Alex: gfgd
+1581422722.6900377 : Alex: fdgdf
+1581422722.6906486 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdgdf
+1581422722.691287 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdgdf
+1581422722.6921268 : Broadcasted Alex: fdgdf
+1581422727.2710302 : Alex: fdgd
+1581422727.2716775 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdgd
+1581422727.2722769 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdgd
+1581422727.2728653 : Broadcasted Alex: fdgd
+1581422731.9868574 : SchoolPC: khjh
+1581422731.9873314 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: khjh
+1581422731.987732 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: khjh
+1581422731.988118 : Broadcasted SchoolPC: khjh
+1581422735.7460227 : Alex: gfdg
+1581422735.7470796 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: gfdg
+1581422735.7496185 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: gfdg
+1581422735.750103 : Broadcasted Alex: gfdg
+1581422744.070703 : SchoolPC: vihjv
+1581422744.071729 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: vihjv
+1581422744.0725915 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: vihjv
+1581422744.0734527 : Broadcasted SchoolPC: vihjv
+1581422744.7877696 : SchoolPC: bhxcvk
+1581422744.7886858 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: bhxcvk
+1581422744.7895532 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: bhxcvk
+1581422744.7932034 : Broadcasted SchoolPC: bhxcvk
+1581422745.5041592 : SchoolPC: jkvxc
+1581422745.5050762 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jkvxc
+1581422745.5059283 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jkvxc
+1581422745.5090039 : Broadcasted SchoolPC: jkvxc
+1581422746.1188967 : SchoolPC: jkbxcv
+1581422746.1197658 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jkbxcv
+1581422746.1206086 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: jkbxcv
+1581422746.1218908 : Broadcasted SchoolPC: jkbxcv
+1581422987.613945 : Alex: sdjfkl
+1581422987.6165328 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjfkl
+1581422987.616955 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjfkl
+1581422987.6172569 : Broadcasted Alex: sdjfkl
+1581422988.2901864 : Alex: sdf
+1581422988.2909176 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581422988.2914724 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581422988.2919846 : Broadcasted Alex: sdf
+1581422988.8849776 : Alex: f
+1581422988.8858542 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581422988.8867033 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581422988.8876753 : Broadcasted Alex: f
+1581422989.4292734 : Alex: sdfj
+1581422989.4297352 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfj
+1581422989.4301982 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfj
+1581422989.4306617 : Broadcasted Alex: sdfj
+1581422989.9405947 : Alex: dsf
+1581422989.9410763 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581422989.9414613 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581422989.9418337 : Broadcasted Alex: dsf
+1581422990.4527795 : Alex: sf
+1581422990.453129 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581422990.4533834 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581422990.4536226 : Broadcasted Alex: sf
+1581422990.948574 : Alex: dsfj
+1581422990.949325 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfj
+1581422990.9500964 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfj
+1581422990.954655 : Broadcasted Alex: dsfj
+1581422991.438349 : Alex: sfdj
+1581422991.4389522 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdj
+1581422991.4394372 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdj
+1581422991.439907 : Broadcasted Alex: sfdj
+1581423029.7441804 : Accepted connection from ('127.0.0.1', 36690) , referring
+1581423029.9463222 : Sending low level message PM
+1581423029.9475727 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581423034.8253179 : Sending low level message PM
+1581423034.825692 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581423036.421494 : Sending low level message PM
+1581423036.4435165 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581423041.3959644 : SchoolPC: yghk
+1581423041.39631 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: yghk
+1581423041.396522 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: yghk
+1581423041.3967772 : Broadcasted SchoolPC: yghk
+1581423042.2675843 : SchoolPC: bjk
+1581423042.267975 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: bjk
+1581423042.2681975 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: bjk
+1581423042.2683747 : Error in broadcast : loop
+1581423042.2685328 : Broadcasted SchoolPC: bjk
+1581423042.984105 : SchoolPC: gu
+1581423042.984507 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gu
+1581423042.9847915 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gu
+1581423042.985054 : Error in broadcast : loop
+1581423042.9852154 : Broadcasted SchoolPC: gu
+1581423043.70141 : SchoolPC: [-og
+1581423043.702424 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: [-og
+1581423043.7042074 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: [-og
+1581423043.7060804 : Error in broadcast : loop
+1581423043.7108357 : Broadcasted SchoolPC: [-og
+1581423044.5560534 : SchoolPC: g
+1581423044.556362 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: g
+1581423044.5565934 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: g
+1581423044.556827 : Error in broadcast : loop
+1581423044.5569935 : Broadcasted SchoolPC: g
+1581423045.7489486 : SchoolPC: gffd
+1581423045.7492602 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gffd
+1581423045.7494917 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gffd
+1581423045.7497523 : Error in broadcast : loop
+1581423045.7529135 : Broadcasted SchoolPC: gffd
+1581423046.363473 : SchoolPC: gfsg
+1581423046.363821 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gfsg
+1581423046.3640497 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: gfsg
+1581423046.3642166 : Error in broadcast : loop
+1581423046.3644202 : Broadcasted SchoolPC: gfsg
+1581423046.7739673 : SchoolPC: sdg
+1581423046.774254 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: sdg
+1581423046.7744813 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: sdg
+1581423046.7747147 : Error in broadcast : loop
+1581423046.7749114 : Broadcasted SchoolPC: sdg
+1581423047.2849433 : SchoolPC: fg
+1581423047.285373 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: fg
+1581423047.2856812 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: fg
+1581423047.2858899 : Error in broadcast : loop
+1581423047.2860649 : Broadcasted SchoolPC: fg
+1581423047.7977443 : SchoolPC: sdg
+1581423047.8202343 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: sdg
+1581423047.821114 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: sdg
+1581423047.822716 : Error in broadcast : loop
+1581423047.8260734 : Broadcasted SchoolPC: sdg
+1581423066.1887474 : Accepted connection from ('127.0.0.1', 36710) , referring
+1581423066.3909988 : Sending low level message PM
+1581423066.39186 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581423073.680115 : Sending low level message PM
+1581423073.6808562 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581423075.6340075 : Sending low level internal message
+1581423075.634385 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581423076.2357714 : Sending low level message PM
+1581423076.236666 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581423080.631378 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581423080.6323235 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581423080.6329842 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581423082.395362 : Sending to Alex : Welcome to the chatroom.
+1581423082.3960948 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581423083.060869 : Alex: sdfl
+1581423083.06166 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfl
+1581423083.0624294 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfl
+1581423083.0638788 : Broadcasted Alex: sdfl
+1581423083.6078715 : Alex: hsfd
+1581423083.6087399 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsfd
+1581423083.6096084 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsfd
+1581423083.6105843 : Broadcasted Alex: hsfd
+1581423084.1905801 : Alex: fj
+1581423084.1915362 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fj
+1581423084.1923263 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fj
+1581423084.1929483 : Broadcasted Alex: fj
+1581423084.7322197 : Alex: f
+1581423084.7325258 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581423084.7327611 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581423084.7330842 : Broadcasted Alex: f
+1581423085.2938857 : Alex: f
+1581423085.294708 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581423085.2957273 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581423085.2971275 : Broadcasted Alex: f
+1581423085.8709474 : Alex: sdfh
+1581423085.8715208 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfh
+1581423085.8720956 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfh
+1581423085.8737297 : Broadcasted Alex: sdfh
+1581423095.3196821 : Alex: sfjl
+1581423095.320567 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfjl
+1581423095.3214707 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfjl
+1581423095.324175 : Broadcasted Alex: sfjl
+1581423095.8830152 : Alex: sdhf
+1581423095.883392 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdhf
+1581423095.8837419 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdhf
+1581423095.8840022 : Broadcasted Alex: sdhf
+1581423096.5040586 : Alex: sdhf
+1581423096.504689 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdhf
+1581423096.5052757 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdhf
+1581423096.5063612 : Broadcasted Alex: sdhf
+1581423098.0286605 : SchoolPC: hih
+1581423098.0293465 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: hih
+1581423098.0299969 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: hih
+1581423098.0306246 : Broadcasted SchoolPC: hih
+1581423107.5765688 : Alex: dskfjklsdjf
+1581423107.5769043 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dskfjklsdjf
+1581423107.5771582 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dskfjklsdjf
+1581423107.577386 : Broadcasted Alex: dskfjklsdjf
+1581423108.428593 : Alex: jlf
+1581423108.4294162 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jlf
+1581423108.4301417 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jlf
+1581423108.431226 : Broadcasted Alex: jlf
+1581423109.179438 : Alex: sldfj
+1581423109.1798577 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sldfj
+1581423109.1802814 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sldfj
+1581423109.1806486 : Broadcasted Alex: sldfj
+1581423109.8498306 : Alex: dfj
+1581423109.8501332 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dfj
+1581423109.8503656 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dfj
+1581423109.8505836 : Broadcasted Alex: dfj
+1581423110.5121784 : Alex: df
+1581423110.5124707 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: df
+1581423110.5126913 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: df
+1581423110.5129023 : Broadcasted Alex: df
+1581423111.4309177 : Alex: fsdjlfjlsdhfljhds
+1581423111.4318316 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdjlfjlsdhfljhds
+1581423111.432713 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdjlfjlsdhfljhds
+1581423111.4337091 : Broadcasted Alex: fsdjlfjlsdhfljhds
+1581423112.3950872 : Alex: a
+1581423112.3959115 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.396744 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.3976228 : Broadcasted Alex: a
+1581423112.5309625 : Alex: a
+1581423112.5318093 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.532463 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.533202 : Broadcasted Alex: a
+1581423112.6579936 : Alex: a
+1581423112.6584985 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.6844747 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.6850917 : Broadcasted Alex: a
+1581423112.8920858 : Alex: a
+1581423112.892812 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.8933554 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.894994 : Broadcasted Alex: a
+1581423112.987311 : Alex: a
+1581423112.9877822 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.9881492 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423112.988487 : Broadcasted Alex: a
+1581423113.2117317 : Alex: a
+1581423113.212601 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.2134104 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.214268 : Broadcasted Alex: a
+1581423113.332047 : Alex: a
+1581423113.3323827 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.3325813 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.3328476 : Broadcasted Alex: a
+1581423113.5798447 : Alex: a
+1581423113.5807426 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.5814998 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.582345 : Broadcasted Alex: a
+1581423113.7221766 : Alex: a
+1581423113.7229073 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.7234628 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423113.7240725 : Broadcasted Alex: a
+1581423114.0097752 : Alex: a
+1581423114.0106552 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423114.011471 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423114.0122933 : Broadcasted Alex: a
+1581423114.9443278 : Alex: a
+1581423114.944863 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423114.9453378 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423114.9458156 : Broadcasted Alex: a
+1581423115.1348612 : Alex: a
+1581423115.1353247 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.13567 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.136045 : Broadcasted Alex: a
+1581423115.455351 : Alex: a
+1581423115.4560025 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.456545 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.4571679 : Broadcasted Alex: a
+1581423115.5972447 : Alex: a
+1581423115.5981867 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.5990252 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.5998843 : Broadcasted Alex: a
+1581423115.7395213 : Alex: a
+1581423115.7398472 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.7400122 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423115.7402704 : Broadcasted Alex: a
+1581423116.0568562 : Alex: a
+1581423116.0571387 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.0573106 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.0575385 : Broadcasted Alex: a
+1581423116.216785 : Alex: a
+1581423116.217613 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.2182503 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.22084 : Broadcasted Alex: a
+1581423116.3868587 : Alex: a
+1581423116.3875756 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.3881226 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.3887541 : Broadcasted Alex: a
+1581423116.5502567 : Alex: a
+1581423116.5512047 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.5519342 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.552754 : Broadcasted Alex: a
+1581423116.710842 : Alex: a
+1581423116.7116027 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.7127159 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.7135608 : Broadcasted Alex: a
+1581423116.8689215 : Alex: a
+1581423116.8695004 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.8699384 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423116.8704855 : Broadcasted Alex: a
+1581423117.2093837 : Alex: a
+1581423117.2097945 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.2100756 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.2104151 : Broadcasted Alex: a
+1581423117.390015 : Alex: a
+1581423117.3909457 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.3916707 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.3924925 : Broadcasted Alex: a
+1581423117.5549457 : Alex: a
+1581423117.5554686 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.5558667 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.5563588 : Broadcasted Alex: a
+1581423117.7459536 : Alex: a
+1581423117.7469456 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.771838 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.7736492 : Broadcasted Alex: a
+1581423117.9267013 : Alex: a
+1581423117.9276435 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.9283636 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423117.930004 : Broadcasted Alex: a
+1581423118.1103292 : Alex: a
+1581423118.111263 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423118.111977 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581423118.1129332 : Broadcasted Alex: a
+1581423125.9961228 : Alex: [PING: REPLY URGENTLY]
+1581423125.9968767 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: [PING: REPLY URGENTLY]
+1581423125.9976175 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: [PING: REPLY URGENTLY]
+1581423125.998595 : Broadcasted Alex: [PING: REPLY URGENTLY]
+1581423131.937778 : Alex: [PING: REPLY URGENTLY]
+1581423131.9384518 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: [PING: REPLY URGENTLY]
+1581423131.939258 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: [PING: REPLY URGENTLY]
+1581423131.9398837 : Broadcasted Alex: [PING: REPLY URGENTLY]
+1581423232.1963277 : Alex: jfkso
+1581423232.1974833 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jfkso
+1581423232.1983826 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jfkso
+1581423232.199076 : Broadcasted Alex: jfkso
+1581423232.7903655 : Alex: hsfd
+1581423232.791413 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsfd
+1581423232.7923524 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsfd
+1581423232.794197 : Broadcasted Alex: hsfd
+1581423233.281429 : Alex: sdfhdsf
+1581423233.2819607 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfhdsf
+1581423233.2824354 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdfhdsf
+1581423233.2830157 : Broadcasted Alex: sdfhdsf
+1581423239.0008187 : Alex: sdjkf
+1581423239.001752 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjkf
+1581423239.0026052 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjkf
+1581423239.0035865 : Broadcasted Alex: sdjkf
+1581423239.644025 : Alex: sdjkf
+1581423239.6448858 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjkf
+1581423239.6458795 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjkf
+1581423239.646714 : Broadcasted Alex: sdjkf
+1581423240.9183323 : SchoolPC: htjtyj
+1581423240.919103 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: htjtyj
+1581423240.9197636 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: htjtyj
+1581423240.9204016 : Broadcasted SchoolPC: htjtyj
+1581423244.7080991 : Alex: lksdjfk
+1581423244.7089796 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lksdjfk
+1581423244.7098184 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lksdjfk
+1581423244.7105618 : Broadcasted Alex: lksdjfk
+1581423245.2240634 : Alex: hjfsd
+1581423245.2250218 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hjfsd
+1581423245.2258842 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hjfsd
+1581423245.2270024 : Broadcasted Alex: hjfsd
+1581423245.7932506 : Alex: jsdf
+1581423245.7936385 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsdf
+1581423245.793946 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsdf
+1581423245.7942543 : Broadcasted Alex: jsdf
+1581423246.293625 : Alex: sj
+1581423246.294165 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sj
+1581423246.2946415 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sj
+1581423246.2952447 : Broadcasted Alex: sj
+1581423250.2150981 : Sending to Alex : Who do you want to send the PM to?
+1581423250.2158265 : Encoding: [SERVER INTERNAL-PM MESSAGE]Who do you want to send the PM to?
+1581423254.757302 : Sending to Alex : What do you want to send?
+1581423254.758013 : Encoding: [SERVER INTERNAL-PM MESSAGE]What do you want to send?
+1581423256.3351727 : Sending to Alex : Added to buffer.
+1581423256.3355474 : Encoding: [SERVER INTERNAL-PM MESSAGE]Added to buffer.
+1581423258.1884072 : Sending to SchoolPC : You have received a private message.
+1581423258.1893122 : Encoding: [SERVER INTERNAL-PM MESSAGE]You have received a private message.
+1581423258.4407544 : Sending to SchoolPC : Name: Alex
+1581423258.441209 : Encoding: [SERVER INTERNAL-PM MESSAGE]Name: Alex
+1581423258.6924748 : Sending to SchoolPC : Message: [CLIENT PING UPDATE]
+1581423258.6933885 : Encoding: [SERVER INTERNAL-PM MESSAGE]Message: [CLIENT PING UPDATE]
+1581423329.571009 : Sending to Alex : Who do you want to send the PM to?
+1581423329.571766 : Encoding: [SERVER INTERNAL-PM MESSAGE]Who do you want to send the PM to?
+1581423331.9092493 : Sending to Alex : What do you want to send?
+1581423331.9096687 : Encoding: [SERVER INTERNAL-PM MESSAGE]What do you want to send?
+1581423333.7011638 : Sending to Alex : Added to buffer.
+1581423333.7020283 : Encoding: [SERVER INTERNAL-PM MESSAGE]Added to buffer.
+1581423334.004862 : Sending to SchoolPC : You have received a private message.
+1581423334.0052617 : Encoding: [SERVER INTERNAL-PM MESSAGE]You have received a private message.
+1581423334.255957 : Sending to SchoolPC : Name: Alex
+1581423334.2564187 : Encoding: [SERVER INTERNAL-PM MESSAGE]Name: Alex
+1581423334.50693 : Sending to SchoolPC : Message: Hi
+1581423334.5073874 : Encoding: [SERVER INTERNAL-PM MESSAGE]Message: Hi
+1581423392.3975806 : Alex: well hello there
+1581423392.3978999 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: well hello there
+1581423392.3981607 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: well hello there
+1581423392.3983767 : Broadcasted Alex: well hello there
+1581423394.0176055 : Alex: jdsl
+1581423394.0182402 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jdsl
+1581423394.0189157 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jdsl
+1581423394.0195162 : Broadcasted Alex: jdsl
+1581423396.3601449 : Sending to SchoolPC : Who do you want to send the PM to?
+1581423396.3605523 : Encoding: [SERVER INTERNAL-PM MESSAGE]Who do you want to send the PM to?
+1581423397.7573571 : Sending to SchoolPC : What do you want to send?
+1581423397.7580495 : Encoding: [SERVER INTERNAL-PM MESSAGE]What do you want to send?
+1581423399.197808 : Sending to SchoolPC : Added to buffer.
+1581423399.1988547 : Encoding: [SERVER INTERNAL-PM MESSAGE]Added to buffer.
+1581423399.8113348 : Sending to Alex : You have received a private message.
+1581423399.8122208 : Encoding: [SERVER INTERNAL-PM MESSAGE]You have received a private message.
+1581423400.0635486 : Sending to Alex : Name: SchoolPC
+1581423400.0644531 : Encoding: [SERVER INTERNAL-PM MESSAGE]Name: SchoolPC
+1581423400.315708 : Sending to Alex : Message: hfdafjlkds
+1581423400.3164604 : Encoding: [SERVER INTERNAL-PM MESSAGE]Message: hfdafjlkds
+1581423448.596941 : SchoolPC: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+1581423448.5978856 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+1581423448.5987337 : Encoding: [SERVER INTERNAL-BROADCAST]SchoolPC: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+1581423448.599884 : Broadcasted SchoolPC: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+1581423478.7942398 : Alex: hdf
+1581423478.7950637 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hdf
+1581423478.7958827 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hdf
+1581423478.8041012 : Broadcasted Alex: hdf
+1581423479.351894 : Alex: sfj
+1581423479.3525448 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfj
+1581423479.3531017 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfj
+1581423479.3536599 : Broadcasted Alex: sfj
+1581423479.9093955 : Alex: fhsd
+1581423479.9097335 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fhsd
+1581423479.9099894 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fhsd
+1581423479.9102318 : Broadcasted Alex: fhsd
+1581423480.4339147 : Alex: sfdh
+1581423480.4342394 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdh
+1581423480.4344687 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfdh
+1581423480.4346972 : Broadcasted Alex: sfdh
+1581423480.9466362 : Alex: dsfjk
+1581423480.9477057 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfjk
+1581423480.972685 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfjk
+1581423480.9732294 : Broadcasted Alex: dsfjk
+1581423481.4601743 : Alex: fdjh
+1581423481.461077 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdjh
+1581423481.4620175 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdjh
+1581423481.4646142 : Broadcasted Alex: fdjh
+1581423481.9798248 : Alex: fsj
+1581423481.9807992 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsj
+1581423481.9816582 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsj
+1581423481.985554 : Broadcasted Alex: fsj
+1581423489.5626662 : Alex: dsfhfsd
+1581423489.5630012 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfhfsd
+1581423489.5632596 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsfhfsd
+1581423489.5634966 : Broadcasted Alex: dsfhfsd
+1581423489.9394977 : Alex: ds
+1581423489.9400947 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ds
+1581423489.9405437 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ds
+1581423489.941079 : Broadcasted Alex: ds
+1581423509.7130525 : Alex: /online
+1581423509.7134163 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: /online
+1581423509.7136323 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: /online
+1581423509.7138653 : Broadcasted Alex: /online
+1581423512.058835 : Alex: /here
+1581423512.0598102 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: /here
+1581423512.0605364 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: /here
+1581423512.0615535 : Broadcasted Alex: /here
+1581453089.6092658 : Defaulted
+1581453089.6389022 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581453089.6388226
+1581453089.644042 : PM Manager started
+1581453120.812979 : Accepted connection from ('127.0.0.1', 46112) , referring
+1581453121.01428 : Sending low level message PM
+1581453121.0152023 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453140.0417802 : Sending low level message PM
+1581453140.0420904 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453140.4430225 : Sending low level message PM
+1581453140.443332 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581453140.4435678 : Error sending low level message PM
+1581453140.8443696 : Sending low level message PM
+1581453140.8447015 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453140.8448772 : Error sending low level message PM
+1581453141.0457447 : Error in sign in : Username pick loop, closing connection
+1581453141.0466342 : Error getting account data, error printing name
+1581453141.2476172 : Sending low level message PM
+1581453141.2479331 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581453141.2481027 : Error sending low level message PM
+1581453153.4184542 : Accepted connection from ('127.0.0.1', 46130) , referring
+1581453153.6195605 : Sending low level message PM
+1581453153.620266 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453156.6537633 : Sending low level message PM
+1581453156.6546612 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581453158.8720024 : Sending low level message PM
+1581453158.8725605 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581453161.009937 : Sending low level message PM
+1581453161.010284 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581453161.4114392 : Sending low level internal message
+1581453161.412427 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453161.8139503 : Sending low level message PM
+1581453161.8148718 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581453166.2574484 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453166.4586008 : Sending low level message PM
+1581453166.4589508 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581453169.0630565 : Sending low level message PM
+1581453169.0639884 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581453171.267678 : Sending to Alex : If you can read this, your account creation worked.
+1581453171.2684538 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581453171.4697895 : Sending to Alex : Enter the word 'continue' to sign in
+1581453171.4706793 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581453174.2822967 : Sending low level message PM
+1581453174.2831445 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453177.4491208 : Sending low level internal message
+1581453177.4499931 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453178.0519674 : Sending low level message PM
+1581453178.052683 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453194.9920428 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453194.993072 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453194.9937427 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453201.8386128 : Sending to Alex : Welcome to the chatroom.
+1581453201.8393188 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453202.849164 : Alex: lfds
+1581453202.8500383 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lfds
+1581453202.8508 : Broadcasted Alex: lfds
+1581453208.1565058 : Alex: f
+1581453208.157436 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581453208.1582887 : Broadcasted Alex: f
+1581453213.2537994 : Alex: sdf
+1581453213.2657225 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581453213.266086 : Broadcasted Alex: sdf
+1581453217.2591522 : Alex: fs
+1581453217.2597241 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fs
+1581453217.260159 : Broadcasted Alex: fs
+1581453219.30091 : Alex: sfd
+1581453219.301801 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfd
+1581453219.3026774 : Broadcasted Alex: sfd
+1581453241.540012 : Accepted connection from ('127.0.0.1', 46176) , referring
+1581453241.7409515 : Sending low level message PM
+1581453241.7413826 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453243.8851523 : Sending low level message PM
+1581453243.885512 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453246.8101652 : Sending low level message PM
+1581453246.810588 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581453299.9322968 : Accepted connection from ('127.0.0.1', 46204) , referring
+1581453300.1333826 : Sending low level message PM
+1581453300.1337204 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453303.59155 : Sending low level message PM
+1581453303.5919058 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453313.1612139 : Sending low level internal message
+1581453313.1616247 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453313.7632334 : Sending low level message PM
+1581453313.763602 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453318.9236274 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453318.9240007 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453318.92417 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453321.401285 : Sending to Alex : Welcome to the chatroom.
+1581453321.4020708 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453345.8062153 : Alex: a
+1581453345.8068647 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453345.8073947 : Broadcasted Alex: a
+1581453380.689806 : Accepted connection from ('127.0.0.1', 46246) , referring
+1581453380.89079 : Sending low level message PM
+1581453380.8912644 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453384.9316556 : Sending low level message PM
+1581453384.9321246 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453386.6145725 : Sending low level internal message
+1581453386.6149144 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453387.2170415 : Sending low level message PM
+1581453387.2179017 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453396.4975476 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453396.4979234 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453396.498076 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453399.704745 : Sending to Alex : Welcome to the chatroom.
+1581453399.7056317 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453401.4050026 : Alex: fdsj
+1581453401.4057894 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdsj
+1581453401.406543 : Broadcasted Alex: fdsj
+1581453401.865965 : Alex: sdf
+1581453401.8668923 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581453401.8678699 : Broadcasted Alex: sdf
+1581453419.791701 : Alex: 1
+1581453419.7921057 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 1
+1581453419.7923794 : Broadcasted Alex: 1
+1581453422.2238982 : Alex: h
+1581453422.2247708 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: h
+1581453422.2256315 : Broadcasted Alex: h
+1581453424.292823 : Alex: 1
+1581453424.2938159 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 1
+1581453424.294616 : Broadcasted Alex: 1
+1581453425.2670274 : Alex: 2
+1581453425.2677577 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 2
+1581453425.2683694 : Broadcasted Alex: 2
+1581453426.1081827 : Alex: 3
+1581453426.1084838 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 3
+1581453426.1087122 : Broadcasted Alex: 3
+1581453426.7386997 : Alex: 4
+1581453426.7396502 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 4
+1581453426.740538 : Broadcasted Alex: 4
+1581453427.3593879 : Alex: 5
+1581453427.3601916 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 5
+1581453427.3609078 : Broadcasted Alex: 5
+1581453427.9809911 : Alex: 6
+1581453427.9819705 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 6
+1581453427.9828827 : Broadcasted Alex: 6
+1581453429.3087747 : Alex: 7
+1581453429.3092582 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: 7
+1581453429.3096406 : Broadcasted Alex: 7
+1581453447.805621 : Alex: fsdf
+1581453447.8059528 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdf
+1581453447.8061795 : Broadcasted Alex: fsdf
+1581453454.422524 : Accepted connection from ('127.0.0.1', 46286) , referring
+1581453454.6504002 : Sending low level message PM
+1581453454.6508121 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453458.5552535 : Sending low level message PM
+1581453458.558965 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453469.9993398 : Sending low level message PM
+1581453470.0005617 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581453480.2326534 : Accepted connection from ('127.0.0.1', 46300) , referring
+1581453480.437693 : Sending low level message PM
+1581453480.4382024 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453485.2326531 : Sending low level message PM
+1581453485.237868 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453487.786921 : Sending low level message PM
+1581453487.7901628 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581453527.6291285 : Accepted connection from ('127.0.0.1', 46326) , referring
+1581453527.8301532 : Sending low level message PM
+1581453527.8309753 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453530.594047 : Sending low level message PM
+1581453530.594974 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453533.1064672 : Sending low level internal message
+1581453533.10709 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453533.7300365 : Sending low level message PM
+1581453533.7309299 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453542.6200714 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453542.6204083 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453542.6205914 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453544.7931376 : Sending to Alex : Welcome to the chatroom.
+1581453544.7944524 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453545.679296 : Alex: sfl
+1581453545.6802554 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfl
+1581453545.681028 : Broadcasted Alex: sfl
+1581453546.3033464 : Alex: s
+1581453546.3042073 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581453546.3050222 : Broadcasted Alex: s
+1581453546.519218 : Alex: sd
+1581453546.5197875 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sd
+1581453546.5202637 : Broadcasted Alex: sd
+1581453546.696591 : Alex: d
+1581453546.697327 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453546.6979735 : Broadcasted Alex: d
+1581453547.0743032 : Alex: dd
+1581453547.0749173 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dd
+1581453547.075435 : Broadcasted Alex: dd
+1581453547.209592 : Alex: d
+1581453547.2101781 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453547.2107494 : Broadcasted Alex: d
+1581453547.374599 : Alex: d
+1581453547.375257 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453547.3758957 : Broadcasted Alex: d
+1581453547.5608997 : Alex: d
+1581453547.5617027 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453547.5624921 : Broadcasted Alex: d
+1581453547.7197962 : Alex: d
+1581453547.7205005 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453547.721165 : Broadcasted Alex: d
+1581453547.889454 : Alex: d
+1581453547.8899202 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453547.8902986 : Broadcasted Alex: d
+1581453548.1992671 : Alex: d
+1581453548.199954 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453548.2005503 : Broadcasted Alex: d
+1581453548.3487475 : Alex: d
+1581453548.34914 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453548.3494358 : Broadcasted Alex: d
+1581453548.5136464 : Alex: d
+1581453548.514218 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453548.5147226 : Broadcasted Alex: d
+1581453548.6863103 : Alex: d
+1581453548.6870368 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453548.6878407 : Broadcasted Alex: d
+1581453549.0363042 : Alex: dd
+1581453549.0371575 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dd
+1581453549.037906 : Broadcasted Alex: dd
+1581453549.1848612 : Alex: d
+1581453549.1856477 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453549.1864176 : Broadcasted Alex: d
+1581453549.3230536 : Alex: d
+1581453549.323768 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453549.3245304 : Broadcasted Alex: d
+1581453549.4799984 : Alex: d
+1581453549.4806423 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453549.4812155 : Broadcasted Alex: d
+1581453549.6142046 : Alex: d
+1581453549.6145294 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453549.614794 : Broadcasted Alex: d
+1581453549.9363718 : Alex: d
+1581453549.9372225 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453549.9649951 : Broadcasted Alex: d
+1581453588.3150206 : Alex: jdfl
+1581453588.3153403 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jdfl
+1581453588.3155859 : Broadcasted Alex: jdfl
+1581453589.4305816 : Alex: sfd
+1581453589.4309464 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfd
+1581453589.4312146 : Broadcasted Alex: sfd
+1581453589.9012692 : Alex: a
+1581453589.90162 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453589.9018726 : Broadcasted Alex: a
+1581453590.0987496 : Alex: a
+1581453590.099111 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453590.0993593 : Broadcasted Alex: a
+1581453590.282497 : Alex: a
+1581453590.2828062 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453590.2830524 : Broadcasted Alex: a
+1581453590.4598396 : Alex: a
+1581453590.460484 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453590.4610407 : Broadcasted Alex: a
+1581453590.6410048 : Alex: a
+1581453590.641306 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453590.641568 : Broadcasted Alex: a
+1581453591.0263903 : Alex: a
+1581453591.026953 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453591.0275753 : Broadcasted Alex: a
+1581453591.271138 : Alex: a
+1581453591.271569 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453591.2718809 : Broadcasted Alex: a
+1581453591.4717073 : Alex: a
+1581453591.4719834 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453591.4722195 : Broadcasted Alex: a
+1581453591.682739 : Alex: a
+1581453591.6830523 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453591.6832933 : Broadcasted Alex: a
+1581453591.8672292 : Alex: a
+1581453591.8675623 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453591.867822 : Broadcasted Alex: a
+1581453592.005329 : Alex: a
+1581453592.0056422 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.0058994 : Broadcasted Alex: a
+1581453592.249756 : Alex: a
+1581453592.2504838 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.251126 : Broadcasted Alex: a
+1581453592.4200172 : Alex: a
+1581453592.420367 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.420616 : Broadcasted Alex: a
+1581453592.6059358 : Alex: a
+1581453592.6062396 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.6064825 : Broadcasted Alex: a
+1581453592.7770064 : Alex: a
+1581453592.7779896 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.7802658 : Broadcasted Alex: a
+1581453592.9359658 : Alex: a
+1581453592.9369156 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453592.9378252 : Broadcasted Alex: a
+1581453593.1270216 : Alex: a
+1581453593.1274462 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.127854 : Broadcasted Alex: a
+1581453593.293826 : Alex: a
+1581453593.2947552 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.295924 : Broadcasted Alex: a
+1581453593.4648135 : Alex: a
+1581453593.4651496 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.4653926 : Broadcasted Alex: a
+1581453593.6550825 : Alex: a
+1581453593.6554105 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.6557012 : Broadcasted Alex: a
+1581453593.8094022 : Alex: a
+1581453593.8103044 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.8111653 : Broadcasted Alex: a
+1581453593.9388974 : Alex: a
+1581453593.9397738 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453593.9405317 : Broadcasted Alex: a
+1581453612.4748597 : Alex: f
+1581453612.4751787 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: f
+1581453612.4754312 : Broadcasted Alex: f
+1581453656.8055031 : Accepted connection from ('127.0.0.1', 46392) , referring
+1581453657.0073795 : Sending low level message PM
+1581453657.0080254 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453659.7055774 : Sending low level message PM
+1581453659.7065284 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453661.01806 : Sending low level internal message
+1581453661.018444 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453661.6196234 : Sending low level message PM
+1581453661.620163 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453665.0912395 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453665.0923514 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453665.0931194 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453668.1886523 : Sending to Alex : Welcome to the chatroom.
+1581453668.1890943 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453668.852822 : Alex: sfj
+1581453668.8532078 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfj
+1581453668.8535006 : Broadcasted Alex: sfj
+1581453669.4093945 : Alex: sfh
+1581453669.4103377 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfh
+1581453669.411212 : Broadcasted Alex: sfh
+1581453669.9968507 : Alex: sf
+1581453669.9972014 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581453669.9974632 : Broadcasted Alex: sf
+1581453670.5689354 : Alex: jf
+1581453670.569841 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jf
+1581453670.5707014 : Broadcasted Alex: jf
+1581453671.7598479 : Alex: df
+1581453671.760716 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: df
+1581453671.7616074 : Broadcasted Alex: df
+1581453672.6757355 : Alex: fdj
+1581453672.6766586 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fdj
+1581453672.6775508 : Broadcasted Alex: fdj
+1581453673.1402564 : Alex: a
+1581453673.1409845 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453673.1416378 : Broadcasted Alex: a
+1581453678.2406042 : Alex: a
+1581453678.2415009 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453678.2423475 : Broadcasted Alex: a
+1581453679.1843717 : Alex: fd
+1581453679.1847577 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fd
+1581453679.1850102 : Broadcasted Alex: fd
+1581453679.5638554 : Alex: dsf
+1581453679.5643606 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dsf
+1581453679.5647683 : Broadcasted Alex: dsf
+1581453679.7799013 : Alex: sdf
+1581453679.7804444 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdf
+1581453679.7809076 : Broadcasted Alex: sdf
+1581453683.8066247 : Alex: d
+1581453683.8074138 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581453683.8082821 : Broadcasted Alex: d
+1581453686.15526 : Alex: aa
+1581453686.1559746 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: aa
+1581453686.156572 : Broadcasted Alex: aa
+1581453695.0706582 : Alex: a
+1581453695.0711384 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453695.0716083 : Broadcasted Alex: a
+1581453780.0402455 : Alex: dflj
+1581453780.0405707 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dflj
+1581453780.0408008 : Broadcasted Alex: dflj
+1581453780.759994 : Alex: sfj
+1581453780.760319 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfj
+1581453780.7605512 : Broadcasted Alex: sfj
+1581453781.3731813 : Alex: hsfd
+1581453781.3735008 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hsfd
+1581453781.3737378 : Broadcasted Alex: hsfd
+1581453786.1607509 : Alex: kjfds
+1581453786.161087 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: kjfds
+1581453786.1613204 : Broadcasted Alex: kjfds
+1581453786.5956333 : Alex: a
+1581453786.5959582 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453786.5961924 : Broadcasted Alex: a
+1581453789.7287884 : Alex: a
+1581453789.7291305 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453789.72936 : Broadcasted Alex: a
+1581453790.4557407 : Alex: a
+1581453790.4560568 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453790.4562871 : Broadcasted Alex: a
+1581453790.6997063 : Alex: a
+1581453790.7000217 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453790.7002501 : Broadcasted Alex: a
+1581453790.9303887 : Alex: a
+1581453790.930706 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453790.930943 : Broadcasted Alex: a
+1581453791.202728 : Alex: a
+1581453791.2030456 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453791.203286 : Broadcasted Alex: a
+1581453791.4369125 : Alex: a
+1581453791.437259 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: a
+1581453791.4375055 : Broadcasted Alex: a
+1581453794.778295 : Alex: fsls
+1581453794.77861 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsls
+1581453794.7788353 : Broadcasted Alex: fsls
+1581453807.9473245 : Accepted connection from ('127.0.0.1', 46468) , referring
+1581453808.148587 : Sending low level message PM
+1581453808.1494603 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453809.8521862 : Sending low level message PM
+1581453809.8525321 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453810.8710728 : Sending low level internal message
+1581453810.8713763 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453811.4730396 : Sending low level message PM
+1581453811.473343 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453816.4757557 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453816.4767668 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453816.4775176 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453818.4845345 : Sending low level internal message
+1581453818.4848742 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453818.4850528 : Error sending low level internal PM, exiting
+1581453819.0862415 : Sending low level message PM
+1581453819.0866663 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453819.0868628 : Error sending low level message PM
+1581453819.2873473 : Error in signin
+1581453839.4407487 : Accepted connection from ('127.0.0.1', 46486) , referring
+1581453839.6418235 : Sending low level message PM
+1581453839.642793 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453842.655754 : Sending low level message PM
+1581453842.6567442 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453844.2727184 : Sending low level internal message
+1581453844.2736435 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581453844.8759484 : Sending low level message PM
+1581453844.8767855 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581453849.874519 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581453849.8756194 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581453849.8763492 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581453852.6016903 : Sending to Alex : Welcome to the chatroom.
+1581453852.602253 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581453854.131416 : Alex: ifs
+1581453854.1323977 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ifs
+1581453854.1333067 : Broadcasted Alex: ifs
+1581453854.9578424 : Alex: jlf
+1581453854.9584117 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jlf
+1581453854.9589143 : Broadcasted Alex: jlf
+1581453855.6868246 : Alex: js
+1581453855.6871572 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: js
+1581453855.687403 : Broadcasted Alex: js
+1581453855.9821515 : Alex: sd
+1581453855.9830587 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sd
+1581453855.9840207 : Broadcasted Alex: sd
+1581453859.006815 : Alex: s
+1581453859.0078292 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581453859.0088491 : Broadcasted Alex: s
+1581453959.7550795 : Accepted connection from ('127.0.0.1', 46548) , referring
+1581453959.9672732 : Sending low level message PM
+1581453959.9678488 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453963.8482456 : Sending low level message PM
+1581453963.8485637 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453966.4377823 : Sending low level message PM
+1581453966.4408586 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581453989.9391136 : Accepted connection from ('127.0.0.1', 46566) , referring
+1581453990.1436143 : Sending low level message PM
+1581453990.1443405 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581453993.2653139 : Sending low level message PM
+1581453993.2659965 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581453994.4488568 : Sending low level message PM
+1581453994.4546785 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581454973.6813078 : Accepted connection from ('127.0.0.1', 46976) , referring
+1581454973.8829248 : Sending low level message PM
+1581454973.8837132 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581454976.36086 : Sending low level message PM
+1581454976.361416 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581454978.1470091 : Sending low level internal message
+1581454978.1473598 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581454978.7490594 : Sending low level message PM
+1581454978.749899 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581454986.7544253 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581454986.7555828 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581454986.7562966 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581454989.421855 : Sending to Alex : Welcome to the chatroom.
+1581454989.4225051 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581454999.7091205 : Alex: hg
+1581454999.7097557 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hg
+1581454999.7102628 : Broadcasted Alex: hg
+1581455001.5076447 : Alex: sjh#
+1581455001.5084143 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sjh#
+1581455001.509121 : Broadcasted Alex: sjh#
+1581455005.037109 : Alex: lsjfklj
+1581455005.037979 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lsjfklj
+1581455005.0387347 : Broadcasted Alex: lsjfklj
+1581455005.8939102 : Alex: sflk
+1581455005.8948448 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sflk
+1581455005.8957875 : Broadcasted Alex: sflk
+1581455006.4914465 : Alex: dff
+1581455006.4923844 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dff
+1581455006.4929054 : Broadcasted Alex: dff

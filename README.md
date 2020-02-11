@@ -31,6 +31,8 @@ No server V3 commands have arguments, you are asked for info after entering the 
 
 # Server V2 Commands
 
+TODO stop message concat by implementing slowmode
+
 Client Side
 
 - /wipe, /clear - Clears chat history locally.
@@ -39,7 +41,6 @@ Client Side
 
 - /faketext - Clears chat history and replaces it with a fake "lesson friendly" conversation. The conversation is shit, replace it.
 
-  
 
 Server side
 
@@ -50,7 +51,7 @@ Server side
 - /unban [name] - Undoes the above. Requires administrator.
 
 - /kick [name] - kicks someone but only once they have sent a message. I need to fix this one too. I don't expect to use these much or at all tbh. Requires administrator.
-
+ 
 - /broadcast [message] - sends a message but without your name at the front, basically. It's more for future proofing if I implement channels etc.
 
 - /wipe -a - this is a good contender for the most useful command. Sends a authenticated message from the server (using my patented HashTime technology) to wipe everyone's chat history. Requires administrator.
