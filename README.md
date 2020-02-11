@@ -25,7 +25,7 @@ Server 3 has
 No server V3 commands have arguments, you are asked for info after entering the base command.
 
 - /pm - prompts you to PM somebody. 
-- /ping - measures ping, only tested on Client2. Pings have a few, ahem, shortcuts in the code(Their if statements are first and traffic is prioritised) so it is more of a network ping than an actual delay test. It might be more like double.
+- /ping - measures ping, only tested on Client2. 
 - /bug report - prompts you to make a bug report.
 - /feature request - prompts you to request a feature
 
@@ -75,7 +75,6 @@ Server side
 
 If a list of words (written below) are in your username, it'll prompt you for the password. Enter it, and you'll be admin. Enter wrong, and you'll be kicked and have to try again or pick a different username. Don't bother looking for it in the code, it's hashed and salted.
 
-  
 
 The words (case insensitive) are:
 
