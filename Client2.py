@@ -4,9 +4,14 @@ import hashlib
 from threading import *
 from socket import AF_INET, socket, SOCK_STREAM
 
+class PingTest():
+    FirstCapture = 0
+    SecondCapture = 0
+
 class Communications():
     HashNextMessage = False
     sendpings = False
+
     def InternalSend(text):
         client_socket.send(Communications.Encode(text))
 
@@ -16,6 +21,13 @@ class Communications():
 
         if message == "/wipe" or message == "/clear":
             GUI.WipeList()
+
+        elif "/faketext" in message:
+            GUI.FakeText()
+
+        elif "/ping" in message:
+            PingTest.FirstCapture = time.time()
+            Communications.InternalSend("[PING: REPLY URGENTLY]")
 
         elif message == "/exit" or message == "/quit":
             Communications.InternalSend("/quit")
@@ -57,6 +69,18 @@ class Communications():
             #These are ordered in most>least often received to increase efficiency.
             #For a broadcast, it only has to check the first one. In the rare case of
             #a "Pings on" message, it takes longer.
+            if "[PING: URGENT REPLY]" in message:
+                PingTest.SecondCapture = time.time()
+
+                Difference = PingTest.SecondCapture - PingTest.FirstCapture
+                Difference = Difference * 1000
+                Difference = str(Difference)[:5]
+
+                GUI.message_list.insert(tkinter.END, "Ping:")
+                GUI.message_list.insert(tkinter.END, Difference + "ms")
+
+            if "Welcome to the chatroom" in message:
+                Communications.sendpings = True
 
             if "[SERVER INTERNAL-BROADCAST]" in message:
                 message = message[27:]
@@ -75,12 +99,8 @@ class Communications():
             elif "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" in message:
                 if "PASSWORD ENTRY FIELD" in message:
                     Communications.HashNextMessage = True
-                    GUI.SetLabelStatus("Hashing next message...")
                     GUI.entry_field["show"] = "*"
-
-            elif "[SERVER INTERNAL-INTERNAL]" in message:
-                if "SENDPINGS=TRUE" in message:
-                    Communications.sendpings = True
+                    GUI.SetLabelStatus("Hashing next message...")
 
             else:
                 GUI.message_list.insert(tkinter.END, message)
@@ -107,6 +127,7 @@ class Cryptography:
 
 
 class GUI:
+    FakeTextList = ["Notes: "]
     top = tkinter.Tk()
 
     #disguise that shit
@@ -168,6 +189,17 @@ class GUI:
             time.sleep(0.1)
             if GUI.message_list.size() > backlogLength:
                 GUI.message_list.delete(0)
+
+    def FakeText():
+        GUI.WipeList()
+        for line in GUI.FakeTextList:
+            GUI.message_list.insert(tkinter.END, line)
+
+
+print("Please enter your faketext. Newlines are defined by + symbols.")
+fakeText = input("> ")
+fakeText = fakeText.split("+")
+GUI.FakeTextList = fakeText
 
 #<copied code> Copied from Client2 because it's pretty good code, if I say so myself. 
 #default settings

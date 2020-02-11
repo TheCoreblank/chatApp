@@ -1,9 +1,7 @@
-import time, hashlib, sys, string, pickle
+import time, hashlib, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import hashlib
-
-#TODO Profile this thing, it takes up way too much resources. I think it may be due to threads continuing to run even when I have closed the connection.
 
 class LowLevelCommunications():
     #for before the client is logged in
@@ -35,7 +33,6 @@ class LowLevelCommunications():
         try:
             PrintLog("Sending low level internal message")
             ToSend = "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" + text
-            #TODO Prevent people broadcasting server internal
             connection.send(LowLevelCommunications.Encode(ToSend))
 
         except:
@@ -137,10 +134,13 @@ class Accounts():
     #    ConnectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
     #}
 
+    def ReadAccountList():
+        a = 1
+        #if I ever reimplement, I have the calls already done
+
     def PopulateFile():
         SaveFile = open("accounts", "wb")
         toDump = [{"Username" : "Placeholder-jshgfiowjfiowfo2nwfo"}]
-        pickle.dump(toDump, SaveFile)
 
     def NewAccount(UsernameInput, PasswordInput, isAdminInput):
         try:
@@ -229,7 +229,6 @@ class Main():
     def ManageClientHighLevel(Username):
         NoError = True
         try:
-            HighLevelCommunications.InternalMessage(Username, "SENDPINGS=TRUE")
             HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
         except:
             PrintLog("Error at start of high level manage client")
@@ -245,6 +244,11 @@ class Main():
                 message = connection.recv(BufferSize).decode("utf8")
 
                 if message:
+                    if message == "[PING: REPLY URGENTLY]":
+                        #Yes I kind of cheated by circumventing the rest of the script and delays to prevent message concat, but...
+                        #I didn't divide it by 2, so it's fair, OK?
+                        connection.send(bytes("[PING: URGENT REPLY]", "utf8"))
+
                     Accounts.PushAccountData(Username, "LastSeen", time.time())
                     Accounts.PushAccountData(Username, "isOnline", True)
 
@@ -586,7 +590,7 @@ class PingManager:
                     lastSeen = Accounts.GetAccountDataFromObject(account, "LastSeen")
                     difference = time.time() - lastSeen
 
-                    if difference > 20:
+                    if difference > 60:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
                         Accounts.PushAccountData(Username, "isOnline", False)
 
