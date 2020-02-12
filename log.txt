@@ -5187,3 +5187,437 @@ Broadcasted Alex: sfjdl
 1581507254.5677683 : Defaulted
 1581507254.570298 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581507254.570236
 1581507254.571594 : PM Manager started
+1581510175.2421167 : Defaulted
+1581510175.2726288 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581510175.2724602
+1581510175.27474 : PM Manager started
+1581510231.7445006 : Accepted connection from ('10.6.141.173', 57284) , referring
+1581510231.9474256 : Sending low level message PM
+1581510231.9483533 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581510235.5295904 : Sending low level message PM
+1581510235.5305192 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581510238.705995 : Sending low level message PM
+1581510238.7068737 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581510247.1418185 : Sending low level message PM
+1581510247.1427534 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: LukeM
+1581510247.5444217 : Sending low level internal message
+1581510247.544816 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510247.9461694 : Sending low level message PM
+1581510247.9469836 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581510254.8482332 : Received [Hashed] password: 5b6f7ae6685fc440c5face191abd0a53c78a3fd697ba1adbffc04a00b61b27cf97e20bb7d85efd60190ddd9dda6607ff85a89547458543e7bc99c7ba20db6553
+1581510255.0496988 : Sending low level message PM
+1581510255.0505154 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581510259.3832161 : Sending low level message PM
+1581510259.3840685 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581510261.6094959 : Sending to LukeM : If you can read this, your account creation worked.
+1581510261.610197 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581510261.8111033 : Sending to LukeM : Enter the word 'continue' to sign in
+1581510261.8114233 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581510266.7672307 : Sending low level message PM
+1581510266.7681003 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581510270.756769 : Sending low level internal message
+1581510270.7743726 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510271.3774238 : Sending low level message PM
+1581510271.37812 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581510276.801503 : Received [Hashed] password: 9071e087e66abc0964fed4f3324baa4ec30835743f90c9ce8c6aa83c21c857b3a033351c6a192896fa225e2e7bc48c1e445feda01b5f602b4f7d4ff595e62582
+1581510277.0025263 : Sending low level message PM
+1581510277.0029197 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password incorrect.
+1581510277.4045734 : Sending low level internal message
+1581510277.405427 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510278.0072381 : Sending low level message PM
+1581510278.007589 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581510282.331014 : Received [Hashed] password: 5b6f7ae6685fc440c5face191abd0a53c78a3fd697ba1adbffc04a00b61b27cf97e20bb7d85efd60190ddd9dda6607ff85a89547458543e7bc99c7ba20db6553
+1581510282.3317962 : Sending to LukeM : If you can read this, you successfully identified. Type 'continue' to continue.
+1581510282.353871 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581510285.575964 : Accepted connection from ('127.0.0.1', 36540) , referring
+1581510285.7780995 : Sending low level message PM
+1581510285.7789342 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581510286.0224652 : Sending to LukeM : Welcome to the chatroom.
+1581510286.0227706 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581510290.0327017 : Sending low level message PM
+1581510290.0330064 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581510290.3209875 : LukeM: hello qts
+1581510290.3221314 : Encoding: [SERVER INTERNAL-BROADCAST]LukeM: hello qts
+1581510290.3229282 : Broadcasted LukeM: hello qts
+1581510295.3993328 : Sending low level message PM
+1581510295.4000027 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581510297.0489445 : Sending low level message PM
+1581510297.0498564 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581510297.451316 : Sending low level internal message
+1581510297.4517517 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510297.8529284 : Sending low level message PM
+1581510297.8534124 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581510301.6632855 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581510301.8642635 : Sending low level message PM
+1581510301.8646133 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581510306.460823 : Sending low level message PM
+1581510306.4617753 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581510308.6657481 : Sending to Alex : If you can read this, your account creation worked.
+1581510308.666569 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581510308.868322 : Sending to Alex : Enter the word 'continue' to sign in
+1581510308.8686512 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581510310.2054489 : Sending low level message PM
+1581510310.2061675 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581510314.564081 : Sending low level internal message
+1581510314.565012 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510315.1983197 : Sending low level message PM
+1581510315.1986563 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581510318.8347082 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581510318.835072 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581510318.8352246 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581510320.7185674 : Sending to Alex : Welcome to the chatroom.
+1581510320.718935 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581510321.5449224 : Alex: hfj
+1581510321.545863 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hfj
+1581510321.54673 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hfj
+1581510321.5706153 : Broadcasted Alex: hfj
+1581510322.1537015 : Alex: hfsd
+1581510322.1543806 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hfsd
+1581510322.1547072 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hfsd
+1581510322.155102 : Broadcasted Alex: hfsd
+1581510323.2877805 : Alex: fsdj
+1581510323.2886097 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdj
+1581510323.2894185 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fsdj
+1581510323.2905805 : Broadcasted Alex: fsdj
+1581510325.2676709 : Alex: fusid
+1581510325.2684972 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fusid
+1581510325.2691903 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fusid
+1581510325.2706172 : Broadcasted Alex: fusid
+1581510325.8547375 : Alex: jfds
+1581510325.8550248 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jfds
+1581510325.8551881 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jfds
+1581510325.8554103 : Broadcasted Alex: jfds
+1581510351.1070392 : Alex: kj
+1581510351.1079116 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: kj
+1581510351.1088016 : Broadcasted Alex: kj
+1581510357.9360516 : Alex: ifj
+1581510357.9369805 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ifj
+1581510357.9379528 : Broadcasted Alex: ifj
+1581510358.4694057 : Alex: fh
+1581510358.469874 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fh
+1581510358.47026 : Broadcasted Alex: fh
+1581510359.0677454 : Alex: g
+1581510359.0680776 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: g
+1581510359.0683544 : Broadcasted Alex: g
+1581510359.59851 : Alex: sf
+1581510359.5993783 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sf
+1581510359.6002836 : Broadcasted Alex: sf
+1581510376.8397663 : Defaulted
+1581510376.8419402 : Set port to 34001 due to error
+1581510376.8421822 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581510376.8421483
+1581510376.8436215 : PM Manager started
+1581510706.4856439 : Defaulted
+1581510706.48668 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581510706.4866304
+1581510706.4876342 : PM Manager started
+1581510728.1229122 : Accepted connection from ('10.6.141.173', 57875) , referring
+1581510728.3257992 : Sending low level message PM
+1581510728.3265038 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581510732.2311127 : Sending low level message PM
+1581510732.2318034 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581510734.7941408 : Sending low level message PM
+1581510734.795042 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581510736.5814579 : Sending low level message PM
+1581510736.5818002 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Luke
+1581510736.9834769 : Sending low level internal message
+1581510736.9842708 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510737.385983 : Sending low level message PM
+1581510737.3867364 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581510743.888388 : Received [Hashed] password: 5b6f7ae6685fc440c5face191abd0a53c78a3fd697ba1adbffc04a00b61b27cf97e20bb7d85efd60190ddd9dda6607ff85a89547458543e7bc99c7ba20db6553
+1581510744.0896187 : Sending low level message PM
+1581510744.0904155 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581510747.0221188 : Sending low level internal message
+1581510747.0229428 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510747.4246256 : Sending low level message PM
+1581510747.425036 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password: 
+1581510748.1639516 : Accepted connection from ('127.0.0.1', 36742) , referring
+1581510748.3656018 : Sending low level message PM
+1581510748.3665454 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581510753.763555 : Sending low level message PM
+1581510753.764379 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Password wrong.
+1581510753.768955 : Sending low level message PM
+1581510753.7699099 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581510754.1661649 : Sending low level message PM
+1581510754.1669607 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581510756.4965706 : Sending low level message PM
+1581510756.4969707 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581510758.099395 : Sending low level message PM
+1581510758.0997744 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581510758.5006778 : Sending low level internal message
+1581510758.501053 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510758.5418313 : Sending low level message PM
+1581510758.5424283 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581510758.9021327 : Sending low level message PM
+1581510758.9024463 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581510760.7453945 : Sending to Luke : If you can read this, your account creation worked.
+1581510760.7582128 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581510760.9593103 : Sending to Luke : Enter the word 'continue' to sign in
+1581510760.9601746 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581510764.918257 : Sending low level message PM
+1581510764.9191277 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581510766.729904 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581510766.9305332 : Sending low level message PM
+1581510766.931003 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Do you want to elevate to admin? Y/N: 
+1581510767.8699522 : Sending low level internal message
+1581510767.8705828 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510768.472512 : Sending low level message PM
+1581510768.4734523 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581510770.1351624 : Sending low level message PM
+1581510770.1360257 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581510772.2155962 : Received [Hashed] password: 5b6f7ae6685fc440c5face191abd0a53c78a3fd697ba1adbffc04a00b61b27cf97e20bb7d85efd60190ddd9dda6607ff85a89547458543e7bc99c7ba20db6553
+1581510772.2167728 : Sending to Luke : If you can read this, you successfully identified. Type 'continue' to continue.
+1581510772.217576 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581510772.3391378 : Sending to Alex : If you can read this, your account creation worked.
+1581510772.3399482 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581510772.541276 : Sending to Alex : Enter the word 'continue' to sign in
+1581510772.542015 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581510776.4994802 : Sending low level message PM
+1581510776.4999137 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581510778.067579 : Sending low level internal message
+1581510778.0679572 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581510778.2168267 : Sending to Luke : Welcome to the chatroom.
+1581510778.2173142 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581510778.6702 : Sending low level message PM
+1581510778.6706939 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581510782.2943683 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581510782.2953396 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581510782.2961998 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581510782.71611 : Luke: test
+1581510782.7169886 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: test
+1581510782.7179596 : Broadcasted Luke: test
+1581510784.4890525 : Sending to Alex : Welcome to the chatroom.
+1581510784.490079 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581510785.7943983 : Alex: fjl
+1581510785.7952259 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fjl
+1581510785.7960386 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fjl
+1581510785.7967663 : Broadcasted Alex: fjl
+1581510788.424154 : Alex: d
+1581510788.425086 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581510788.4260604 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: d
+1581510788.4271958 : Broadcasted Alex: d
+1581510788.6369243 : Alex: dd
+1581510788.6377714 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dd
+1581510788.6384017 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dd
+1581510788.6402102 : Broadcasted Alex: dd
+1581510790.7727025 : Luke: YESSS
+1581510790.7730167 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: YESSS
+1581510790.7733083 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: YESSS
+1581510790.7735245 : Broadcasted Luke: YESSS
+1581510793.0870643 : Luke: wesdopfsandg
+1581510793.087918 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: wesdopfsandg
+1581510793.088547 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: wesdopfsandg
+1581510793.089168 : Broadcasted Luke: wesdopfsandg
+1581510793.286037 : Luke: fh
+1581510793.2868671 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: fh
+1581510793.2876887 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: fh
+1581510793.2887807 : Broadcasted Luke: fh
+1581510800.1604466 : Luke: sad
+1581510800.1608694 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: sad
+1581510800.1611094 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: sad
+1581510800.1614 : Broadcasted Luke: sad
+1581510822.3457534 : Luke: 1
+1581510822.3462367 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: 1
+1581510822.346647 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: 1
+1581510822.3471994 : Broadcasted Luke: 1
+1581510826.523275 : Luke: 1
+1581510826.5237548 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: 1
+1581510826.5241714 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: 1
+1581510826.5246532 : Broadcasted Luke: 1
+1581510828.733838 : Alex: yjf
+1581510828.7347174 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: yjf
+1581510828.7355542 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: yjf
+1581510828.7365396 : Broadcasted Alex: yjf
+1581510850.1582403 : Luke: omf
+1581510850.158626 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: omf
+1581510850.1588664 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: omf
+1581510850.1590858 : Broadcasted Luke: omf
+1581510860.8174784 : Luke: hello
+1581510860.8183331 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hello
+1581510860.8192084 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hello
+1581510860.820085 : Broadcasted Luke: hello
+1581510863.482352 : Luke: /wipeall
+1581510863.483086 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wipeall
+1581510863.483797 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wipeall
+1581510863.485913 : Broadcasted Luke: /wipeall
+1581510867.8877428 : Luke: /wipes
+1581510867.8886695 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wipes
+1581510867.889614 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wipes
+1581510867.890476 : Broadcasted Luke: /wipes
+1581510871.094218 : Luke: /wetwipe
+1581510871.0950391 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wetwipe
+1581510871.095955 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: /wetwipe
+1581510871.0974126 : Broadcasted Luke: /wetwipe
+1581510873.7942276 : Alex: hgh,
+1581510873.795086 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hgh,
+1581510873.795876 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hgh,
+1581510873.796203 : Broadcasted Alex: hgh,
+1581510874.5345879 : Alex: hkg
+1581510874.5354512 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hkg
+1581510874.536274 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: hkg
+1581510874.537072 : Broadcasted Alex: hkg
+1581510875.2375324 : Alex: bjl
+1581510875.2381477 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: bjl
+1581510875.2387319 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: bjl
+1581510875.239305 : Broadcasted Alex: bjl
+1581510875.275448 : Luke: hi
+1581510875.2759454 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hi
+1581510875.2762933 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hi
+1581510875.2766898 : Broadcasted Luke: hi
+1581510877.3142798 : Luke: :)
+1581510877.3151102 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510877.3159246 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510877.316394 : Broadcasted Luke: :)
+1581510891.0686328 : Alex: fda
+1581510891.06957 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fda
+1581510891.0704176 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fda
+1581510891.0714126 : Broadcasted Alex: fda
+1581510895.505047 : Luke: hello
+1581510895.5054576 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hello
+1581510895.5057008 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hello
+1581510895.5059576 : Broadcasted Luke: hello
+1581510896.8899193 : Luke: hm
+1581510896.89058 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hm
+1581510896.8912108 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hm
+1581510896.8918178 : Broadcasted Luke: hm
+1581510899.7594666 : Alex: n
+1581510899.7600315 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: n
+1581510899.760263 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: n
+1581510899.7604735 : Broadcasted Alex: n
+1581510903.640315 : Alex: jbmv
+1581510903.6412973 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jbmv
+1581510903.6417506 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jbmv
+1581510903.641978 : Broadcasted Alex: jbmv
+1581510904.1179724 : Luke: :)
+1581510904.1187832 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510904.1196048 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510904.1204093 : Broadcasted Luke: :)
+1581510905.0843573 : Luke: :)
+1581510905.084825 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510905.0852795 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :)
+1581510905.0856705 : Broadcasted Luke: :)
+1581510907.1899848 : Luke: :0
+1581510907.190831 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :0
+1581510907.1916678 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: :0
+1581510907.1924758 : Broadcasted Luke: :0
+1581510910.6431372 : Luke: @hello
+1581510910.643936 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: @hello
+1581510910.6446812 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: @hello
+1581510910.645785 : Broadcasted Luke: @hello
+1581510940.2193127 : Alex: yktyi
+1581510940.2200308 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: yktyi
+1581510940.2206857 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: yktyi
+1581510940.2221642 : Broadcasted Alex: yktyi
+1581510947.1202097 : Luke: helu
+1581510947.1208115 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: helu
+1581510947.1214147 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: helu
+1581510947.1219506 : Broadcasted Luke: helu
+1581510960.8405242 : Luke: //wipe
+1581510960.8408585 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: //wipe
+1581510960.8411052 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: //wipe
+1581510960.8415403 : Broadcasted Luke: //wipe
+1581510963.496107 : Luke: hielo
+1581510963.4964297 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hielo
+1581510963.4966962 : Encoding: [SERVER INTERNAL-BROADCAST]Luke: hielo
+1581510963.4969065 : Broadcasted Luke: hielo
+1581511028.9996853 : Error in manage client, exiting
+1581511081.1220243 : Alex: jgj
+1581511081.122449 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jgj
+1581511081.122792 : Broadcasted Alex: jgj
+1581511364.3543847 : Alex: jkj
+1581511364.3546996 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jkj
+1581511364.35493 : Broadcasted Alex: jkj
+1581511365.1461535 : Alex: ug
+1581511365.1470866 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: ug
+1581511365.147944 : Broadcasted Alex: ug
+1581511376.4892445 : Alex: uo]
+1581511376.4896297 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: uo]
+1581511376.4899151 : Broadcasted Alex: uo]
+1581530963.7419086 : Defaulted
+1581530963.77123 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581530963.7711947
+1581530963.7727103 : PM Manager started
+1581530977.1212854 : Port set to 443
+1581530979.9071295 : Defaulted
+1581530979.9085345 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581530979.9085102
+1581530979.9097874 : PM Manager started
+1581530984.9133267 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581530984.9137225 : Currently active threads:
+1581531022.9404929 : Defaulted
+1581531022.942535 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581531022.9425077
+1581531022.9438496 : PM Manager started
+1581531027.9502985 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531027.9507356 : Currently active threads:
+1581531074.0383878 : Defaulted
+1581531074.04077 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581531074.0407474
+1581531074.042387 : PM Manager started
+1581531079.0497234 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531079.0507152 : Currently active threads:
+1581531079.0514257 : <function enumerate at 0x7fa4ba4ce830>
+1581531079.0520515 : Length of account list is 0
+1581531079.0527053 : Account list:
+1581531079.0540936 : []
+1581531079.0554128 : -------- PERIODIC DATA RETURN ::END::
+1581531091.1191885 : Defaulted
+1581531091.120272 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581531091.1202586
+1581531091.1210387 : PM Manager started
+1581531096.125552 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531096.1260073 : Currently active threads:
+1581531096.1263244 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531096.126533 : Length of account list is 0
+1581531096.1266787 : Account list:
+1581531096.1268108 : []
+1581531096.126939 : -------- PERIODIC DATA RETURN ::END::
+1581531101.1313822 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531101.131778 : Currently active threads:
+1581531101.132007 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531101.1321597 : Length of account list is 0
+1581531101.1322973 : Account list:
+1581531101.1324337 : []
+1581531101.1325698 : -------- PERIODIC DATA RETURN ::END::
+1581531106.1372678 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531106.1376505 : Currently active threads:
+1581531106.13787 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531106.1380143 : Length of account list is 0
+1581531106.13816 : Account list:
+1581531106.1382926 : []
+1581531106.138423 : -------- PERIODIC DATA RETURN ::END::
+1581531111.1412964 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531111.141742 : Currently active threads:
+1581531111.1420367 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531111.1422334 : Length of account list is 0
+1581531111.1424167 : Account list:
+1581531111.1426005 : []
+1581531111.1427965 : -------- PERIODIC DATA RETURN ::END::
+1581531116.145306 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531116.1457574 : Currently active threads:
+1581531116.1459963 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531116.1461475 : Length of account list is 0
+1581531116.14628 : Account list:
+1581531116.1464121 : []
+1581531116.1465445 : -------- PERIODIC DATA RETURN ::END::
+1581531121.1493874 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531121.1498024 : Currently active threads:
+1581531121.1500258 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531121.1501718 : Length of account list is 0
+1581531121.1503086 : Account list:
+1581531121.150457 : []
+1581531121.1505945 : -------- PERIODIC DATA RETURN ::END::
+1581531126.154661 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531126.1555936 : Currently active threads:
+1581531126.1564696 : [<_MainThread(MainThread, started 139948607571776)>, <Thread(Thread-1, started 139948595861248)>, <Thread(Thread-2, started 139948587468544)>, <Thread(Thread-3, started 139948579075840)>]
+1581531126.1571174 : Length of account list is 0
+1581531126.1578467 : Account list:
+1581531126.1584716 : []
+1581531126.160435 : -------- PERIODIC DATA RETURN ::END::
+1581531219.8877783 : Defaulted
+1581531219.8888807 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581531219.8888679
+1581531219.8896594 : PM Manager started
+1581531224.8935332 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531224.8946838 : 4 active threads.
+1581531224.895072 : Length of account list is 0
+1581531224.8953733 : Account list:
+1581531224.8956604 : []
+1581531224.8959293 : -------- PERIODIC DATA RETURN ::END::
+1581531229.901806 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581531229.9023504 : 4 active threads.
+1581531229.9026396 : Length of account list is 0
+1581531229.9029171 : Account list:
+1581531229.9032164 : []
+1581531229.903529 : -------- PERIODIC DATA RETURN ::END::

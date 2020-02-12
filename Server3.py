@@ -151,6 +151,7 @@ class Accounts():
             #Accounts.ReadAccountList()
             Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : False})
             #Accounts.SaveAccountListToFile
+            PrintDataDigest()
         except:
             try:
                 PrintLog("Error creating new account, username: " + str(UsernameInput))
@@ -218,6 +219,7 @@ class Accounts():
                     AccountListB.remove(account)
         
         Accounts.AccountList = AccountListB
+        PrintDataDigest()
         #Accounts.SaveAccountListToFile
 
     def InitAccountList():
@@ -229,6 +231,7 @@ class Main():
     def ManageClientHighLevel(Username):
         NoError = True
         try:
+            PrintDataDigest()
             HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
         except:
             PrintLog("Error at start of high level manage client")
@@ -325,6 +328,7 @@ class Main():
 
     def WelcomeNewConnections(connection, address):
         try:
+            PrintDataDigest()
             LowLevelCommunications.SendServerPM(connection, "Make a new account (M), or sign in (S)")
             ContinueConnectionProcess = True
         except:
@@ -337,9 +341,11 @@ class Main():
                 response = connection.recv(BufferSize).decode("utf8")
                 if response == "M":
                     Thread(target=Main.NewAccountProcess, args=(connection, address)).start()
+                    PrintDataDigest()
 
                 else:
                     Thread(target=Main.SignInProcess, args=(connection, address)).start()
+                    PrintDataDigest()
 
 
         except:
@@ -398,6 +404,7 @@ class Main():
                         if reply == "continue":
                             Accounts.PushAccountData(Username, "ErrorCount", 0)
                             Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
+                            PrintDataDigest()
                             break
 
                         else:
@@ -530,6 +537,7 @@ class Main():
 
                 if response == "continue":
                     Thread(target=Main.SignInProcess, args=(connection, address)).start()
+                    PrintDataDigest()
 
                 else:
                     connection.close()
@@ -578,10 +586,10 @@ class PMManager:
 #NOTE Not in any class because I want it to be readily accessed and it doesn't belong to any in particular
 def PrintLog(text):
     text = str(text)
+    text = str(time.time()) + " : " + text
     print(text)
-    text = str(time.time()) + " : " + text + "\n"
     LogFile = open('log.txt', 'a')
-    LogFile.write(text)
+    LogFile.write(text + "\n")
 
 class PingManager:
     def PingManager():
@@ -622,10 +630,19 @@ except:
     server.bind((Host, Port))
 server.listen(1000)
 
+def PrintDataDigest():
+    PrintLog("-------- PERIODIC DATA RETURN ::BEGIN::")
+    #enumerate should be threading.active_count
+    PrintLog(str(active_count()) + " active threads.")
+    PrintLog("Length of account list is " + str(len(Accounts.AccountList)))
+    PrintLog("Account list:")
+    PrintLog(str(Accounts.AccountList))
+    PrintLog("-------- PERIODIC DATA RETURN ::END::")
+
 def PrintPeriodic():
     while True:
-        time.sleep(0.5)
-        PrintLog(str(Accounts.GetAccountData("Alex", "isOnline")))
+        time.sleep(60)
+        PrintDataDigest()
 
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
@@ -635,6 +652,6 @@ Thread(target=PMManager.PMManager).start()
 
 Thread(target=PingManager.PingManager).start()
 
-#Thread(target=PrintPeriodic).start()
+Thread(target=PrintPeriodic).start()
 
 Main.AcceptIncomingConnections()
