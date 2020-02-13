@@ -39,7 +39,7 @@ Client Side
 
 - /exit, /quit - Closes client locally.
 
-- /faketext - Clears chat history and replaces it with a fake "lesson friendly" conversation. The conversation is shit, replace it.
+- /faketext - Clears chat history and replaces it with a conversation you entered earlier. Go faketext -end to see messages again.
 
 
 Server side
