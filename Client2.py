@@ -151,7 +151,7 @@ class GUI:
 
     #disguise that shit
     top.title("untitled - Notepad")
-    top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
+    #top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
     top.configure(background="white") 
 
     menu = tkinter.Menu(top,tearoff=0,font="italic 10 ")
@@ -225,8 +225,8 @@ GUI.FakeTextList = fakeText
 #<copied code> Copied from Client2 because it's pretty good code, if I say so myself. 
 #default settings
 backlogLength = 20
-host = "127.0.0.1"
-#host = "86.31.133.208"
+#host = "127.0.0.1"
+host = "86.31.133.208"
 #host = "192.168.0.35"
 port = 34000
 

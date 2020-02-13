@@ -5739,3 +5739,28 @@ Broadcasted Alex: sfjdl
 1581582806.2687042 : Account list:
 1581582806.2692487 : []
 1581582806.269784 : -------- PERIODIC DATA RETURN ::END::
+1581582866.3272185 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581582866.3276267 : 5 active threads.
+1581582866.3277867 : Length of account list is 0
+1581582866.327919 : Account list:
+1581582866.3280528 : []
+1581582866.3281922 : -------- PERIODIC DATA RETURN ::END::
+1581582869.415367 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581582869.41574 : 6 active threads.
+1581582869.4158788 : Length of account list is 0
+1581582869.4160063 : Account list:
+1581582869.4161372 : []
+1581582869.4162686 : -------- PERIODIC DATA RETURN ::END::
+1581582869.610706 : Sending low level message PM
+1581582869.6110806 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581582870.0120013 : Sending low level message PM
+1581582870.012396 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581582870.0126762 : Error sending low level message PM
+1581582870.4134161 : Sending low level message PM
+1581582870.4140165 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581582870.414358 : Error sending low level message PM
+1581582870.6150236 : Error in sign in : Username pick loop, closing connection
+1581582870.6157076 : Error getting account data, error printing name
+1581582870.816441 : Sending low level message PM
+1581582870.8172772 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581582870.8178482 : Error sending low level message PM
