@@ -43,6 +43,7 @@ class Communications():
                 GUI.FakeText()
             else:
                 Communications.freezeMessages = False
+                GUI.WipeList()
 
         elif "/ping" in message and IsMessageToEarly == False:
             PingTest.FirstCapture = time.time()
