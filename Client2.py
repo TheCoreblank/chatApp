@@ -30,7 +30,7 @@ class Communications():
         GUI.my_message.set("")
         IsMessageToEarly = False
 
-        if Communications.freezeMessagesBecauseOfFakeText == True and not "/faketext" in message:
+        if Communications.freezeMessagesBecauseOfFakeText == True and not "/faketext" in message and not "/wipe" in message and not "/status" in message:
             GUI.message_list.insert(tkinter.END, message)
             GUI.FakeTextList.append(message)
 
@@ -44,12 +44,17 @@ class Communications():
             GUI.WipeList()
 
         elif "/faketext" in message:
-            if not "-end" in message:
+            if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
+                GUI.SwitchToMessageMode()
+            elif Communications.freezeMessagesBecauseOfFakeText == False and not "-end" in message:
                 GUI.FakeText()
-            else:
-                Communications.freezeMessagesBecauseOfFakeText = False
-                GUI.WipeList()
-                GUI.WriteListData(GUI.MessageList)
+
+        elif "/status" in message:
+            if Communications.freezeMessagesBecauseOfFakeText == True:
+                GUI.SetLabelStatus("Notepad Mode")
+
+            if Communications.freezeMessagesBecauseOfFakeText == False:
+                GUI.SetLabelStatus("Chat Mode")
 
         elif "/ping" in message and IsMessageToEarly == False:
             PingTest.FirstCapture = time.time()
@@ -79,7 +84,7 @@ class Communications():
             GUI.entry_field["show"] = ""
             Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
         
-        if not "/faketext" in message and not "/wipe" in message and not "/clear" in message:
+        if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
             GUI.SetLabelStatus("Sent: " + message)
 
 
@@ -179,16 +184,53 @@ class GUI:
     top.configure(background="white") 
 
     menu = tkinter.Menu(top,tearoff=0,font="italic 10 ")
-    menu.add_command(label="File",font="italic 10")
+
+    fileMenu = tkinter.Menu(menu)
+    fileMenu.add_command(label="New", font="italic 10")
+    fileMenu.add_command(label="Open...", font="italic 10")
+    fileMenu.add_command(label="Save", font="italic 10")
+    fileMenu.add_command(label="Save As...", font="italic 10")
+    fileMenu.add_command(label="Page Setup...", font="italic 10")
+    fileMenu.add_command(label="Print...", font="italic 10")
+    fileMenu.add_command(label="Exit", font="italic 10")
+    menu.add_cascade(label="File",font="italic 10", menu=fileMenu)
+
+    editMenu = tkinter.Menu(menu)
+    editMenu.add_command(label="Undo")
+    editMenu.add_command(label="Cut")
+    editMenu.add_command(label="Copy")
+    editMenu.add_command(label="Paste")
+    editMenu.add_command(label="Delete")
+    #editMenu.add_seperator()
+    editMenu.add_command(label="Find")
+    editMenu.add_command(label="Find Next")
+    editMenu.add_command(label="Replace")
+    editMenu.add_command(label="Go to")
+    #editMenu.add_seperator()
+    editMenu.add_command(label="Select All")
+    editMenu.add_command(label="Time/Date")
+
+    menu.add_cascade(label = "Edit", font="italic 10", menu = editMenu)
+
+    formatMenu = tkinter.Menu(menu)
+
+    formatMenu.add_command(label="Word Wrap")
+    formatMenu.add_command(label="Font")
+
+    menu.add_cascade(label = "Format", font = "italic 10", menu = formatMenu)
+
     menu.add_separator()
-    menu.add_command(label="Edit",font="italic 10")
+
+    viewMenu = tkinter.Menu(menu)
+    viewMenu.add_command(label = "Status Bar")
+    
+    menu.add_cascade(label = "View", font = "italic 10", menu = viewMenu)
     menu.add_separator()
-    menu.add_command(label="Format",font="italic 10")
-    menu.add_separator()
-    menu.add_command(label="View",font="italic 10")
-    menu.add_separator()
-    menu.add_command(label="Help",font="italic 10")
-    menu.add_separator()
+
+    helpMenu = tkinter.Menu(menu)
+    helpMenu.add_command(label="View Help")
+    helpMenu.add_command(label="About Notepad")
+    menu.add_cascade(label = "Help", font = "italic 10", menu = helpMenu)
 
     top.config(menu=menu)
 
@@ -255,6 +297,11 @@ class GUI:
         Communications.freezeMessagesBecauseOfFakeText = True
         for line in GUI.FakeTextList:
             GUI.message_list.insert(tkinter.END, line)
+
+    def SwitchToMessageMode():
+        Communications.freezeMessagesBecauseOfFakeText = False
+        GUI.WipeList()
+        GUI.WriteListData(GUI.MessageList)
 
 
 print("Please enter your faketext. Newlines are defined by + symbols.")
