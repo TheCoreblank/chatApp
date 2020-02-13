@@ -3,6 +3,7 @@ from tkinter import messagebox
 import hashlib
 from threading import *
 from socket import AF_INET, socket, SOCK_STREAM
+from time import strftime
 
 class PingTest():
     FirstCapture = 0
@@ -67,7 +68,8 @@ class Communications():
             GUI.entry_field["show"] = ""
             Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
         
-        GUI.SetLabelStatus("Sent: " + message)
+        if not "/faketext" in message and not "/wipe" in message and not "/clear" in message:
+            GUI.SetLabelStatus("Sent: " + message)
 
 
     def PeriodicPing():
@@ -210,6 +212,7 @@ class GUI:
 
     def FakeText():
         GUI.WipeList()
+        GUI.SetLabelStatus("Untitled - Notepad - "  + strftime("%Y-%m-%d"))
         for line in GUI.FakeTextList:
             GUI.message_list.insert(tkinter.END, line)
 
