@@ -7449,3 +7449,449 @@ Do you want to do default or custom s
 1581611273.0761206 : Alex: /everyoneclose
 1581611273.076492 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: /everyoneclose
 1581611273.0770009 : Broadcasted Alex: /everyoneclose
+1581611700.431972 : Defaulted
+1581611700.4353998 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581611700.4353552
+1581611700.439729 : PM Manager started
+1581611716.9782405 : Accepted connection from ('127.0.0.1', 58882) , referring
+1581611716.9790316 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611716.979616 : 4 active threads.
+1581611716.9797928 : Length of account list is 0
+1581611716.9799447 : Account list:
+1581611716.9800868 : []
+1581611716.9802258 : -------- PERIODIC DATA RETURN ::END::
+1581611717.180631 : Sending low level message PM
+1581611717.1810174 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581611719.8480155 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611719.8489778 : 5 active threads.
+1581611719.8700483 : Length of account list is 0
+1581611719.8703477 : Account list:
+1581611719.8704882 : []
+1581611719.87064 : -------- PERIODIC DATA RETURN ::END::
+1581611720.0482154 : Sending low level message PM
+1581611720.0485876 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter phrase to auth new account
+1581611720.4493115 : Sending low level message PM
+1581611720.4497058 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581611956.2513766 : Defaulted
+1581611956.2524815 : Set port to 34001 due to error
+1581611956.2527306 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581611956.2527223
+1581611956.2536385 : PM Manager started
+1581611959.1481724 : Accepted connection from ('127.0.0.1', 48242) , referring
+1581611959.1488528 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611959.1491537 : 4 active threads.
+1581611959.149302 : Length of account list is 0
+1581611959.1494353 : Account list:
+1581611959.1495817 : []
+1581611959.1497116 : -------- PERIODIC DATA RETURN ::END::
+1581611959.3501372 : Sending low level message PM
+1581611959.3505237 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581611962.272898 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611962.2733414 : 5 active threads.
+1581611962.2735484 : Length of account list is 0
+1581611962.273736 : Account list:
+1581611962.2739253 : []
+1581611962.274112 : -------- PERIODIC DATA RETURN ::END::
+1581611962.4759555 : Sending low level internal message
+1581611962.4766893 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581611962.8780017 : Sending low level message PM
+1581611962.8788059 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581611967.2238984 : Sending low level message PM
+1581611967.2248144 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: 
+1581611967.6265216 : Sending low level internal message
+1581611967.6270618 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581611967.6274116 : Error sending low level internal PM, exiting
+1581611968.0290794 : Sending low level message PM
+1581611968.029467 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581611968.0296404 : Error sending low level message PM
+1581611968.2301295 : Error in account creation
+1581611976.805113 : Accepted connection from ('127.0.0.1', 48258) , referring
+1581611976.8057692 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611976.806137 : 4 active threads.
+1581611976.8062875 : Length of account list is 0
+1581611976.8064246 : Account list:
+1581611976.8065598 : []
+1581611976.8066938 : -------- PERIODIC DATA RETURN ::END::
+1581611977.007082 : Sending low level message PM
+1581611977.0074813 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581611979.3728192 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581611979.3731732 : 5 active threads.
+1581611979.3733263 : Length of account list is 0
+1581611979.3734622 : Account list:
+1581611979.3735976 : []
+1581611979.3737314 : -------- PERIODIC DATA RETURN ::END::
+1581611979.5743449 : Sending low level internal message
+1581611979.5750942 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581611979.9763763 : Sending low level message PM
+1581611979.9767764 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Upgrade your client
+1581616752.1171715 : Defaulted
+1581616752.1438065 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581616752.143783
+1581616752.1454568 : PM Manager started
+1581616756.7581673 : Accepted connection from ('127.0.0.1', 59228) , referring
+1581616756.7593946 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616756.7601175 : 4 active threads.
+1581616756.7604852 : Length of account list is 0
+1581616756.76082 : Account list:
+1581616756.7611399 : []
+1581616756.76144 : -------- PERIODIC DATA RETURN ::END::
+1581616756.9619021 : Sending low level message PM
+1581616756.962564 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581616759.5938761 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616759.5949087 : 5 active threads.
+1581616759.5956402 : Length of account list is 0
+1581616759.5962603 : Account list:
+1581616759.5968843 : []
+1581616759.597628 : -------- PERIODIC DATA RETURN ::END::
+1581616759.7941926 : Sending low level internal message
+1581616759.7955072 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581616760.1967824 : Sending low level message PM
+1581616760.1972938 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581616783.25473 : Sending low level message PM
+1581616783.2551675 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: 
+1581616783.6559994 : Sending low level internal message
+1581616783.6563692 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581616783.6565554 : Error sending low level internal PM, exiting
+1581616784.0574665 : Sending low level message PM
+1581616784.0584195 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581616784.0592465 : Error sending low level message PM
+1581616784.260218 : Error in account creation
+1581616786.5666642 : Accepted connection from ('127.0.0.1', 59244) , referring
+1581616786.5673141 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616786.567661 : 4 active threads.
+1581616786.5678086 : Length of account list is 0
+1581616786.5679579 : Account list:
+1581616786.5681794 : []
+1581616786.568316 : -------- PERIODIC DATA RETURN ::END::
+1581616786.768697 : Sending low level message PM
+1581616786.7690423 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581616789.1663399 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616789.1666994 : 5 active threads.
+1581616789.1669533 : Length of account list is 0
+1581616789.167121 : Account list:
+1581616789.1672988 : []
+1581616789.1674573 : -------- PERIODIC DATA RETURN ::END::
+1581616789.3709815 : Sending low level internal message
+1581616789.3719766 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581616789.774276 : Sending low level message PM
+1581616789.775311 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581616791.8661892 : Sending low level message PM
+1581616791.8667886 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex
+1581616792.268363 : Sending low level internal message
+1581616792.2691836 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581616792.670718 : Sending low level message PM
+1581616792.6717286 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581616802.4950628 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581616803.1978414 : Sending low level message PM
+1581616803.1987448 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581616803.4001133 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616803.4009547 : 4 active threads.
+1581616803.4015255 : Length of account list is 1
+1581616803.4019518 : Account list:
+1581616803.4020958 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False}]
+1581616803.4022312 : -------- PERIODIC DATA RETURN ::END::
+1581616803.4023862 : Sending to Alex : If you can read this, your account creation worked.
+1581616803.4025297 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581616803.603376 : Sending to Alex : Enter the word 'continue' to sign in
+1581616803.604293 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581616806.0645576 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616806.0655248 : 5 active threads.
+1581616806.0662224 : Length of account list is 1
+1581616806.0668967 : Account list:
+1581616806.0678716 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>}]
+1581616806.0685425 : -------- PERIODIC DATA RETURN ::END::
+1581616806.2690582 : Sending low level message PM
+1581616806.2697132 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616806.813415 : Sending low level message PM
+1581616806.8144085 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581616807.215745 : Sending low level message PM
+1581616807.2161283 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616807.617006 : Sending low level message PM
+1581616807.6174216 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581616808.018458 : Sending low level message PM
+1581616808.0190105 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616829.6564739 : Sending low level message PM
+1581616829.6572785 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581616830.059202 : Sending low level message PM
+1581616830.0596948 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616830.4613245 : Sending low level message PM
+1581616830.462267 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581616830.8641858 : Sending low level message PM
+1581616830.8651528 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616832.778094 : Sending low level internal message
+1581616832.7786498 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581616833.3813918 : Sending low level message PM
+1581616833.381813 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581616837.007151 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581616837.0081465 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581616837.0088527 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581616838.9316006 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616838.932725 : 5 active threads.
+1581616838.9333735 : Length of account list is 1
+1581616838.9313695 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616838.933992 : Account list:
+1581616838.9347255 : 5 active threads.
+1581616838.936558 : Length of account list is 1
+1581616838.936994 : Account list:
+1581616838.9372268 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0}]
+1581616838.937411 : -------- PERIODIC DATA RETURN ::END::
+1581616838.9375813 : Sending to Alex : Welcome to the chatroom.
+1581616838.937758 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581616838.9357913 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0}]
+1581616838.9383578 : -------- PERIODIC DATA RETURN ::END::
+1581616839.5008144 : Alex: s
+1581616839.5017645 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: s
+1581616839.502656 : Broadcasted Alex: s
+1581616839.963944 : Alex: sfd
+1581616839.9647696 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sfd
+1581616839.9655907 : Broadcasted Alex: sfd
+1581616931.345564 : Accepted connection from ('127.0.0.1', 59318) , referring
+1581616931.3553107 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616931.356149 : 5 active threads.
+1581616931.3565943 : Length of account list is 1
+1581616931.3568468 : Account list:
+1581616931.357277 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581616931.3577085 : -------- PERIODIC DATA RETURN ::END::
+1581616931.5582952 : Sending low level message PM
+1581616931.55867 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581616933.762379 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616933.7628703 : 6 active threads.
+1581616933.7880092 : Length of account list is 1
+1581616933.7882965 : Account list:
+1581616933.788621 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581616933.7887793 : -------- PERIODIC DATA RETURN ::END::
+1581616933.9544334 : Sending low level message PM
+1581616933.9551098 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616935.730408 : Sending low level message PM
+1581616935.731067 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581616942.8238642 : Accepted connection from ('127.0.0.1', 59324) , referring
+1581616942.828177 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616942.8293679 : 5 active threads.
+1581616942.8358576 : Length of account list is 1
+1581616942.8469865 : Account list:
+1581616942.8670726 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581616942.8673093 : -------- PERIODIC DATA RETURN ::END::
+1581616943.0677297 : Sending low level message PM
+1581616943.0680902 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581616959.5220468 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581616959.522462 : 6 active threads.
+1581616959.5226593 : Length of account list is 1
+1581616959.5229008 : Account list:
+1581616959.5240679 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59244)>, 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581616959.524355 : -------- PERIODIC DATA RETURN ::END::
+1581616959.7222228 : Sending low level message PM
+1581616959.7259526 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581616960.356592 : Sending low level message PM
+1581616960.3785815 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581616960.7828605 : Sending low level message PM
+1581616960.7832267 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581617190.0217736 : Sending low level message PM
+1581617190.022163 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581617190.4229083 : Sending low level message PM
+1581617190.423278 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581617190.4234617 : Error sending low level message PM
+1581617190.6239557 : Error in sign in : Username pick loop, closing connection
+1581617190.6243343 : Error getting account data, error printing name
+1581617190.824785 : Sending low level message PM
+1581617190.825139 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581617190.825308 : Error sending low level message PM
+1581617193.182219 : Accepted connection from ('127.0.0.1', 59500) , referring
+1581617193.1828518 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617193.2078218 : 4 active threads.
+1581617193.2081525 : Length of account list is 1
+1581617193.208298 : Account list:
+1581617193.2085187 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581617193.208669 : -------- PERIODIC DATA RETURN ::END::
+1581617193.4090912 : Sending low level message PM
+1581617193.4096758 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581617196.785737 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617196.7861383 : 5 active threads.
+1581617196.7863653 : Length of account list is 1
+1581617196.7865732 : Account list:
+1581617196.7868104 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581617196.78709 : -------- PERIODIC DATA RETURN ::END::
+1581617196.9880002 : Sending low level internal message
+1581617196.988981 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581617197.391194 : Sending low level message PM
+1581617197.392122 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581617199.497099 : Sending low level message PM
+1581617199.498044 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Sorry! That username is already in use.
+1581617199.899735 : Sending low level message PM
+1581617199.9006805 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581617526.8516908 : Sending low level message PM
+1581617526.8520906 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: 
+1581617527.2528667 : Sending low level internal message
+1581617527.25321 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581617527.253387 : Error sending low level internal PM, exiting
+1581617527.6540859 : Sending low level message PM
+1581617527.6544845 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581617527.6546588 : Error sending low level message PM
+1581617527.8549519 : Error in account creation
+1581617530.6922786 : Accepted connection from ('127.0.0.1', 59666) , referring
+1581617530.6929452 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617530.6932411 : 4 active threads.
+1581617530.693404 : Length of account list is 1
+1581617530.6935544 : Account list:
+1581617530.6937273 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581617530.6938875 : -------- PERIODIC DATA RETURN ::END::
+1581617530.8943176 : Sending low level message PM
+1581617530.8951705 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581617532.8144643 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617532.8149369 : 5 active threads.
+1581617532.8151734 : Length of account list is 1
+1581617532.8153799 : Account list:
+1581617532.8167522 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581617532.8173864 : -------- PERIODIC DATA RETURN ::END::
+1581617533.0150626 : Sending low level message PM
+1581617533.0155854 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581617535.8513303 : Sending low level internal message
+1581617535.8522427 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581617536.4554932 : Sending low level message PM
+1581617536.456412 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581617541.9922473 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581617541.9926252 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581617541.9927826 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581617566.1215372 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617566.1218812 : 5 active threads.
+1581617566.1220286 : Length of account list is 1
+1581617566.1221635 : Account list:
+1581617566.1224127 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59666)>, 'ErrorCount': 0, 'LastSeen': 1581616926.696373}]
+1581617566.1225884 : -------- PERIODIC DATA RETURN ::END::
+1581617566.1227264 : Sending to Alex : Welcome to the chatroom.
+1581617566.1229084 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581617566.1237268 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581617566.1240988 : 5 active threads.
+1581617566.124248 : Length of account list is 1
+1581617566.124382 : Account list:
+1581617566.1246424 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 59666)>, 'ErrorCount': 0, 'LastSeen': 1581617566.123148}]
+1581617566.1248007 : -------- PERIODIC DATA RETURN ::END::
+1581617567.0959494 : Alex: slkdj
+1581617567.0967777 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: slkdj
+1581617567.1198657 : Broadcasted Alex: slkdj
+1581617567.637481 : Alex: dj
+1581617567.6378868 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: dj
+1581617567.6381924 : Broadcasted Alex: dj
+1581617579.3066263 : Alex: jslf
+1581617579.3076725 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jslf
+1581617579.309128 : Broadcasted Alex: jslf
+1581617579.8915231 : Alex: jf
+1581617579.892144 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jf
+1581617579.8926926 : Broadcasted Alex: jf
+1581618783.9945884 : Alex: sdjlkfj
+1581618783.9957 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: sdjlkfj
+1581618783.9965854 : Broadcasted Alex: sdjlkfj
+1581618784.6245377 : Alex: fjl
+1581618784.6254976 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: fjl
+1581618784.6263967 : Broadcasted Alex: fjl
+1581618836.8906887 : Alex: jsf
+1581618836.891678 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsf
+1581618836.892557 : Broadcasted Alex: jsf
+1581618837.4015353 : Alex: jsfd
+1581618837.4020936 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jsfd
+1581618837.4025624 : Broadcasted Alex: jsfd
+1581619044.2840834 : Accepted connection from ('127.0.0.1', 60326) , referring
+1581619044.2846851 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619044.2850027 : 4 active threads.
+1581619044.2851477 : Length of account list is 1
+1581619044.2852812 : Account list:
+1581619044.2854352 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581618911.897729}]
+1581619044.2856052 : -------- PERIODIC DATA RETURN ::END::
+1581619044.4860308 : Sending low level message PM
+1581619044.486441 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581619053.212596 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619053.213501 : 5 active threads.
+1581619053.214173 : Length of account list is 1
+1581619053.214981 : Account list:
+1581619053.2157037 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': '', 'ErrorCount': 0, 'LastSeen': 1581618911.897729}]
+1581619053.2163527 : -------- PERIODIC DATA RETURN ::END::
+1581619053.4176176 : Sending low level message PM
+1581619053.4184713 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581619056.2625396 : Sending low level internal message
+1581619056.2629578 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581619056.8641207 : Sending low level message PM
+1581619056.8645263 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581619060.1379998 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581619060.1383967 : Sending to Alex : If you can read this, you successfully identified. Type 'continue' to continue.
+1581619060.1385653 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581619062.027765 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619062.0287614 : 5 active threads.
+1581619062.0293777 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619062.0298142 : 5 active threads.
+1581619062.0300117 : Length of account list is 1
+1581619062.030208 : Account list:
+1581619062.031722 : Length of account list is 1
+1581619062.059577 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581618911.897729}]
+1581619062.0597184 : Account list:
+1581619062.0676074 : -------- PERIODIC DATA RETURN ::END::
+1581619062.0680854 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581618911.897729}]
+1581619062.068667 : -------- PERIODIC DATA RETURN ::END::
+1581619062.068864 : Sending to Alex : Welcome to the chatroom.
+1581619062.0690317 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581619078.2760513 : Alex: lkjf
+1581619078.2770383 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: lkjf
+1581619078.2779083 : Broadcasted Alex: lkjf
+1581619078.876845 : Alex: jlsdf
+1581619078.8773966 : Encoding: [SERVER INTERNAL-BROADCAST]Alex: jlsdf
+1581619078.8778584 : Broadcasted Alex: jlsdf
+1581619128.4311182 : Accepted connection from ('127.0.0.1', 60366) , referring
+1581619128.434788 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619128.44246 : 5 active threads.
+1581619128.4427478 : Length of account list is 1
+1581619128.4429653 : Account list:
+1581619128.4432387 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}]
+1581619128.4444902 : -------- PERIODIC DATA RETURN ::END::
+1581619128.645052 : Sending low level message PM
+1581619128.710381 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581619130.2077234 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619130.2186022 : 6 active threads.
+1581619130.2200956 : Length of account list is 1
+1581619130.2203803 : Account list:
+1581619130.2206466 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}]
+1581619130.2208228 : -------- PERIODIC DATA RETURN ::END::
+1581619130.407926 : Sending low level message PM
+1581619130.4123259 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581619131.5227828 : Sending low level message PM
+1581619131.525995 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581619140.323946 : Accepted connection from ('127.0.0.1', 60374) , referring
+1581619140.3341663 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619140.338374 : 5 active threads.
+1581619140.3386176 : Length of account list is 1
+1581619140.33876 : Account list:
+1581619140.3424664 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}]
+1581619140.3428676 : -------- PERIODIC DATA RETURN ::END::
+1581619140.5440383 : Sending low level message PM
+1581619140.5446258 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581619142.7757428 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619142.8056638 : 6 active threads.
+1581619142.8165052 : Length of account list is 1
+1581619142.830059 : Account list:
+1581619142.843742 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}]
+1581619142.8663297 : -------- PERIODIC DATA RETURN ::END::
+1581619142.9758859 : Sending low level internal message
+1581619142.984189 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581619143.388546 : Sending low level message PM
+1581619143.393527 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581619144.835088 : Sending low level message PM
+1581619144.8365517 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alex2
+1581619145.2420797 : Sending low level internal message
+1581619145.247229 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581619145.658294 : Sending low level message PM
+1581619145.6688614 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581619150.0477252 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581619150.7501717 : Sending low level message PM
+1581619150.7505705 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581619150.9512038 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619150.953379 : 5 active threads.
+1581619150.959244 : Length of account list is 2
+1581619150.95988 : Account list:
+1581619150.9603739 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}, {'Username': 'Alex2', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False}]
+1581619150.9608877 : -------- PERIODIC DATA RETURN ::END::
+1581619150.9612298 : Sending to Alex2 : If you can read this, your account creation worked.
+1581619150.9615579 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581619151.1637058 : Sending to Alex2 : Enter the word 'continue' to sign in
+1581619151.1789382 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581619152.7332673 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581619152.7367046 : 6 active threads.
+1581619152.7371862 : Length of account list is 2
+1581619152.737507 : Account list:
+1581619152.7379806 : [{'Username': 'Alex', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': True, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60326)>, 'ErrorCount': 0, 'LastSeen': 1581619114.344482}, {'Username': 'Alex2', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 60374)>}]
+1581619152.7385273 : -------- PERIODIC DATA RETURN ::END::
+1581619152.9333723 : Sending low level message PM
+1581619152.9381485 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 

@@ -431,14 +431,14 @@ class Main():
 
     def NewAccountProcess(connection, address):
         try:
-            LowLevelCommunications.SendServerPM(connection, "Please enter phrase to auth new account")
+            LowLevelCommunications.SendInternalMessage(connection, "Enter auth to access")
             response = connection.recv(BufferSize).decode("utf8")
         except:
             PrintLog("Error in NewAccountProcess, closing connection")
             connection.close()
 
         #try:
-        if response == "Hello":
+        if response == "RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN.":
             try:
                 while True:
                     InUse = False
@@ -517,6 +517,8 @@ class Main():
                 PrintLog("Error in account creation")
 
         else:
+            LowLevelCommunications.SendServerPM(connection, "Upgrade your client")
+            time.sleep(5)
             connection.close()
     #except:
     #    PrintLog("Error in account creation, exiting")    

@@ -13,7 +13,7 @@ class PingTest():
 class Communications():
     HashNextMessage = False
     sendpings = False
-    freezeMessages = False
+    freezeMessagesBecauseOfFakeText = False
 
     #Speed restrictions
     lastMessageTransmitTime = 0
@@ -30,8 +30,9 @@ class Communications():
         GUI.my_message.set("")
         IsMessageToEarly = False
 
-        if Communications.freezeMessages == True:
+        if Communications.freezeMessagesBecauseOfFakeText == True and not "/faketext" in message:
             GUI.message_list.insert(tkinter.END, message)
+            GUI.FakeTextList.append(message)
 
         if Communications.nextAllowedMessageTime > time.time():
             IsMessageToEarly = True
@@ -46,8 +47,9 @@ class Communications():
             if not "-end" in message:
                 GUI.FakeText()
             else:
-                Communications.freezeMessages = False
+                Communications.freezeMessagesBecauseOfFakeText = False
                 GUI.WipeList()
+                GUI.WriteListData(GUI.MessageList)
 
         elif "/ping" in message and IsMessageToEarly == False:
             PingTest.FirstCapture = time.time()
@@ -61,11 +63,11 @@ class Communications():
             GUI.top.quit()
             sys.exit()
 
-        elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessages == False:
+        elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
             Communications.InternalSend(message)
             Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
         
-        elif IsMessageToEarly == False and Communications.freezeMessages == False:
+        elif IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
             Communications.HashNextMessage = False
             print("Hashing message")
             #Good joke, "securely." If anyone is reading this:
@@ -105,7 +107,7 @@ class Communications():
                 GUI.FakeText()
                 os._exit(1)
 
-            if Communications.freezeMessages == False:
+            if Communications.freezeMessagesBecauseOfFakeText == False:
                 if "[PING: URGENT REPLY]" in message:
                     PingTest.SecondCapture = time.time()
 
@@ -139,6 +141,9 @@ class Communications():
                         GUI.entry_field["show"] = "*"
                         GUI.SetLabelStatus("Securely hashing and encrypting next message with over 524,288 iterations")
 
+                    if "Enter auth to access" in message:
+                        Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN.")
+
                 else:
                     GUI.message_list.insert(tkinter.END, message)
 
@@ -165,6 +170,7 @@ class Cryptography:
 
 class GUI:
     FakeTextList = ["Notes: "]
+    MessageList = ""
     top = tkinter.Tk()
 
     #disguise that shit
@@ -234,10 +240,19 @@ class GUI:
             if GUI.message_list.size() > backlogLength:
                 GUI.message_list.delete(0)
 
+    def GetListData():
+        return list(GUI.message_list.get(0, tkinter.END))
+
+    def WriteListData(messageList):
+        GUI.WipeList()
+        for line in messageList:
+            GUI.message_list.insert(tkinter.END, line)
+
     def FakeText():
+        GUI.MessageList = GUI.GetListData()
         GUI.WipeList()
         GUI.SetLabelStatus("Untitled - Notepad - "  + strftime("%Y-%m-%d"))
-        Communications.freezeMessages = True
+        Communications.freezeMessagesBecauseOfFakeText = True
         for line in GUI.FakeTextList:
             GUI.message_list.insert(tkinter.END, line)
 
