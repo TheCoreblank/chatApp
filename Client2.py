@@ -12,6 +12,7 @@ class PingTest():
 class Communications():
     HashNextMessage = False
     sendpings = False
+    freezeMessages = False
 
     #Speed restrictions
     lastMessageTransmitTime = 0
@@ -38,7 +39,10 @@ class Communications():
             GUI.WipeList()
 
         elif "/faketext" in message:
-            GUI.FakeText()
+            if not "-end" in message:
+                GUI.FakeText()
+            else:
+                Communications.freezeMessages = False
 
         elif "/ping" in message and IsMessageToEarly == False:
             PingTest.FirstCapture = time.time()
@@ -52,11 +56,11 @@ class Communications():
             GUI.top.quit()
             sys.exit()
 
-        elif Communications.HashNextMessage == False and IsMessageToEarly == False:
+        elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessages == False:
             Communications.InternalSend(message)
             Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
         
-        elif IsMessageToEarly == False:
+        elif IsMessageToEarly == False and Communications.freezeMessages == False:
             Communications.HashNextMessage = False
             print("Hashing message")
             #Good joke, "securely." If anyone is reading this:
@@ -88,41 +92,42 @@ class Communications():
             #These are ordered in most>least often received to increase efficiency.
             #For a broadcast, it only has to check the first one. In the rare case of
             #a "Pings on" message, it takes longer.
-            if "[PING: URGENT REPLY]" in message:
-                PingTest.SecondCapture = time.time()
+            if Communications.freezeMessages == False:
+                if "[PING: URGENT REPLY]" in message:
+                    PingTest.SecondCapture = time.time()
 
-                Difference = PingTest.SecondCapture - PingTest.FirstCapture
-                Difference = Difference * 1000
-                Difference = str(Difference)[:5]
+                    Difference = PingTest.SecondCapture - PingTest.FirstCapture
+                    Difference = Difference * 1000
+                    Difference = str(Difference)[:5]
 
-                GUI.message_list.insert(tkinter.END, "Ping:")
-                GUI.message_list.insert(tkinter.END, Difference + "ms")
+                    GUI.message_list.insert(tkinter.END, "Ping:")
+                    GUI.message_list.insert(tkinter.END, Difference + "ms")
 
-            if "Welcome to the chatroom" in message:
-                Communications.sendpings = True
+                if "Welcome to the chatroom" in message:
+                    Communications.sendpings = True
 
-            if "[SERVER INTERNAL-BROADCAST]" in message:
-                message = message[27:]
-                GUI.message_list.insert(tkinter.END, message)
+                if "[SERVER INTERNAL-BROADCAST]" in message:
+                    message = message[27:]
+                    GUI.message_list.insert(tkinter.END, message)
 
-            elif "[SERVER INTERNAL-PM MESSAGE]" in message:
-                message = message[28:]
-                message = "SERVER[PM-H]: " + message 
-                GUI.message_list.insert(tkinter.END, message)
+                elif "[SERVER INTERNAL-PM MESSAGE]" in message:
+                    message = message[28:]
+                    message = "SERVER[PM-H]: " + message 
+                    GUI.message_list.insert(tkinter.END, message)
 
-            elif "[SERVER INTERNAL-LOW LEVEL-PM MESSAGE]" in message:
-                message = message[38:]
-                message = "Server[PM-L]: " + message
-                GUI.message_list.insert(tkinter.END, message)
-            
-            elif "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" in message:
-                if "PASSWORD ENTRY FIELD" in message:
-                    Communications.HashNextMessage = True
-                    GUI.entry_field["show"] = "*"
-                    GUI.SetLabelStatus("Securely hashing and encrypting next message with over 524,288 iterations")
+                elif "[SERVER INTERNAL-LOW LEVEL-PM MESSAGE]" in message:
+                    message = message[38:]
+                    message = "Server[PM-L]: " + message
+                    GUI.message_list.insert(tkinter.END, message)
+                
+                elif "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" in message:
+                    if "PASSWORD ENTRY FIELD" in message:
+                        Communications.HashNextMessage = True
+                        GUI.entry_field["show"] = "*"
+                        GUI.SetLabelStatus("Securely hashing and encrypting next message with over 524,288 iterations")
 
-            else:
-                GUI.message_list.insert(tkinter.END, message)
+                else:
+                    GUI.message_list.insert(tkinter.END, message)
 
     def Encode(text):
         return bytes(text, "utf8")
@@ -213,6 +218,7 @@ class GUI:
     def FakeText():
         GUI.WipeList()
         GUI.SetLabelStatus("Untitled - Notepad - "  + strftime("%Y-%m-%d"))
+        Communications.freezeMessages = True
         for line in GUI.FakeTextList:
             GUI.message_list.insert(tkinter.END, line)
 
@@ -228,7 +234,7 @@ backlogLength = 20
 #host = "127.0.0.1"
 host = "86.31.133.208"
 #host = "192.168.0.35"
-port = 34000
+port = 443
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
 if not port:
