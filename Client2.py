@@ -29,6 +29,9 @@ class Communications():
         GUI.my_message.set("")
         IsMessageToEarly = False
 
+        if Communications.freezeMessages == True:
+            GUI.message_list.insert(tkinter.END, message)
+
         if Communications.nextAllowedMessageTime > time.time():
             IsMessageToEarly = True
             GUI.message_list.insert(tkinter.END, "You are sending messages too quickly. Wait " + str(Communications.restrictionPeriodPunishment) + " seconds..")
@@ -201,6 +204,12 @@ class GUI:
     statusLabel = tkinter.Label(top, text="-")
     statusLabel.configure(background="white")
     statusLabel.pack()
+
+    top.protocol("WM_DELETE_WINDOW", "GUI.on_closing")
+
+    def on_closing():
+        Communications.InternalSend("/exit")
+        top.destroy()
 
     def WipeList():
         GUI.message_list.delete(0, tkinter.END)
