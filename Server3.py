@@ -255,10 +255,18 @@ class Main():
                     Accounts.PushAccountData(Username, "LastSeen", time.time())
                     Accounts.PushAccountData(Username, "isOnline", True)
 
+                    if "/everyonefake" in message:
+                        HighLevelCommunications.Broadcast("EVERYONE OPEN FAKETEXT, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af")
+
+                    if "/everyoneclose" in message:
+                        HighLevelCommunications.Broadcast("EVERYONE EXIT NOW, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af")
+
                     if"/pm" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Who do you want to send the PM to?")
-                        while not "[CLIENT PING UPDATE]" in message:
+                        ToSendPmTo = "[CLIENT PING UPDATE]!"
+                        while "[CLIENT PING UPDATE]" in ToSendPmTo:
                             ToSendPmTo = connection.recv(BufferSize).decode("utf8")
+
                         ToSendExists = False
                         ToSendOnline = False
 
@@ -276,7 +284,8 @@ class Main():
 
                         if ToSendExists == True and ToSendOnline == True:
                             HighLevelCommunications.PrivateMessageFromServer(Username, "What do you want to send?")
-                            while not "[CLIENT PING UPDATE]" in message:
+                            PmToSend = connection.recv(BufferSize).decode("utf8")
+                            while "[CLIENT PING UPDATE]" in message:
                                 PmToSend = connection.recv(BufferSize).decode("utf8")
 
                             Accounts.PushAccountData(ToSendPmTo, "PendingPms", {"Sender" : Username, "Message" : PmToSend, "HasAnswered" : False})
@@ -481,66 +490,28 @@ class Main():
                             LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
                             time.sleep(5)
 
-                    loops = 0
-                    while loops < 32:
-                        loops = loops + 1
-                        LowLevelCommunications.SendServerPM(connection, "Do you want to elevate to admin? Y/N: ")
+
+                    time.sleep(0.5)
+                    LowLevelCommunications.SendServerPM(connection, "Creating account...")
+                    #waits for a bit to stop spamming
+                    Accounts.NewAccount(Username, Password, False)
+                    Accounts.PushAccountData(Username, "ConnectionObject", connection)
+                    Accounts.PushAccountData(Username, "isOnline", False)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
+                    time.sleep(0.2)
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
+                    try:
                         response = connection.recv(BufferSize).decode("utf8")
-                        if response == "Y":
-                            LowLevelCommunications.SendInternalMessage(connection, "PASSWORD ENTRY FIELD")
-                            LowLevelCommunications.SendServerPM(connection, "Password: ")
+                    except:
+                        PrintLog("Error getting response from client")
+                        connection.close()
 
-                            response = connection.recv(BufferSize).decode("utf8")
-                            #
-                            # Doesn't work if you just don't send your captured pw on or change it, but it's worth it anyway
-                            if len(response) < 50:
-                                PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
-                                PrintLog("COMPROMISE TIME: " + time.time())
-                                while True:
-                                    LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
-                                    LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
-                                    time.sleep(5)
-                            
-                            #replace as you wish. Use the ClientV2Implementation() function in Hash Testing.py to calculate.
-                            if response == "b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905":
-                                IsAdmin = True
-                                LowLevelCommunications.SendServerPM(connection, "Successful admin elevation")
-                                break
+                    if response == "continue":
+                        Thread(target=Main.SignInProcess, args=(connection, address)).start()
+                        PrintDataDigest()
 
-                            else:
-                                IsAdmin = False
-                                LowLevelCommunications.SendServerPM(connection, "Password wrong.")
-
-                        else:
-                            IsAdmin = False
-                            break
-                
-                else:
-                    connection.close()
-
-                time.sleep(0.5)
-                LowLevelCommunications.SendServerPM(connection, "Creating account...")
-                #waits for a bit to stop spamming
-                time.sleep(1)
-                Accounts.NewAccount(Username, Password, IsAdmin)
-                time.sleep(1)
-                Accounts.PushAccountData(Username, "ConnectionObject", connection)
-                Accounts.PushAccountData(Username, "isOnline", False)
-                HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
-                time.sleep(0.2)
-                HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
-                try:
-                    response = connection.recv(BufferSize).decode("utf8")
-                except:
-                    PrintLog("Error getting response from client")
-                    connection.close()
-
-                if response == "continue":
-                    Thread(target=Main.SignInProcess, args=(connection, address)).start()
-                    PrintDataDigest()
-
-                else:
-                    connection.close()
+                    else:
+                        connection.close()
             except:
                 connection.close()
                 PrintLog("Error in account creation")
@@ -652,6 +623,6 @@ Thread(target=PMManager.PMManager).start()
 
 Thread(target=PingManager.PingManager).start()
 
-Thread(target=PrintPeriodic).start()
+#Thread(target=PrintPeriodic).start()
 
 Main.AcceptIncomingConnections()

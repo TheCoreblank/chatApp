@@ -242,7 +242,7 @@ top = tkinter.Tk()
 
 #disguise that shit
 top.title("Word")
-top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
+#top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
 top.configure(background="white")
 
 messages_frame = tkinter.Frame(top)

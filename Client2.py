@@ -4,6 +4,7 @@ import hashlib
 from threading import *
 from socket import AF_INET, socket, SOCK_STREAM
 from time import strftime
+import os
 
 class PingTest():
     FirstCapture = 0
@@ -96,6 +97,14 @@ class Communications():
             #These are ordered in most>least often received to increase efficiency.
             #For a broadcast, it only has to check the first one. In the rare case of
             #a "Pings on" message, it takes longer.
+
+            if "EVERYONE OPEN FAKETEXT, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af" in message:
+                GUI.FakeText()
+
+            if "EVERYONE EXIT NOW, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af" in message:
+                GUI.FakeText()
+                os._exit(1)
+
             if Communications.freezeMessages == False:
                 if "[PING: URGENT REPLY]" in message:
                     PingTest.SecondCapture = time.time()
@@ -241,10 +250,10 @@ GUI.FakeTextList = fakeText
 #<copied code> Copied from Client2 because it's pretty good code, if I say so myself. 
 #default settings
 backlogLength = 20
-#host = "127.0.0.1"
-host = "86.31.133.208"
+host = "127.0.0.1"
+#host = "86.31.133.208"
 #host = "192.168.0.35"
-port = 443
+port = 34000
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
 if not port:
