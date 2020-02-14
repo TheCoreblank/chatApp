@@ -338,7 +338,7 @@ class Main():
     def WelcomeNewConnections(connection, address):
         try:
             PrintDataDigest()
-            LowLevelCommunications.SendServerPM(connection, "Make a new account (M), or sign in (S)")
+            LowLevelCommunications.SendServerPM(connection, "Make a new account (M) or sign in (S)")
             ContinueConnectionProcess = True
         except:
             PrintLog("Error sending to new client. Removing client.")

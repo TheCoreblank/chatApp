@@ -88,3 +88,112 @@
 1581702150.9277554 : Sending low level message PM
 1581702150.9281511 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
 1581702150.92835 : Error sending low level message PM
+1581702968.475235 : Defaulted
+1581702968.4785595 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581702968.478515
+1581702968.4810987 : PM Manager started
+1581702976.3757765 : Accepted connection from ('127.0.0.1', 58542) , referring
+1581702976.377328 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702976.3776917 : 4 active threads.
+1581702976.377838 : Length of account list is 0
+1581702976.3779898 : Account list:
+1581702976.3791504 : []
+1581702976.379377 : -------- PERIODIC DATA RETURN ::END::
+1581702976.5798857 : Sending low level message PM
+1581702976.580887 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581702981.8622856 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702981.863214 : 5 active threads.
+1581702981.8640435 : Length of account list is 0
+1581702981.8646748 : Account list:
+1581702981.8656166 : []
+1581702981.866253 : -------- PERIODIC DATA RETURN ::END::
+1581702982.068529 : Sending low level internal message
+1581702982.0695016 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581702982.4717073 : Sending low level message PM
+1581702982.47266 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702986.1623511 : Sending low level message PM
+1581702986.16292 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please use codenames. Suggestion:
+1581702986.5642567 : Sending low level message PM
+1581702986.5650284 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Alpha
+1581702986.9668167 : Sending low level message PM
+1581702986.9678185 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702990.820828 : Sending low level message PM
+1581702990.8217847 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: Alpha
+1581702991.2241116 : Sending low level internal message
+1581702991.2246132 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581702991.6261559 : Sending low level message PM
+1581702991.6269855 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581702996.9735858 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581702997.6753607 : Sending low level message PM
+1581702997.676137 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Creating account...
+1581702997.8773186 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702997.878223 : 4 active threads.
+1581702997.878794 : Length of account list is 1
+1581702997.8793323 : Account list:
+1581702997.8809547 : [{'Username': 'Alpha', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False}]
+1581702997.882305 : -------- PERIODIC DATA RETURN ::END::
+1581702997.8830605 : Sending to Alpha : If you can read this, your account creation worked.
+1581702997.8838208 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, your account creation worked.
+1581702998.0850947 : Sending to Alpha : Enter the word 'continue' to sign in
+1581702998.0859175 : Encoding: [SERVER INTERNAL-PM MESSAGE]Enter the word 'continue' to sign in
+1581702999.3655457 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702999.3665564 : 5 active threads.
+1581702999.3884814 : Length of account list is 1
+1581702999.38881 : Account list:
+1581702999.3890822 : [{'Username': 'Alpha', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 58542)>}]
+1581702999.3892431 : -------- PERIODIC DATA RETURN ::END::
+1581702999.5632036 : Sending low level message PM
+1581702999.5641935 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581703004.3997507 : Sending low level internal message
+1581703004.4001427 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581703005.0011313 : Sending low level message PM
+1581703005.0017304 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Enter password, be careful about whitespace.
+1581703008.1164742 : Received [Hashed] password: b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905
+1581703008.1168337 : Sending to Alpha : If you can read this, you successfully identified. Type 'continue' to continue.
+1581703008.1169837 : Encoding: [SERVER INTERNAL-PM MESSAGE]If you can read this, you successfully identified. Type 'continue' to continue.
+1581703010.1793182 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581703010.1999214 : 5 active threads.
+1581703010.200224 : Length of account list is 1
+1581703010.2003655 : Account list:
+1581703010.2006187 : [{'Username': 'Alpha', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 58542)>, 'ErrorCount': 0}]
+1581703010.2007768 : -------- PERIODIC DATA RETURN ::END::
+1581703010.179154 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581703010.2021422 : 4 active threads.
+1581703010.2024488 : Length of account list is 1
+1581703010.2025955 : Account list:
+1581703010.2028553 : [{'Username': 'Alpha', 'Password': 'b97cd8e783380b48e41b26237ca60c8ef2bb3f7339c895e304185885e9f8ba30972a8ec9ba7740077c5b8f862912611e4fbc4824b285a2e55b24c719149d3905', 'isAdmin': 'False', 'isOnline': False, 'ConnectionObject': <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 58542)>, 'ErrorCount': 0}]
+1581703010.2030537 : -------- PERIODIC DATA RETURN ::END::
+1581703010.2032223 : Sending to Alpha : Welcome to the chatroom.
+1581703010.2033713 : Encoding: [SERVER INTERNAL-PM MESSAGE]Welcome to the chatroom.
+1581703051.193472 : Defaulted
+1581703051.1945376 : Set port to 34001 due to error
+1581703051.1947596 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581703051.1947522
+1581703051.195808 : PM Manager started
+1581703052.7335694 : Accepted connection from ('127.0.0.1', 36902) , referring
+1581703052.7343113 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581703052.7346401 : 4 active threads.
+1581703052.7347982 : Length of account list is 0
+1581703052.7349286 : Account list:
+1581703052.7350624 : []
+1581703052.7351933 : -------- PERIODIC DATA RETURN ::END::
+1581703052.9354947 : Sending low level message PM
+1581703052.9359517 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M) 
+ or sign in (S)
+1581703057.2079935 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581703057.208456 : 5 active threads.
+1581703057.2086632 : Length of account list is 0
+1581703057.2088478 : Account list:
+1581703057.2090342 : []
+1581703057.2092178 : -------- PERIODIC DATA RETURN ::END::
+1581703057.4082265 : Sending low level message PM
+1581703057.4090726 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581703057.811047 : Sending low level message PM
+1581703057.811514 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581703057.8117795 : Error sending low level message PM
+1581703058.2126453 : Sending low level message PM
+1581703058.213039 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581703058.2132401 : Error sending low level message PM
+1581703058.4137497 : Error in sign in : Username pick loop, closing connection
+1581703058.4141433 : Error getting account data, error printing name
+1581703058.6145594 : Sending low level message PM
+1581703058.614923 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581703058.6151006 : Error sending low level message PM

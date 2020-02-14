@@ -143,17 +143,17 @@ class Communications():
 
                 if "[SERVER INTERNAL-BROADCAST]" in message:
                     message = message[27:]
-                    GUI.message_list.insert(tkinter.END, message)
+                    GUI.WriteMessage(message)
 
                 elif "[SERVER INTERNAL-PM MESSAGE]" in message:
                     message = message[28:]
                     message = "SERVER[PM-H]: " + message 
-                    GUI.message_list.insert(tkinter.END, message)
+                    GUI.WriteMessage(message)
 
                 elif "[SERVER INTERNAL-LOW LEVEL-PM MESSAGE]" in message:
                     message = message[38:]
                     message = "Server[PM-L]: " + message
-                    GUI.message_list.insert(tkinter.END, message)
+                    GUI.WriteMessage(message)
                 
                 elif "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" in message:
                     if "PASSWORD ENTRY FIELD" in message:
@@ -165,7 +165,7 @@ class Communications():
                         Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT.")
 
                 else:
-                    GUI.message_list.insert(tkinter.END, message)
+                    GUI.WriteMessage(message)
 
     def Encode(text):
         return bytes(text, "utf8")
@@ -317,6 +317,11 @@ class GUI:
         Communications.freezeMessagesBecauseOfFakeText = False
         GUI.WipeList()
         GUI.WriteListData(GUI.MessageList)
+
+    def WriteMessage(message):
+        messageList = message.split("\n")
+        for line in messageList:
+            GUI.message_list.insert(tkinter.END, line)
 
 
 print("Please enter your faketext. Newlines are defined by + symbols.")
