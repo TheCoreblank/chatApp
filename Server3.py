@@ -3,6 +3,7 @@ from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import hashlib
 
+PrintLog("Commit 132 before commit")
 class LowLevelCommunications():
     #for before the client is logged in
     def Encode(Text):
