@@ -400,8 +400,7 @@ class Main():
                         PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
                         PrintLog("COMPROMISE TIME: " + time.time())
                         while True:
-                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
-                            LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED \nIF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
                             time.sleep(5)
 
                     
@@ -498,8 +497,7 @@ class Main():
                         PrintLog("PASSWORD IS LESS THAN 50 CHARACTERS: PASSWORD MAY NOT BE HASHED: LINK MAY BE COMPROMISED.")
                         PrintLog("COMPROMISE TIME: " + time.time())
                         while True:
-                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED")
-                            LowLevelCommunications.SendServerPM(connection, "IF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
+                            LowLevelCommunications.SendServerPM(connection, "YOUR LINK TO THE SERVER MAY BE COMPROMISED \nIF YOU USE THIS PASSWORD ANYWHERE ELSE, CHANGE IT.")
                             time.sleep(5)
 
 
@@ -509,9 +507,7 @@ class Main():
                     Accounts.NewAccount(Username, Password, False)
                     Accounts.PushAccountData(Username, "ConnectionObject", connection)
                     Accounts.PushAccountData(Username, "isOnline", False)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.")
-                    time.sleep(0.2)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "Enter the word 'continue' to sign in")
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.\nEnter the word 'continue' to sign in.")
                     try:
                         response = connection.recv(BufferSize).decode("utf8")
                     except:
@@ -519,7 +515,7 @@ class Main():
                         connection.close()
 
                     if response == "continue":
-                        Thread(target=Main.SignInProcess, args=(connection, address)).start()
+                        Thread(target=Main.ManageClientHighLevel, args=(Username,))
                         PrintDataDigest()
 
                     else:
@@ -548,14 +544,7 @@ class PMManager:
                             Username = Accounts.GetAccountDataFromObject(Account, "Username")
                             PendingPMobject = Accounts.GetAccountData(Username, "PendingPms")
                             if PendingPMobject.get("HasAnswered") == False:
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- BEGIN PRIVATE MESSAGE --")
-                                time.sleep(0.25)
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "SENDER: " + str(PendingPMobject.get("Sender")))
-                                time.sleep(0.25)
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- MESSAGE FOLLOWS --")
-                                time.sleep(0.25)
-                                HighLevelCommunications.PrivateMessageFromServer(Username, str(PendingPMobject.get("Message")))
-                                time.sleep(0.25)
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- BEGIN PRIVATE MESSAGE -- \nSENDER: " + str(PendingPMobject.get("Sender")) + "\n--MESSAGE FOLLOWS -- \n" + str(PendingPMobject.get("Message")))
                                 HighLevelCommunications.PrivateMessageFromServer(Username, "-- END PRIVATE MESSAGE --")
                                 Accounts.PushAccountData(Username, "PendingPms", None)
 
