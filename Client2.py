@@ -30,67 +30,72 @@ class Communications():
         GUI.my_message.set("")
         IsMessageToEarly = False
 
-        if Communications.freezeMessagesBecauseOfFakeText == True and not "/faketext" in message and not "/wipe" in message and not "/status" in message:
-            GUI.message_list.insert(tkinter.END, message)
-            GUI.FakeTextList.append(message)
+        #it's not server side, but these people are too incompetent to get around it.
+        if len(message) < 150:
+            if Communications.freezeMessagesBecauseOfFakeText == True and not "/faketext" in message and not "/wipe" in message and not "/status" in message:
+                GUI.message_list.insert(tkinter.END, message)
+                GUI.FakeTextList.append(message)
 
-        if Communications.nextAllowedMessageTime > time.time():
-            IsMessageToEarly = True
-            GUI.message_list.insert(tkinter.END, "You are sending messages too quickly. Wait " + str(Communications.restrictionPeriodPunishment) + " seconds..")
-            Communications.nextAllowedMessageTime = time.time() + Communications.restrictionPeriodPunishment
-            GUI.SetLabelStatus("You can write again at " + str(Communications.nextAllowedMessageTime))
+            if Communications.nextAllowedMessageTime > time.time():
+                IsMessageToEarly = True
+                GUI.message_list.insert(tkinter.END, "You are sending messages too quickly. Wait " + str(Communications.restrictionPeriodPunishment) + " seconds..")
+                Communications.nextAllowedMessageTime = time.time() + Communications.restrictionPeriodPunishment
+                GUI.SetLabelStatus("You can write again at " + str(Communications.nextAllowedMessageTime))
 
-        if message == "/wipe" or message == "/clear":
-            GUI.WipeList()
-            if Communications.freezeMessagesBecauseOfFakeText == True:
-                GUI.FakeTextList = []
+            if message == "/wipe" or message == "/clear":
+                GUI.WipeList()
+                if Communications.freezeMessagesBecauseOfFakeText == True:
+                    GUI.FakeTextList = []
 
-            else:
-                GUI.MessageList = []
+                else:
+                    GUI.MessageList = []
 
-        elif "/faketext" in message:
-            if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
-                GUI.SwitchToMessageMode()
-            elif Communications.freezeMessagesBecauseOfFakeText == False and not "-end" in message:
-                GUI.FakeText()
+            elif "/faketext" in message:
+                if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
+                    GUI.SwitchToMessageMode()
+                elif Communications.freezeMessagesBecauseOfFakeText == False and not "-end" in message:
+                    GUI.FakeText()
 
-        elif "/status" in message:
-            if Communications.freezeMessagesBecauseOfFakeText == True:
-                GUI.SetLabelStatus("Notepad Mode")
+            elif "/status" in message:
+                if Communications.freezeMessagesBecauseOfFakeText == True:
+                    GUI.SetLabelStatus("Notepad Mode")
 
-            if Communications.freezeMessagesBecauseOfFakeText == False:
-                GUI.SetLabelStatus("Chat Mode")
+                if Communications.freezeMessagesBecauseOfFakeText == False:
+                    GUI.SetLabelStatus("Chat Mode")
 
-        elif "/ping" in message and IsMessageToEarly == False:
-            PingTest.FirstCapture = time.time()
-            Communications.InternalSend("[PING: REPLY URGENTLY]")
-            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+            elif "/ping" in message and IsMessageToEarly == False:
+                PingTest.FirstCapture = time.time()
+                Communications.InternalSend("[PING: REPLY URGENTLY]")
+                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
 
-        elif message == "/exit" or message == "/quit":
-            Communications.InternalSend("/quit")
-            client_socket.close()
-            GUI.top.destroy()
-            GUI.top.quit()
-            sys.exit()
+            elif message == "/exit" or message == "/quit":
+                Communications.InternalSend("/quit")
+                client_socket.close()
+                GUI.top.destroy()
+                GUI.top.quit()
+                sys.exit()
 
-        elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
-            Communications.InternalSend(message)
-            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+            elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
+                Communications.InternalSend(message)
+                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+            
+            elif IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
+                Communications.HashNextMessage = False
+                print("Hashing message")
+                #Good joke, "securely." If anyone is reading this:
+                #I try my best, but only consider trusting me with
+                #passwords once I have a Computer Science degree. 
+                #I just looked it up in a book and went through some StackOverflow posts.
+                message = Cryptography.Hash(message)
+                Communications.InternalSend(message)
+                GUI.entry_field["show"] = ""
+                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+            
+            if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
+                GUI.SetLabelStatus("Sent: " + message)
         
-        elif IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
-            Communications.HashNextMessage = False
-            print("Hashing message")
-            #Good joke, "securely." If anyone is reading this:
-            #I try my best, but only consider trusting me with
-            #passwords once I have a Computer Science degree. 
-            #I just looked it up in a book and went through some StackOverflow posts.
-            message = Cryptography.Hash(message)
-            Communications.InternalSend(message)
-            GUI.entry_field["show"] = ""
-            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
-        
-        if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
-            GUI.SetLabelStatus("Sent: " + message)
+        else:
+            GUI.message_list.insert(tkinter.END, "Too long")
 
 
     def PeriodicPing():
@@ -157,7 +162,7 @@ class Communications():
                         GUI.SetLabelStatus("Securely hashing and encrypting next message with over 524,288 iterations")
 
                     if "Enter auth to access" in message:
-                        Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN.")
+                        Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT.")
 
                 else:
                     GUI.message_list.insert(tkinter.END, message)
