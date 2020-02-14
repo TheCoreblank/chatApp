@@ -294,6 +294,8 @@ class Main():
                             HighLevelCommunications.PrivateMessageFromServer(Username, "Added to buffer.")
 
                     elif "/bug report" in message:
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "Disabled because of a lack of use: Tell me in person.")
+                        '''
                         HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to report?")
                         reply = "[CLIENT PING UPDATE]"
 
@@ -306,10 +308,13 @@ class Main():
                         BugReportsFile.write("</BUG REPORT> \n")
                         BugReportsFile.close()
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
+                        '''
 
                     elif "/feature request" in message:
+                        HighLevelCommunications.PrivateMessageFromServer(Username, "Disabled because of a lack of use: Tell me in person.")
+                        ''''
                         HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to request?")
-                        
+
                         reply = "[CLIENT PING UPDATE]"
 
                         while "[CLIENT PING UPDATE]" in reply:
@@ -321,6 +326,8 @@ class Main():
                         FeatureRequestsFile.write("</FEATURE REQUEST> \n")
                         FeatureRequestsFile.close()
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
+
+                        '''
 
                     elif "/exit" in message or "/quit" in message:
                         Accounts.PushAccountData(Username, "isOnline", False)
