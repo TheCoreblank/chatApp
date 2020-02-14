@@ -548,12 +548,15 @@ class PMManager:
                             Username = Accounts.GetAccountDataFromObject(Account, "Username")
                             PendingPMobject = Accounts.GetAccountData(Username, "PendingPms")
                             if PendingPMobject.get("HasAnswered") == False:
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "You have received a private message.")
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- BEGIN PRIVATE MESSAGE --")
                                 time.sleep(0.25)
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "Name: " + str(PendingPMobject.get("Sender")))
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "SENDER: " + str(PendingPMobject.get("Sender")))
                                 time.sleep(0.25)
-                                HighLevelCommunications.PrivateMessageFromServer(Username, "Message: " + str(PendingPMobject.get("Message")))
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- MESSAGE FOLLOWS --")
                                 time.sleep(0.25)
+                                HighLevelCommunications.PrivateMessageFromServer(Username, str(PendingPMobject.get("Message")))
+                                time.sleep(0.25)
+                                HighLevelCommunications.PrivateMessageFromServer(Username, "-- END PRIVATE MESSAGE --")
                                 Accounts.PushAccountData(Username, "PendingPms", None)
 
                             else:
