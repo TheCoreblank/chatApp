@@ -8175,3 +8175,13 @@ Do you want to do default or custom s
 1581622940.1699338 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
 1581622940.5718129 : Sending low level message PM
 1581622940.5728314 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581625052.024078 : Sending low level message PM
+1581625052.0245044 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581625052.4253333 : Sending low level message PM
+1581625052.4257154 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581625052.4258993 : Error sending low level message PM
+1581625052.6264622 : Error in sign in : Username pick loop, closing connection
+1581625052.6268692 : Error getting account data, error printing name
+1581625052.827332 : Sending low level message PM
+1581625052.8277168 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581625052.827888 : Error sending low level message PM

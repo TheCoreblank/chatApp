@@ -621,6 +621,8 @@ PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 
 Accounts.InitAccountList()
 
+#add my acocunt preset
+
 Thread(target=PMManager.PMManager).start()
 
 Thread(target=PingManager.PingManager).start()
