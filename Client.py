@@ -294,10 +294,10 @@ if DoCustom == True:
 else:
     #default settings
     backlogLength = 20
-    #host = "127.0.0.1"
-    host = "86.31.133.208"
+    host = "127.0.0.1"
+    #host = "86.31.133.208"
     #host = "192.168.0.35"
-    port = 443
+    port = 34000
     allowRemoteAccess = True
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.

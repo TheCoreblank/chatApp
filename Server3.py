@@ -258,10 +258,10 @@ class Main():
                     if "/everyonefake" in message:
                         HighLevelCommunications.Broadcast("EVERYONE OPEN FAKETEXT, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af")
 
-                    if "/everyoneclose" in message:
+                    elif "/everyoneclose" in message:
                         HighLevelCommunications.Broadcast("EVERYONE EXIT NOW, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af")
 
-                    if"/pm" in message:
+                    elif"/pm" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "Who do you want to send the PM to?")
                         ToSendPmTo = "[CLIENT PING UPDATE]!"
                         while "[CLIENT PING UPDATE]" in ToSendPmTo:
@@ -455,10 +455,22 @@ class Main():
                             LowLevelCommunications.SendServerPM(connection, "Sorry! That username is already in use.")
                             InUse = True
 
-                    bannedWords = ["Marlwood is great", "Admin", "Server", "admin", "server"]
+                    #banned words is for "bad" ones, for various reasons
+                    bannedWords = ["Marlwood is great", "Admin", "Server"]
+
+                    #banned names is for my friends, this is to force codenames.
+                    bannedNames = ["LUKE", "ALEX", "LEWIS", "JOEL"]
+                    bannedNameSuggestions = {"LUKE" : "SquireLostWood", "ALEX" : "Alpha", "LEWIS" : "Phantom", "JOEL" : "Death, Omega, Whisper"}
+
                     for word in bannedWords:
-                        if word in Username:
+                        if word.upper() in Username.upper():
                             LowLevelCommunications.SendServerPM(connection, "Username is in a blacklist.")
+                            InUse = True
+                    
+                    for word in bannedNames:
+                        if word.upper() in Username.upper():
+                            LowLevelCommunications.SendServerPM(connection, "Please use codenames. Suggestion:")
+                            LowLevelCommunications.SendServerPM(connection, bannedNameSuggestions[word.upper()])
                             InUse = True
 
                     if "42" in Username:

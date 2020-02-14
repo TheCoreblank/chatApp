@@ -1,0 +1,90 @@
+1581702006.6616814 : Defaulted
+1581702006.6650975 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581702006.665053
+1581702006.6673188 : PM Manager started
+1581702044.8483973 : Port set to 34000
+1581702044.851758 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581702044.8517427
+1581702044.8525229 : PM Manager started
+1581702089.3308246 : Accepted connection from ('127.0.0.1', 57980) , referring
+1581702089.331617 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702089.3321059 : 4 active threads.
+1581702089.3323288 : Length of account list is 0
+1581702089.332524 : Account list:
+1581702089.3327177 : []
+1581702089.3329084 : -------- PERIODIC DATA RETURN ::END::
+1581702089.5336123 : Sending low level message PM
+1581702089.534364 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581702091.8661008 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702091.8664575 : 5 active threads.
+1581702091.8666153 : Length of account list is 0
+1581702091.8667552 : Account list:
+1581702091.8668916 : []
+1581702091.867026 : -------- PERIODIC DATA RETURN ::END::
+1581702092.0683055 : Sending low level internal message
+1581702092.0687358 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]Enter auth to access
+1581702092.4696138 : Sending low level message PM
+1581702092.470019 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702093.9459481 : Sending low level message PM
+1581702093.9468846 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please use codenames. Suggestion:
+1581702094.3489227 : Sending low level message PM
+1581702094.34976 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Alpha
+1581702094.7517684 : Sending low level message PM
+1581702094.7525399 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702097.8751025 : Sending low level message PM
+1581702097.8761234 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please use codenames. Suggestion:
+1581702098.2778456 : Sending low level message PM
+1581702098.2787519 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]SquireLostWood
+1581702098.6808524 : Sending low level message PM
+1581702098.6816642 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702107.176032 : Sending low level message PM
+1581702107.1769938 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please use codenames. Suggestion:
+1581702107.5784814 : Sending low level message PM
+1581702107.5789428 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Phantom
+1581702107.9799163 : Sending low level message PM
+1581702107.9803002 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702109.838801 : Sending low level message PM
+1581702109.8399827 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please use codenames. Suggestion:
+1581702110.2416902 : Sending low level message PM
+1581702110.2420754 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Death, Omega, Whisper
+1581702110.64291 : Sending low level message PM
+1581702110.6433249 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new username: 
+1581702117.8029687 : Sending low level message PM
+1581702117.8034456 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Username received: 
+1581702118.204345 : Sending low level internal message
+1581702118.2047372 : Encoding: [SERVER INTERNAL-LOW LEVEL-INTERNAL]PASSWORD ENTRY FIELD
+1581702118.2049193 : Error sending low level internal PM, exiting
+1581702118.6056724 : Sending low level message PM
+1581702118.6062276 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter your new password: 
+1581702118.6065695 : Error sending low level message PM
+1581702118.8071961 : Error in account creation
+1581702125.8009295 : Accepted connection from ('127.0.0.1', 58002) , referring
+1581702125.802598 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702125.8037674 : 4 active threads.
+1581702125.8044357 : Length of account list is 0
+1581702125.8050754 : Account list:
+1581702125.805576 : []
+1581702125.8057241 : -------- PERIODIC DATA RETURN ::END::
+1581702126.0064046 : Sending low level message PM
+1581702126.0075085 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Make a new account (M), or sign in (S)
+1581702145.6458786 : -------- PERIODIC DATA RETURN ::BEGIN::
+1581702145.646347 : 5 active threads.
+1581702145.646594 : Length of account list is 0
+1581702145.6468232 : Account list:
+1581702145.6470544 : []
+1581702145.647282 : -------- PERIODIC DATA RETURN ::END::
+1581702145.8463554 : Sending low level message PM
+1581702145.8472676 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581702149.3212397 : Sending low level message PM
+1581702149.3216527 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581702149.7225173 : Sending low level message PM
+1581702149.7229316 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581702150.1243377 : Sending low level message PM
+1581702150.1247103 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]That account doesn't exist.
+1581702150.1249065 : Error sending low level message PM
+1581702150.5256906 : Sending low level message PM
+1581702150.526222 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]Please enter username, be careful about whitespace: 
+1581702150.526416 : Error sending low level message PM
+1581702150.7268925 : Error in sign in : Username pick loop, closing connection
+1581702150.7272842 : Error getting account data, error printing name
+1581702150.9277554 : Sending low level message PM
+1581702150.9281511 : Encoding: [SERVER INTERNAL-LOW LEVEL-PM MESSAGE]You are online somewhere else.
+1581702150.92835 : Error sending low level message PM
