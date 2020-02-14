@@ -332,10 +332,10 @@ GUI.FakeTextList = fakeText
 #<copied code> Copied from Client2 because it's pretty good code, if I say so myself. 
 #default settings
 backlogLength = 20
-host = "127.0.0.1"
-#host = "86.31.133.208"
+#host = "127.0.0.1"
+host = "86.31.133.208"
 #host = "192.168.0.35"
-port = 34000
+port = 443
 
 #now this is a brilliant thing you can do in python that is 100% from the internet.
 if not port:
