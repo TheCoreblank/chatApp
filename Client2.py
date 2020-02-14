@@ -162,7 +162,7 @@ class Communications():
                         GUI.SetLabelStatus("Securely hashing and encrypting next message with over 524,288 iterations")
 
                     if "Enter auth to access" in message:
-                        Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT.")
+                        Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT AND NEWLINE PARSE.")
 
                 else:
                     GUI.WriteMessage(message)

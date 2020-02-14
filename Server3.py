@@ -440,7 +440,7 @@ class Main():
             connection.close()
 
         #try:
-        if response == "RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT.":
+        if response == RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT AND NEWLINE PARSE.:
             try:
                 while True:
                     InUse = False
