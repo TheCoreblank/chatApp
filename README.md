@@ -28,6 +28,12 @@ No server V3 commands have arguments, you are asked for info after entering the 
 - /ping - measures ping, only tested on Client2. 
 - /bug report - prompts you to make a bug report.
 - /feature request - prompts you to request a feature
+- /quit
+- /faketext, which switches to a notepad mode where you can write notes. Data is saved/
+- /faketext -end, which switches back to messages with all the chat history saved.
+- /wipe
+- /everyoneclose, /everyonefake - needs admin, closes all or sets everyone to faketext.
+- /help, obvious
 
 # Server V2 Commands
 

@@ -68,6 +68,10 @@ class Communications():
                 Communications.InternalSend("[PING: REPLY URGENTLY]")
                 Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
 
+            elif "/help" in message:
+                GUI.WriteMessage("/pm - prompts you to PM somebody.\n/ping - measure ping. \n/bug report - prompts you to make a bug report.\n/feature request - prompts you to make a feature request.\n/quit\n/faketext- switches to a notepad you can write notes in!\n/faketext -end - switches back to messages. \n/wipe\n/everyoneclose\n/everyonefake\n/help")
+
+
             elif message == "/exit" or message == "/quit":
                 Communications.InternalSend("/quit")
                 client_socket.close()
@@ -90,7 +94,7 @@ class Communications():
                 Communications.InternalSend(message)
                 GUI.entry_field["show"] = ""
                 Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
-            
+
             if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
                 GUI.SetLabelStatus("Sent: " + message)
         
@@ -163,7 +167,6 @@ class Communications():
 
                     if "Enter auth to access" in message:
                         Communications.InternalSend("RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT AND NEWLINE PARSE.")
-
                 else:
                     GUI.WriteMessage(message)
 

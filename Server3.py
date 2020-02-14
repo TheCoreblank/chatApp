@@ -295,7 +295,11 @@ class Main():
 
                     elif "/bug report" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to report?")
-                        reply = connection.recv(BufferSize).decode("utf8")
+                        reply = "[CLIENT PING UPDATE]"
+
+                        while "[CLIENT PING UPDATE]" in reply:
+                            reply = connection.recv(BufferSize).decode("utf8")
+
                         BugReportsFile = open('bugReports.txt', 'a')
                         BugReportsFile.write("---- BUG REPORT: SENDER " + str(Username) + " TIME:" + str(time.time()) + " ---- \n")
                         BugReportsFile.write(str(reply) + "\n")
@@ -305,7 +309,12 @@ class Main():
 
                     elif "/feature request" in message:
                         HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to request?")
-                        reply = connection.recv(BufferSize).decode("utf8")
+                        
+                        reply = "[CLIENT PING UPDATE]"
+
+                        while "[CLIENT PING UPDATE]" in reply:
+                            reply = connection.recv(BufferSize).decode("utf8")
+
                         FeatureRequestsFile = open('featureRequests.txt', "a")
                         FeatureRequestsFile.write("---- FEATURE REQUEST: SENDER " + str(Username) + " TIME: " + str(time.time()) + " ----\n")
                         FeatureRequestsFile.write(str(reply) + "\n")
