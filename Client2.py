@@ -115,6 +115,11 @@ class Communications():
 
             if "EVERYONE EXIT NOW, ID CODE: e325482c26c995caad73f1987ff5c1b8c94fb9e68f9608f87949b81c5dfb2255f7939e8aaef8e0e82db45a293a1c61d79262bd05d2d72ec06e6bb7ee88d4d1af" in message:
                 GUI.FakeText()
+                try:
+                    Communications.InternalSend("/quit")
+                except:
+                    print("Error sending quit message")
+                    pass
                 os._exit(1)
 
             if Communications.freezeMessagesBecauseOfFakeText == False:
