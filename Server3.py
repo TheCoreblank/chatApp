@@ -3,7 +3,6 @@ from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
 import hashlib
 
-PrintLog("Commit 132 before commit")
 class LowLevelCommunications():
     #for before the client is logged in
     def Encode(Text):
@@ -603,6 +602,8 @@ class PingManager:
                     if difference > 30:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
                         Accounts.PushAccountData(Username, "isOnline", False)
+
+PrintLog("Commit 132 before commit")
 
 server = socket(AF_INET, SOCK_STREAM) 
 Port = input("Port: ")
