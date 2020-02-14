@@ -603,8 +603,6 @@ class PingManager:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
                         Accounts.PushAccountData(Username, "isOnline", False)
 
-PrintLog("Commit 132 before commit")
-
 server = socket(AF_INET, SOCK_STREAM) 
 Port = input("Port: ")
 if not Port:
