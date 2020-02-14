@@ -42,6 +42,11 @@ class Communications():
 
         if message == "/wipe" or message == "/clear":
             GUI.WipeList()
+            if Communications.freezeMessagesBecauseOfFakeText == True:
+                GUI.FakeTextList = []
+
+            else:
+                GUI.MessageList = []
 
         elif "/faketext" in message:
             if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
