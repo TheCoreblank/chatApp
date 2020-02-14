@@ -440,7 +440,7 @@ class Main():
             connection.close()
 
         #try:
-        if response == "RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT AND NEWLINE PARSE.":
+        if "RESPONSE, SERVER CLIENT CONTAINS REMOTE SHUTDOWN AND LENGTH LIMIT AND NEWLINE PARSE." in response:
             try:
                 while True:
                     InUse = False
@@ -520,7 +520,7 @@ class Main():
                     if response == "continue":
                         PrintLog("Referring main thread")
                         Accounts.PushAccountData(Username, "ErrorCount", 0)
-                        Thread(target=Main.ManageClientHighLevel, args=(Username)).start()
+                        Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
                         PrintDataDigest()
 
                     else:
