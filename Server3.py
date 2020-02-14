@@ -284,7 +284,8 @@ class Main():
 
                         if ToSendExists == True and ToSendOnline == True:
                             HighLevelCommunications.PrivateMessageFromServer(Username, "What do you want to send?")
-                            PmToSend = connection.recv(BufferSize).decode("utf8")
+                            PmToSend = "[CLIENT PING UPDATE]"
+
                             while "[CLIENT PING UPDATE]" in message:
                                 PmToSend = connection.recv(BufferSize).decode("utf8")
 
@@ -362,9 +363,11 @@ class Main():
             connection.close()
 
     def SignInProcess(connection, address):
+        PrintLog("Started sign in process thread")
         try:
             while True:
                 try:
+                    PrintLog("Begun loop")
                     LowLevelCommunications.SendServerPM(connection, "Please enter username, be careful about whitespace: ")
                     Username = connection.recv(BufferSize).decode("utf8")
 
@@ -507,7 +510,7 @@ class Main():
                     Accounts.NewAccount(Username, Password, False)
                     Accounts.PushAccountData(Username, "ConnectionObject", connection)
                     Accounts.PushAccountData(Username, "isOnline", False)
-                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.\nEnter the word 'continue' to sign in.")
+                    HighLevelCommunications.PrivateMessageFromServer(Username, "If you can read this, your account creation worked.\nEnter the word 'continue' to enter")
                     try:
                         response = connection.recv(BufferSize).decode("utf8")
                     except:
@@ -515,10 +518,13 @@ class Main():
                         connection.close()
 
                     if response == "continue":
-                        Thread(target=Main.ManageClientHighLevel, args=(Username,))
+                        PrintLog("Referring main thread")
+                        Accounts.PushAccountData(Username, "ErrorCount", 0)
+                        Thread(target=Main.ManageClientHighLevel, args=(Username)).start()
                         PrintDataDigest()
 
                     else:
+                        PrintLog("Didn't enter 'continue'")
                         connection.close()
             except:
                 connection.close()
