@@ -340,13 +340,6 @@ host = "86.31.133.208"
 #host = "192.168.0.35"
 port = 443
 
-#now this is a brilliant thing you can do in python that is 100% from the internet.
-if not port:
-    port = 34000
-
-else:
-    port = int(port)
-
 Buffer_size = 2048
 Address = (host, port)
 #AF_INET means TCP
