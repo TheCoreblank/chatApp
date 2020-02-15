@@ -625,6 +625,7 @@ except:
 server.listen(1000)
 
 def PrintDataDigest():
+    '''
     PrintLog("-------- PERIODIC DATA RETURN ::BEGIN::")
     #enumerate should be threading.active_count
     PrintLog(str(active_count()) + " active threads.")
@@ -632,6 +633,7 @@ def PrintDataDigest():
     PrintLog("Account list:")
     PrintLog(str(Accounts.AccountList))
     PrintLog("-------- PERIODIC DATA RETURN ::END::")
+    '''
 
 def PrintPeriodic():
     while True:
