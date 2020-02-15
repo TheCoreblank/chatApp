@@ -8,7 +8,6 @@ class LowLevelCommunications():
     def Encode(Text):
         try:
             Text = str(Text)
-            PrintLog("Encoding: " + Text)
             return bytes(Text, 'utf8')
         except:
             PrintLog("Error encoding")
@@ -17,9 +16,9 @@ class LowLevelCommunications():
         time.sleep(0.2)
         text = str(text)
         try:
-            PrintLog("Sending low level message PM")
             ToSend = "[SERVER INTERNAL-LOW LEVEL-PM MESSAGE]" + text
             connection.send(LowLevelCommunications.Encode(ToSend))
+            PrintLog(ToSend)
         except:
             PrintLog("Error sending low level message PM")
             connection.close()
@@ -31,9 +30,9 @@ class LowLevelCommunications():
         time.sleep(0.2)
         text = str(text)
         try:
-            PrintLog("Sending low level internal message")
             ToSend = "[SERVER INTERNAL-LOW LEVEL-INTERNAL]" + text
             connection.send(LowLevelCommunications.Encode(ToSend))
+            PrintLog(ToSend)
 
         except:
             PrintLog("Error sending low level internal PM, exiting")
@@ -137,10 +136,6 @@ class Accounts():
     def ReadAccountList():
         a = 1
         #if I ever reimplement, I have the calls already done
-
-    def PopulateFile():
-        SaveFile = open("accounts", "wb")
-        toDump = [{"Username" : "Placeholder-jshgfiowjfiowfo2nwfo"}]
 
     def NewAccount(UsernameInput, PasswordInput, isAdminInput):
         try:
@@ -644,10 +639,6 @@ def PrintPeriodic():
         PrintDataDigest()
 
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
-
-Accounts.InitAccountList()
-
-#add my acocunt preset
 
 Thread(target=PMManager.PMManager).start()
 
