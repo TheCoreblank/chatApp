@@ -1,6 +1,6 @@
 #client side script
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import *
+from threading import Thread, ThreadError
 import tkinter, time
 from tkinter import messagebox
 import sys, hashlib
@@ -33,7 +33,7 @@ if DoCustom:
         allowRemoteAccess = True
         print("Non Y/N answer, defaulting to yes")
 
-#There is an identical one on the server, it means my friends can't pretend to 
+#There is an identical one on the server, it means my friends can't pretend to
 #send commands as the server without knowing python
 
 #I wish python would just let global vars be a proper thing
@@ -124,7 +124,7 @@ def ReceiveFromServer():
             
             if "[INTERNAL SET LABEL MESSAGE]" in message:
                 #28 is the length of "[INTERNAL SET LABEL MESSAGE]" + 1.
-                #and the crazy symbol list thingy removes everything before 28. 
+                #and the crazy symbol list thingy removes everything before 28.
                 #it's a part of the python language I barely know. I can do
                 #stuff like this, but anything more complex and I'm off to
                 #stack overflow.
@@ -142,8 +142,8 @@ def ReceiveFromServer():
 #the process server side and it a obvious way of knowing if your connection is working.
 
 #also, this event thing? It's extremely annoying. I spent half an hour thinking I was passing messages to it
-#and the server was the one being weird cause it doesn't show errors! It's a tkinter requirement. 
-def send(event=None): 
+#and the server was the one being weird cause it doesn't show errors! It's a tkinter requirement.
+def send(event=None):
     #handles sending of messages
     pastLabelStatus = statusLabel["text"]
     SetLabelStatus("If you see this, error sending")
@@ -162,7 +162,7 @@ def send(event=None):
         PingVars.IsTestingPing = True
 
     #if internal command, do shit
-    #wipes. 
+    #wipes.
     if message == "/wipe" or message == "/clear":
         SetLabelStatus("Received, wiping")
         WipeList()
@@ -185,7 +185,7 @@ def send(event=None):
     #inserts a bunch of stilted, totally unconvincing fake "lesson friendly" chatter. 
     if message == "/faketext" or message == "/faketext -a":
         InsertFakeText()
-    
+
     #if you are sending the shutdown message, send an auth code, cause that thing's the highest security
     #there is in this joke so we need to use the totally secure, impossible to fake method of
     #hashing the time then sending a password over the internet in plain text before finally hashing it

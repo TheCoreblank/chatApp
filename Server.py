@@ -1,5 +1,5 @@
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import *
+from threading import Thread, ThreadError
 import hashlib, time, sys
 
 Clients = {}
@@ -170,7 +170,6 @@ def broadcast(msg, prefix=""):
             print("Error broadcasting, closing.")
             client.close()
             del ClientsB[client]
-            pass
 
 
     Clients = ClientsB

@@ -1,7 +1,6 @@
 import time, hashlib, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import *
-import hashlib
 
 class LowLevelCommunications():
     #for before the client is logged in
@@ -133,10 +132,6 @@ class Accounts():
     #    ConnectionObject: {IP : 127.0.0.1, PROTOCOL : TCP, NOTES : 'I am not copying an entire sockets connection object'}
     #}
 
-    def ReadAccountList():
-        a = 1
-        #if I ever reimplement, I have the calls already done
-
     def NewAccount(UsernameInput, PasswordInput, isAdminInput):
         try:
             UsernameInput = str(UsernameInput)
@@ -172,8 +167,8 @@ class Accounts():
             #Accounts.ReadAccountList()
             for account in Accounts.AccountList:
                 if account.get('Username') == UsernameInput:
-                    return account.get(key)
                     returned = True
+                    return account.get(key)
 
             if returned == False:
                 PrintLog("Could not find data when searching " + str(username) + " for " + str(key))
@@ -547,7 +542,7 @@ class Main():
             connection.close()
     #except:
     #    PrintLog("Error in account creation, exiting")    
-    #    connection.close()  
+    #    connection.close()
 
 class PMManager:
     def PMManager():

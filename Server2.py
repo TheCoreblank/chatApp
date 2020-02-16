@@ -1,6 +1,6 @@
 import time, hashlib, select, sys, string
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import *
+from threading import Thread, ThreadError
 from random import *
 
 def printlog(text):
@@ -106,7 +106,7 @@ def CalculateAuthCode():
 
 #calculates the characters that go at the front of the names so the fuckery that happens when two people
 #have the same name is as hard to trigger as possible. If a client disconnects non-cleanly, it often keeps
-#their names in the names list, which is why we didn't filter that way. 
+#their names in the names list, which is why we didn't filter that way.
 def CalculateNameAppend(length):
     alphabet = list("abcdefghijklmnopqrstuvwxyz1234567890!'£%^&*()@/#ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
@@ -407,44 +407,6 @@ def HandlePMs(connection, name):
 
         time.sleep(0.2)
 
-#first thread assigned to someone. It gets name and refers to the main thread. It's partially here
-#just cause that function is so long. I
-''' removed due to not working. 
-def LocalServerCommandConsole():
-    while True:
-        message = str(input("CmdConsole > "))
-        if not "/" in message:
-            broadcast(bytes(message, "utf8"))
-
-        if "/pm" in message:
-            nameToPm = message[4:]
-
-            if nameToPm in namelist:
-                reply = str(input("CmdConsole-Enter PM > "))
-
-                pendingPms[nameToPm] = (reply)
-
-                printlog("Added to buffer")
-
-            else:
-                printlog("This person isn't online right now")
-
-            if "/kick" in message:
-                kicklist.append(message[6:])
-                printlog("Successfully added " + message[6:] + " to kicklist.")
-
-            if "/exit -a" in message:
-                for i in range(1, 10):
-                    time.sleep(0.2)
-                    authCode = CalculateAuthCode()
-                    broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
-
-            if "wipe -a" in message:
-                for i in range(1, 10):
-                    time.sleep(0.2)
-                    authCode = CalculateAuthCode()
-                    broadcast(bytes("-- WIPE AUTHORISE --" + authCode, "utf8"))
-'''
 def HandleStartingClient(connection, address):
     try:
         printlog("Referred to thread HandleStartingClient")
@@ -640,7 +602,6 @@ def Listen_for_clients():
 def PeriodicallyWipeDictsAndLists():
     time.sleep(100000)
     kicklist = []
-    pendingPms = {}
     printlog("Kicklist, pendingPms wiped")
 
 time.sleep(0.5)

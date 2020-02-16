@@ -1,6 +1,4 @@
 import hashlib
-import time
-import argon2
 
 def OldMethod(text):
     i = 0
