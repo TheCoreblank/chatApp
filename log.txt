@@ -936,3 +936,92 @@ Started Listen_for_clients()
 SCRIPT FULLY OPERATIONAL1581929082.1952097 : Defaulted
 1581929082.2235463 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581929082.2235143
 1581929082.22586 : PM Manager started
+
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Client list initalised
+Block list initialised
+Kick list initialised
+Name list initialised
+All arrays initialised
+Pending PM's initialised
+All dicts initialised
+Misc. Variable initialised
+Ready to start server: STARTING SERVER
+Enter server port. Nothing will default to 443
+Port set to 34000
+Success.
+Initialising functions
+All functions initialised
+Core script entirely initialised
+
+ 
+ 
+
+Starting listen_for_clients...
+Started Listen_for_clients()
+SCRIPT FULLY OPERATIONAL
+Accepted connection from ('127.0.0.1', 35696)
+Setting client label to Welcome! Referring you to a thread.
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Names must be less than 10 characters.
+PM'd >> Please enter your name
+Calculated name append to be cnRD
+PM'd >> Received your name, cnRD-Alex
+Manageclient reporting: Have been initiated for name cnRD-Alex, address('127.0.0.1', 35696), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 35696)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+PM'd >> Your authorisation has been received.
+cnRD-Alex has elevated to admin privileges
+Setting client label to Elevated to admin
+PM'd >> Elevated to admin
+Manage client for ('127.0.0.1', 35696) , by name cnRD-Alex STARTED
+Started kickCheckThread for cnRD-Alex
+PM'd >> You have now entered the main chatroom.
+Entered main thread : main loop
+Setting client label to Welcome to the chatroom.
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Client list initalised
+Block list initialised
+Kick list initialised
+Name list initialised
+All arrays initialised
+Pending PM's initialised
+All dicts initialised
+Misc. Variable initialised
+Ready to start server: STARTING SERVER
+Enter server port. Nothing will default to 443
+Port set to 34000
+Success.
+Initialising functions
+All functions initialised
+Core script entirely initialised
+
+ 
+ 
+
+Starting listen_for_clients...
+Started Listen_for_clients()
+SCRIPT FULLY OPERATIONAL
+Accepted connection from ('127.0.0.1', 35758)
+Setting client label to Welcome! Referring you to a thread.
+Referring to starting thread
+Referred to thread HandleStartingClient
+Setting client label to Names must be less than 10 characters.
+PM'd >> Please enter your name
+Calculated name append to be VpGy
+PM'd >> Received your name, VpGy-Alex
+Manageclient reporting: Have been initiated for name VpGy-Alex, address('127.0.0.1', 35758), connection <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 34000), raddr=('127.0.0.1', 35758)>
+PM'd >> Due to your username, you need to elevate to admin
+PM'd >> Enter authorisation
+PM'd >> Your authorisation has been received.
+VpGy-Alex has elevated to admin privileges
+Setting client label to Elevated to admin
+PM'd >> Elevated to admin
+Manage client for ('127.0.0.1', 35758) , by name VpGy-Alex STARTED
+Started kickCheckThread for VpGy-Alex
+PM'd >> You have now entered the main chatroom.
+Entered main thread : main loop
+Setting client label to Welcome to the chatroom.

@@ -1,4 +1,4 @@
-import time, hashlib, select, sys
+import time, hashlib, sys
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 from random import *
@@ -59,6 +59,8 @@ time.sleep(0.2)
 DoRun = True
 
 sleepTime = 0.1
+
+errorCount = 0
 
 printlog("Misc. Variable initialised")
 
@@ -187,6 +189,147 @@ def ManageClient(connection, address, name):
 
     Thread(target=MainLoop, args=(isAdmin, connection, address, name))
 
+def BanAndKickParse(connection, name, isAdmin, address):
+    if "/ban" in message:
+        if isAdmin == True:
+            blocklist.append(message[5:])
+            send(connection, ("Successfully added " + message[5:] + " to blocklist."))
+            printlog("Added " + message[5:] + " to the blocklist.")
+        else:
+            send(connection, "You don't have permission to run that command.")
+
+    #unbanning system
+    if "/unban" in message:
+        DoSuccess = True
+        if isAdmin == True:
+            try:
+                blocklist.remove(message[7:])
+            except:
+                send(connection, ("Error, it seems " + message[7:] + " is not banned."))
+                DoSuccess = False
+
+            if DoSuccess == True:
+                send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
+            printlog("Removed " + message[7:] + " from the blocklist.")
+
+        else:
+            send(connection, ("You don't have permission to run that command"))
+            broadcast(bytes(name + " attempted to unban " + message[5:]))
+
+    #kick system
+    if "/kick" in message:
+        if isAdmin == True:
+            kicklist.append(message[6:])
+            send(connection, ("Successfully added " + message[6:] + " to kicklist."))
+            printlog("Added " + message[6:] + " to the kicklist.")
+        else:
+            send(connection, "You don't have permission to run that command.")
+
+def StatusParse(connection, name, isAdmin, address):
+    if "/status" in message:
+        time.sleep(0.2)
+        send(connection, "Port: " + str(Port))
+        time.sleep(0.2)
+        send(connection, "Your IP: " + str(address))
+        time.sleep(0.2)
+        send(connection, "Your name: " + name)
+        time.sleep(0.2)
+        send(connection, "Your Admin Status: " + str(isAdmin))
+
+def PMParse(connection, name, isAdmin, address):
+    #PM system
+    if "/pm" in message:
+        nameToPm = message[4:]
+
+        if nameToPm in namelist:
+            send(connection, ("What do you want to send? Your next message is private"))
+            reply = connection.recv(bufferSize).decode("utf8")
+
+            pendingPms[nameToPm] = (name + " : " + reply)
+
+            send(connection, ("Added to buffer."))
+
+            time.sleep(0.2)
+
+            setClientLabel(connection, "PM Sent")
+
+        else:
+            send(connection, ("This person isn't online right now"))
+
+def BroadcastParse(connection, name, isAdmin, address):
+    if "/broadcast" in message:
+        if isAdmin == True:
+            broadcast(bytes((message[11:]), "utf8"))
+
+        else:
+            send(connection, "You don't have permission to run that command.")
+
+def MinusAParse(connection, name, isAdmin, address):
+    #wipes everyone's screens. I'll go in depth in the auth for this one
+    if message == "/wipe -a" or message == "/clear -a":
+        if isAdmin == True:
+            for i in range(1, 10):
+                time.sleep(0.2)
+                #get an auth code from the time (10 second change)
+                authCode = CalculateAuthCode()
+                #broadcast wipe authorise plus the auth code, 10 times just in case
+                broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
+
+        else:
+            send(connection, "You don't have permission to run that command.")
+            setClientLabel(connection, "Permission denied.")
+
+    elif message == "/exit -a":
+        if isAdmin == True:
+            for i in range(1, 10):
+                time.sleep(0.2)
+                authCode = CalculateAuthCode()
+                broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
+
+        else:
+            send(connection, "You don't have permission to run that command.")
+            setClientLabel(connection, "Permission denied.")
+
+
+    elif message == "/faketext -a":
+        if isAdmin == True:
+            for i in range(1, 10):
+                time.sleep(0.2)
+                authCode = CalculateAuthCode()
+                #uses this so if a teacher catches it mid wipe they don't see "authorise faketext"
+                broadcast(bytes(("-- AUTHORISE 42 --" + authCode), "utf8"))
+
+def ShutdownServerParse(connection, name, isAdmin, address):
+    #for remote shutdown, if the sockets module has a vuln somehow or all this talking
+    #stuff is getting on my nerves.
+    if "sudo shutdown server" in message:
+        printlog("Received sudo shutdown server")
+        if isAdmin == True:
+            if CalculateAuthCode() == message[21:]:
+                    send(connection, "This requires root priveleges, even higher than admin.")
+                    send(connection, "Enter authorisation")
+                    reply = connection.recv(bufferSize).decode("utf8")
+
+                    passwordHashed = hashlib.sha512(bytes((reply + "84902340829048290480928409834902849028409284902890428390482304820948"), "utf8")).hexdigest()
+                    
+                    if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
+                        broadcast(bytes("This server is shutting down by remote command", "utf8"))
+                        printlog("Exiting due to sudo shutdown server command.")
+                        DoRun = False
+                        sys.exit()
+
+                    else:
+                        broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
+                        remove(connection, name)
+                        time.sleep(0.5)
+                        broadcast(bytes("SERVER: REQUEST DENIED, CLIENT REMOVED.", "utf8"))
+ 
+                        
+        else:
+            broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
+            remove(connection, name)
+
+                
 def MainLoop(isAdmin, connection, address, name):
     DoRun = True
     while DoRun == True:
@@ -212,117 +355,15 @@ def MainLoop(isAdmin, connection, address, name):
 
                 if not "-- EXIT AUTHORISE --" in message and not "-- AUTHORISE 42 --" in message and not  "-- WIPE AUTHORISE --" in message and not  "/status" in message and not "/broadcast" in message and not "/verify" in message and not "/ban" in message and not "/unban" in message and not "/pm" in message and not "/faketext" in message:
                     broadcast(bytes((name + ": " + message), "utf8"))
-
-                #PM system
-                if "/pm" in message:
-                    nameToPm = message[4:]
-
-                    if nameToPm in namelist:
-                        send(connection, ("What do you want to send? Your next message is private"))
-                        reply = connection.recv(bufferSize).decode("utf8")
-
-                        pendingPms[nameToPm] = (name + " : " + reply)
-
-                        send(connection, ("Added to buffer."))
-
-                        time.sleep(0.2)
-
-                        setClientLabel("PM Sent")
-
-                    else:
-                        send(connection, ("This person isn't online right now"))
                 
-                #banning system
-                if "/ban" in message:
-                    if isAdmin == True:
-                        blocklist.append(message[5:])
-                        send(connection, ("Successfully added " + message[5:] + " to blocklist."))
-                        printlog("Added " + message[5:] + " to the blocklist.")
-                    else:
-                        send(connection, "You don't have permission to run that command.")
+                BanAndKickParse(connection, name, isAdmin, address)
+                PMParse(connection, name, isAdmin, address)
+                StatusParse(connection, name, isAdmin, address)
+                BroadcastParse(connection, name, isAdmin, address)
+                MinusAParse(connection, name, isAdmin, address)
+                ShutdownServerParse(connection, name, isAdmin, address)
 
-                #unbanning system
-                if "/unban" in message:
-                    DoSuccess = True
-                    if isAdmin == True:
-                        try:
-                            blocklist.remove(message[7:])
-                        except:
-                            send(connection, ("Error, it seems " + message[7:] + " is not banned."))
-                            DoSuccess = False
-
-                        if DoSuccess == True:
-                            send(connection, ("Successfully removed " + message[7:] + " from blocklist."))
-                        printlog("Removed " + message[7:] + " from the blocklist.")
-
-                    else:
-                        send(connection, ("You don't have permission to run that command"))
-                        broadcast(bytes(name + " attempted to unban " + message[5:]))
-
-                #kick system
-                if "/kick" in message:
-                    if isAdmin == True:
-                        kicklist.append(message[6:])
-                        send(connection, ("Successfully added " + message[6:] + " to kicklist."))
-                        printlog("Added " + message[6:] + " to the kicklist.")
-                    else:
-                        send(connection, "You don't have permission to run that command.")
-
-
-                #returns server info
-                if "/status" in message:
-                    time.sleep(0.2)
-                    send(connection, "Port: " + str(Port))
-                    time.sleep(0.2)
-                    send(connection, "Your IP: " + str(address))
-                    time.sleep(0.2)
-                    send(connection, "Your name: " + name)
-                    time.sleep(0.2)
-                    send(connection, "Your Admin Status: " + str(isAdmin))
-
-                #way to pretend you are the server
-                if "/broadcast" in message:
-                    if isAdmin == True:
-                        broadcast(bytes((message[11:]), "utf8"))
-
-                    else:
-                        send(connection, "You don't have permission to run that command.")
-                        
-                #wipes everyone's screens. I'll go in depth in the auth for this one
-                if message == "/wipe -a" or message == "/clear -a":
-                    if isAdmin == True:
-                        for i in range(1, 10):
-                            time.sleep(0.2)
-                            #get an auth code from the time (10 second change)
-                            authCode = CalculateAuthCode()
-                            #broadcast wipe authorise plus the auth code, 10 times just in case
-                            broadcast(bytes(("-- WIPE AUTHORISE --" + authCode), "utf8"))
-
-                    else:
-                        send(connection, "You don't have permission to run that command.")
-                        setClientLabel(connection, "Permission denied.")
-
-                elif message == "/exit -a":
-                    if isAdmin == True:
-                        for i in range(1, 10):
-                            time.sleep(0.2)
-                            authCode = CalculateAuthCode()
-                            broadcast(bytes(("-- EXIT AUTHORISE --" + authCode), "utf8"))
-
-                    else:
-                        send(connection, "You don't have permission to run that command.")
-                        setClientLabel(connection, "Permission denied.")
-
-
-                elif message == "/faketext -a":
-                    if isAdmin == True:
-                        for i in range(1, 10):
-                            time.sleep(0.2)
-                            authCode = CalculateAuthCode()
-                            #uses this so if a teacher catches it mid wipe they don't see "authorise faketext"
-                            broadcast(bytes(("-- AUTHORISE 42 --" + authCode), "utf8"))
-
-                elif message == "/verify":
+                if message == "/verify":
                     #the client will printlog it's auth code too. This is more for diagnostics than security
                     send(connection, CalculateAuthCode())
 
@@ -341,36 +382,6 @@ def MainLoop(isAdmin, connection, address, name):
                         time.sleep(0.4)
                         send(connection, name)
 
-                #for remote shutdown, if the sockets module has a vuln somehow or all this talking
-                #lark is getting on my nerves.
-                elif "sudo shutdown server" in message:
-                    printlog("Received sudo shutdown server")
-                    if isAdmin == True:
-                        if CalculateAuthCode() == message[21:]:
-                                send(connection, "This requires root priveleges, even higher than admin.")
-                                send(connection, "Enter authorisation")
-                                reply = connection.recv(bufferSize).decode("utf8")
-
-                                passwordHashed = hashlib.sha512(bytes((reply + "84902340829048290480928409834902849028409284902890428390482304820948"), "utf8")).hexdigest()
-                                
-                                if passwordHashed == "ea600e271bcc401cba82320e3e53842cfd23b316aeaa6d41b73f3f5492dccff72bede7f03307eb00487e509c69a820129ccaaa38ef8160ff6d36987f67e67c1e":
-                                    broadcast(bytes("This server is shutting down by remote command", "utf8"))
-                                    printlog("Exiting due to sudo shutdown server command.")
-                                    DoRun = False
-                                    sys.exit()
-
-                                else:
-                                    broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown."), "utf8"))
-                                    remove(connection, name)
-                                    time.sleep(0.5)
-                                    broadcast(bytes("SERVER: REQUEST DENIED, CLIENT REMOVED.", "utf8"))
-                                    break
-                                    
-                    else:
-                        broadcast(bytes(("SERVER: " + name + " attempted remote server shutdown.", "utf8")))
-                        remove(connection, name)
-                        break
-
             else:
                 remove(connection, name)
                     
@@ -386,6 +397,7 @@ def MainLoop(isAdmin, connection, address, name):
                     send(connection, "to protect the other threads and main server.")
 
                 except:
+                    printlog("Error sending abort message")
                     pass
 
                 remove(connection, name)
@@ -458,7 +470,6 @@ def HandleStartingClient(connection, address):
             time.sleep(0.2)
             
             Thread(target=ManageClient, args=(connection, address, name)).start()
-            
         #nameDict.append(address, name)
 
     except:
@@ -510,7 +521,7 @@ def broadcast(message):
     if DoRun == True:
         try:
             printlog("Broadcast: " + str(message.decode("utf8")))
-        except: 
+        except:
             printlog("Error printlogging broadcast")
 
         for client in clientList:
@@ -590,7 +601,7 @@ def kickCheckThread(connection, name, isAdmin):
                 pass
             except:
                 printlog("Error, error, error")
-                pass
+                pass  
 
 #passes off incoming connections to threads. For the only directly run function, it's pretty pathetic!
 def Listen_for_clients():
