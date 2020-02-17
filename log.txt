@@ -909,3 +909,30 @@ Enter the word 'continue' to enter
 1581890270.7382925 : Defaulted
 1581890270.769519 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581890270.769498
 1581890270.772906 : PM Manager started
+
+------------ START OF SCRIPT ------------
+Imports successful, printlog function initialised.
+Client list initalised
+Block list initialised
+Kick list initialised
+Name list initialised
+All arrays initialised
+Pending PM's initialised
+All dicts initialised
+Misc. Variable initialised
+Ready to start server: STARTING SERVER
+Enter server port. Nothing will default to 443
+Port set to 34000
+Success.
+Initialising functions
+All functions initialised
+Core script entirely initialised
+
+ 
+ 
+
+Starting listen_for_clients...
+Started Listen_for_clients()
+SCRIPT FULLY OPERATIONAL1581929082.1952097 : Defaulted
+1581929082.2235463 : --SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: 1581929082.2235143
+1581929082.22586 : PM Manager started

@@ -1,7 +1,6 @@
 import tkinter, time
-from tkinter import messagebox
 import hashlib
-from threading import Thread, ThreadError
+from threading import Thread
 from socket import AF_INET, socket, SOCK_STREAM
 from time import strftime
 import os
@@ -14,6 +13,8 @@ class Communications():
     HashNextMessage = False
     sendpings = False
     freezeMessagesBecauseOfFakeText = False
+
+    IsMessageToEarly = False
 
     #Speed restrictions
     lastMessageTransmitTime = 0
@@ -28,7 +29,7 @@ class Communications():
     def Send(event=None):
         message = GUI.my_message.get()
         GUI.my_message.set("")
-        IsMessageToEarly = False
+        Communications.IsMessageToEarly = False
 
         #it's not server side, but these people are too incompetent to get around it.
         if len(message) < 150:
@@ -37,7 +38,7 @@ class Communications():
                 GUI.FakeTextList.append(message)
 
             if Communications.nextAllowedMessageTime > time.time():
-                IsMessageToEarly = True
+                Communications.IsMessageToEarly = True
                 GUI.message_list.insert(tkinter.END, "You are sending messages too quickly. Wait " + str(Communications.restrictionPeriodPunishment) + " seconds..")
                 Communications.nextAllowedMessageTime = time.time() + Communications.restrictionPeriodPunishment
                 GUI.SetLabelStatus("You can write again at " + str(Communications.nextAllowedMessageTime))
@@ -50,56 +51,59 @@ class Communications():
                 else:
                     GUI.MessageList = []
 
-            elif "/faketext" in message:
-                if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
-                    GUI.SwitchToMessageMode()
-                elif Communications.freezeMessagesBecauseOfFakeText == False and not "-end" in message:
-                    GUI.FakeText()
+            Communications.DoSendCommands(message)
 
-            elif "/status" in message:
-                if Communications.freezeMessagesBecauseOfFakeText == True:
-                    GUI.SetLabelStatus("Notepad Mode")
-
-                if Communications.freezeMessagesBecauseOfFakeText == False:
-                    GUI.SetLabelStatus("Chat Mode")
-
-            elif "/ping" in message and IsMessageToEarly == False:
-                PingTest.FirstCapture = time.time()
-                Communications.InternalSend("[PING: REPLY URGENTLY]")
-                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
-
-            elif "/help" in message:
-                GUI.WriteMessage("/pm - prompts you to PM somebody.\n/ping - measure ping. \n/bug report - prompts you to make a bug report.\n/feature request - prompts you to make a feature request.\n/quit\n/faketext- switches to a notepad you can write notes in!\n/faketext -end - switches back to messages. \n/wipe\n/everyoneclose\n/everyonefake\n/help")
-
-
-            elif message == "/exit" or message == "/quit":
-                Communications.InternalSend("/quit")
-                client_socket.close()
-                GUI.top.destroy()
-                GUI.top.quit()
-                sys.exit()
-
-            elif Communications.HashNextMessage == False and IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
-                Communications.InternalSend(message)
-                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
-            
-            elif IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
-                Communications.HashNextMessage = False
-                print("Hashing message")
-                #Good joke, "securely." If anyone is reading this:
-                #I try my best, but only consider trusting me with
-                #passwords once I have a Computer Science degree. 
-                #I just looked it up in a book and went through some StackOverflow posts.
-                message = Cryptography.Hash(message)
-                Communications.InternalSend(message)
-                GUI.entry_field["show"] = ""
-                Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
-
-            if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
-                GUI.SetLabelStatus("Sent: " + message)
-        
         else:
-            GUI.message_list.insert(tkinter.END, "Too long")
+            GUI.message_list.insert(tkinter.END, "Message too long")
+            GUI.my_message.set(message)
+
+    def DoSendCommands(message):
+        if "/faketext" in message:
+            if "-end" in message and Communications.freezeMessagesBecauseOfFakeText == True:
+                GUI.SwitchToMessageMode()
+            elif Communications.freezeMessagesBecauseOfFakeText == False and not "-end" in message:
+                GUI.FakeText()
+
+        elif "/status" in message:
+            if Communications.freezeMessagesBecauseOfFakeText == True:
+                GUI.SetLabelStatus("Notepad Mode")
+
+            if Communications.freezeMessagesBecauseOfFakeText == False:
+                GUI.SetLabelStatus("Chat Mode")
+
+        elif "/ping" in message and Communications.IsMessageToEarly == False:
+            PingTest.FirstCapture = time.time()
+            Communications.InternalSend("[PING: REPLY URGENTLY]")
+            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+
+        elif "/help" in message:
+            GUI.WriteMessage("/pm - prompts you to PM somebody.\n/ping - measure ping. \n/bug report - prompts you to make a bug report.\n/feature request - prompts you to make a feature request.\n/quit\n/faketext- switches to a notepad you can write notes in!\n/faketext -end - switches back to messages. \n/wipe\n/everyoneclose\n/everyonefake\n/help")
+
+
+        elif message == "/exit" or message == "/quit":
+            Communications.InternalSend("/quit")
+            client_socket.close()
+            GUI.top.destroy()
+            GUI.top.quit()
+
+        elif Communications.HashNextMessage == False and Communications.IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
+            Communications.InternalSend(message)
+            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+        
+        elif Communications.IsMessageToEarly == False and Communications.freezeMessagesBecauseOfFakeText == False:
+            Communications.HashNextMessage = False
+            print("Hashing message")
+            #Good joke, "securely." If anyone is reading this:
+            #I try my best, but only consider trusting me with
+            #passwords once I have a Computer Science degree. 
+            #I just looked it up in a book and went through some StackOverflow posts.
+            message = Cryptography.Hash(message)
+            Communications.InternalSend(message)
+            GUI.entry_field["show"] = ""
+            Communications.nextAllowedMessageTime = time.time() + Communications.messageRestrictionPeriod
+
+        if not "/faketext" in message and not "/wipe" in message and not "/clear" in message and not "/status" in message:
+            GUI.SetLabelStatus("Sent: " + message)
 
 
     def PeriodicPing():
@@ -180,7 +184,7 @@ class Cryptography:
         text = hashlib.pbkdf2_hmac('sha512', bytes(text, "utf8"), bytes(salt, "utf8"), 524288).hex()
         
         #My own iterating implementation, low security but a nice extra
-        i = 0 
+        i = 0
         while True:
             i = i + 1
             text = str(hashlib.sha512(bytes(str(text) + str(i) + str(salt) + 'f8weucrwirun3wurifiwshfkfdsifjisdjfisjfiosjflsjfiljdslkfjllhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89', 'utf8')).hexdigest())
@@ -283,7 +287,7 @@ class GUI:
 
     def on_closing():
         Communications.InternalSend("/exit")
-        top.destroy()
+        GUI.top.destroy()
 
     def WipeList():
         GUI.message_list.delete(0, tkinter.END)
@@ -346,7 +350,7 @@ client_socket = socket(AF_INET, SOCK_STREAM)
 
 tries = 0
 
-#tries to connect. 
+#tries to connect.
 #*Auto adapting port technologies to compensate for pre-allocated ports* this could be from a shitty hacking movie
 while True:
     try:

@@ -1,11 +1,10 @@
 #client side script
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import Thread, ThreadError
+from threading import Thread
 import tkinter, time
-from tkinter import messagebox
 import sys, hashlib
 
-#not sure. I am scared to remove it, so I'll keep it. 
+#not sure. I am scared to remove it, so I'll keep it.
 isUp = False
 
 DoCustom = input("Do you want to do default or custom setup? C/D > ")
@@ -130,7 +129,7 @@ def ReceiveFromServer():
                 #stack overflow.
                 SetLabelStatus(message[28:])
 
-            #if it's not internal, write it in the feed. 
+            #if it's not internal, write it in the feed.
             if not "/ping" in message and not "/pingTest" in message and not "/pingTime" in message and not "-- WIPE AUTHORISE --" in message and not "-- EXIT AUTHORISE --" in message and not "[INTERNAL SET LABEL MESSAGE]" in message and not "-- AUTHORISE 42 --" in message:
                 message_list.insert(tkinter.END, message)
 
@@ -138,7 +137,7 @@ def ReceiveFromServer():
             break
         
 #sends to the server. Note it doesn't write it's own messages to the feed.
-#it sends to the server, server sends them back, it writes them down. It simplifies 
+#it sends to the server, server sends them back, it writes them down. It simplifies
 #the process server side and it a obvious way of knowing if your connection is working.
 
 #also, this event thing? It's extremely annoying. I spent half an hour thinking I was passing messages to it
@@ -167,7 +166,7 @@ def send(event=None):
         SetLabelStatus("Received, wiping")
         WipeList()
         SetLabelStatus("")
-    
+
     #exits
     if message == "/exit" or message == "/quit":
         SetLabelStatus("Quitting.")
@@ -182,7 +181,7 @@ def send(event=None):
     if message == "/verify":
         message_list.insert(tkinter.END, "Client [LOCAL]: " + CalculateAuthCode())
 
-    #inserts a bunch of stilted, totally unconvincing fake "lesson friendly" chatter. 
+    #inserts a bunch of stilted, totally unconvincing fake "lesson friendly" chatter.
     if message == "/faketext" or message == "/faketext -a":
         InsertFakeText()
 
@@ -284,7 +283,7 @@ statusLabel.pack()
 
 top.protocol("WM_DELETE_WINDOW", on_closing)
 
-#phew, end of that tkinter stuff. 
+#phew, end of that tkinter stuff.
 #I hope this doesn't need explaining
 if DoCustom == True:
     backlogLength = int(input("What length should the backlog be before removing the end? > "))
@@ -314,7 +313,7 @@ client_socket = socket(AF_INET, SOCK_STREAM)
 
 tries = 0
 
-#tries to connnect. 
+#tries to connnect.
 while True:
     try:
         print("Attempting to connect")

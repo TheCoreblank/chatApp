@@ -1,6 +1,6 @@
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import Thread, ThreadError
-import hashlib, time, sys
+from threading import Thread
+import hashlib, time
 
 Clients = {}
 Addresses = {}
@@ -36,9 +36,9 @@ def accept_incoming_connections():
         Addresses[client] = clientAddress
         
         print("Beginning handling for client")
-        Thread(target=handle_client, args=(client,)).start()
+        Thread(target=handle_client_start, args=(client,)).start()
     
-def handle_client(client):
+def handle_client_start(client):
     try:
         #handles client connections
         name = client.recv(Buffer_size).decode("utf8")
@@ -89,6 +89,8 @@ def handle_client(client):
 
         message = name + " has joined!"
         broadcast(bytes(message, "utf8"))
+
+        Thread(target=main_loop, args=(client, isAdmin, name))
         
     except BrokenPipeError:
         print("Broken pipe, closing")
@@ -97,11 +99,10 @@ def handle_client(client):
         
     ##########main loop###############
 
+def main_loop(client, isAdmin, name):
     while True:
         try:
-            print(str(Clients))
             print(str(Addresses))
-            print(str(len(Clients)))
             print(str(len(Addresses)))
             try:
                 incomingMessage = client.recv(Buffer_size)
@@ -153,7 +154,7 @@ def handle_client(client):
             break
 
     Clients = ClientsB
-        
+    
 def broadcast(msg, prefix=""):
     #broadcasts to *all* clients
     ClientsB = Clients
@@ -164,7 +165,6 @@ def broadcast(msg, prefix=""):
             print("Broken pipe, closing.")
             client.close()
             del ClientsB[client]
-            pass
 
         except:
             print("Error broadcasting, closing.")

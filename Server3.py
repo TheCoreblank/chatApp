@@ -1,6 +1,6 @@
-import time, hashlib, sys, string
+import time, hashlib
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import *
+from threading import Thread
 
 class LowLevelCommunications():
     #for before the client is logged in
@@ -79,6 +79,7 @@ class HighLevelCommunications():
                     Username = Accounts.GetAccountDataFromObject(account, "Username")
                     Accounts.IncreaseErrorCount(Username)
                 except:
+                    PrintLog("Error increasing error count")
                     pass
                 continue
 
@@ -99,7 +100,6 @@ class HighLevelCommunications():
             PrintLog("Could not get connection for internal message name, passing and not sending")
             hadError = True
             Accounts.IncreaseErrorCount(Username)
-            pass
 
         try:
             if hadError == False:
@@ -171,14 +171,14 @@ class Accounts():
                     return account.get(key)
 
             if returned == False:
-                PrintLog("Could not find data when searching " + str(username) + " for " + str(key))
+                PrintLog("Could not find data when searching " + str(UsernameInput) + " for " + str(key))
                 return ""
 
             #Accounts.SaveAccountListToFile
 
         except:
             try:
-                PrintLog("Error getting account data for " + str(username))
+                PrintLog("Error getting account data for " + str(UsernameInput))
             except:
                 PrintLog("Error getting account data, error printing name")
 
@@ -203,7 +203,7 @@ class Accounts():
 
         #Accounts.ReadAccountList()
         AccountListB = Accounts.AccountList
-        for account in AccountList:
+        for account in Accounts.AccountList:
             if account.get('Username') == UsernameInput:
                 if account.get('Password') == PasswordInput:
                     AccountListB.remove(account)
@@ -225,7 +225,6 @@ class Main():
             HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
         except:
             PrintLog("Error at start of high level manage client")
-            connection.close()
             NoError = False
 
         Accounts.PushAccountData(Username, "LastSeen", time.time())
@@ -282,42 +281,6 @@ class Main():
                             Accounts.PushAccountData(ToSendPmTo, "PendingPms", {"Sender" : Username, "Message" : PmToSend, "HasAnswered" : False})
 
                             HighLevelCommunications.PrivateMessageFromServer(Username, "Added to buffer.")
-
-                    elif "/bug report" in message:
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "Disabled because of a lack of use: Tell me in person.")
-                        '''
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to report?")
-                        reply = "[CLIENT PING UPDATE]"
-
-                        while "[CLIENT PING UPDATE]" in reply:
-                            reply = connection.recv(BufferSize).decode("utf8")
-
-                        BugReportsFile = open('bugReports.txt', 'a')
-                        BugReportsFile.write("---- BUG REPORT: SENDER " + str(Username) + " TIME:" + str(time.time()) + " ---- \n")
-                        BugReportsFile.write(str(reply) + "\n")
-                        BugReportsFile.write("</BUG REPORT> \n")
-                        BugReportsFile.close()
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
-                        '''
-
-                    elif "/feature request" in message:
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "Disabled because of a lack of use: Tell me in person.")
-                        ''''
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "What would you like to request?")
-
-                        reply = "[CLIENT PING UPDATE]"
-
-                        while "[CLIENT PING UPDATE]" in reply:
-                            reply = connection.recv(BufferSize).decode("utf8")
-
-                        FeatureRequestsFile = open('featureRequests.txt', "a")
-                        FeatureRequestsFile.write("---- FEATURE REQUEST: SENDER " + str(Username) + " TIME: " + str(time.time()) + " ----\n")
-                        FeatureRequestsFile.write(str(reply) + "\n")
-                        FeatureRequestsFile.write("</FEATURE REQUEST> \n")
-                        FeatureRequestsFile.close()
-                        HighLevelCommunications.PrivateMessageFromServer(Username, "Saved.")
-
-                        '''
 
                     elif "/exit" in message or "/quit" in message:
                         Accounts.PushAccountData(Username, "isOnline", False)
@@ -541,7 +504,7 @@ class Main():
             time.sleep(5)
             connection.close()
     #except:
-    #    PrintLog("Error in account creation, exiting")    
+    #    PrintLog("Error in account creation, exiting")
     #    connection.close()
 
 class PMManager:
@@ -568,7 +531,6 @@ class PMManager:
 
             except TypeError:
                 continue
-            
             except:
                 PrintLog("Error in PM manager, can not increase log")
 
@@ -593,7 +555,7 @@ class PingManager:
                         Username = Accounts.GetAccountDataFromObject(account, "Username")
                         Accounts.PushAccountData(Username, "isOnline", False)
 
-server = socket(AF_INET, SOCK_STREAM) 
+server = socket(AF_INET, SOCK_STREAM)
 Port = input("Port: ")
 if not Port:
     Port = 34000

@@ -1,6 +1,6 @@
-import time, hashlib, select, sys, string
+import time, hashlib, select, sys
 from socket import AF_INET, socket, SOCK_STREAM
-from threading import Thread, ThreadError
+from threading import Thread
 from random import *
 
 def printlog(text):
@@ -66,7 +66,7 @@ time.sleep(0.2)
 
 printlog("Ready to start server: STARTING SERVER")
 
-server = socket(AF_INET, SOCK_STREAM) 
+server = socket(AF_INET, SOCK_STREAM)
 
 #can be changed, but seems OK for this kind of thing. Was originally 1024
 bufferSize = 2048
@@ -126,7 +126,7 @@ def ManageClient(connection, address, name):
     try:
         #Yes, I know I should have made an all lowercase copy of name and made it half as long.
         #checks if they should be made admin, then requests auth
-        if "Alex" in name or "System" in name or "sudo" in name or "Sudo" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:    
+        if "Alex" in name or "System" in name or "sudo" in name or "Sudo" in name or "Server" in name or "server" in name or "system" in name or "Admin" in name or "Administrator" in name or "Root" in name or "admin" in name or "administrator" in name or "root" in name or "Admin" == name or "Administrator" == name or "Root" == name or "admin" == name or "administrator" == name or "root" == name:
             send(connection, "Due to your username, you need to elevate to admin")
             #the phrase "enter authorisation" triggers the client to change the input field to stars
             send(connection, "Enter authorisation")
@@ -174,6 +174,7 @@ def ManageClient(connection, address, name):
                 send(connection, "to protect the other threads and main server.")
 
             except:
+                printlog("Error sending abort message to client")
                 pass
 
             remove(connection, name)
@@ -184,7 +185,11 @@ def ManageClient(connection, address, name):
 
     setClientLabel(connection, "Welcome to the chatroom.")
 
-    while True:
+    Thread(target=MainLoop, args=(isAdmin, connection, address, name))
+
+def MainLoop(isAdmin, connection, address, name):
+    DoRun = True
+    while DoRun == True:
         try:
             #this isn't how it's intended, but it's there anyway incase someone uses it wrong
             if name in blocklist and isAdmin == False:
@@ -220,7 +225,9 @@ def ManageClient(connection, address, name):
 
                         send(connection, ("Added to buffer."))
 
-                        SetLabelStatus("PM sent")
+                        time.sleep(0.2)
+
+                        setClientLabel("PM Sent")
 
                     else:
                         send(connection, ("This person isn't online right now"))
@@ -470,7 +477,7 @@ def HandleStartingClient(connection, address):
         except:
             remove(connection, "")
         pass
-    
+
 def send(connection, text, Show=True):
     try:
         if DoRun == True:
@@ -536,7 +543,7 @@ def remove(connection, name):
             printlog("Error removing client connection, printloging name caused an error")
             pass
 
-#sets the label at the bottom of the client. 
+#sets the label at the bottom of the client.
 def setClientLabel(connection, text):
     printlog("Setting client label to " + text)
     try:
@@ -578,7 +585,6 @@ def kickCheckThread(connection, name, isAdmin):
             pass
         except:
             printlog("Error in kick check thread")
-            pass
             try:
                 remove(connection, name)
                 pass
