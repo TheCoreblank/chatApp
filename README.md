@@ -1,6 +1,7 @@
 # chatApp
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/41ef0c5b8cb64beb94def71f000df38e)](https://app.codacy.com/manual/AlexAndHisScripts/chatApp?utm_source=github.com&utm_medium=referral&utm_content=AlexAndHisScripts/chatApp&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/41ef0c5b8cb64beb94def71f000df38e)](https://app.codacy.com/manual/AlexAndHisScripts/chatApp?utm_source=github.com&utm_medium=referral&utm_content=AlexAndHisScripts/chatApp&utm_campaign=Badge_Grade_Dashboard)
 
 A work-in-progress chat app designed to circumvent school systems.
 
