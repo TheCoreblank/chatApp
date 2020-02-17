@@ -95,7 +95,7 @@ class Communications():
             print("Hashing message")
             #Good joke, "securely." If anyone is reading this:
             #I try my best, but only consider trusting me with
-            #passwords once I have a Computer Science degree. 
+            #passwords once I have a Computer Science degree.
             #I just looked it up in a book and went through some StackOverflow posts.
             message = Cryptography.Hash(message)
             Communications.InternalSend(message)
@@ -190,7 +190,6 @@ class Cryptography:
             text = str(hashlib.sha512(bytes(str(text) + str(i) + str(salt) + 'f8weucrwirun3wurifiwshfkfdsifjisdjfisjfiosjflsjfiljdslkfjllhwifiwfhownowur8o2rn82u8onu328cu482bu82u48b23u89', 'utf8')).hexdigest())
             if i == 8192:
                 break
-        
         return str(text)
 
 
@@ -202,7 +201,7 @@ class GUI:
     #disguise that shit
     top.title("untitled - Notepad")
     #top.call('wm', 'iconphoto', top._w, tkinter.PhotoImage(file='wordlogo.png'))
-    top.configure(background="white") 
+    top.configure(background="white")
 
     menu = tkinter.Menu(top,tearoff=0,font="italic 10 ")
 

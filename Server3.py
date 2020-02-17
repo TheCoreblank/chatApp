@@ -1,4 +1,4 @@
-import time, hashlib
+import time 
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
@@ -80,7 +80,6 @@ class HighLevelCommunications():
                     Accounts.IncreaseErrorCount(Username)
                 except:
                     PrintLog("Error increasing error count")
-                    pass
                 continue
 
         PrintLog("Broadcasted " + Text)
@@ -95,7 +94,7 @@ class HighLevelCommunications():
         Username = str(Username)
         PrintLog("Sending internal message to " + Username + " : " + Text)
         try:
-            Connection = Accounts.GetAccountData(Username, ConnectionObject)
+            Connection = Accounts.GetAccountData(Username, "ConnectionObject")
         except:
             PrintLog("Could not get connection for internal message name, passing and not sending")
             hadError = True
@@ -141,7 +140,6 @@ class Accounts():
             #Accounts.ReadAccountList()
             Accounts.AccountList.append({'Username' : UsernameInput, 'Password' : PasswordInput, 'isAdmin' : isAdminInput, 'isOnline' : False})
             #Accounts.SaveAccountListToFile
-            PrintDataDigest()
         except:
             try:
                 PrintLog("Error creating new account, username: " + str(UsernameInput))
@@ -209,7 +207,6 @@ class Accounts():
                     AccountListB.remove(account)
         
         Accounts.AccountList = AccountListB
-        PrintDataDigest()
         #Accounts.SaveAccountListToFile
 
     def InitAccountList():
@@ -221,7 +218,6 @@ class Main():
     def ManageClientHighLevel(Username):
         NoError = True
         try:
-            PrintDataDigest()
             HighLevelCommunications.PrivateMessageFromServer(Username, "Welcome to the chatroom.")
         except:
             PrintLog("Error at start of high level manage client")
@@ -307,7 +303,6 @@ class Main():
 
     def WelcomeNewConnections(connection, address):
         try:
-            PrintDataDigest()
             LowLevelCommunications.SendServerPM(connection, "Make a new account (M) or sign in (S)")
             ContinueConnectionProcess = True
         except:
@@ -320,11 +315,8 @@ class Main():
                 response = connection.recv(BufferSize).decode("utf8")
                 if response == "M":
                     Thread(target=Main.NewAccountProcess, args=(connection, address)).start()
-                    PrintDataDigest()
-
                 else:
                     Thread(target=Main.SignInProcess, args=(connection, address)).start()
-                    PrintDataDigest()
 
 
         except:
@@ -384,7 +376,6 @@ class Main():
                         if reply == "continue":
                             Accounts.PushAccountData(Username, "ErrorCount", 0)
                             Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
-                            PrintDataDigest()
                             break
 
                         else:
@@ -446,7 +437,6 @@ class Main():
 
                     if "42" in Username:
                         LowLevelCommunications.SendServerPM(connection, "42! Nice!")
-                    
                     if InUse == False:
                         break
 
@@ -490,8 +480,6 @@ class Main():
                         PrintLog("Referring main thread")
                         Accounts.PushAccountData(Username, "ErrorCount", 0)
                         Thread(target=Main.ManageClientHighLevel, args=(Username,)).start()
-                        PrintDataDigest()
-
                     else:
                         PrintLog("Didn't enter 'continue'")
                         connection.close()
@@ -580,22 +568,6 @@ except:
 
     server.bind((Host, Port))
 server.listen(1000)
-
-def PrintDataDigest():
-    '''
-    PrintLog("-------- PERIODIC DATA RETURN ::BEGIN::")
-    #enumerate should be threading.active_count
-    PrintLog(str(active_count()) + " active threads.")
-    PrintLog("Length of account list is " + str(len(Accounts.AccountList)))
-    PrintLog("Account list:")
-    PrintLog(str(Accounts.AccountList))
-    PrintLog("-------- PERIODIC DATA RETURN ::END::")
-    '''
-
-def PrintPeriodic():
-    while True:
-        time.sleep(60)
-        PrintDataDigest()
 
 PrintLog("--SCRIPT RESTART-- SERVER VERSION: 3 -- TIME: " + str(time.time()))
 

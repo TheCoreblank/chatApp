@@ -135,7 +135,7 @@ def ReceiveFromServer():
 
         except OSError: #may be a client exit
             break
-        
+
 #sends to the server. Note it doesn't write it's own messages to the feed.
 #it sends to the server, server sends them back, it writes them down. It simplifies
 #the process server side and it a obvious way of knowing if your connection is working.
