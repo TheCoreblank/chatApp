@@ -269,7 +269,7 @@ class Main():
 
                         if ToSendExists == True and ToSendOnline == True:
                             HighLevelCommunications.PrivateMessageFromServer(Username, "What do you want to send?")
-                            PmToSend = "[CLIENT PING UPDATE]"
+                            PmToSend = "[CLIENT PING UPDATE]!"
 
                             while "[CLIENT PING UPDATE]" in message:
                                 PmToSend = connection.recv(BufferSize).decode("utf8")
